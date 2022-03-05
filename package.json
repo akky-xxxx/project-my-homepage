@@ -4,7 +4,8 @@
   "repository": "https://github.com/akky-xxxx/project-my-homepage.git",
   "scripts": {
     "fix": "run-p fix:* -c",
-    "fix:pack": "fixpack"
+    "fix:pack": "fixpack",
+    "prepare": "husky install"
   },
   "devDependencies": {
     "@commitlint/cli": "^16.2.1",
