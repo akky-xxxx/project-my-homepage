@@ -1,0 +1,9 @@
+{
+  "name": "project-my-homepage",
+  "version": "1.0.0",
+  "repository": "https://github.com/akky-xxxx/project-my-homepage.git",
+  "author": "akky-xxxx <114.s.aki@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "workspaces": ["packages/*"]
+}
