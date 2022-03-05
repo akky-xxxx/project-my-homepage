@@ -2,6 +2,7 @@
   "name": "service-client",
   "scripts": {
     "build": "next build",
+    "build:storybook": "build-storybook",
     "check-all": "npm-run-all fix -p spell-check lint:css type-check -s test",
     "check-code": "run-p spell-check lint type-check",
     "dev": "next dev",
@@ -23,6 +24,7 @@
     "lint:ts": "run-s lint-ts-by-eslint lint-ts-by-prettier",
     "spell-check": "cspell \"./src/**/*.{ts,tsx}\"",
     "start": "next start",
+    "storybook": "start-storybook -p 3050",
     "test": "echo \"仮の script\"",
     "type-check": "tsc"
   },
