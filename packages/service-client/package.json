@@ -33,7 +33,7 @@
     "ss:remove": "shx rm -rf \"./.screenshot/expected/*\"",
     "start": "next start",
     "storybook": "start-storybook -p 3050",
-    "test": "jest",
+    "test": "jest --coverage",
     "type-check": "tsc"
   },
   "dependencies": {
