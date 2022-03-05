@@ -6,5 +6,5 @@ const { Default } = composeStories(stories)
 
 it("HomeTemplate component", () => {
   render(<Default />)
-  expect(screen.getByText("Welcome to Next.js!")).toBeTruthy()
+  expect(screen.getByText("Welcome to")).toBeTruthy()
 })
