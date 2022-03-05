@@ -5,6 +5,10 @@
   "author": "akky-xxxx <114.s.aki@gmail.com>",
   "license": "MIT",
   "private": true,
+  "scripts": {
+    "fix": "run-p fix:* -c",
+    "fix:pack": "fixpack"
+  },
   "workspaces": [
     "packages/*"
   ],
