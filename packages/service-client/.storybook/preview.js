@@ -6,7 +6,7 @@ import { GlobalStyle } from "../src/assets/styles"
 export const decorators = [withScreenshot]
 
 export const parameters = {
-  actions: { argTypesRegex: "^on[A-Z].*" },
+  actions: { argTypesRegex: "^handle[A-Z].*" },
   controls: {
     matchers: {
       color: /(background|color)$/i,
