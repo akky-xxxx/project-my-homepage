@@ -2,6 +2,8 @@
   "name": "service-client",
   "scripts": {
     "build": "next build",
+    "check-all": "npm-run-all fix -p spell-check lint:css type-check -s test",
+    "check-code": "run-p spell-check lint type-check",
     "dev": "next dev",
     "fix": "run-p fix:* -c",
     "fix-ts-by-eslint": "eslint \"./src/**/*.{ts,tsx}\" --fix",
