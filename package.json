@@ -12,6 +12,7 @@
     "fix:service-client": "yarn workspace service-client fix",
     "lint": "run-p lint:* -c",
     "lint:js": "prettier \"./*.js\" --check",
+    "lint:service-client": "yarn workspace service-client lint",
     "prepare": "husky install"
   },
   "devDependencies": {
