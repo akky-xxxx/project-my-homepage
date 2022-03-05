@@ -3,6 +3,9 @@
   "author": "akky-xxxx <114.s.aki@gmail.com>",
   "repository": "https://github.com/akky-xxxx/project-my-homepage.git",
   "scripts": {
+    "dev": "run-p dev:*",
+    "dev:strapi-photos": "yarn workspace service-strapi-photos dev",
+    "dev:client": "yarn workspace service-client dev",
     "fix": "run-p fix:* -c",
     "fix:js": "prettier \"./*.js\" --write",
     "fix:pack": "fixpack",
