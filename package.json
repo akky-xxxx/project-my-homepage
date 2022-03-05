@@ -8,6 +8,7 @@
     "dev:client": "yarn workspace service-client dev",
     "fix": "run-p fix:* -c",
     "fix:js": "prettier \"./*.js\" --write",
+    "fix:client": "yarn workspace service-client fix",
     "fix:pack": "fixpack",
     "lint": "run-p lint:* -c",
     "lint:js": "prettier \"./*.js\" --check",
