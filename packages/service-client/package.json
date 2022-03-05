@@ -11,6 +11,7 @@
     "lint:configs": "prettier \"./*.{js,json}\" \"./**/*.js\" \"!**/.next\" --check",
     "lint:css": "stylelint './src/**/*.{ts,tsx}'",
     "lint:ts": "run-s lint-ts-by-eslint lint-ts-by-prettier",
+    "spell-check": "cspell \"./src/**/*.{ts,tsx}\"",
     "start": "next start"
   },
   "dependencies": {
