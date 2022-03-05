@@ -4,7 +4,10 @@
   "repository": "https://github.com/akky-xxxx/project-my-homepage.git",
   "scripts": {
     "fix": "run-p fix:* -c",
+    "fix:js": "prettier \"./*.js\" --write",
     "fix:pack": "fixpack",
+    "lint": "run-p lint:* -c",
+    "lint:js": "prettier \"./*.js\" --check",
     "prepare": "husky install"
   },
   "devDependencies": {
