@@ -17,6 +17,7 @@
     "lint:ts": "run-s lint-ts-by-eslint lint-ts-by-prettier",
     "spell-check": "cspell \"./src/**/*.{ts,tsx}\"",
     "start": "next start",
+    "test": "echo \"仮の script\"",
     "type-check": "tsc"
   },
   "dependencies": {
