@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "photos",
+  "info": {
+    "singularName": "photo",
+    "pluralName": "photos",
+    "displayName": "photo"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "photo": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "takenAt": {
+      "type": "date",
+      "required": true,
+      "unique": false
+    },
+    "prefecture": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::prefecture.prefecture",
+      "inversedBy": "photos"
+    },
+    "tags": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::tag.tag",
+      "inversedBy": "photos"
+    }
+  }
+}
