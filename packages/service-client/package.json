@@ -4,6 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "fix": "run-p fix:* -c",
+    "fix:pack": "fixpack",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
