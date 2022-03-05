@@ -4,11 +4,11 @@
   "repository": "https://github.com/akky-xxxx/project-my-homepage.git",
   "scripts": {
     "dev": "run-p dev:*",
-    "dev:strapi-photos": "yarn workspace service-strapi-photos dev",
     "dev:client": "yarn workspace service-client dev",
+    "dev:strapi-photos": "yarn workspace service-strapi-photos dev",
     "fix": "run-p fix:* -c",
-    "fix:js": "prettier \"./*.js\" --write",
     "fix:client": "yarn workspace service-client fix",
+    "fix:js": "prettier \"./*.js\" --write",
     "fix:pack": "fixpack",
     "lint": "run-p lint:* -c",
     "lint:js": "prettier \"./*.js\" --check",
