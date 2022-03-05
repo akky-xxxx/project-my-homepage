@@ -12,7 +12,8 @@
     "lint:css": "stylelint './src/**/*.{ts,tsx}'",
     "lint:ts": "run-s lint-ts-by-eslint lint-ts-by-prettier",
     "spell-check": "cspell \"./src/**/*.{ts,tsx}\"",
-    "start": "next start"
+    "start": "next start",
+    "type-check": "tsc"
   },
   "dependencies": {
     "next": "12.1.0",
