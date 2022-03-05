@@ -25,5 +25,5 @@ module.exports = {
     "../../configs/eslint/jest",
     "prettier",
   ],
-  ignorePatterns: ["**/libs/**/*"],
+  ignorePatterns: ["**/libs/**/*", "**/coverage/**"],
 }
