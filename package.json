@@ -3,16 +3,17 @@
   "author": "akky-xxxx <114.s.aki@gmail.com>",
   "repository": "https://github.com/akky-xxxx/project-my-homepage.git",
   "scripts": {
+    "check-all": "run-p check-all:* -c",
+    "check-all:root": "run-s fix lint",
+    "check-all:service-client": "yarn workspace service-client check-all",
     "dev": "run-p dev:*",
     "dev:service-client": "yarn workspace service-client dev",
     "dev:service-strapi-photos": "yarn workspace service-strapi-photos dev",
     "fix": "run-p fix:* -c",
     "fix:js": "prettier \"./*.js\" --write",
     "fix:pack": "fixpack",
-    "fix:service-client": "yarn workspace service-client fix",
     "lint": "run-p lint:* -c",
     "lint:js": "prettier \"./*.js\" --check",
-    "lint:service-client": "yarn workspace service-client lint",
     "prepare": "husky install"
   },
   "devDependencies": {
