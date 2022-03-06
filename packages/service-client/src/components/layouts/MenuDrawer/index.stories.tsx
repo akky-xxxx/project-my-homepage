@@ -1,5 +1,5 @@
 import { ComponentStoryObj, Meta } from "@storybook/react"
-import { MenuDrawer } from "./index"
+import { MenuDrawer } from "."
 
 type MenuDrawerType = typeof MenuDrawer
 

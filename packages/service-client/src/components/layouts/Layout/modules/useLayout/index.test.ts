@@ -1,5 +1,5 @@
 import { act, renderHook, RenderHookResult } from "@testing-library/react-hooks"
-import { useLayout } from "./index"
+import { useLayout } from "."
 
 describe("useLayout", () => {
   let result: RenderHookResult<
