@@ -1,4 +1,5 @@
-import { createTheme } from "@mui/material"
+import { colors, createTheme } from "@mui/material"
+import { omit } from "remeda"
 
 const { spacing, breakpoints } = createTheme()
 
@@ -26,3 +27,15 @@ export const AppMargins = {
   },
   /* eslint-enable no-magic-numbers */
 } as const
+
+type ColorKey = keyof typeof colors
+const colorsBase = omit<Record<ColorKey, unknown>, ColorKey>(colors, ["common"])
+type MuiColorKey = keyof typeof colorsBase
+
+// Object.keys の戻り値を厳密に定義したいため
+// eslint-disable-next-line @typescript-eslint/consistent-type-assertions
+export const Colors = (Object.keys(colorsBase) as MuiColorKey[])
+  // ハードコーディングの値に意味がないため
+  // eslint-disable-next-line no-magic-numbers
+  .map((key) => colors[key][500])
+  .sort()
