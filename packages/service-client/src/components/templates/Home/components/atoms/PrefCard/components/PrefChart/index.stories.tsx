@@ -1,6 +1,6 @@
 import { ComponentStoryObj, Meta } from "@storybook/react"
 import { ComponentProps } from "react"
-import { PrefChart } from "./index"
+import { PrefChart } from "."
 
 type PrefChartType = typeof PrefChart
 

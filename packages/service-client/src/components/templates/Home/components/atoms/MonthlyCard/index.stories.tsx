@@ -1,6 +1,6 @@
 import { ComponentStoryObj, Meta } from "@storybook/react"
 import { ComponentProps } from "react"
-import { MonthlyCard } from "./index"
+import { MonthlyCard } from "."
 
 type MonthlyCardType = typeof MonthlyCard
 

@@ -1,6 +1,6 @@
 import { ComponentStoryObj, Meta } from "@storybook/react"
 import { ComponentProps } from "react"
-import { PrefCard } from "./index"
+import { PrefCard } from "."
 
 type PrefCardType = typeof PrefCard
 

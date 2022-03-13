@@ -1,6 +1,6 @@
 import { ComponentStoryObj, Meta } from "@storybook/react"
 import { ComponentProps } from "react"
-import { TagCard } from "./index"
+import { TagCard } from "."
 
 type TagCardType = typeof TagCard
 
