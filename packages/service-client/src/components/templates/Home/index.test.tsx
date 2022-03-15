@@ -6,5 +6,8 @@ const { Default } = composeStories(stories)
 
 it("HomeTemplate component", () => {
   render(<Default />)
-  expect(screen.getByText("Welcome to")).toBeTruthy()
+  expect(screen.getByText("Home")).toBeTruthy()
+  expect(screen.getByText("月別")).toBeTruthy()
+  expect(screen.getByText("都道府県別")).toBeTruthy()
+  expect(screen.getByText("タグ別")).toBeTruthy()
 })
