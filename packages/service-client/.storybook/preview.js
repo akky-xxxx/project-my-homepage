@@ -17,6 +17,7 @@ export const parameters = {
       date: /Date$/,
     },
   },
+  layout: "fullscreen",
   screenshot: {
     // Put global screenshot parameters(e.g. viewport)
   },
