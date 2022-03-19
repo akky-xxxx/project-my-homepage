@@ -36,6 +36,11 @@ const meta: Meta<ComponentProps<PrefChartType>> = {
     ],
   },
   component: Wrapper,
+  parameters: {
+    screenshot: {
+      delay: 500,
+    },
+  },
 }
 export default meta
 

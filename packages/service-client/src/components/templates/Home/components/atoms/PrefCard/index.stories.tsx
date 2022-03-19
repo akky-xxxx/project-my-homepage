@@ -30,6 +30,11 @@ const meta: Meta<ComponentProps<PrefCardType>> = {
     ],
   },
   component: PrefCard,
+  parameters: {
+    screenshot: {
+      delay: 500,
+    },
+  },
 }
 export default meta
 

@@ -22,6 +22,11 @@ const meta: Meta<ComponentProps<MonthlyCardType>> = {
     startMonth: 10,
   },
   component: MonthlyCard,
+  parameters: {
+    screenshot: {
+      delay: 5000,
+    },
+  },
 }
 export default meta
 
