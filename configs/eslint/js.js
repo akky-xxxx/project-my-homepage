@@ -17,6 +17,9 @@ module.exports = {
       files: ["**/*.test.ts", "**/*.test.tsx"],
       rules: {
         "max-nested-callbacks": OFF,
+        "no-magic-numbers": OFF,
+        "sort-keys": OFF,
+        "no-undefined": OFF,
       },
     },
   ],

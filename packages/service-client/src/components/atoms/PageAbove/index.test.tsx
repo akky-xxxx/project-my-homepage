@@ -4,7 +4,7 @@ import * as stories from "./index.stories"
 
 const { Default } = composeStories(stories)
 
-it("HeaderBar component", () => {
+it("PageAbove component", () => {
   render(<Default />)
-  expect(screen).toBeTruthy()
+  expect(screen.getByText("タイトルテキスト")).toBeTruthy()
 })

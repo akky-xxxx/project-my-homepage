@@ -17,9 +17,7 @@ export const parameters = {
       date: /Date$/,
     },
   },
-  screenshot: {
-    // Put global screenshot parameters(e.g. viewport)
-  },
+  layout: "fullscreen",
 }
 
 addDecorator((storyFn) => (

@@ -1,5 +1,5 @@
 import { ComponentStoryObj, Meta } from "@storybook/react"
-import { MenuItem } from "./index"
+import { MenuItem } from "."
 
 type MenuItemType = typeof MenuItem
 
