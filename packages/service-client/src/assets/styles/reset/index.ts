@@ -9,6 +9,7 @@ export const reset = css`
   ul,
   ol {
     padding: 0;
+    margin: 0;
   }
 
   li {
