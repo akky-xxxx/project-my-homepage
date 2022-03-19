@@ -29,12 +29,13 @@
     "ss:capture": "storycap http://localhost:3050 -o \".screenshot/actual\"",
     "ss:copy": "shx cp -r \"./.screenshot/actual/*\" \"./.screenshot/expected\"",
     "ss:git-add": "git add \"./.screenshot/expected\"",
-    "ss:git-commit": "git commit -m \"docs(nextjs): update expected screenshot@`date \"+%Y-%m-%d %H:%M:%S\"`\"",
+    "ss:git-commit": "git commit -m \"docs(service-client): update expected screenshot@`date \"+%Y-%m-%d %H:%M:%S\"`\"",
     "ss:remove": "shx rm -rf \"./.screenshot/expected/*\"",
     "start": "next start",
     "storybook": "start-storybook -p 3050",
     "test": "jest --coverage",
-    "type-check": "tsc"
+    "type-check": "tsc",
+    "update-ss": "run-s ss:remove ss:copy ss:git-add ss:git-commit"
   },
   "dependencies": {
     "@mui/icons-material": "^5.4.4",
