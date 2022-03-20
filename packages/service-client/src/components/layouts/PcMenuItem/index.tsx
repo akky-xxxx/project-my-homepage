@@ -5,13 +5,15 @@ import { PcAnchor } from "../PcAnchor"
 import { PcMenuListItem } from "../PcMenuListItem"
 import { isExternal } from "../../../shared/utils/isExternal"
 import { AnchorBack } from "../AnchorBack"
+import { PcSubMenu } from "../PcSubMenu"
 
 type PcMenuItemProps = Menu & {
   handleHover: () => void
+  subMenu?: Menu[]
 }
 
 export const PcMenuItem: VFC<PcMenuItemProps> = (props) => {
-  const { href, linkText, handleHover } = props
+  const { href, linkText, handleHover, subMenu } = props
 
   if (isExternal(href))
     return (
@@ -26,6 +28,7 @@ export const PcMenuItem: VFC<PcMenuItemProps> = (props) => {
             {linkText}
           </PcAnchor>
         </AnchorBack>
+        {subMenu && <PcSubMenu subMenu={subMenu} />}
       </PcMenuListItem>
     )
 
@@ -36,6 +39,7 @@ export const PcMenuItem: VFC<PcMenuItemProps> = (props) => {
           <PcAnchor onMouseEnter={handleHover}>{linkText}</PcAnchor>
         </Link>
       </AnchorBack>
+      {subMenu && <PcSubMenu subMenu={subMenu} />}
     </PcMenuListItem>
   )
 }
