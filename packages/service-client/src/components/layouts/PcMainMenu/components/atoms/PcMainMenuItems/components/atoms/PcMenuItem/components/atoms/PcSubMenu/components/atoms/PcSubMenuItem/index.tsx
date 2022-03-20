@@ -4,7 +4,7 @@ import { Menu } from "../../../../../../../../../../../../../../../shared/const/
 import { isExternal } from "../../../../../../../../../../../../../../../shared/utils/isExternal"
 import { AnchorBack } from "../../../../../../../../../../../../../AnchorBack"
 import { PcAnchor } from "../../../../../../../PcAnchor"
-import { PcMenuListItem } from "../../../../../../../../../../../../../PcMenuListItem"
+import { PcMenuListItem } from "../../../../../../../PcMenuListItem"
 
 type PcSubMenuItemProps = Menu
 
