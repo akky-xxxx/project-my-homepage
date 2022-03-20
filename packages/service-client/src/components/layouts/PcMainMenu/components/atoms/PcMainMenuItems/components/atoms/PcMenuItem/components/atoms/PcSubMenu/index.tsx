@@ -22,8 +22,8 @@ export const PcSubMenu: VFC<PcSubMenuProps> = (props) => {
 
 const StyledUl = styled.ul`
   left: 0;
-  right: 0;
   position: absolute;
+  right: 0;
   transition: top 0.3s;
   z-index: -1;
 `
