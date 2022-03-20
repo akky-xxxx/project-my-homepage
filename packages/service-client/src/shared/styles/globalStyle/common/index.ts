@@ -8,4 +8,12 @@ export const common = css`
     background-color: ${$fff6e0};
     color: ${$333333};
   }
+
+  li {
+    list-style: none;
+  }
+
+  a {
+    text-decoration: none;
+  }
 `
