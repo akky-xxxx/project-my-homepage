@@ -2,7 +2,7 @@ const properties = require("known-css-properties").all
 
 module.exports = {
   processors: ["stylelint-processor-styled-components"],
-  customSyntax: "postcss-jsx",
+  customSyntax: "postcss-jsx", // TODO: チェックの時はコメントアウトする。14系でうまく動かないため
   plugins: [
     "stylelint-prettier",
     "stylelint-order",
