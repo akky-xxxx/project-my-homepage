@@ -4,6 +4,7 @@ import { Menu } from "../../../shared/const/Menu"
 import { isExternal } from "../../../shared/utils/isExternal"
 import { PcAnchor } from "../PcAnchor"
 import { PcMenuListItem } from "../PcMenuListItem"
+import { AnchorBack } from "../AnchorBack"
 
 type PcSubMenuItemProps = Menu
 
@@ -13,21 +14,25 @@ export const PcSubMenuItem: VFC<PcSubMenuItemProps> = (props) => {
   if (isExternal(href))
     return (
       <PcMenuListItem>
-        <PcAnchor
-          href={href}
-          target="_blank"
-          rel="noopener"
-        >
-          {linkText}
-        </PcAnchor>
+        <AnchorBack>
+          <PcAnchor
+            href={href}
+            target="_blank"
+            rel="noopener"
+          >
+            {linkText}
+          </PcAnchor>
+        </AnchorBack>
       </PcMenuListItem>
     )
 
   return (
     <PcMenuListItem>
-      <Link href={href} passHref>
-        <PcAnchor>{linkText}</PcAnchor>
-      </Link>
+      <AnchorBack>
+        <Link href={href} passHref>
+          <PcAnchor>{linkText}</PcAnchor>
+        </Link>
+      </AnchorBack>
     </PcMenuListItem>
   )
 }
