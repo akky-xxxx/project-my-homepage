@@ -1,8 +1,8 @@
 import { Card, CardHeader } from "@mui/material"
 import { VFC } from "react"
 import { pick } from "remeda"
-import { CardMain } from "../../atoms/CardMain"
-import { TagContents } from "../../atoms/TagContents"
+import { CardMain } from "./components/atoms/CardMain"
+import { TagContents } from "./components/atoms/TagContents"
 import { GalleryCardProps } from "./types"
 
 export const Template: VFC<GalleryCardProps> = (props) => {

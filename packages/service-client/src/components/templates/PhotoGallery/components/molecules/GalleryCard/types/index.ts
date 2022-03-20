@@ -1,7 +1,7 @@
 import { ComponentProps } from "react"
 import { InViewHookResponse } from "react-intersection-observer"
-import { CardMain } from "../../../atoms/CardMain"
-import { TagContents } from "../../../atoms/TagContents"
+import { CardMain } from "../components/atoms/CardMain"
+import { TagContents } from "../components/atoms/TagContents"
 
 type CardMainProps = ComponentProps<typeof CardMain>
 type TagContentsProps = ComponentProps<typeof TagContents>
