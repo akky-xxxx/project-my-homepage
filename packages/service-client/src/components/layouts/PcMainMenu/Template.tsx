@@ -6,7 +6,7 @@ import { PcMainMenuItems } from "../PcMainMenuItems"
 import { getTransform } from "./modules/getTransform"
 import { MarkerProps, PcMainMenuProps } from "./types"
 
-const { $003989, $bf9963, $f0284f } = Colors
+const { $bf9963, $f0284f } = Colors
 const { Margin8 } = Margins
 
 export const Template: VFC<PcMainMenuProps> = (props) => {
@@ -34,7 +34,6 @@ const Wrapper = styled.div`
 `
 
 const MenuWrapper = styled.ul`
-  background-color: ${$003989};
   display: flex;
   list-style: none;
   padding: 0;
@@ -42,14 +41,15 @@ const MenuWrapper = styled.ul`
 `
 
 const MarkerStyle = css<MarkerProps>`
-  bottom: 0;
   content: "";
   display: inline-block;
   height: ${Margin8}px;
+  pointer-events: none;
   position: absolute;
-  width: ${({ menuLength }) => css`calc(100% / ${menuLength})`};
   transform: ${getTransform};
+  top: 48px;
   transition: transform 0.3s;
+  width: ${({ menuLength }) => css`calc(100% / ${menuLength})`};
 `
 
 const Marker = styled.div<MarkerProps>`

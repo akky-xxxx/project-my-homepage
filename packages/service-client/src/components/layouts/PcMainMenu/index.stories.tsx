@@ -13,6 +13,16 @@ const meta: Meta<ComponentProps<PcMainMenuType>> = {
       {
         href: "/href",
         linkText: "リンクテキスト1",
+        subMenu: [
+          {
+            href: "/?1",
+            linkText: "サブメニュー1",
+          },
+          {
+            href: "/?2",
+            linkText: "サブメニュー2",
+          },
+        ],
       },
       {
         href: "https://www.google.com/",
@@ -33,5 +43,11 @@ export const Default: PcMainMenuStory = {}
 export const ThirdHovered: PcMainMenuStory = {
   args: {
     currentPagePosition: 2,
+  },
+}
+
+export const OpenedSubMenu: PcMainMenuStory = {
+  parameters: {
+    pseudo: { hover: true },
   },
 }
