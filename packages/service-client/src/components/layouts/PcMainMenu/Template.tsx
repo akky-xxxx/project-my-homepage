@@ -2,7 +2,7 @@ import { VFC } from "react"
 import styled, { css } from "styled-components"
 import { Colors } from "../../../shared/const/Colors"
 import { Margins } from "../../../shared/const/Margins"
-import { PcMainMenuItems } from "../PcMainMenuItems"
+import { PcMainMenuItems } from "./components/atoms/PcMainMenuItems"
 import { getTransform } from "./modules/getTransform"
 import { MarkerProps, PcMainMenuProps } from "./types"
 
