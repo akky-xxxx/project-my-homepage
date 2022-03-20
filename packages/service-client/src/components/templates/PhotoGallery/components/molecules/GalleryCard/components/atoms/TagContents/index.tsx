@@ -1,7 +1,7 @@
 import { ComponentProps, VFC } from "react"
 import styled from "styled-components"
 import { AppMargins } from "../../../../../../../../../shared/const/styles"
-import { Tags } from "../../../../../atoms/Tags"
+import { Tags } from "./components/atoms/Tags"
 
 type TagsProps = ComponentProps<typeof Tags>
 type TagContentsProps = TagsProps

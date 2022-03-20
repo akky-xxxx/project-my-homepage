@@ -1,7 +1,7 @@
 import { createTheme } from "@mui/material"
 import { Fragment, VFC } from "react"
 import styled from "styled-components"
-import { Tag } from "../Tag"
+import { Tag } from "../../../../../../../../atoms/Tag"
 
 // eslint-disable-next-line no-magic-numbers
 const TagMargin = createTheme().spacing(1)
