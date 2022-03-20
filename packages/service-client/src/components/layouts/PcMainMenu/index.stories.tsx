@@ -7,7 +7,7 @@ type PcMainMenuStory = ComponentStoryObj<PcMainMenuType>
 
 const meta: Meta<ComponentProps<PcMainMenuType>> = {
   args: {
-    currentPagePosition: 1,
+    currentPagePosition: 0,
     markerPosition: 0,
     menuData: [
       {
@@ -25,11 +25,11 @@ const meta: Meta<ComponentProps<PcMainMenuType>> = {
         ],
       },
       {
-        href: "https://www.google.com/",
+        href: "https://www.google.com/?1",
         linkText: "リンクテキスト2",
       },
       {
-        href: "https://www.google.com/",
+        href: "https://www.google.com/?2",
         linkText: "リンクテキスト3",
       },
     ],
@@ -42,7 +42,7 @@ export const Default: PcMainMenuStory = {}
 
 export const ThirdHovered: PcMainMenuStory = {
   args: {
-    currentPagePosition: 2,
+    markerPosition: 2,
   },
 }
 
