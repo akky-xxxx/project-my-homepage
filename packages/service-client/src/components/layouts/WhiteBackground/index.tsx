@@ -3,6 +3,6 @@ import { Colors } from "../../../shared/const/Colors"
 
 const { $ffffff } = Colors
 
-export const AnchorBack = styled.div`
+export const WhiteBackground = styled.div`
   background-color: ${$ffffff};
 `
