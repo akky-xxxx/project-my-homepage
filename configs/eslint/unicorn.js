@@ -26,6 +26,7 @@ module.exports = {
           req: true,
           Res: true,
           res: true,
+          ref: true,
         },
       },
     ],

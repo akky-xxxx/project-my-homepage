@@ -28,11 +28,6 @@ const meta: Meta<ComponentProps<MonthlyChartType>> = {
     startMonth: 10,
   },
   component: Wrapper,
-  parameters: {
-    screenshot: {
-      delay: 5000,
-    },
-  },
 }
 export default meta
 
