@@ -3,7 +3,7 @@ import { VFC } from "react"
 import { Menu } from "../../../shared/const/Menu"
 import { PcAnchor } from "../PcAnchor"
 import { PcMenuListItem } from "../PcMenuListItem"
-import { isExternal } from "./modules/isExternal"
+import { isExternal } from "../../../shared/utils/isExternal"
 
 type PcMenuItemProps = Menu & {
   handleHover: () => void
