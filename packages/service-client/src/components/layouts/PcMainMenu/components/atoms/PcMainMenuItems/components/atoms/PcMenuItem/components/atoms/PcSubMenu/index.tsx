@@ -1,6 +1,6 @@
 import { VFC } from "react"
 import { Menu } from "../../../../../../../../../../../../shared/const/Menu"
-import { PcSubMenuItem } from "../../../../../../../../../../PcSubMenuItem"
+import { PcSubMenuItem } from "./components/atoms/PcSubMenuItem"
 
 type PcSubMenuProps = {
   subMenu: Menu[]
