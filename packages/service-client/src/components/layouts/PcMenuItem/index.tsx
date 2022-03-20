@@ -1,17 +1,12 @@
 import Link from "next/link"
 import { VFC } from "react"
-import styled from "styled-components"
-import { Colors } from "../../../shared/const/Colors"
-import { Margins } from "../../../shared/const/Margins"
+import { Menu } from "../../../shared/const/Menu"
+import { PcAnchor } from "../PcAnchor"
+import { PcMenuListItem } from "../PcMenuListItem"
 import { isExternal } from "./modules/isExternal"
 
-const { $003989, $ffffff } = Colors
-const { Margin16, Margin20 } = Margins
-
-type PcMenuItemProps = {
+type PcMenuItemProps = Menu & {
   handleHover: () => void
-  href: string
-  linkText: string
 }
 
 export const PcMenuItem: VFC<PcMenuItemProps> = (props) => {
@@ -19,41 +14,23 @@ export const PcMenuItem: VFC<PcMenuItemProps> = (props) => {
 
   if (isExternal(href))
     return (
-      <StyledLi>
-        <Anchor
+      <PcMenuListItem>
+        <PcAnchor
           href={href}
           target="_blank"
           rel="noopener"
           onMouseEnter={handleHover}
         >
           {linkText}
-        </Anchor>
-      </StyledLi>
+        </PcAnchor>
+      </PcMenuListItem>
     )
 
   return (
-    <StyledLi>
+    <PcMenuListItem>
       <Link href={href} passHref>
-        <Anchor onMouseEnter={handleHover}>{linkText}</Anchor>
+        <PcAnchor onMouseEnter={handleHover}>{linkText}</PcAnchor>
       </Link>
-    </StyledLi>
+    </PcMenuListItem>
   )
 }
-
-const StyledLi = styled.li`
-  background-color: ${$ffffff};
-  flex-grow: 1;
-`
-
-const Anchor = styled.a`
-  background-color: ${$003989};
-  color: ${$ffffff};
-  display: block;
-  padding: ${Margin16}px ${Margin20}px;
-  text-align: center;
-  transition: opacity 0.2s;
-
-  &:hover {
-    opacity: 0.9;
-  }
-`
