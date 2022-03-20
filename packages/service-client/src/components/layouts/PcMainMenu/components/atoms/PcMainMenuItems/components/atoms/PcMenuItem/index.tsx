@@ -5,7 +5,7 @@ import { isExternal } from "../../../../../../../../../shared/utils/isExternal"
 import { AnchorBack } from "../../../../../../../AnchorBack"
 import { PcAnchor } from "../../../../../../../PcAnchor"
 import { PcMenuListItem } from "../../../../../../../PcMenuListItem"
-import { PcSubMenu } from "../../../../../../../PcSubMenu"
+import { PcSubMenu } from "./components/atoms/PcSubMenu"
 
 type PcMenuItemProps = Menu & {
   handleHover: () => void
