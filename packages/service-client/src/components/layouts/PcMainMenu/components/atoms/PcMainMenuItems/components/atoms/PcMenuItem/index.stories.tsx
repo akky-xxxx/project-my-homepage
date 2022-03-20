@@ -1,6 +1,6 @@
 import { ComponentStoryObj, Meta } from "@storybook/react"
 import { ComponentProps } from "react"
-import { PcMenuItem } from "."
+import { PcMenuItem } from "./index"
 
 type PcMenuItemType = typeof PcMenuItem
 type PcMenuItemStory = ComponentStoryObj<PcMenuItemType>
