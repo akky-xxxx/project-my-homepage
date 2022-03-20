@@ -49,7 +49,7 @@ const MarkerStyle = css<MarkerProps>`
   top: 48px;
   transform: ${getTransform};
   transition: transform 0.3s;
-  width: ${({ menuLength }) => css`calc(100% / ${menuLength})`};
+  width: ${({ menuLength }) => `calc(100% / ${menuLength})`};
 `
 
 const Marker = styled.div<MarkerProps>`
