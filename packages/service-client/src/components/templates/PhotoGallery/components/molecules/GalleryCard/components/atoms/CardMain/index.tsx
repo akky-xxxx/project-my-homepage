@@ -1,7 +1,7 @@
 import { CardMedia } from "@mui/material"
 import { VFC } from "react"
 import styled from "styled-components"
-import { Spinner } from "../../../../../atoms/Spinner"
+import { Spinner } from "./components/atoms/Spinner"
 
 type CardMainProps = {
   handleOpenModal: () => void
