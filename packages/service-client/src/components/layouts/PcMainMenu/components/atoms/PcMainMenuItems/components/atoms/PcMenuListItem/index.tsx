@@ -5,10 +5,10 @@ export const PcMenuListItem = styled.li`
   position: relative;
 
   & > ul {
-    display: none;
+    top: -100px;
   }
 
   &:hover ul {
-    display: block;
+    top: 50px;
   }
 `

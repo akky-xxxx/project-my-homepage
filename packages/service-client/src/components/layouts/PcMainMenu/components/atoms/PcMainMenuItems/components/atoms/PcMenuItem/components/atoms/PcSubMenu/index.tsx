@@ -1,4 +1,5 @@
 import { VFC } from "react"
+import styled from "styled-components"
 import { Menu } from "../../../../../../../../../../../../shared/const/Menu"
 import { PcSubMenuItem } from "./components/atoms/PcSubMenuItem"
 
@@ -10,11 +11,19 @@ export const PcSubMenu: VFC<PcSubMenuProps> = (props) => {
   const { subMenu } = props
 
   return (
-    <ul>
+    <StyledUl>
       {subMenu.map((subMenuData) => {
         const { href, linkText } = subMenuData
         return <PcSubMenuItem key={href} href={href} linkText={linkText} />
       })}
-    </ul>
+    </StyledUl>
   )
 }
+
+const StyledUl = styled.ul`
+  left: 0;
+  right: 0;
+  position: absolute;
+  transition: top 0.3s;
+  z-index: -1;
+`
