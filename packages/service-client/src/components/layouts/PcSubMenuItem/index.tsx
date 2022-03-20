@@ -2,9 +2,9 @@ import Link from "next/link"
 import { VFC } from "react"
 import { Menu } from "../../../shared/const/Menu"
 import { isExternal } from "../../../shared/utils/isExternal"
+import { AnchorBack } from "../AnchorBack"
 import { PcAnchor } from "../PcAnchor"
 import { PcMenuListItem } from "../PcMenuListItem"
-import { AnchorBack } from "../AnchorBack"
 
 type PcSubMenuItemProps = Menu
 
@@ -15,11 +15,7 @@ export const PcSubMenuItem: VFC<PcSubMenuItemProps> = (props) => {
     return (
       <PcMenuListItem>
         <AnchorBack>
-          <PcAnchor
-            href={href}
-            target="_blank"
-            rel="noopener"
-          >
+          <PcAnchor href={href} target="_blank" rel="noopener">
             {linkText}
           </PcAnchor>
         </AnchorBack>

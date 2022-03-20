@@ -7,9 +7,9 @@ type AnchorBackStory = ComponentStoryObj<AnchorBackType>
 
 const meta: Meta<ComponentProps<AnchorBackType>> = {
   args: {
-    children: "リンクの透過じの背景用"
+    children: "リンクの透過じの背景用",
   },
-  component: AnchorBack
+  component: AnchorBack,
 }
 export default meta
 

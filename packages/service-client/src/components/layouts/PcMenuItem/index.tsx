@@ -1,10 +1,10 @@
 import Link from "next/link"
 import { VFC } from "react"
 import { Menu } from "../../../shared/const/Menu"
-import { PcAnchor } from "../PcAnchor"
-import { PcMenuListItem } from "../PcMenuListItem"
 import { isExternal } from "../../../shared/utils/isExternal"
 import { AnchorBack } from "../AnchorBack"
+import { PcAnchor } from "../PcAnchor"
+import { PcMenuListItem } from "../PcMenuListItem"
 import { PcSubMenu } from "../PcSubMenu"
 
 type PcMenuItemProps = Menu & {
