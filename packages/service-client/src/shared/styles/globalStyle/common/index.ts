@@ -1,5 +1,6 @@
 import { css } from "styled-components"
 import { Colors } from "../../../const/Colors"
+import { MediaQuery } from "../../../const/MediaQuery"
 
 const { $333333, $fff6e0 } = Colors
 
@@ -15,5 +16,17 @@ export const common = css`
 
   a {
     text-decoration: none;
+  }
+
+  .is-only-pc {
+    ${MediaQuery.Tb} {
+      display: none;
+    }
+  }
+
+  .is-only-tb {
+    ${MediaQuery.Pc} {
+      display: none;
+    }
   }
 `
