@@ -3,7 +3,7 @@ import { Menu } from "../../../../../../../../../../../../../../../shared/const/
 import { Anchor } from "../../../../../../../../../../../../../../atoms/Anchor"
 import { WhiteBackground } from "../../../../../../../../../../../../../../atoms/WhiteBackground"
 import { PcAnchorText } from "./components/atoms/PcAnchorText"
-import { PcMenuListItem } from "../../../../../../../PcMenuListItem"
+import { PcMenuListItem } from "../../../../PcMenuListItem"
 
 type PcSubMenuItemProps = Menu
 
