@@ -15,6 +15,6 @@ describe("use<%= templateName %>Page", () => {
   })
 
   it("dummy", () => {
-    expect(use<%= templateName %>Page()).toEqual(1)
+    expect(use<%= templateName %>Page()).toBe(1)
   })
 })

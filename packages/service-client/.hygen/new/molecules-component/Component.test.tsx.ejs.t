@@ -7,7 +7,9 @@ import * as stories from "./index.stories"
 
 const { Default } = composeStories(stories)
 
-it("<%= componentName %> component", () => {
-  render(<Default />)
-  expect(screen.getByText("test")).toBeTruthy()
+describe("<%= componentName %> component", () => {
+  it("Default pattern", () => {
+    render(<Default />)
+    expect(screen.getByText("test")).toBeVisible()
+  })
 })

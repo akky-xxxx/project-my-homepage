@@ -15,6 +15,6 @@ describe("use<%= componentName %>", () => {
     })
 
   it("dummy", () => {
-    expect(use<%= componentName %>({ test1: 1 })).toEqual({ test2: "1" })
+    expect(use<%= componentName %>({ test1: 1 })).toBe({ test2: "1" })
   })
 })
