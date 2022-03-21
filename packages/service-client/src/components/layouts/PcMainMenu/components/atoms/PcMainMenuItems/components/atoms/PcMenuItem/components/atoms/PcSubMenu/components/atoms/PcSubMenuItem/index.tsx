@@ -2,7 +2,7 @@ import { VFC } from "react"
 import { Menu } from "../../../../../../../../../../../../../../../shared/const/Menu"
 import { Anchor } from "../../../../../../../../../../../../../../atoms/Anchor"
 import { WhiteBackground } from "../../../../../../../../../../../../../../atoms/WhiteBackground"
-import { PcAnchorText } from "../../../../../../../PcAnchorText"
+import { PcAnchorText } from "./components/atoms/PcAnchorText"
 import { PcMenuListItem } from "../../../../../../../PcMenuListItem"
 
 type PcSubMenuItemProps = Menu

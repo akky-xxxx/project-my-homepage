@@ -1,6 +1,6 @@
 import styled from "styled-components"
-import { Colors } from "../../../../../../../../../shared/const/Colors"
-import { Margins } from "../../../../../../../../../shared/const/Margins"
+import { Colors } from "../../../../../../../../../../../../../../../../../../shared/const/Colors"
+import { Margins } from "../../../../../../../../../../../../../../../../../../shared/const/Margins"
 
 const { $003989, $ffffff } = Colors
 const { Margin16, Margin20 } = Margins
