@@ -38,5 +38,6 @@ module.exports = {
         ignoreValues: ["box"],
       },
     ],
+    "color-function-notation": "legacy",
   },
 }
