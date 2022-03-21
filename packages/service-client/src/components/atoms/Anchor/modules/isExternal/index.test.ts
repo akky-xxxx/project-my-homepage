@@ -1,4 +1,4 @@
-import { isExternal } from "."
+import { isExternal } from "./index"
 
 describe("isExternal", () => {
   it.each([

@@ -1,6 +1,6 @@
 import Link from "next/link"
 import { FC } from "react"
-import { isExternal } from "../../../shared/utils/isExternal"
+import { isExternal } from "./modules/isExternal"
 
 type AnchorProps = {
   href: string
