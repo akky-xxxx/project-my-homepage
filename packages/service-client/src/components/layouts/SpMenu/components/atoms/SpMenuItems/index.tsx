@@ -41,9 +41,9 @@ export const SpMenuItems: VFC<SpMenuItemsProps> = (props) => {
 }
 
 const Wrapper = styled.div`
-  transition: opacity 0.2s;
   opacity: 0;
   pointer-events: none;
+  transition: opacity 0.2s;
 
   &.is-opened {
     opacity: 1;
