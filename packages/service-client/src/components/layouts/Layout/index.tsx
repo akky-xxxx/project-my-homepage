@@ -1,7 +1,7 @@
 import { FC, Fragment } from "react"
+import { Menu } from "../../../shared/const/Menu"
 import { PcMainMenu } from "../PcMainMenu"
 import { SpMenu } from "../SpMenu"
-import { Menu } from "../../../shared/const/Menu"
 
 type MenuWithSubMenu = Menu & {
   subMenu?: Menu[]

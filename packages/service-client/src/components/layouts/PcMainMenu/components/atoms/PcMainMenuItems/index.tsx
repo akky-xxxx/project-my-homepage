@@ -16,7 +16,9 @@ export const PcMainMenuItems: VFC<PcMainMenuItemsProps> = (props) => {
         const handleHover = () => {
           handleHoverMenu(position)
         }
-        return <PcMainMenuItem key={href} {...menuInfo} handleHover={handleHover} />
+        return (
+          <PcMainMenuItem key={href} {...menuInfo} handleHover={handleHover} />
+        )
       })}
     </Fragment>
   )

@@ -1,7 +1,7 @@
 import { ComponentStoryObj, Meta } from "@storybook/react"
 import { ComponentProps } from "react"
-import { Layout } from "./index"
 import { DeviceMap } from "../../../shared/const/DeviceMap"
+import { Layout } from "./index"
 
 type LayoutType = typeof Layout
 type LayoutStory = ComponentStoryObj<LayoutType>
@@ -33,7 +33,7 @@ const meta: Meta<ComponentProps<LayoutType>> = {
         href: "https://www.google.com/?2",
         linkText: "リンクテキスト3",
       },
-    ]
+    ],
   },
   component: Layout,
 }
@@ -49,6 +49,6 @@ export const Tablet: LayoutStory = {
     },
     screenshot: {
       viewport: DeviceMap[Device],
-    }
+    },
   },
 }

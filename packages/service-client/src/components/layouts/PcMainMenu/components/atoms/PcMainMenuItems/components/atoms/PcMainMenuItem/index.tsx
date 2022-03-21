@@ -2,9 +2,9 @@ import { VFC } from "react"
 import { Menu } from "../../../../../../../../../shared/const/Menu"
 import { Anchor } from "../../../../../../../../atoms/Anchor"
 import { WhiteBackground } from "../../../../../../../../atoms/WhiteBackground"
-import { PcAnchorText } from "./components/atoms/PcSubMenu/components/atoms/PcSubMenuItem/components/atoms/PcAnchorText"
 import { PcMainMenuListItem } from "./components/atoms/PcMainMenuListItem"
 import { PcSubMenu } from "./components/atoms/PcSubMenu"
+import { PcAnchorText } from "./components/atoms/PcSubMenu/components/atoms/PcSubMenuItem/components/atoms/PcAnchorText"
 
 type PcMainMenuItemProps = Menu & {
   handleHover: () => void
