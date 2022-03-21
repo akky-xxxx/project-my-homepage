@@ -3,7 +3,7 @@ import { Colors } from "../../../../../../../../../shared/const/Colors"
 
 const { $ffffff } = Colors
 
-export const SubMenuLinkText = styled.span`
+export const MainMenuLinkText = styled.span`
   color: ${$ffffff};
-  font-size: 20px;
+  font-size: 22px;
 `

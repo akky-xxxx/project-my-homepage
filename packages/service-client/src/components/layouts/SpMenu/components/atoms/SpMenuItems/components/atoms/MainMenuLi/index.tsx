@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { Margins } from "../../../../../../shared/const/Margins"
+import { Margins } from "../../../../../../../../../shared/const/Margins"
 
 const { Margin20 } = Margins
 
