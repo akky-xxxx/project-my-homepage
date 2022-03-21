@@ -1,15 +1,15 @@
 import { ComponentStoryObj, Meta } from "@storybook/react"
 import { ComponentProps } from "react"
-import { PcAnchor } from "./index"
+import { PcAnchorText } from "./index"
 
-type PcAnchorType = typeof PcAnchor
+type PcAnchorType = typeof PcAnchorText
 type PcAnchorStory = ComponentStoryObj<PcAnchorType>
 
 const meta: Meta<ComponentProps<PcAnchorType>> = {
   args: {
     children: "リンクテキスト",
   },
-  component: PcAnchor,
+  component: PcAnchorText,
 }
 export default meta
 

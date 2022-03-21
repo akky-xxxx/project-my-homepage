@@ -5,7 +5,7 @@ import { Margins } from "../../../../../../../../../shared/const/Margins"
 const { $003989, $ffffff } = Colors
 const { Margin16, Margin20 } = Margins
 
-export const PcAnchor = styled.a`
+export const PcAnchorText = styled.span`
   background-color: ${$003989};
   color: ${$ffffff};
   display: block;
