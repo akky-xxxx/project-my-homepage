@@ -1,7 +1,6 @@
-import Link from "next/link"
 import { VFC } from "react"
 import { Menu } from "../../../../../../../../../shared/const/Menu"
-import { isExternal } from "../../../../../../../../../shared/utils/isExternal"
+import { Anchor } from "../../../../../../../../atoms/Anchor"
 import { WhiteBackground } from "../../../../../../../../atoms/WhiteBackground"
 import { PcAnchorText } from "../PcAnchorText"
 import { PcMenuListItem } from "../PcMenuListItem"
@@ -15,29 +14,12 @@ type PcMenuItemProps = Menu & {
 export const PcMenuItem: VFC<PcMenuItemProps> = (props) => {
   const { href, linkText, handleHover, subMenu } = props
 
-  if (isExternal(href))
-    return (
-      <PcMenuListItem>
-        <WhiteBackground>
-          <PcAnchorText
-            href={href}
-            target="_blank"
-            rel="noopener"
-            onMouseEnter={handleHover}
-          >
-            {linkText}
-          </PcAnchorText>
-        </WhiteBackground>
-        {subMenu && <PcSubMenu subMenu={subMenu} />}
-      </PcMenuListItem>
-    )
-
   return (
     <PcMenuListItem>
       <WhiteBackground>
-        <Link href={href} passHref>
+        <Anchor href={href}>
           <PcAnchorText onMouseEnter={handleHover}>{linkText}</PcAnchorText>
-        </Link>
+        </Anchor>
       </WhiteBackground>
       {subMenu && <PcSubMenu subMenu={subMenu} />}
     </PcMenuListItem>
