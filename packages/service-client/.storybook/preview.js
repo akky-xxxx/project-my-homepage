@@ -1,9 +1,11 @@
 import { addDecorator } from "@storybook/react"
 import { RouterContext } from "next/dist/shared/lib/router-context"
+import { INITIAL_VIEWPORTS } from "@storybook/addon-viewport";
 import { Fragment } from "react"
 import { withScreenshot } from "storycap"
 import { Colors } from "../src/shared/const/Colors"
 import { GlobalStyle } from "../src/shared/styles/globalStyle"
+import { DeviceMap } from "../src/shared/const/DeviceMap";
 
 const { $003989, $f0284f, $bf9963, $fff6e0 } = Colors
 
@@ -27,6 +29,12 @@ export const parameters = {
       color: /(background|color)$/i,
       date: /Date$/,
     },
+  },
+  viewport: {
+    viewports: INITIAL_VIEWPORTS,
+  },
+  screenshot: {
+    viewport: DeviceMap.pc,
   },
   layout: "fullscreen",
 }
