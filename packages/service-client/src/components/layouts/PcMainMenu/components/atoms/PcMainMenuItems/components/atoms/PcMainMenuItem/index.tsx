@@ -3,7 +3,7 @@ import { Menu } from "../../../../../../../../../shared/const/Menu"
 import { Anchor } from "../../../../../../../../atoms/Anchor"
 import { WhiteBackground } from "../../../../../../../../atoms/WhiteBackground"
 import { PcAnchorText } from "./components/atoms/PcSubMenu/components/atoms/PcSubMenuItem/components/atoms/PcAnchorText"
-import { PcMenuListItem } from "./components/atoms/PcMenuListItem"
+import { PcMainMenuListItem } from "./components/atoms/PcMainMenuListItem"
 import { PcSubMenu } from "./components/atoms/PcSubMenu"
 
 type PcMainMenuItemProps = Menu & {
@@ -15,13 +15,13 @@ export const PcMainMenuItem: VFC<PcMainMenuItemProps> = (props) => {
   const { href, linkText, handleHover, subMenu } = props
 
   return (
-    <PcMenuListItem>
+    <PcMainMenuListItem>
       <WhiteBackground>
         <Anchor href={href}>
           <PcAnchorText onMouseEnter={handleHover}>{linkText}</PcAnchorText>
         </Anchor>
       </WhiteBackground>
       {subMenu && <PcSubMenu subMenu={subMenu} />}
-    </PcMenuListItem>
+    </PcMainMenuListItem>
   )
 }
