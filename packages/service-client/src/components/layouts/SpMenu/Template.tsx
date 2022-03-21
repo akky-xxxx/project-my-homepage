@@ -1,5 +1,5 @@
 import { Fragment, VFC } from "react"
-import { Menu } from "./components/atoms/Menu"
+import { SpMenu } from "./components/atoms/SpMenu"
 import { SpMenuBackground } from "./components/atoms/SpMenuBackground"
 import { SpMenuBackgroundWrapper } from "./components/atoms/SpMenuBackgroundWrapper"
 import { SpMenuButton } from "./components/atoms/SpMenuButton"
@@ -19,14 +19,14 @@ export const Template: VFC<SpMenuProps> = (props) => {
         />
       </SpMenuButtonWrapper>
 
-      <Menu isOpened={isOpenedMenu}>
+      <SpMenu isOpened={isOpenedMenu}>
         <SpMenuItemsWrapper>
           <SpMenuItems isOpened={isOpenedMenu} menu={menu} />
         </SpMenuItemsWrapper>
         <SpMenuBackgroundWrapper>
           <SpMenuBackground isOpened={isOpenedMenu} />
         </SpMenuBackgroundWrapper>
-      </Menu>
+      </SpMenu>
     </Fragment>
   )
 }

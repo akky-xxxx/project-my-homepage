@@ -30,7 +30,7 @@ const getKeyframes = (props: MenuProps) => {
   return isOpened ? inKeyframes : outKeyframes
 }
 
-export const Menu = styled.div<MenuProps>`
+export const SpMenu = styled.div<MenuProps>`
   animation: ${getKeyframes} 0.5s;
   position: fixed;
   z-index: ${ZIndexes.Menu};
