@@ -6,12 +6,12 @@ import { PcAnchorText } from "./components/atoms/PcSubMenu/components/atoms/PcSu
 import { PcMenuListItem } from "./components/atoms/PcMenuListItem"
 import { PcSubMenu } from "./components/atoms/PcSubMenu"
 
-type PcMenuItemProps = Menu & {
+type PcMainMenuItemProps = Menu & {
   handleHover: () => void
   subMenu?: Menu[]
 }
 
-export const PcMenuItem: VFC<PcMenuItemProps> = (props) => {
+export const PcMainMenuItem: VFC<PcMainMenuItemProps> = (props) => {
   const { href, linkText, handleHover, subMenu } = props
 
   return (

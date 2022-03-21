@@ -1,9 +1,9 @@
 import { ComponentProps, Fragment, VFC } from "react"
-import { PcMenuItem } from "./components/atoms/PcMenuItem"
+import { PcMainMenuItem } from "./components/atoms/PcMainMenuItem"
 
 type PcMainMenuItemsProps = {
   handleHoverMenu: (position: number) => void
-  menuData: Omit<ComponentProps<typeof PcMenuItem>, "handleHover">[]
+  menuData: Omit<ComponentProps<typeof PcMainMenuItem>, "handleHover">[]
 }
 
 export const PcMainMenuItems: VFC<PcMainMenuItemsProps> = (props) => {
@@ -16,7 +16,7 @@ export const PcMainMenuItems: VFC<PcMainMenuItemsProps> = (props) => {
         const handleHover = () => {
           handleHoverMenu(position)
         }
-        return <PcMenuItem key={href} {...menuInfo} handleHover={handleHover} />
+        return <PcMainMenuItem key={href} {...menuInfo} handleHover={handleHover} />
       })}
     </Fragment>
   )
