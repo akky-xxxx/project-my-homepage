@@ -1,7 +1,12 @@
 import { FC, Fragment } from "react"
+import styled from "styled-components"
 import { Menu } from "../../../shared/const/Menu"
 import { PcMainMenu } from "../PcMainMenu"
 import { SpMenu } from "../SpMenu"
+import { MediaQuery } from "../../../shared/const/MediaQuery"
+import { Margins } from "../../../shared/const/Margins"
+
+const { Margin12, Margin20 } = Margins
 
 type MenuWithSubMenu = Menu & {
   subMenu?: Menu[]
@@ -23,7 +28,16 @@ export const Layout: FC<LayoutProps> = (props) => {
       <div className="is-only-tb">
         <SpMenu menu={menu} />
       </div>
-      <main>{children}</main>
+      <StyledMain>{children}</StyledMain>
     </Fragment>
   )
 }
+
+const StyledMain = styled.main`
+  ${MediaQuery.Pc} {
+    padding: ${Margin20}px;
+  }
+  ${MediaQuery.Tb} {
+    padding: ${70 + Margin12}px ${Margin12}px ${Margin12}px;
+  }
+`
