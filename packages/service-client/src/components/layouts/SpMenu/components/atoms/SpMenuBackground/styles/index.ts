@@ -7,24 +7,24 @@ const { $003989, $f0284f, $ffffff } = Colors
 const { IsOpened, BlueLayer, RedLayer, WhiteLayer } = ClassNames
 
 const positions = css`
-  bottom: 0;
   left: 0;
   right: 0;
+  top: 0;
 `
 
 // 変数を class 名と捉えられてるため
 /* stylelint-disable selector-class-pattern, no-duplicate-selectors */
 export const wrapperBase = css`
   ${positions};
+  bottom: 0;
   overflow: hidden;
   position: fixed;
-  top: 0;
 
   .${BlueLayer}, .${RedLayer}, .${WhiteLayer} {
     ${positions};
+    bottom: 100%;
     position: absolute;
-    top: 100%;
-    transition: top 0.3s;
+    transition: bottom 0.3s;
   }
 
   .${BlueLayer} {
@@ -47,17 +47,17 @@ export const wrapperBase = css`
 
   &.${IsOpened} {
     .${BlueLayer} {
-      top: 20px;
+      bottom: 20px;
       transition-delay: 0.2s;
     }
 
     .${RedLayer} {
-      top: 10px;
+      bottom: 10px;
       transition-delay: 0.1s;
     }
 
     .${WhiteLayer} {
-      top: 0;
+      bottom: 0;
       transition-delay: 0s;
     }
   }
