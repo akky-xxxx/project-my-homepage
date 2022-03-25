@@ -9,7 +9,7 @@ type <%= componentName %>Type = typeof <%= componentName %>
 type <%= componentName %>Story = ComponentStoryObj<<%= componentName %>Type>
 
 const meta: Meta<ComponentProps<<%= componentName %>Type>> = {
-  component: <%= componentName %>
+  component: <%= componentName %>,
 }
 export default meta
 
