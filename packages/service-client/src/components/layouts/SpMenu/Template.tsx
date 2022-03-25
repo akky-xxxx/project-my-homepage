@@ -13,12 +13,13 @@ export const Template: VFC<SpMenuProps> = (props) => {
   const { handleClickMenuButton, isOpenedMenu, menu } = props
   return (
     <Fragment>
-      <SpMenuBar>
+      <SpMenuButtonWrapper>
         <SpMenuButton
           isOpened={isOpenedMenu}
           handleClickButton={handleClickMenuButton}
         />
-      </SpMenuBar>
+      </SpMenuButtonWrapper>
+      <SpMenuBar />
 
       <SpMenu isOpened={isOpenedMenu}>
         <SpMenuItemsWrapper>

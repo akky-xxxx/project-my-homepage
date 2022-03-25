@@ -10,11 +10,12 @@ export const SpMenuBar = styled.header`
   background-color: ${$ffffff};
   border-bottom: 1px solid ${$bf9963};
   display: flex;
+  height: 90px;
   justify-content: flex-end;
   left: 0;
   padding: ${Margin12}px;
   position: fixed;
   right: 0;
   top: 0;
-  z-index: ${ZIndexes.Button};
+  z-index: ${ZIndexes.MenuBar};
 `

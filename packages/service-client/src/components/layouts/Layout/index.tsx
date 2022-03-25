@@ -40,12 +40,12 @@ const StyledDiv = styled.div`
 
 const StyledMain = styled.main`
   position: relative;
-  z-index: 10;
+  z-index: 1;
 
   ${MediaQuery.Pc} {
     padding: ${Margin20}px;
   }
   ${MediaQuery.Tb} {
-    padding: ${70 + Margin12}px ${Margin12}px ${Margin12}px;
+    padding: ${90 + Margin12}px ${Margin12}px ${Margin12}px;
   }
 `

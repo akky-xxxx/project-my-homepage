@@ -1,7 +1,8 @@
 /* eslint-disable sort-keys */
 export const ZIndexes = {
   // root
-  Button: 2,
+  Button: 3,
+  MenuBar: 2,
   Menu: 1,
 
   // in menu
