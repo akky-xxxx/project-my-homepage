@@ -3,7 +3,7 @@ import { ZIndexes } from "../../../const/ZIndexes"
 
 export const SpMenuButtonWrapper = styled.div`
   position: fixed;
-  right: 30px;
-  top: 40px;
+  right: 20px;
+  top: 20px;
   z-index: ${ZIndexes.Button};
 `
