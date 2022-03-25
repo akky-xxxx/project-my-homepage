@@ -22,18 +22,26 @@ export const Layout: FC<LayoutProps> = (props) => {
 
   return (
     <Fragment>
-      <div className="is-only-pc">
+      <StyledDiv className="is-only-pc">
         <PcMainMenu menuData={menu} currentPagePosition={currentPagePosition} />
-      </div>
-      <div className="is-only-tb">
+      </StyledDiv>
+      <StyledDiv className="is-only-tb">
         <SpMenu menu={menu} />
-      </div>
+      </StyledDiv>
       <StyledMain>{children}</StyledMain>
     </Fragment>
   )
 }
 
+const StyledDiv = styled.div`
+  position: relative;
+  z-index: 10;
+`
+
 const StyledMain = styled.main`
+  position: relative;
+  z-index: 10;
+
   ${MediaQuery.Pc} {
     padding: ${Margin20}px;
   }
