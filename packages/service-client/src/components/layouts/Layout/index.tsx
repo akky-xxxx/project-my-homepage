@@ -1,10 +1,10 @@
 import { FC, Fragment } from "react"
 import styled from "styled-components"
+import { Margins } from "../../../shared/const/Margins"
+import { MediaQuery } from "../../../shared/const/MediaQuery"
 import { Menu } from "../../../shared/const/Menu"
 import { PcMainMenu } from "../PcMainMenu"
 import { SpMenu } from "../SpMenu"
-import { MediaQuery } from "../../../shared/const/MediaQuery"
-import { Margins } from "../../../shared/const/Margins"
 
 const { Margin12, Margin20 } = Margins
 
