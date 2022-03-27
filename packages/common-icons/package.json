@@ -4,7 +4,8 @@
   "scripts": {
     "fix:pack": "fixpack",
     "gen": "svgr -d ./dist ./origin",
-    "hygen:story": "hygen new story"
+    "hygen:story": "hygen new story",
+    "storybook": "start-storybook -p 3051"
   },
   "dependencies": {
     "react": "^17.0.2"
