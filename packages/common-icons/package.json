@@ -8,6 +8,8 @@
     "@svgr/cli": "^6.2.1",
     "fixpack": "^4.0.0"
   },
+  "private": true,
+  "main": "dist/index.ts",
   "version": "0.1.0",
   "license": "MIT"
 }
