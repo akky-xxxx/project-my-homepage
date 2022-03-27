@@ -46,6 +46,7 @@ const StyledMain = styled.main`
   ${MediaQuery.Pc} {
     padding: ${Margin20}px;
   }
+
   ${MediaQuery.Tb} {
     padding: ${HeaderBuffer + Margin12}px ${Margin12}px ${Margin12}px;
   }
