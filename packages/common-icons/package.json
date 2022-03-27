@@ -2,9 +2,13 @@
   "name": "common-icons",
   "main": "dist/index.ts",
   "scripts": {
+    "check-all": "run-s fix lint",
+    "fix": "run-p fix:*",
+    "fix:js": "prettier \"./*.{js,ts,tsx}\" \"./**/*.{js,ts,tsx}\" --write",
     "fix:pack": "fixpack",
     "gen": "svgr -d ./dist ./origin",
     "hygen:story": "hygen new story",
+    "lint": "prettier \"./*.{js,ts,tsx}\" \"./**/*.{js,ts,tsx}\" --check",
     "storybook": "start-storybook -p 3051"
   },
   "dependencies": {
