@@ -14,7 +14,10 @@
     "fix:pack": "fixpack",
     "lint": "run-p lint:* -c",
     "lint:js": "prettier \"./*.js\" --check",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "storybook": "run-p storybook:*",
+    "storybook:common-icons": "yarn workspace common-icons storybook",
+    "storybook:service-client": "yarn workspace service-client storybook"
   },
   "devDependencies": {
     "@commitlint/cli": "^16.2.1",
