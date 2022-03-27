@@ -4,15 +4,18 @@ import { getPointerEventsValue } from "./modules/getPointerEventsValue"
 import { getRotateValue } from "./modules/getRotateValue"
 import { IndicatorProps } from "./types"
 
+const NarrowWidth = 5
+const WideWidth = 20
+
 export const Indicator = styled.button<IndicatorProps>`
   background-color: transparent;
   border: none;
   cursor: pointer;
-  height: 20px;
+  height: ${WideWidth}px;
   pointer-events: ${getPointerEventsValue};
   position: relative;
   transition: opacity 0.2s, color 0.2s;
-  width: 20px;
+  width: ${WideWidth}px;
 
   &::before,
   &::after {
@@ -20,7 +23,6 @@ export const Indicator = styled.button<IndicatorProps>`
     bottom: 0;
     content: "";
     display: inline-block;
-    height: 20px;
     left: 0;
     margin: auto;
     position: absolute;
@@ -28,7 +30,6 @@ export const Indicator = styled.button<IndicatorProps>`
     top: 0;
     transform: rotate(${getRotateValue});
     transition: transform 0.2s;
-    width: 3px;
   }
 
   &:hover {
@@ -36,12 +37,12 @@ export const Indicator = styled.button<IndicatorProps>`
   }
 
   &::before {
-    height: 20px;
-    width: 3px;
+    height: ${WideWidth}px;
+    width: ${NarrowWidth}px;
   }
 
   &::after {
-    height: 3px;
-    width: 20px;
+    height: ${NarrowWidth}px;
+    width: ${WideWidth}px;
   }
 `
