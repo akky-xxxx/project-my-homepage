@@ -2,7 +2,7 @@
   "name": "common-icons",
   "scripts": {
     "fix:pack": "fixpack",
-    "gen:icon": "svgr -d ./svg/dist ./svg/origin"
+    "gen": "svgr -d ./dist ./origin"
   },
   "devDependencies": {
     "@svgr/cli": "^6.2.1",
