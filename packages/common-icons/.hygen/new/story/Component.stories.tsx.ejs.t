@@ -14,3 +14,9 @@ const meta: Meta<ComponentProps<<%= componentName %>Type>> = {
 export default meta
 
 export const Default: <%= componentName %>Story = {}
+
+export const Coloring: <%= componentName %>Story = {
+  args: {
+    color: "blue",
+  },
+}
