@@ -1,9 +1,9 @@
 import { Colors } from "../../../../../../../../../../../../shared/const/Colors"
 import { IndicatorProps } from "../../types"
 
-const { $867445, $ffcadc } = Colors
+const { $333333, $ffffff } = Colors
 
 export const getBackgroundColor = (props: IndicatorProps) => {
   const { isSelected } = props
-  return isSelected ? $867445 : $ffcadc
+  return isSelected ? $333333 : $ffffff
 }
