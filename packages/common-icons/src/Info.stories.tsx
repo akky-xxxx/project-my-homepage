@@ -11,3 +11,9 @@ const meta: Meta<ComponentProps<InfoType>> = {
 export default meta
 
 export const Default: InfoStory = {}
+
+export const Coloring: InfoStory = {
+  args: {
+    color: "blue",
+  },
+}
