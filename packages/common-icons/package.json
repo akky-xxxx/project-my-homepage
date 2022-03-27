@@ -6,7 +6,8 @@
   },
   "devDependencies": {
     "@svgr/cli": "^6.2.1",
-    "fixpack": "^4.0.0"
+    "fixpack": "^4.0.0",
+    "hygen": "^6.2.0"
   },
   "private": true,
   "main": "dist/index.ts",
