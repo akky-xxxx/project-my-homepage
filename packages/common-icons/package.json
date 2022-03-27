@@ -2,6 +2,10 @@
   "name": "common-icons",
   "version": "0.1.0",
   "license": "MIT",
+  "scripts": {
+    "fix:pack": "fixpack",
+    "gen:icon": "svgr -d ./svg/dist ./svg/origin"
+  },
   "devDependencies": {
     "@svgr/cli": "^6.2.1",
     "fixpack": "^4.0.0"
