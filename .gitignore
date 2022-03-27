@@ -11,3 +11,7 @@ Thumbs.db
 node_modules/
 yarn-error.log*
 .env
+
+# reg-suit
+reg.json
+report.html

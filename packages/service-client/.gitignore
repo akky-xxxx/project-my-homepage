@@ -15,8 +15,6 @@
 # reg-suit
 .screenshot/actual
 .screenshot/diff
-reg.json
-report.html
 
 # production
 /build
