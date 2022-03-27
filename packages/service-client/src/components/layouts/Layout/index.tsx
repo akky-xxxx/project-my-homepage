@@ -7,6 +7,7 @@ import { PcMainMenu } from "../PcMainMenu"
 import { SpMenu } from "../SpMenu"
 
 const { Margin12, Margin20 } = Margins
+const HeaderBuffer = 90
 
 type MenuWithSubMenu = Menu & {
   subMenu?: Menu[]
@@ -46,6 +47,6 @@ const StyledMain = styled.main`
     padding: ${Margin20}px;
   }
   ${MediaQuery.Tb} {
-    padding: ${90 + Margin12}px ${Margin12}px ${Margin12}px;
+    padding: ${HeaderBuffer + Margin12}px ${Margin12}px ${Margin12}px;
   }
 `
