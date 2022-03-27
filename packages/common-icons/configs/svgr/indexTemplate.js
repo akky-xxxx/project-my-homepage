@@ -1,4 +1,4 @@
-const path = require('path')
+const path = require("path")
 
 const indexTemplate = (filePaths) => {
   const exportEntries = filePaths.map((filePath) => {
@@ -6,7 +6,7 @@ const indexTemplate = (filePaths) => {
     const exportName = /^\d/.test(basename) ? `Svg${basename}` : basename
     return `export { ${exportName} } from './${basename}'`
   })
-  return exportEntries.join('\n')
+  return exportEntries.join("\n")
 }
 
 exports.indexTemplate = indexTemplate
