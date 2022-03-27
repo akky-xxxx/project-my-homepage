@@ -3,7 +3,7 @@
   "author": "akky-xxxx <114.s.aki@gmail.com>",
   "repository": "https://github.com/akky-xxxx/project-my-homepage.git",
   "scripts": {
-    "check-all": "run-p check-all:* -c",
+    "check-all": "run-p check-all:*",
     "check-all:common-icons": "yarn workspace common-icons check-all",
     "check-all:root": "run-s fix lint",
     "check-all:service-client": "yarn workspace service-client check-all",
