@@ -1,8 +1,13 @@
 {
   "name": "common-icons",
+  "main": "dist/index.ts",
   "scripts": {
     "fix:pack": "fixpack",
-    "gen": "svgr -d ./dist ./origin"
+    "gen": "svgr -d ./dist ./origin",
+    "hygen:story": "hygen new story"
+  },
+  "dependencies": {
+    "react": "^17.0.2"
   },
   "devDependencies": {
     "@svgr/cli": "^6.2.1",
@@ -10,7 +15,6 @@
     "hygen": "^6.2.0"
   },
   "private": true,
-  "main": "dist/index.ts",
   "version": "0.1.0",
   "license": "MIT"
 }
