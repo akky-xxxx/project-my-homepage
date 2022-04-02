@@ -1,8 +1,8 @@
-import { Close } from "common-icons"
 import { VFC } from "react"
 import styled from "styled-components"
 import { Colors } from "../../../../../../../../../../../../shared/const/Colors"
 import { Margins } from "../../../../../../../../../../../../shared/const/Margins"
+import { Close } from "../../../../../../../../../../../icons/Close"
 
 const { $ffffff, $a81c4d } = Colors
 const { Margin16 } = Margins

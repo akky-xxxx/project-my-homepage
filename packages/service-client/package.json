@@ -23,6 +23,8 @@
     "lint:configs": "prettier \"./*.{js,json}\" \"./**/*.js\" \"!**/.next\" --check",
     "lint:css": "stylelint './src/**/*.{ts,tsx}'",
     "lint:ts": "run-s lint-ts-by-eslint lint-ts-by-prettier",
+    "mock": "run-p mock:*",
+    "mock:strapi": "prism mock ../service-strapi/src/extensions/documentation/documentation/1.0.0/full_documentation.json -p 4010",
     "reg-suit:open": "open-cli \"./report.html\"",
     "reg-suit:save": "reg-cli \"./.screenshot/actual\" \"./.screenshot/expected\" \"./.screenshot/diff\" -R \"./report.html\"",
     "spell-check": "cspell \"./src/**/*.{ts,tsx}\"",
@@ -48,6 +50,7 @@
     "styled-components": "^5.3.3"
   },
   "devDependencies": {
+    "@stoplight/prism-cli": "^4.8.0",
     "@storybook/addon-actions": "^6.4.19",
     "@storybook/addon-essentials": "^6.4.19",
     "@storybook/addon-interactions": "^6.4.19",
