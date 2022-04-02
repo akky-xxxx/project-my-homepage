@@ -11,7 +11,7 @@
     "dev:service-client": "yarn workspace service-client dev",
     "dev:service-strapi": "yarn workspace service-strapi dev",
     "fix": "run-p fix:* -c",
-    "fix:js": "prettier \"./*.js\" --write",
+    "fix:config": "prettier \"./*.{js,json}\" \"./**/*.{js,json}\" --write",
     "fix:pack": "fixpack",
     "lint": "run-p lint:* -c",
     "lint:js": "prettier \"./*.js\" --check",
