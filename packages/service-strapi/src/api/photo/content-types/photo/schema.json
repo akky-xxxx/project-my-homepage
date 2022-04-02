@@ -35,6 +35,12 @@
       "relation": "manyToMany",
       "target": "api::tag.tag",
       "inversedBy": "photos"
+    },
+    "location": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::location.location",
+      "inversedBy": "photos"
     }
   }
 }
