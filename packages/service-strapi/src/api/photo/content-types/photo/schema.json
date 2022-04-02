@@ -4,7 +4,8 @@
   "info": {
     "singularName": "photo",
     "pluralName": "photos",
-    "displayName": "photo"
+    "displayName": "photo",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -12,23 +13,17 @@
   "pluginOptions": {},
   "attributes": {
     "photo": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
       "multiple": false,
-      "required": true
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
     },
     "takenAt": {
       "type": "date",
       "required": true,
       "unique": false
-    },
-    "prefecture": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::prefecture.prefecture",
-      "inversedBy": "photos"
     },
     "tags": {
       "type": "relation",
