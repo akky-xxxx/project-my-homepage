@@ -9,7 +9,7 @@
     "check-all:service-client": "yarn workspace service-client check-all",
     "dev": "run-p dev:*",
     "dev:service-client": "yarn workspace service-client dev",
-    "dev:service-strapi-photos": "yarn workspace service-strapi-photos dev",
+    "dev:service-strapi": "yarn workspace service-strapi dev",
     "fix": "run-p fix:* -c",
     "fix:js": "prettier \"./*.js\" --write",
     "fix:pack": "fixpack",
