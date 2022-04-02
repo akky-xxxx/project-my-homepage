@@ -1,8 +1,8 @@
 import { ComponentProps, VFC } from "react"
 import styled from "styled-components"
 import { MediaQuery } from "../../../../../../shared/const/MediaQuery"
-import { Card } from "../../molecules/Card"
-import { CardRear } from "../CardRear"
+import { CardRear } from "./components/atoms/CardRear"
+import { Card } from "./components/molecules/Card"
 
 type CardInfo = ComponentProps<typeof Card> & ComponentProps<typeof CardRear>
 
