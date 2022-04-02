@@ -13,16 +13,17 @@ export const MenuData: MenuWithSubMenu[] = [
   {
     href: UrlMap.PhotoGallery,
     linkText: "Photo Gallery",
-    subMenu: [
-      {
-        href: UrlMap.PhotoGalleryLocationList,
-        linkText: "by location",
-      },
-      {
-        href: UrlMap.PhotoGalleryTagList,
-        linkText: "by tag",
-      },
-    ],
+    // TODO: 画面実装したら戻す
+    // subMenu: [
+    //   {
+    //     href: UrlMap.PhotoGalleryLocationList,
+    //     linkText: "by location",
+    //   },
+    //   {
+    //     href: UrlMap.PhotoGalleryTagList,
+    //     linkText: "by tag",
+    //   },
+    // ],
   },
   {
     href: "https://github.com/akky-xxxx",
