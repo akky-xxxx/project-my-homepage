@@ -1,6 +1,10 @@
 import { getEmptyArray } from "."
 
 describe("getEmptyArray", () => {
+  it("引数なしだと length 1の配列を返す", () => {
+    expect(getEmptyArray()).toHaveLength(1)
+  })
+
   it("3を渡すと length 3の配列を返す", () => {
     expect(getEmptyArray(3)).toHaveLength(3)
   })
