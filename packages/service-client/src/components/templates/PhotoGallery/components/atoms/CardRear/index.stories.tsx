@@ -1,13 +1,14 @@
 import { ComponentStoryObj, Meta } from "@storybook/react"
 import { ComponentProps } from "react"
 import { DeviceMap } from "../../../../../../shared/const/DeviceMap"
+import { getEmptyArray } from "../../../../../../shared/utils/getEmptyArray"
 import { CardRear } from "./index"
 
 type CardRearType = typeof CardRear
 type CardRearStory = ComponentStoryObj<CardRearType>
 
 const getTags = (arrayNumber = 1): ComponentProps<CardRearType>["tags"] =>
-  [...new Array<unknown>(arrayNumber)].map((_, index) => ({
+  getEmptyArray(arrayNumber).map((_, index) => ({
     tagId: String(index),
     tagName: `tag${index + 1}`,
   }))
