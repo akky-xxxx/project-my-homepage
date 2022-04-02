@@ -1,8 +1,8 @@
 import type { AppProps } from "next/app"
 import { Fragment } from "react"
 import { Layout } from "../components/layouts/Layout"
+import { MenuData } from "../shared/const/MenuData"
 import { GlobalStyle } from "../shared/styles/globalStyle"
-import { MenuData } from "../shared/const/MenuData/indedx"
 
 const MyApp = ({ Component, pageProps }: AppProps) => (
   <Fragment>
