@@ -1,2 +1,4 @@
 remeda
 stylelint
+Embedder
+strapi
