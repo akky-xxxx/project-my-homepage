@@ -1,30 +1,33 @@
+import { Photos } from "../../types/strapi/photos"
 import { apiHandler } from "../../utils/apiHandler"
-// import { isErrorStatus } from "../../utils/isErrorStatus"
+import { isErrorStatus } from "../../utils/isErrorStatus"
 import { infoLogger, loggerWrapper } from "../../utils/logger"
+import { strapiApiClient } from "../../utils/strapiApiClient"
+import { Query } from "./const"
+import { getMainVisualPath } from "./modules/getMainVisualPath"
 
 type ResponseBody = {
   mainVisualPaths: string[]
 }
 
-// TODO: 非同期処理を入れたら消す
-// eslint-disable-next-line @typescript-eslint/require-await
 const homeGetBase = async () => {
-  // TODO: trace id を設定したら定義場所を変更
+  const {
+    data: { data },
+    status,
+  } = await strapiApiClient.get<Photos>(`/photos?${Query}`)
+
+  if (isErrorStatus(status)) {
+    throw new Error(`status: ${status}`)
+  }
+
+  const mainVisualPaths = data.map(getMainVisualPath)
   const infoLoggerMain = loggerWrapper(infoLogger, { traceId: "-" })
 
-  // TODO: strapi からデータを取得する
   const response: ResponseBody = {
-    mainVisualPaths: [
-      "http://placehold.jp/3d4070/ffffff/2000x1000.png?text=image1",
-      "http://placehold.jp/3d4070/ffffff/2000x1000.png?text=image2",
-      "http://placehold.jp/3d4070/ffffff/2000x1000.png?text=image3",
-      "http://placehold.jp/3d4070/ffffff/2000x1000.png?text=image4",
-      "http://placehold.jp/3d4070/ffffff/2000x1000.png?text=image5",
-      "http://placehold.jp/3d4070/ffffff/2000x1000.png?text=image6",
-    ],
+    mainVisualPaths,
   }
   infoLoggerMain({
-    endpoint: "GET: api/home",
+    endpoint: "GET: /api/home",
     response,
   })
 
