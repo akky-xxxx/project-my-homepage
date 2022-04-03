@@ -21,6 +21,7 @@ module.exports = {
         "sort-keys": OFF,
         "no-undefined": OFF,
         "no-console": OFF,
+        complexity: OFF,
       },
     },
   ],
