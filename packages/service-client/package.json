@@ -35,7 +35,9 @@
     "ss:remove": "shx rm -rf \"./.screenshot/expected/*\"",
     "start": "next start",
     "storybook": "start-storybook -p 3050",
-    "test": "jest --coverage",
+    "test": "run-s test:*",
+    "test:client": "jest --coverage",
+    "test:server": "jest -c jest.server.config.js",
     "type-check": "tsc",
     "update-ss": "run-s ss:remove ss:copy ss:git-add ss:git-commit"
   },
