@@ -36,6 +36,11 @@
       "relation": "manyToOne",
       "target": "api::location.location",
       "inversedBy": "photos"
+    },
+    "isShownTop": {
+      "type": "boolean",
+      "default": false,
+      "required": true
     }
   }
 }
