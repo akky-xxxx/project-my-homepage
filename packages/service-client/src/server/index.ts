@@ -7,7 +7,7 @@ import { getServer } from "./modules/getServer"
 import { errorLogger, loggerWrapper, sillyLogger } from "./utils/logger"
 
 const DefaultPort = 3000
-const Port = Number(process.env.PORT) || DefaultPort
+const Port = Number(process.env.NEXT_PUBLIC_PORT) || DefaultPort
 const app = next({ dev: IsDevelopment, dir: "./" })
 const handler = app.getRequestHandler()
 
