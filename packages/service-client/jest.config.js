@@ -27,6 +27,6 @@ module.exports = {
       },
     ],
   },
-  testMatch: ["**/?(*.)test.ts?(x)"],
+  testMatch: ["**/?(*.)test.ts?(x)", "!**/server/**"],
   testEnvironment: "jsdom",
 }
