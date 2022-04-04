@@ -1,4 +1,4 @@
-import { Dates } from "../common"
+import { Dates, StrapiItem, StrapiResponse } from "../common"
 
 type Rectangle = Record<"height" | "width", number>
 
@@ -26,26 +26,17 @@ type PhotoAttributes = Omit<Dates, "publishedAt"> &
     url: string
   }
 
-type Photo = {
-  id: string
-  attributes: PhotoAttributes
-}
-
-type Attributes = Dates & {
+export type PhotoBase = Dates & {
   photo: {
-    data: Photo
+    data: StrapiItem<PhotoAttributes>
   }
   takenAt: string
-  tags: unknown
-  location: unknown
   isShownTop: boolean
 }
 
-type Data = {
-  id: string
-  attributes: Attributes
+type Attributes = PhotoBase & {
+  tags: unknown
+  location: unknown
 }
 
-export type Photos = {
-  data: Data[]
-}
+export type Photos = StrapiResponse<StrapiItem<Attributes>[]>
