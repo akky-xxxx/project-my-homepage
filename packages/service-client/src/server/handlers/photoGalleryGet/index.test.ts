@@ -1,10 +1,13 @@
-import supertest from "supertest"
+import supertest, { Response } from "supertest"
 import { isObject } from "remeda"
 // node_modules を除き最初に import させるため
 // organize-imports-ignore
 import "../../modules/initialize"
+import { spyOn } from "jest-mock"
 import { getServer } from "../../modules/getServer"
 import { UnknownObject } from "../../../shared/types/common"
+import { strapiApiClient } from "../../utils/strapiApiClient"
+import { spyResponse } from "./const/spy"
 
 const app = getServer()
 const request = supertest(app)
@@ -14,21 +17,31 @@ const slashSyntaxDateRegExp = /^\d{4}(?:\/\d{2}){2}$/
 
 describe("GET /api/photo-gallery", () => {
   describe("photo-gallery 200 パターン", () => {
-    it("200 を返すこと", async () => {
-      const res = await request.get("/api/photo-gallery")
+    let spy: ReturnType<typeof spyOn>
+    let res: Response
 
+    beforeEach(async () => {
+      spy = spyOn(strapiApiClient, "get")
+      spy.mockReturnValue(Promise.resolve(spyResponse))
+      res = await request.get("/api/photo-gallery")
+    })
+
+    afterEach(() => {
+      spy.mockRestore()
+    })
+
+    it("200 を返すこと", () => {
+      expect(spy).toHaveBeenCalled()
       expect(res.status).toBe(200)
     })
 
-    it("cards プロパティがあり、配列である", async () => {
-      const res = await request.get("/api/photo-gallery")
-
+    it("cards プロパティがあり、配列である", () => {
+      expect(spy).toHaveBeenCalled()
       expect(Array.isArray(res.body?.cards)).toBeTruthy()
     })
 
-    it("cards[number] はオブジェクトである", async () => {
-      const res = await request.get("/api/photo-gallery")
-
+    it("cards[number] はオブジェクトである", () => {
+      expect(spy).toHaveBeenCalled()
       if (!Array.isArray(res.body?.cards)) return
       res.body.cards.forEach((card: unknown) => {
         expect(typeof card).toBe("object")
@@ -36,9 +49,8 @@ describe("GET /api/photo-gallery", () => {
       })
     })
 
-    it("cards[number].imagePath は http で始まる文字列である", async () => {
-      const res = await request.get("/api/photo-gallery")
-
+    it("cards[number].imagePath は http で始まる文字列である", () => {
+      expect(spy).toHaveBeenCalled()
       res.body.cards.forEach((card: unknown) => {
         if (typeof card !== "object" || card === null) return
         const newCard: UnknownObject = { ...card }
@@ -48,9 +60,8 @@ describe("GET /api/photo-gallery", () => {
       })
     })
 
-    it("cards[number].location はオブジェクトであり、 locationId, locationName に文字列を持つ", async () => {
-      const res = await request.get("/api/photo-gallery")
-
+    it("cards[number].location はオブジェクトであり、 locationId, locationName に文字列を持つ", () => {
+      expect(spy).toHaveBeenCalled()
       res.body.cards.forEach((card: unknown) => {
         if (typeof card !== "object" || card === null) return
         const newCard: UnknownObject = { ...card }
@@ -67,9 +78,8 @@ describe("GET /api/photo-gallery", () => {
       })
     })
 
-    it("cards[number].takenAt はオブジェクトであり、 yearMonth, viewTakenAt に文字列を持つ", async () => {
-      const res = await request.get("/api/photo-gallery")
-
+    it("cards[number].takenAt はオブジェクトであり、 yearMonth, viewTakenAt に文字列を持つ", () => {
+      expect(spy).toHaveBeenCalled()
       res.body.cards.forEach((card: unknown) => {
         if (typeof card !== "object" || card === null) return
         const newCard: UnknownObject = { ...card }
@@ -81,6 +91,7 @@ describe("GET /api/photo-gallery", () => {
           typeof takenAt.viewTakenAt !== "string"
         )
           return
+
         expect(typeof takenAt.yearMonth === "string").toBeTruthy()
         expect(hyphenSyntaxYearMonthRegExp.test(takenAt.yearMonth)).toBe(true)
         expect(typeof takenAt.viewTakenAt === "string").toBeTruthy()

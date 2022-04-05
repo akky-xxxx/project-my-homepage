@@ -9,8 +9,9 @@ type GetTag = (tagRecord: StrapiItem<TagBase>) => GetTagReturn
 
 export const getTag: GetTag = (tagRecord) => {
   const {
-    id: tagId,
+    id,
     attributes: { tagName },
   } = tagRecord
+  const tagId = String(id)
   return { tagId, tagName }
 }

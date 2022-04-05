@@ -1,5 +1,9 @@
+import { format } from "date-fns"
+import { DateFnsFormats } from "../../../../const/DateFns"
 import { Photos } from "../../../../types/strapi/photos"
 import { getTag } from "./modules/getTag"
+
+const { VIEW, YEAR_MONTH } = DateFnsFormats
 
 // TODO: common-types を作って移動する
 export type Location = {
@@ -49,9 +53,10 @@ export const getCard: GetCard = (cardRecord) => {
       tags: { data: originTags },
     },
   } = cardRecord
+  const datedOriginTakenAt = new Date(originTakenAt)
   const imagePath = `${process.env.STRAPI_SERVER || ""}${url}`
-  const viewTakenAt = originTakenAt
-  const yearMonth = viewTakenAt
+  const viewTakenAt = format(datedOriginTakenAt, VIEW)
+  const yearMonth = format(datedOriginTakenAt, YEAR_MONTH)
   const takenAt = { viewTakenAt, yearMonth }
   const location = { locationId, locationName }
   const tags = originTags.map(getTag)
