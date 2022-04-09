@@ -1,4 +1,4 @@
-import { FC } from "react"
+import { FcWithChildren } from "../../../../../../../../../shared/types/react"
 import { CardMain } from "./components/atoms/CardMain"
 import { CloseIcon } from "./components/atoms/CloseIcon"
 import { InfoIcon } from "./components/atoms/InfoIcon"
@@ -10,7 +10,7 @@ import { CardProps } from "./types"
 
 const { IsShownDetail } = Classes
 
-export const Template: FC<CardProps> = (props) => {
+export const Template: FcWithChildren<CardProps> = (props) => {
   const {
     children,
     handleHideDetail,

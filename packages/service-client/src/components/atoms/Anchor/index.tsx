@@ -1,12 +1,12 @@
 import Link from "next/link"
-import { FC } from "react"
+import { FcWithChildren } from "../../../shared/types/react"
 import { isExternal } from "./modules/isExternal"
 
 type AnchorProps = {
   href: string
 }
 
-export const Anchor: FC<AnchorProps> = (props) => {
+export const Anchor: FcWithChildren<AnchorProps> = (props) => {
   const { children, href } = props
 
   if (isExternal(href))
