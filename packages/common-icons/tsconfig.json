@@ -1,0 +1,10 @@
+{
+  "extends": "../../configs/tsconfig/client.json",
+  "include": ["**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"],
+  "compilerOptions": {
+    "incremental": true,
+    "outDir": "./out",
+    "jsx": "react"
+  }
+}
