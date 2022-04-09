@@ -4,6 +4,7 @@
       "get": {
         "responses": {
           "200": {
+            "description": "OK",
             "content": {
               "application/json": {
                 "schema": {
@@ -1590,11 +1591,12 @@
             }
           }
         ],
-        "requestBody": {}
+        "operationId": "get/photos"
       },
       "post": {
         "responses": {
           "200": {
+            "description": "OK",
             "content": {
               "application/json": {
                 "schema": {
@@ -3077,6 +3079,7 @@
           "Photo"
         ],
         "parameters": [],
+        "operationId": "post/photos",
         "requestBody": {
           "required": true,
           "content": {
@@ -3117,6 +3120,7 @@
       "get": {
         "responses": {
           "200": {
+            "description": "OK",
             "content": {
               "application/json": {
                 "schema": {
@@ -4610,11 +4614,12 @@
             }
           }
         ],
-        "requestBody": {}
+        "operationId": "get/photos/{id}"
       },
       "put": {
         "responses": {
           "200": {
+            "description": "OK",
             "content": {
               "application/json": {
                 "schema": {
@@ -6108,6 +6113,7 @@
             }
           }
         ],
+        "operationId": "put/photos/{id}",
         "requestBody": {
           "required": true,
           "content": {
@@ -6205,6 +6211,7 @@
       "delete": {
         "responses": {
           "200": {
+            "description": "OK",
             "content": {
               "application/json": {
                 "schema": {
@@ -6375,7 +6382,7 @@
             }
           }
         ],
-        "requestBody": {}
+        "operationId": "delete/photos/{id}"
       }
     }
   }
