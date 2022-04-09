@@ -2,7 +2,11 @@
   "name": "common-icons",
   "main": "dist/index.ts",
   "scripts": {
-    "check-all": "run-s fix lint",
+    "build": "run-s build:compile build:staging build:commit",
+    "build:commit": "git commit -m \"feat(common-icons): output components@`date \"+%Y-%m-%d %H:%M:%S\"`\"",
+    "build:compile": "tsc --noEmit false",
+    "build:staging": "git add ./out",
+    "check-all": "run-s fix lint type-check",
     "compare-story": "run-s -c ss:capture reg-suit:save reg-suit:open",
     "fix": "run-p fix:*",
     "fix:js": "prettier \"./*.{js,ts,tsx}\" \"./**/*.{js,ts,tsx}\" --write",
@@ -18,6 +22,7 @@
     "ss:git-commit": "git commit -m \"docs(common-icons): update expected screenshot@`date \"+%Y-%m-%d %H:%M:%S\"`\"",
     "ss:remove": "shx rm -rf \"./.screenshot/expected/*\"",
     "storybook": "start-storybook -p 3051",
+    "type-check": "tsc",
     "update-ss": "run-s ss:remove ss:copy ss:git-add ss:git-commit"
   },
   "dependencies": {
