@@ -5,6 +5,7 @@
   "scripts": {
     "check-all": "run-p check-all:*",
     "check-all:common-icons": "yarn workspace common-icons check-all",
+    "check-all:common-types": "yarn workspace common-types check-all",
     "check-all:root": "run-s fix lint",
     "check-all:service-client": "yarn workspace service-client check-all",
     "dev": "run-p dev:*",
