@@ -49,7 +49,6 @@ const photoGalleryGetBase = async () => {
 
   const cards: Card[] = data.map(getCard)
 
-  // TODO: strapi からデータを取得する
   const response: ResponseBody = { cards }
   infoLoggerMain({
     endpoint: "GET: api/photo-gallery",
