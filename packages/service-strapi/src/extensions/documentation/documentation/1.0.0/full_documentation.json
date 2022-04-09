@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2022-04-03T13:10:59.821Z"
+    "x-generation-date": "2022-04-09T10:14:14.266Z"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -54,6 +54,7 @@
       "get": {
         "responses": {
           "200": {
+            "description": "OK",
             "content": {
               "application/json": {
                 "schema": {
@@ -1248,11 +1249,12 @@
             }
           }
         ],
-        "requestBody": {}
+        "operationId": "get/locations"
       },
       "post": {
         "responses": {
           "200": {
+            "description": "OK",
             "content": {
               "application/json": {
                 "schema": {
@@ -2343,6 +2345,7 @@
           "Location"
         ],
         "parameters": [],
+        "operationId": "post/locations",
         "requestBody": {
           "required": true,
           "content": {
@@ -2371,6 +2374,7 @@
       "get": {
         "responses": {
           "200": {
+            "description": "OK",
             "content": {
               "application/json": {
                 "schema": {
@@ -3472,11 +3476,12 @@
             }
           }
         ],
-        "requestBody": {}
+        "operationId": "get/locations/{id}"
       },
       "put": {
         "responses": {
           "200": {
+            "description": "OK",
             "content": {
               "application/json": {
                 "schema": {
@@ -4578,6 +4583,7 @@
             }
           }
         ],
+        "operationId": "put/locations/{id}",
         "requestBody": {
           "required": true,
           "content": {
@@ -4648,6 +4654,7 @@
       "delete": {
         "responses": {
           "200": {
+            "description": "OK",
             "content": {
               "application/json": {
                 "schema": {
@@ -4818,13 +4825,14 @@
             }
           }
         ],
-        "requestBody": {}
+        "operationId": "delete/locations/{id}"
       }
     },
     "/photos": {
       "get": {
         "responses": {
           "200": {
+            "description": "OK",
             "content": {
               "application/json": {
                 "schema": {
@@ -6411,11 +6419,12 @@
             }
           }
         ],
-        "requestBody": {}
+        "operationId": "get/photos"
       },
       "post": {
         "responses": {
           "200": {
+            "description": "OK",
             "content": {
               "application/json": {
                 "schema": {
@@ -7898,6 +7907,7 @@
           "Photo"
         ],
         "parameters": [],
+        "operationId": "post/photos",
         "requestBody": {
           "required": true,
           "content": {
@@ -7938,6 +7948,7 @@
       "get": {
         "responses": {
           "200": {
+            "description": "OK",
             "content": {
               "application/json": {
                 "schema": {
@@ -9431,11 +9442,12 @@
             }
           }
         ],
-        "requestBody": {}
+        "operationId": "get/photos/{id}"
       },
       "put": {
         "responses": {
           "200": {
+            "description": "OK",
             "content": {
               "application/json": {
                 "schema": {
@@ -10929,6 +10941,7 @@
             }
           }
         ],
+        "operationId": "put/photos/{id}",
         "requestBody": {
           "required": true,
           "content": {
@@ -11026,6 +11039,7 @@
       "delete": {
         "responses": {
           "200": {
+            "description": "OK",
             "content": {
               "application/json": {
                 "schema": {
@@ -11196,13 +11210,14 @@
             }
           }
         ],
-        "requestBody": {}
+        "operationId": "delete/photos/{id}"
       }
     },
     "/tags": {
       "get": {
         "responses": {
           "200": {
+            "description": "OK",
             "content": {
               "application/json": {
                 "schema": {
@@ -12394,11 +12409,12 @@
             }
           }
         ],
-        "requestBody": {}
+        "operationId": "get/tags"
       },
       "post": {
         "responses": {
           "200": {
+            "description": "OK",
             "content": {
               "application/json": {
                 "schema": {
@@ -13486,6 +13502,7 @@
           "Tag"
         ],
         "parameters": [],
+        "operationId": "post/tags",
         "requestBody": {
           "required": true,
           "content": {
@@ -13511,6 +13528,7 @@
       "get": {
         "responses": {
           "200": {
+            "description": "OK",
             "content": {
               "application/json": {
                 "schema": {
@@ -14609,11 +14627,12 @@
             }
           }
         ],
-        "requestBody": {}
+        "operationId": "get/tags/{id}"
       },
       "put": {
         "responses": {
           "200": {
+            "description": "OK",
             "content": {
               "application/json": {
                 "schema": {
@@ -15712,6 +15731,7 @@
             }
           }
         ],
+        "operationId": "put/tags/{id}",
         "requestBody": {
           "required": true,
           "content": {
@@ -15779,6 +15799,7 @@
       "delete": {
         "responses": {
           "200": {
+            "description": "OK",
             "content": {
               "application/json": {
                 "schema": {
@@ -15949,13 +15970,14 @@
             }
           }
         ],
-        "requestBody": {}
+        "operationId": "delete/tags/{id}"
       }
     },
     "/email": {
       "post": {
         "responses": {
           "200": {
+            "description": "OK",
             "content": {
               "application/json": {
                 "schema": {
@@ -16134,6 +16156,7 @@
           "Email"
         ],
         "parameters": [],
+        "operationId": "post/email",
         "requestBody": {
           "required": true,
           "content": {
@@ -16159,6 +16182,7 @@
       "post": {
         "responses": {
           "200": {
+            "description": "OK",
             "content": {
               "application/json": {
                 "schema": {
@@ -16337,6 +16361,7 @@
           "Email"
         ],
         "parameters": [],
+        "operationId": "post/email/test",
         "requestBody": {
           "required": true,
           "content": {
@@ -16362,6 +16387,7 @@
       "get": {
         "responses": {
           "200": {
+            "description": "OK",
             "content": {
               "application/json": {
                 "schema": {
@@ -16540,13 +16566,14 @@
           "Email"
         ],
         "parameters": [],
-        "requestBody": {}
+        "operationId": "get/email/settings"
       }
     },
     "/upload": {
       "post": {
         "responses": {
           "200": {
+            "description": "OK",
             "content": {
               "application/json": {
                 "schema": {
@@ -17074,6 +17101,7 @@
           "Upload - file"
         ],
         "parameters": [],
+        "operationId": "post/upload",
         "requestBody": {
           "required": true,
           "content": {
@@ -17115,6 +17143,7 @@
       "get": {
         "responses": {
           "200": {
+            "description": "OK",
             "content": {
               "application/json": {
                 "schema": {
@@ -17642,13 +17671,14 @@
           "Upload - file"
         ],
         "parameters": [],
-        "requestBody": {}
+        "operationId": "get/upload/files/count"
       }
     },
     "/upload/files": {
       "get": {
         "responses": {
           "200": {
+            "description": "OK",
             "content": {
               "application/json": {
                 "schema": {
@@ -18280,13 +18310,14 @@
             }
           }
         ],
-        "requestBody": {}
+        "operationId": "get/upload/files"
       }
     },
     "/upload/files/{id}": {
       "get": {
         "responses": {
           "200": {
+            "description": "OK",
             "content": {
               "application/json": {
                 "schema": {
@@ -18825,11 +18856,12 @@
             }
           }
         ],
-        "requestBody": {}
+        "operationId": "get/upload/files/{id}"
       },
       "delete": {
         "responses": {
           "200": {
+            "description": "OK",
             "content": {
               "application/json": {
                 "schema": {
@@ -19000,7 +19032,7 @@
             }
           }
         ],
-        "requestBody": {}
+        "operationId": "delete/upload/files/{id}"
       }
     }
   }
