@@ -1,5 +1,6 @@
 {
   "name": "common-types",
+  "main": "./src/index.ts",
   "scripts": {
     "check-all": "npm-run-all fix -p spell-check type-check",
     "check-code": "run-p spell-check lint type-check",
