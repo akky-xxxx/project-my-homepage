@@ -1,8 +1,5 @@
 {
   "name": "common-types",
-  "version": "0.1.0",
-  "license": "MIT",
-  "private": true,
   "scripts": {
     "check-all": "npm-run-all fix -p spell-check type-check",
     "check-code": "run-p spell-check lint type-check",
@@ -27,5 +24,8 @@
     "fixpack": "^4.0.0",
     "npm-run-all": "^4.1.5",
     "typescript": "^4.5.5"
-  }
+  },
+  "private": true,
+  "version": "0.1.0",
+  "license": "MIT"
 }
