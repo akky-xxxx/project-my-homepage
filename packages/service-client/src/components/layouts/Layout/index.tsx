@@ -1,8 +1,9 @@
-import { FC, Fragment } from "react"
+import { Fragment } from "react"
 import styled from "styled-components"
 import { Margins } from "../../../shared/const/Margins"
 import { MediaQuery } from "../../../shared/const/MediaQuery"
 import { Menu } from "../../../shared/const/Menu"
+import { FcWithChildren } from "../../../shared/types/react"
 import { PcMainMenu } from "../PcMainMenu"
 import { SpMenu } from "../SpMenu"
 
@@ -18,7 +19,7 @@ type LayoutProps = {
   menu: MenuWithSubMenu[]
 }
 
-export const Layout: FC<LayoutProps> = (props) => {
+export const Layout: FcWithChildren<LayoutProps> = (props) => {
   const { children, currentPagePosition, menu } = props
 
   return (
