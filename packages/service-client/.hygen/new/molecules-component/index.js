@@ -16,7 +16,7 @@ module.exports = {
     ]
     return inquirer.prompt(questions).then((answers) => {
       const { componentName: componentNameBase, hasChildren } = answers
-      const componentType = hasChildren ? "FC" : "VFC"
+      const componentType = hasChildren ? "FcWithChildren" : "VFC"
       const [initial, ...latest] = [...componentNameBase]
       const componentName = `${initial.toUpperCase()}${latest.join("")}`
       const path = `src/components/molecules/${componentName}`
