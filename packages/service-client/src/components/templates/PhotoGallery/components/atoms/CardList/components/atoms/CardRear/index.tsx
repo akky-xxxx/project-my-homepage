@@ -1,9 +1,5 @@
+import { Location, Tag as TagType, TakenAt } from "common-types"
 import { VFC } from "react"
-import {
-  Location,
-  Tag as TagType,
-  TakenAt,
-} from "../../../../../../../../../shared/types/photo"
 import { getUrl } from "../../../../../../../../../shared/utils/getUrl"
 import { Anchor } from "../../../../../../../../atoms/Anchor"
 import { LinkText } from "../../../../../../../../atoms/LinkText"

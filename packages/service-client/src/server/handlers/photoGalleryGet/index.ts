@@ -1,3 +1,4 @@
+import { Card, ResponseBody } from "common-types"
 import { Photos } from "../../types/strapi/photos"
 import { apiHandler } from "../../utils/apiHandler"
 import { isErrorStatus } from "../../utils/isErrorStatus"
@@ -5,35 +6,6 @@ import { infoLogger, loggerWrapper } from "../../utils/logger"
 import { strapiApiClient } from "../../utils/strapiApiClient"
 import { Query } from "./const"
 import { getCard } from "./modules/getCard"
-
-// TODO: common-types を作って移動する
-export type Location = {
-  locationId: string
-  locationName: string
-}
-
-// TODO: common-types を作って移動する
-export type Tag = {
-  tagId: string
-  tagName: string
-}
-
-// TODO: common-types を作って移動する
-export type TakenAt = {
-  yearMonth: string
-  viewTakenAt: string
-}
-
-type Card = {
-  imagePath: string
-  location: Location
-  tags: Tag[]
-  takenAt: TakenAt
-}
-
-type ResponseBody = {
-  cards: Card[]
-}
 
 const photoGalleryGetBase = async () => {
   // TODO: trace id を設定したら定義場所を変更
