@@ -1155,6 +1155,9 @@
                                                               }
                                                             }
                                                           },
+                                                          "isShownTop": {
+                                                            "type": "boolean"
+                                                          },
                                                           "createdAt": {
                                                             "type": "string",
                                                             "format": "date-time"
@@ -1273,6 +1276,9 @@
                                     }
                                   }
                                 }
+                              },
+                              "isShownTop": {
+                                "type": "boolean"
                               },
                               "createdAt": {
                                 "type": "string",
@@ -2738,6 +2744,9 @@
                                                             }
                                                           }
                                                         },
+                                                        "isShownTop": {
+                                                          "type": "boolean"
+                                                        },
                                                         "createdAt": {
                                                           "type": "string",
                                                           "format": "date-time"
@@ -2856,6 +2865,9 @@
                                   }
                                 }
                               }
+                            },
+                            "isShownTop": {
+                              "type": "boolean"
                             },
                             "createdAt": {
                               "type": "string",
@@ -3088,6 +3100,9 @@
                       "takenAt": {
                         "type": "string",
                         "format": "date"
+                      },
+                      "isShownTop": {
+                        "type": "boolean"
                       }
                     }
                   }
@@ -4251,6 +4266,9 @@
                                                             }
                                                           }
                                                         },
+                                                        "isShownTop": {
+                                                          "type": "boolean"
+                                                        },
                                                         "createdAt": {
                                                           "type": "string",
                                                           "format": "date-time"
@@ -4369,6 +4387,9 @@
                                   }
                                 }
                               }
+                            },
+                            "isShownTop": {
+                              "type": "boolean"
                             },
                             "createdAt": {
                               "type": "string",
@@ -5743,6 +5764,9 @@
                                                             }
                                                           }
                                                         },
+                                                        "isShownTop": {
+                                                          "type": "boolean"
+                                                        },
                                                         "createdAt": {
                                                           "type": "string",
                                                           "format": "date-time"
@@ -5861,6 +5885,9 @@
                                   }
                                 }
                               }
+                            },
+                            "isShownTop": {
+                              "type": "boolean"
                             },
                             "createdAt": {
                               "type": "string",
@@ -6129,6 +6156,9 @@
                           }
                         ],
                         "example": "string or id"
+                      },
+                      "isShownTop": {
+                        "type": "boolean"
                       },
                       "createdAt": {
                         "type": "string",

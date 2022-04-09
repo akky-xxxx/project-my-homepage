@@ -836,6 +836,9 @@
                                                 }
                                               }
                                             },
+                                            "isShownTop": {
+                                              "type": "boolean"
+                                            },
                                             "createdAt": {
                                               "type": "string",
                                               "format": "date-time"
@@ -2030,6 +2033,9 @@
                                               }
                                             }
                                           },
+                                          "isShownTop": {
+                                            "type": "boolean"
+                                          },
                                           "createdAt": {
                                             "type": "string",
                                             "format": "date-time"
@@ -3145,6 +3151,9 @@
                                               }
                                             }
                                           },
+                                          "isShownTop": {
+                                            "type": "boolean"
+                                          },
                                           "createdAt": {
                                             "type": "string",
                                             "format": "date-time"
@@ -4247,6 +4256,9 @@
                                                 }
                                               }
                                             }
+                                          },
+                                          "isShownTop": {
+                                            "type": "boolean"
                                           },
                                           "createdAt": {
                                             "type": "string",
