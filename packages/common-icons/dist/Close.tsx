@@ -1,4 +1,4 @@
-import { SVGProps } from "react"
+import React, { SVGProps } from "react"
 export const Close = (props: SVGProps<SVGSVGElement>) => (
   <svg
     viewBox="0 0 512 512"
