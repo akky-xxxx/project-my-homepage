@@ -3,6 +3,7 @@ const { OFF, ERROR } = require("./const")
 module.exports = {
   rules: {
     "import/prefer-default-export": OFF,
+    "import/no-default-export": ERROR,
     "import/extensions": [
       ERROR,
       {
@@ -28,6 +29,12 @@ module.exports = {
       ],
       rules: {
         "import/no-extraneous-dependencies": OFF,
+      },
+    },
+    {
+      files: ["**/pages/**/*.{api,page}.{tsx,ts}", "**/*.stories.{ts,tsx}"],
+      rules: {
+        "import/no-default-export": OFF,
       },
     },
   ],
