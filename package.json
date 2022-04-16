@@ -16,6 +16,7 @@
     "fix:pack": "fixpack",
     "lint": "run-p lint:* -c",
     "lint:js": "prettier \"./*.js\" --check",
+    "lint:pack": "fixpack --dryRun",
     "prepare": "husky install",
     "storybook": "run-p storybook:*",
     "storybook:common-icons": "yarn workspace common-icons storybook",
