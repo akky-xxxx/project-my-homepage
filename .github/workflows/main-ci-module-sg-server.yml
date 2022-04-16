@@ -1,0 +1,47 @@
+name: main ci of module-sg-server
+
+on:
+  push:
+    branches:
+      - release/renewal
+      - develop
+      - main
+    paths:
+      - 'packages/module-sg-server/**'
+  pull_request:
+    branches:
+      - release/renewal
+      - develop
+      - main
+      - feature/*
+    paths:
+      - 'packages/module-sg-server/**'
+
+env:
+  STRAPI_SERVER: http://localhost:4000
+
+jobs:
+  checks:
+
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./packages/module-sg-server
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.14.0
+          cache: 'yarn'
+
+      - name: Install dependencies
+        run: yarn
+
+      - name: Check the codes
+        run: yarn check-code
+
+      - name: Test the codes
+        run: yarn test
