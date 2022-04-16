@@ -8,6 +8,11 @@
     "check-all:common-types": "yarn workspace common-types check-all",
     "check-all:root": "run-s fix lint",
     "check-all:service-client": "yarn workspace service-client check-all",
+    "check-code": "run-p check-code:*",
+    "check-code:common-icons": "yarn workspace common-icons check-code",
+    "check-code:common-types": "yarn workspace common-types check-code",
+    "check-code:root": "run-s fix lint",
+    "check-code:service-client": "yarn workspace service-client check-code",
     "dev": "run-p dev:*",
     "dev:service-client": "yarn workspace service-client dev",
     "dev:service-strapi": "yarn workspace service-strapi dev",
@@ -16,10 +21,13 @@
     "fix:pack": "fixpack",
     "lint": "run-p lint:* -c",
     "lint:js": "prettier \"./*.js\" --check",
+    "lint:pack": "fixpack --dryRun",
     "prepare": "husky install",
     "storybook": "run-p storybook:*",
     "storybook:common-icons": "yarn workspace common-icons storybook",
-    "storybook:service-client": "yarn workspace service-client storybook"
+    "storybook:service-client": "yarn workspace service-client storybook",
+    "test": "run-p test:*",
+    "test:service-client": "yarn workspace service-client test"
   },
   "devDependencies": {
     "@commitlint/cli": "^16.2.3",
