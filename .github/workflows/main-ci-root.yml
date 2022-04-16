@@ -13,6 +13,9 @@ on:
       - release/renewal
       - develop
       - main
+      - feature/*
+    paths-ignore:
+      - './packages/**'
 
 jobs:
   checks:
