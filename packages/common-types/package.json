@@ -2,7 +2,7 @@
   "name": "common-types",
   "main": "./src/index.ts",
   "scripts": {
-    "check-all": "npm-run-all fix -p spell-check type-check",
+    "check-all": "npm-run-all fix check-code",
     "check-code": "run-p spell-check lint type-check",
     "fix": "run-p fix:* -c",
     "fix-ts-by-eslint": "eslint \"./src/**/*.{ts,tsx}\" --fix",
