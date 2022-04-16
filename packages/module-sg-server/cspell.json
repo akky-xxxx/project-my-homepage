@@ -1,11 +1,7 @@
 {
   "version": "0.1",
   "language": "en",
-  "dictionaries": [
-    "en",
-    "typescript",
-    "packages"
-  ],
+  "dictionaries": ["en", "typescript", "packages"],
   "dictionaryDefinitions": [
     {
       "name": "packages",

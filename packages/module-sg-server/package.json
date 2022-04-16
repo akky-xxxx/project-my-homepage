@@ -1,9 +1,6 @@
 {
   "name": "module-sg-server",
-  "version": "1.0.0",
   "main": "index.js",
-  "license": "MIT",
-  "private": true,
   "scripts": {
     "check-all": "npm-run-all fix -p spell-check type-check -s test",
     "check-code": "run-p spell-check lint type-check",
@@ -61,5 +58,8 @@
     "ts-node": "^10.7.0",
     "ts-unused-exports": "^8.0.0",
     "typescript": "^4.5.5"
-  }
+  },
+  "private": true,
+  "version": "1.0.0",
+  "license": "MIT"
 }
