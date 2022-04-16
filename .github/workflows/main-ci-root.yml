@@ -13,6 +13,8 @@ on:
       - release/renewal
       - develop
       - main
+    paths-ignore:
+      - './packages/**'
 
 jobs:
   checks:

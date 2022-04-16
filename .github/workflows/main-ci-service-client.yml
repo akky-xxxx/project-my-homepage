@@ -13,6 +13,8 @@ on:
       - release/renewal
       - develop
       - main
+    paths:
+      - 'packages/service-client/**'
 
 env:
   STRAPI_SERVER: http://localhost:4000
