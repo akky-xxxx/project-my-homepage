@@ -6,4 +6,4 @@ const isDir = (path) => statSync(path).isDirectory()
 const path2dir = (path) => path.replace(`${packagesDir}/`, "")
 const dirs = readdirSync(packagesDir).map(dir2path).filter(isDir).map(path2dir)
 
-exports.dirs = ["root", ...dirs]
+exports.dirs = ["root", "*", ...dirs]
