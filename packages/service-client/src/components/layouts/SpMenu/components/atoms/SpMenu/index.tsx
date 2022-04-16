@@ -32,8 +32,14 @@ const getKeyframes = (props: MenuProps) => {
   return isOpened ? inKeyframes : outKeyframes
 }
 
+const getPointerEvents = (props: MenuProps) => {
+  const { isOpened } = props
+  return isOpened ? "inherit" : "none"
+}
+
 export const SpMenu = styled.div<MenuProps>`
   animation: ${getKeyframes} 0.5s;
+  pointer-events: ${getPointerEvents};
   position: fixed;
   z-index: ${ZIndexes.Menu};
 `
