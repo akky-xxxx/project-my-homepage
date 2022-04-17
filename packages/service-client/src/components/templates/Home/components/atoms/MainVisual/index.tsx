@@ -1,5 +1,7 @@
 import { VFC } from "react"
 import { Carousel } from "react-responsive-carousel"
+import styled from "styled-components"
+import { MediaQuery } from "../../../../../../shared/const/MediaQuery"
 import { renderIndicator } from "./modules/renderIndicator"
 
 type MainVisualProps = {
@@ -12,6 +14,7 @@ export const MainVisual: VFC<MainVisualProps> = (props) => {
   return (
     <Carousel
       showThumbs={false}
+      showArrows={false}
       infiniteLoop
       animationHandler="fade"
       autoPlay
@@ -22,9 +25,21 @@ export const MainVisual: VFC<MainVisualProps> = (props) => {
         <div key={mainVisualPath}>
           {/* TODO: サーバに乗せる時に要確認 */}
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={mainVisualPath} alt="" />
+          <StyledImage src={mainVisualPath} alt="" />
         </div>
       ))}
     </Carousel>
   )
 }
+
+const StyledImage = styled.img`
+  width: auto !important;
+
+  ${MediaQuery.Pc} {
+    max-height: calc(100vh - 90px);
+  }
+
+  ${MediaQuery.Tb} {
+    max-height: calc(100vh - 110px);
+  }
+`
