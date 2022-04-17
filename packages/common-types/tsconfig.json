@@ -1,8 +1,5 @@
 {
-  "extends": "../../configs/tsconfig/client.json",
+  "extends": "../../configs/tsconfig/tsconfig.client.json",
   "include": ["next-env.d.ts", "**/*.ts"],
-  "exclude": ["node_modules"],
-  "compilerOptions": {
-    "incremental": true
-  }
+  "exclude": ["node_modules"]
 }
