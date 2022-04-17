@@ -1,8 +1,0 @@
-{
-  "extends": "../../configs/tsconfig/server.json",
-  "include": ["next-env.d.ts", "**/server/**/*.ts"],
-  "exclude": ["node_modules"],
-  "compilerOptions": {
-    "incremental": true
-  }
-}
