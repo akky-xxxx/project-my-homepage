@@ -20,6 +20,7 @@
     "spell-check": "cspell \"./src/**/*.ts\"",
     "start": "NODE_ENV=production nodemon",
     "test": "jest --coverage",
+    "ts-unused-exports": "ts-unused-exports tsconfig.json",
     "type-check": "tsc"
   },
   "dependencies": {
