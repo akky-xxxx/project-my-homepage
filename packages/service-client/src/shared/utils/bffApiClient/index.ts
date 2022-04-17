@@ -1,9 +1,9 @@
 import axios from "axios"
 
-const { NEXT_PUBLIC_PORT } = process.env
+const { NEXT_PUBLIC_SG_SERVER } = process.env
 
-if (!NEXT_PUBLIC_PORT) throw new Error("NEXT_PUBLIC_PORT が定義されてません")
+if (!NEXT_PUBLIC_SG_SERVER) throw new Error("NEXT_PUBLIC_SG_SERVER が定義されてません")
 
 export const bffApiClient = axios.create({
-  baseURL: `http://localhost:${NEXT_PUBLIC_PORT}/api`,
+  baseURL: `${NEXT_PUBLIC_SG_SERVER}/api`,
 })
