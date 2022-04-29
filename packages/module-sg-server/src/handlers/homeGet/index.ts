@@ -1,4 +1,5 @@
 import { Photos } from "common-types"
+import { HomeGETRes } from "../../libs/bffApiClient"
 import { apiHandler } from "../../shared/utils/apiHandler"
 import { isErrorStatus } from "../../shared/utils/isErrorStatus"
 import { infoLogger, loggerWrapper } from "../../shared/utils/logger"
@@ -10,7 +11,9 @@ type ResponseBody = {
   mainVisualPaths: string[]
 }
 
-const homeGetBase = async () => {
+type HomeGetBase = () => Promise<HomeGETRes>
+
+const homeGetBase: HomeGetBase = async () => {
   const {
     data: { data },
     status,
