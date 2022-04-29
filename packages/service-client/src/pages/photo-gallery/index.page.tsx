@@ -15,8 +15,7 @@ const PhotoGalleryTemplatePage: NextPage<PhotoGalleryTemplatePageProps> = (
 export const getStaticProps: GetStaticProps<
   PhotoGalleryTemplatePageProps
 > = async () => {
-  const { data: result } =
-    await bffApiClient.get<PhotoGalleryTemplatePageProps>("/photo-gallery")
+  const { data: result } = await bffApiClient.getApiPhotoGallery()
 
   return {
     props: result,
