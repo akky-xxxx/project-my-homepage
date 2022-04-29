@@ -11,6 +11,8 @@
     "fix:config": "prettier \"./*.{js,json}\" \"./**/*.js\" \"!**/.next\" --write",
     "fix:pack": "fixpack",
     "fix:ts": "run-s fix-ts-by-eslint fix-ts-by-prettier",
+    "gen": "run-p gen:*",
+    "gen:ts-api-client": "sh configs/shells/ts-api-client-gen.sh",
     "lint": "run-p lint:* -c",
     "lint-ts-by-eslint": "eslint \"./src/**/*.ts\"",
     "lint-ts-by-prettier": "prettier \"./src/**/*.ts\" --check",
