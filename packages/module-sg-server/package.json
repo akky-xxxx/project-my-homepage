@@ -2,6 +2,10 @@
   "name": "module-sg-server",
   "main": "index.js",
   "scripts": {
+    "build": "run-s build:compile build:staging build:commit",
+    "build:commit": "git commit -m \"feat(module-sg-server): output bffApiClient@`date \"+%Y-%m-%d %H:%M:%S\"`\"",
+    "build:compile": "tsc ./src/libs/bffApiClient/*.ts --noEmit false --outDir out/bffApiClient --declaration",
+    "build:staging": "git add ./out",
     "check-all": "npm-run-all fix -p spell-check type-check -s test",
     "check-code": "run-p spell-check lint type-check",
     "dev": "nodemon",
@@ -11,6 +15,8 @@
     "fix:config": "prettier \"./*.{js,json}\" \"./**/*.js\" \"!**/.next\" --write",
     "fix:pack": "fixpack",
     "fix:ts": "run-s fix-ts-by-eslint fix-ts-by-prettier",
+    "gen": "run-p gen:*",
+    "gen:ts-api-client": "sh configs/shells/ts-api-client-gen.sh",
     "lint": "run-p lint:* -c",
     "lint-ts-by-eslint": "eslint \"./src/**/*.ts\"",
     "lint-ts-by-prettier": "prettier \"./src/**/*.ts\" --check",
@@ -29,6 +35,7 @@
     "date-fns": "^2.28.0",
     "dotenv": "^16.0.0",
     "express": "^4.17.3",
+    "express-openapi-validator": "^4.13.7",
     "helmet": "^5.0.2",
     "qs": "^6.10.3",
     "remeda": "^0.0.32",
@@ -62,6 +69,6 @@
     "typescript": "^4.5.5"
   },
   "private": true,
-  "version": "1.0.0",
+  "version": "0.1.0",
   "license": "MIT"
 }

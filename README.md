@@ -6,6 +6,11 @@
 ## About
 root of monorepo
 
+## Requires
+- node.js
+- yarn
+- docker
+
 ## Resolve dependencies
 ```shell
 $ yarn

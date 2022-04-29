@@ -12,7 +12,7 @@ const HomePage: NextPage<HomePageProps> = (props) => {
 }
 
 export const getStaticProps: GetStaticProps<HomePageProps> = async () => {
-  const { data: result } = await bffApiClient.get<HomePageProps>("/home")
+  const { data: result } = await bffApiClient.getApiHome()
 
   return {
     props: result,
