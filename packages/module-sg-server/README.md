@@ -18,3 +18,4 @@ $ yarn dev
 | dev               | run as development             |
 | gen               | generate all                   |
 | gen:ts-api-client | generate ts api client for bff |
+| build             | dist js files                  |
