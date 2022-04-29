@@ -3,7 +3,7 @@ to: <%= path %>/<%= componentName %>.stories.tsx
 ---
 import { ComponentStoryObj, Meta } from "@storybook/react"
 import { ComponentProps } from "react"
-import { <%= componentName %> } from "../dist"
+import { <%= componentName %> } from "./index"
 
 type <%= componentName %>Type = typeof <%= componentName %>
 type <%= componentName %>Story = ComponentStoryObj<<%= componentName %>Type>
