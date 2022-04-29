@@ -1,8 +1,9 @@
 {
   "openapi": "3.0.0",
   "info": {
-    "title": "BFF",
-    "version": "1.0"
+    "title": "sg-server",
+    "version": "1.0",
+    "description": "api for ssg"
   },
   "servers": [
     {
@@ -20,9 +21,47 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/responses/HomeGet"
+                  "description": "",
+                  "type": "object",
+                  "properties": {
+                    "mainVisualPaths": {
+                      "type": "array",
+                      "items": {
+                        "required": [],
+                        "properties": {}
+                      }
+                    }
+                  },
+                  "required": [
+                    "mainVisualPaths"
+                  ],
+                  "x-examples": {
+                    "example-1": {
+                      "mainVisualPaths": [
+                        "http://placehold.jp/3d4070/ffffff/2000x1000.png?text=image1",
+                        "http://placehold.jp/3d4070/ffffff/2000x1000.png?text=image2",
+                        "http://placehold.jp/3d4070/ffffff/2000x1000.png?text=image3",
+                        "http://placehold.jp/3d4070/ffffff/2000x1000.png?text=image4",
+                        "http://placehold.jp/3d4070/ffffff/2000x1000.png?text=image5",
+                        "http://placehold.jp/3d4070/ffffff/2000x1000.png?text=image6"
+                      ]
+                    }
+                  }
                 },
-                "examples": {}
+                "examples": {
+                  "example": {
+                    "value": {
+                      "mainVisualPaths": [
+                        "http://placehold.jp/3d4070/ffffff/2000x1000.png?text=image1",
+                        "http://placehold.jp/3d4070/ffffff/2000x1000.png?text=image2",
+                        "http://placehold.jp/3d4070/ffffff/2000x1000.png?text=image3",
+                        "http://placehold.jp/3d4070/ffffff/2000x1000.png?text=image4",
+                        "http://placehold.jp/3d4070/ffffff/2000x1000.png?text=image5",
+                        "http://placehold.jp/3d4070/ffffff/2000x1000.png?text=image6"
+                      ]
+                    }
+                  }
+                }
               }
             }
           }
@@ -41,7 +80,210 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/responses/PhotoGalleryGet"
+                  "description": "",
+                  "type": "object",
+                  "x-examples": {
+                    "example-1": {
+                      "cards": [
+                        {
+                          "imagePath": "http://placehold.jp/3d4070/ffffff/2000x1000.png?text=image1",
+                          "location": {
+                            "locationId": "locationId1",
+                            "locationName": "locationName1"
+                          },
+                          "takenAt": {
+                            "yearMonth": "2022-01",
+                            "viewTakenAt": "2022/01/02"
+                          },
+                          "tags": [
+                            {
+                              "tagId": "tagId1",
+                              "tagName": "tagName1"
+                            },
+                            {
+                              "tagId": "tagId2",
+                              "tagName": "tagName2"
+                            }
+                          ]
+                        },
+                        {
+                          "imagePath": "http://placehold.jp/3d4070/ffffff/2000x1000.png?text=image2",
+                          "location": {
+                            "locationId": "locationId2",
+                            "locationName": "locationName2"
+                          },
+                          "takenAt": {
+                            "yearMonth": "2022-01",
+                            "viewTakenAt": "2022/01/02"
+                          },
+                          "tags": [
+                            {
+                              "tagId": "tagId1",
+                              "tagName": "tagName1"
+                            },
+                            {
+                              "tagId": "tagId2",
+                              "tagName": "tagName2"
+                            }
+                          ]
+                        },
+                        {
+                          "imagePath": "http://placehold.jp/3d4070/ffffff/2000x1000.png?text=image3",
+                          "location": {
+                            "locationId": "locationId2",
+                            "locationName": "locationName2"
+                          },
+                          "takenAt": {
+                            "yearMonth": "2022-01",
+                            "viewTakenAt": "2022/01/02"
+                          },
+                          "tags": []
+                        }
+                      ]
+                    }
+                  },
+                  "properties": {
+                    "cards": {
+                      "type": "array",
+                      "uniqueItems": true,
+                      "minItems": 1,
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "imagePath": {
+                            "type": "string",
+                            "minLength": 1
+                          },
+                          "location": {
+                            "type": "object",
+                            "properties": {
+                              "locationId": {
+                                "type": "string",
+                                "minLength": 1
+                              },
+                              "locationName": {
+                                "type": "string",
+                                "minLength": 1
+                              }
+                            },
+                            "required": [
+                              "locationId",
+                              "locationName"
+                            ]
+                          },
+                          "takenAt": {
+                            "type": "object",
+                            "properties": {
+                              "yearMonth": {
+                                "type": "string",
+                                "minLength": 1,
+                                "pattern": "^\\d{4}-\\d{2}$"
+                              },
+                              "viewTakenAt": {
+                                "type": "string",
+                                "minLength": 1,
+                                "pattern": "^\\d{4}(?:\\/\\d{2}){2}$"
+                              }
+                            },
+                            "required": [
+                              "yearMonth",
+                              "viewTakenAt"
+                            ]
+                          },
+                          "tags": {
+                            "type": "array",
+                            "uniqueItems": true,
+                            "minItems": 1,
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "tagId": {
+                                  "type": "string",
+                                  "minLength": 1
+                                },
+                                "tagName": {
+                                  "type": "string",
+                                  "minLength": 1
+                                }
+                              },
+                              "required": [
+                                "tagId",
+                                "tagName"
+                              ]
+                            }
+                          }
+                        },
+                        "required": [
+                          "imagePath"
+                        ]
+                      }
+                    }
+                  },
+                  "required": [
+                    "cards"
+                  ]
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "cards": [
+                        {
+                          "imagePath": "http://placehold.jp/3d4070/ffffff/2000x1000.png?text=image1",
+                          "location": {
+                            "locationId": "locationId1",
+                            "locationName": "locationName1"
+                          },
+                          "takenAt": {
+                            "yearMonth": "2022-01",
+                            "viewTakenAt": "2022/01/02"
+                          },
+                          "tags": [
+                            {
+                              "tagId": "tagId1",
+                              "tagName": "tagName1"
+                            },
+                            {
+                              "tagId": "tagId2",
+                              "tagName": "tagName2"
+                            }
+                          ]
+                        },
+                        {
+                          "imagePath": "http://placehold.jp/3d4070/ffffff/2000x1000.png?text=image2",
+                          "location": {
+                            "locationId": "locationId2",
+                            "locationName": "locationName2"
+                          },
+                          "takenAt": {
+                            "yearMonth": "2022-01",
+                            "viewTakenAt": "2022/01/02"
+                          },
+                          "tags": [
+                            {
+                              "tagId": "tagId1",
+                              "tagName": "tagName1"
+                            },
+                            {
+                              "tagId": "tagId2",
+                              "tagName": "tagName2"
+                            }
+                          ]
+                        },
+                        {
+                          "imagePath": "http://placehold.jp/3d4070/ffffff/2000x1000.png?text=image3",
+                          "location": {
+                            "locationId": "locationId2",
+                            "locationName": "locationName2"
+                          },
+                          "takenAt": {
+                            "yearMonth": "2022-01",
+                            "viewTakenAt": "2022/01/02"
+                          },
+                          "tags": []
+                        }
+                      ]
+                    }
+                  }
                 }
               }
             }
@@ -53,188 +295,7 @@
   },
   "components": {
     "schemas": {},
-    "responses": {
-      "HomeGet": {
-        "description": "Example response",
-        "content": {
-          "application/json": {
-            "schema": {
-              "type": "object",
-              "properties": {
-                "mainVisualPaths": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  },
-                  "readOnly": true
-                }
-              },
-              "required": [
-                "mainVisualPaths"
-              ]
-            },
-            "examples": {
-              "example-1": {
-                "value": {
-                  "mainVisualPaths": [
-                    "http://placehold.jp/3d4070/ffffff/2000x1000.png?text=image1",
-                    "http://placehold.jp/3d4070/ffffff/2000x1000.png?text=image2",
-                    "http://placehold.jp/3d4070/ffffff/2000x1000.png?text=image3",
-                    "http://placehold.jp/3d4070/ffffff/2000x1000.png?text=image4",
-                    "http://placehold.jp/3d4070/ffffff/2000x1000.png?text=image5",
-                    "http://placehold.jp/3d4070/ffffff/2000x1000.png?text=image6"
-                  ]
-                }
-              }
-            }
-          }
-        }
-      },
-      "PhotoGalleryGet": {
-        "description": "Example response",
-        "content": {
-          "application/json": {
-            "schema": {
-              "type": "object",
-              "properties": {
-                "cards": {
-                  "type": "array",
-                  "items": {
-                    "type": "object",
-                    "properties": {
-                      "imagePath": {
-                        "type": "string"
-                      },
-                      "location": {
-                        "type": "object",
-                        "required": [
-                          "locationId",
-                          "locationName"
-                        ],
-                        "properties": {
-                          "locationId": {
-                            "type": "string"
-                          },
-                          "locationName": {
-                            "type": "string"
-                          }
-                        }
-                      },
-                      "takenAt": {
-                        "type": "object",
-                        "required": [
-                          "yearMonth",
-                          "viewTakenAt"
-                        ],
-                        "properties": {
-                          "yearMonth": {
-                            "type": "string",
-                            "pattern": "^\\d{4}-\\d{2}$"
-                          },
-                          "viewTakenAt": {
-                            "type": "string",
-                            "pattern": "^\\d{4}(?:\\/\\d{2}){2}$"
-                          }
-                        }
-                      },
-                      "tags": {
-                        "type": "array",
-                        "items": {
-                          "type": "object",
-                          "properties": {
-                            "tagId": {
-                              "type": "string"
-                            },
-                            "tagName": {
-                              "type": "string"
-                            }
-                          },
-                          "required": [
-                            "tagId",
-                            "tagName"
-                          ]
-                        }
-                      }
-                    },
-                    "required": [
-                      "imagePath",
-                      "location",
-                      "takenAt",
-                      "tags"
-                    ]
-                  }
-                }
-              },
-              "required": [
-                "cards"
-              ]
-            },
-            "examples": {
-              "example-1": {
-                "value": {
-                  "cards": [
-                    {
-                      "imagePath": "http://placehold.jp/3d4070/ffffff/2000x1000.png?text=image1",
-                      "location": {
-                        "locationId": "locationId1",
-                        "locationName": "locationName1"
-                      },
-                      "takenAt": {
-                        "yearMonth": "2022-01",
-                        "viewTakenAt": "2022/01/02"
-                      },
-                      "tags": [
-                        {
-                          "tagId": "tagId1",
-                          "tagName": "tagName1"
-                        },
-                        {
-                          "tagId": "tagId2",
-                          "tagName": "tagName2"
-                        }
-                      ]
-                    },
-                    {
-                      "imagePath": "http://placehold.jp/3d4070/ffffff/2000x1000.png?text=image2",
-                      "location": {
-                        "locationId": "locationId2",
-                        "locationName": "locationName2"
-                      },
-                      "takenAt": {
-                        "yearMonth": "2022-01",
-                        "viewTakenAt": "2022/01/02"
-                      },
-                      "tags": [
-                        {
-                          "tagId": "tagId1",
-                          "tagName": "tagName1"
-                        },
-                        {
-                          "tagId": "tagId2",
-                          "tagName": "tagName2"
-                        }
-                      ]
-                    },
-                    {
-                      "imagePath": "http://placehold.jp/3d4070/ffffff/2000x1000.png?text=image3",
-                      "location": {
-                        "locationId": "locationId2",
-                        "locationName": "locationName2"
-                      },
-                      "takenAt": {
-                        "yearMonth": "2022-01",
-                        "viewTakenAt": "2022/01/02"
-                      },
-                      "tags": []
-                    }
-                  ]
-                }
-              }
-            }
-          }
-        }
-      }
-    },
+    "responses": {},
     "examples": {}
   }
 }
