@@ -12,7 +12,7 @@
     "fix": "run-p fix:*",
     "fix:js": "prettier \"./*.{js,ts,tsx}\" \"./**/*.{js,ts,tsx}\" --write",
     "fix:pack": "fixpack",
-    "gen": "svgr -d ./dist ./origin",
+    "gen": "svgr -d ./src ./origin",
     "hygen:story": "hygen new story",
     "lint": "run-p lint:*",
     "lint:js": "prettier \"./*.{js,ts,tsx}\" \"./**/*.{js,ts,tsx}\" --check",

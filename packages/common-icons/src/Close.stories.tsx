@@ -1,6 +1,6 @@
 import { ComponentStoryObj, Meta } from "@storybook/react"
 import { ComponentProps } from "react"
-import { Close } from "../dist"
+import { Close } from "./index"
 
 type CloseType = typeof Close
 type CloseStory = ComponentStoryObj<CloseType>
