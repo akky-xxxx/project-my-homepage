@@ -23,18 +23,6 @@
                 "schema": {
                   "description": "",
                   "type": "object",
-                  "properties": {
-                    "mainVisualPaths": {
-                      "type": "array",
-                      "items": {
-                        "required": [],
-                        "properties": {}
-                      }
-                    }
-                  },
-                  "required": [
-                    "mainVisualPaths"
-                  ],
                   "x-examples": {
                     "example-1": {
                       "mainVisualPaths": [
@@ -46,7 +34,18 @@
                         "http://placehold.jp/3d4070/ffffff/2000x1000.png?text=image6"
                       ]
                     }
-                  }
+                  },
+                  "properties": {
+                    "mainVisualPaths": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "required": [
+                    "mainVisualPaths"
+                  ]
                 },
                 "examples": {
                   "example": {
@@ -146,24 +145,20 @@
                     "cards": {
                       "type": "array",
                       "uniqueItems": true,
-                      "minItems": 1,
                       "items": {
                         "type": "object",
                         "properties": {
                           "imagePath": {
-                            "type": "string",
-                            "minLength": 1
+                            "type": "string"
                           },
                           "location": {
                             "type": "object",
                             "properties": {
                               "locationId": {
-                                "type": "string",
-                                "minLength": 1
+                                "type": "string"
                               },
                               "locationName": {
-                                "type": "string",
-                                "minLength": 1
+                                "type": "string"
                               }
                             },
                             "required": [
@@ -176,12 +171,10 @@
                             "properties": {
                               "yearMonth": {
                                 "type": "string",
-                                "minLength": 1,
                                 "pattern": "^\\d{4}-\\d{2}$"
                               },
                               "viewTakenAt": {
                                 "type": "string",
-                                "minLength": 1,
                                 "pattern": "^\\d{4}(?:\\/\\d{2}){2}$"
                               }
                             },
@@ -193,17 +186,14 @@
                           "tags": {
                             "type": "array",
                             "uniqueItems": true,
-                            "minItems": 1,
                             "items": {
                               "type": "object",
                               "properties": {
                                 "tagId": {
-                                  "type": "string",
-                                  "minLength": 1
+                                  "type": "string"
                                 },
                                 "tagName": {
-                                  "type": "string",
-                                  "minLength": 1
+                                  "type": "string"
                                 }
                               },
                               "required": [
@@ -214,7 +204,8 @@
                           }
                         },
                         "required": [
-                          "imagePath"
+                          "imagePath",
+                          "tags"
                         ]
                       }
                     }
