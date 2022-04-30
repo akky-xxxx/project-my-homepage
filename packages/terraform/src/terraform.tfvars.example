@@ -28,3 +28,8 @@ run_strapi = {
   concurrency : "5",
   env_test : "test1234",
 }
+
+storage_strapi = {
+  name : ""
+  location : "ASIA"
+}

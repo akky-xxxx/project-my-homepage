@@ -134,3 +134,8 @@ resource "google_cloud_run_service_iam_policy" "no_auth-strapi" {
 
   policy_data = data.google_iam_policy.no_auth.policy_data
 }
+
+resource "google_storage_bucket" "strapi" {
+  name     = lookup(var.storage_strapi, "name")
+  location = lookup(var.storage_strapi, "location")
+}
