@@ -33,3 +33,9 @@ storage_strapi = {
   name : ""
   location : "ASIA"
 }
+
+db_strapi = {
+  version: "MYSQL_8_0"
+  name: ""
+  user: ""
+}

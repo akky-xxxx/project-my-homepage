@@ -7,6 +7,14 @@ terraform {
   }
 }
 
+resource "random_id" "id" {
+  byte_length = 4
+}
+
+locals {
+  db_instance = "strapi-db-instance-${random_id.id.hex}"
+}
+
 provider "google" {
   credentials = file("${var.credentials}.json")
 
@@ -138,4 +146,24 @@ resource "google_cloud_run_service_iam_policy" "no_auth-strapi" {
 resource "google_storage_bucket" "strapi" {
   name     = lookup(var.storage_strapi, "name")
   location = lookup(var.storage_strapi, "location")
+}
+
+resource "google_sql_database_instance" "db_instance-strapi" {
+  name             = local.db_instance
+  region           = var.region
+  database_version = lookup(var.db_strapi, "version")
+
+  settings {
+    tier = "db-f1-micro"
+  }
+}
+
+resource "google_sql_database" "db-strapi" {
+  name     = lookup(var.db_strapi, "name")
+  instance = google_sql_database_instance.db_instance-strapi.name
+}
+
+resource "google_sql_user" "users" {
+  name     = lookup(var.db_strapi, "user")
+  instance = google_sql_database_instance.db_instance-strapi.name
 }
