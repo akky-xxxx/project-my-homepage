@@ -1,0 +1,26 @@
+{
+  "name": "terraform",
+  "main": "index.js",
+  "scripts": {
+    "check-all": "npm-run-all fix -p lint -s test",
+    "dev:apply": "cd src && terraform apply -var-file dev.tfvars",
+    "dev:destroy": "cd src && terraform destroy -var-file dev.tfvars",
+    "dev:plan": "cd src && terraform plan -var-file dev.tfvars",
+    "dev:reset": "cd src && terraform destroy -var-file dev.tfvars && terraform apply -var-file dev.tfvars",
+    "fix": "run-p fix:*",
+    "fix:pack": "fixpack",
+    "fix:tf": "cd src && terraform fmt",
+    "lint": "run-p lint:*",
+    "lint:pack": "fixpack --dryRun",
+    "lint:tf:fmt": "cd src && terraform fmt -check",
+    "lint:tf:validate": "cd src && terraform validate",
+    "test": "run-s test:*",
+    "test:dev": "yarn dev:plan"
+  },
+  "devDependencies": {
+    "fixpack": "^4.0.0",
+    "npm-run-all": "^4.1.5"
+  },
+  "version": "1.0.0",
+  "license": "MIT"
+}
