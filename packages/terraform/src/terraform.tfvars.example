@@ -1,0 +1,41 @@
+region      = "asia-northeast1"
+credentials = ""
+project_id  = ""
+
+run_client = {
+  name : "",
+  registry : "",
+  memory : "1Gi",
+  cpu : "1000m",
+  concurrency : "5",
+  env_test : "test1234",
+}
+
+run_sg_server = {
+  name : "",
+  registry : "",
+  memory : "1Gi",
+  cpu : "1000m",
+  concurrency : "5",
+  env_test : "test1234",
+}
+
+run_strapi = {
+  name : "",
+  registry : "",
+  memory : "1Gi",
+  cpu : "1000m",
+  concurrency : "5",
+  env_test : "test1234",
+}
+
+storage_strapi = {
+  name : ""
+  location : "ASIA"
+}
+
+db_strapi = {
+  version: "MYSQL_8_0"
+  name: ""
+  user: ""
+}
