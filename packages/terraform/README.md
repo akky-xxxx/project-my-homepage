@@ -10,3 +10,4 @@
 | dev:apply   | apply as dev             |
 | dev:destroy | destroy as dev           |
 | dev:reset   | destroy and apply as dev |
+| test        | run all plan             |

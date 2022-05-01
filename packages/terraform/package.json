@@ -2,7 +2,7 @@
   "name": "terraform",
   "main": "index.js",
   "scripts": {
-    "check-all": "npm-run-all fix -p lint",
+    "check-all": "npm-run-all fix -p lint -s test",
     "dev:apply": "cd src && terraform apply -var-file dev.tfvars",
     "dev:destroy": "cd src && terraform destroy -var-file dev.tfvars",
     "dev:plan": "cd src && terraform plan -var-file dev.tfvars",
@@ -13,7 +13,9 @@
     "lint": "run-p lint:*",
     "lint:pack": "fixpack --dryRun",
     "lint:tf:fmt": "cd src && terraform fmt -check",
-    "lint:tf:validate": "cd src && terraform validate"
+    "lint:tf:validate": "cd src && terraform validate",
+    "test": "run-s test:*",
+    "test:dev": "yarn dev:plan"
   },
   "devDependencies": {
     "fixpack": "^4.0.0",
