@@ -13,6 +13,13 @@ resource "random_id" "id" {
 
 locals {
   db_instance = "strapi-db-instance-${random_id.id.hex}"
+  strapi = {
+    storage_bucket_name = lookup(var.storage_strapi, "name")
+    storage_base_url    = "https://storage.googleapis.com/${lookup(var.storage_strapi, "name")}"
+    db_socket           = "${var.project_id}:${var.region}:${local.db_instance}"
+    db_name             = lookup(var.db_strapi, "name")
+    db_username         = lookup(var.db_strapi, "user")
+  }
 }
 
 provider "google" {
@@ -102,8 +109,48 @@ resource "google_cloud_run_service" "strapi" {
         }
 
         env {
-          name  = "TEST"
-          value = lookup(var.run_strapi, "env_test")
+          name  = "APP_KEYS"
+          value = lookup(var.run_strapi, "app_keys")
+        }
+
+        env {
+          name  = "JWT_SECRET"
+          value = lookup(var.run_strapi, "jwt_secret")
+        }
+
+        env {
+          name  = "API_TOKEN_SALT"
+          value = lookup(var.run_strapi, "api_token_salt")
+        }
+
+        env {
+          name  = "ADMIN_JWT_SECRET"
+          value = lookup(var.run_strapi, "admin_jwt_secret")
+        }
+
+        env {
+          name  = "CLOUD_STORAGE_BUCKET_NAME"
+          value = lookup(local.strapi, "storage_bucket_name")
+        }
+
+        env {
+          name  = "CLOUD_STORAGE_BASE_URL"
+          value = lookup(local.strapi, "storage_base_url")
+        }
+
+        env {
+          name  = "CLOUD_SQL_SOCKET"
+          value = lookup(local.strapi, "db_socket")
+        }
+
+        env {
+          name  = "CLOUD_SQL_NAME"
+          value = lookup(local.strapi, "db_name")
+        }
+
+        env {
+          name  = "CLOUD_SQL_USERNAME"
+          value = lookup(local.strapi, "db_username")
         }
       }
     }

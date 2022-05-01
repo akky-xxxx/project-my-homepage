@@ -26,7 +26,10 @@ run_strapi = {
   memory : "1Gi",
   cpu : "1000m",
   concurrency : "5",
-  env_test : "test1234",
+  app_keys : "",
+  jwt_secret : "",
+  api_token_salt : "",
+  admin_jwt_secret : "",
 }
 
 storage_strapi = {
