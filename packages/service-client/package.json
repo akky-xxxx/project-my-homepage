@@ -45,11 +45,11 @@
     "axios": "^0.27.2",
     "common-icons": "0.1.0",
     "common-types": "0.1.0",
-    "module-sg-server": "0.1.0",
     "next": "12.1.5",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-responsive-carousel": "^3.2.23",
+    "service-sg-server": "0.1.0",
     "styled-components": "^5.3.5"
   },
   "devDependencies": {
