@@ -118,6 +118,28 @@
         "operationId": "get-api-photo-gallery",
         "description": "for photo-gallery page"
       }
+    },
+    "/api/tags": {
+      "get": {
+        "summary": "Get all tags",
+        "tags": [
+          "SG"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/tags_GET_res"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-api-tags",
+        "description": "for tags page"
+      }
     }
   },
   "components": {
@@ -295,6 +317,71 @@
         },
         "required": [
           "cards"
+        ]
+      },
+      "tags_GET_res": {
+        "description": "",
+        "type": "object",
+        "x-examples": {
+          "example": {
+            "tags": [
+              {
+                "tagName": "tag1",
+                "tagId": "tagId1",
+                "imagePath": "http://placehold.jp/3d4070/ffffff/2000x1000.png?text=image1",
+                "imageNum": 10
+              },
+              {
+                "tagName": "tag2",
+                "tagId": "tagId2",
+                "imagePath": "http://placehold.jp/3d4070/ffffff/2000x1000.png?text=image2",
+                "imageNum": 10000
+              },
+              {
+                "tagName": "tag3",
+                "tagId": "tagId3",
+                "imagePath": "http://placehold.jp/3d4070/ffffff/2000x1000.png?text=image3",
+                "imageNum": 10000000
+              }
+            ]
+          }
+        },
+        "properties": {
+          "tags": {
+            "type": "array",
+            "uniqueItems": true,
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "properties": {
+                "tagName": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "tagId": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "imagePath": {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "^https?:\\/\\/"
+                },
+                "imageNum": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "tagName",
+                "tagId",
+                "imagePath",
+                "imageNum"
+              ]
+            }
+          }
+        },
+        "required": [
+          "tags"
         ]
       }
     },
