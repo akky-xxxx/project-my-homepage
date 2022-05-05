@@ -187,8 +187,9 @@ resource "google_cloud_run_service_iam_policy" "no_auth-strapi" {
 }
 
 resource "google_storage_bucket" "strapi" {
-  name     = lookup(var.storage_strapi, "name")
-  location = lookup(var.storage_strapi, "location")
+  name          = lookup(var.storage_strapi, "name")
+  location      = lookup(var.storage_strapi, "location")
+  force_destroy = true
 }
 
 resource "google_sql_database_instance" "db_instance-strapi" {
