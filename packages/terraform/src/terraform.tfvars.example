@@ -41,4 +41,5 @@ db_strapi = {
   version: "MYSQL_8_0"
   name: ""
   user: ""
+  pass: ""
 }
