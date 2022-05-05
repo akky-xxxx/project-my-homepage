@@ -179,6 +179,100 @@ export interface TagsGETResTagsInner {
      */
     'imageNum': number;
 }
+/**
+ * 
+ * @export
+ * @interface TagsIdGETRes
+ */
+export interface TagsIdGETRes {
+    /**
+     * 
+     * @type {string}
+     * @memberof TagsIdGETRes
+     */
+    'tagName': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof TagsIdGETRes
+     */
+    'tagId': string;
+    /**
+     * 
+     * @type {Set<TagsIdGETResImagesInner>}
+     * @memberof TagsIdGETRes
+     */
+    'images': Set<TagsIdGETResImagesInner>;
+}
+/**
+ * 
+ * @export
+ * @interface TagsIdGETResImagesInner
+ */
+export interface TagsIdGETResImagesInner {
+    /**
+     * 
+     * @type {string}
+     * @memberof TagsIdGETResImagesInner
+     */
+    'imagePath': string;
+    /**
+     * 
+     * @type {PhotoGalleryGETResCardsItemsLocation}
+     * @memberof TagsIdGETResImagesInner
+     */
+    'location': PhotoGalleryGETResCardsItemsLocation;
+    /**
+     * 
+     * @type {TagsIdGETResImagesItemsTakenAt}
+     * @memberof TagsIdGETResImagesInner
+     */
+    'takenAt': TagsIdGETResImagesItemsTakenAt;
+    /**
+     * 
+     * @type {Set<TagsIdGETResImagesItemsTagsInner>}
+     * @memberof TagsIdGETResImagesInner
+     */
+    'tags': Set<TagsIdGETResImagesItemsTagsInner>;
+}
+/**
+ * 
+ * @export
+ * @interface TagsIdGETResImagesItemsTagsInner
+ */
+export interface TagsIdGETResImagesItemsTagsInner {
+    /**
+     * 
+     * @type {string}
+     * @memberof TagsIdGETResImagesItemsTagsInner
+     */
+    'tagId': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof TagsIdGETResImagesItemsTagsInner
+     */
+    'tagName': string;
+}
+/**
+ * 
+ * @export
+ * @interface TagsIdGETResImagesItemsTakenAt
+ */
+export interface TagsIdGETResImagesItemsTakenAt {
+    /**
+     * 
+     * @type {string}
+     * @memberof TagsIdGETResImagesItemsTakenAt
+     */
+    'yearMonth': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof TagsIdGETResImagesItemsTakenAt
+     */
+    'viewTakenAt': string;
+}
 
 /**
  * Class01TopApi - axios parameter creator
@@ -361,6 +455,40 @@ export const Class02PhotoGalleryApiAxiosParamCreator = function (configuration?:
                 options: localVarRequestOptions,
             };
         },
+        /**
+         * for tag detail page
+         * @summary Get photos related the tag
+         * @param {string} photoId tag id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getApiTagsId: async (photoId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'photoId' is not null or undefined
+            assertParamExists('getApiTagsId', 'photoId', photoId)
+            const localVarPath = `/api/tags/{photoId}`
+                .replace(`{${"photoId"}}`, encodeURIComponent(String(photoId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
     }
 };
 
@@ -391,6 +519,17 @@ export const Class02PhotoGalleryApiFp = function(configuration?: Configuration) 
             const localVarAxiosArgs = await localVarAxiosParamCreator.getApiTags(options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
+        /**
+         * for tag detail page
+         * @summary Get photos related the tag
+         * @param {string} photoId tag id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getApiTagsId(photoId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<TagsIdGETRes>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getApiTagsId(photoId, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
     }
 };
 
@@ -419,6 +558,16 @@ export const Class02PhotoGalleryApiFactory = function (configuration?: Configura
         getApiTags(options?: any): AxiosPromise<TagsGETRes> {
             return localVarFp.getApiTags(options).then((request) => request(axios, basePath));
         },
+        /**
+         * for tag detail page
+         * @summary Get photos related the tag
+         * @param {string} photoId tag id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getApiTagsId(photoId: string, options?: any): AxiosPromise<TagsIdGETRes> {
+            return localVarFp.getApiTagsId(photoId, options).then((request) => request(axios, basePath));
+        },
     };
 };
 
@@ -445,6 +594,16 @@ export interface Class02PhotoGalleryApiInterface {
      * @memberof Class02PhotoGalleryApiInterface
      */
     getApiTags(options?: AxiosRequestConfig): AxiosPromise<TagsGETRes>;
+
+    /**
+     * for tag detail page
+     * @summary Get photos related the tag
+     * @param {string} photoId tag id
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof Class02PhotoGalleryApiInterface
+     */
+    getApiTagsId(photoId: string, options?: AxiosRequestConfig): AxiosPromise<TagsIdGETRes>;
 
 }
 
@@ -475,6 +634,18 @@ export class Class02PhotoGalleryApi extends BaseAPI implements Class02PhotoGalle
      */
     public getApiTags(options?: AxiosRequestConfig) {
         return Class02PhotoGalleryApiFp(this.configuration).getApiTags(options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * for tag detail page
+     * @summary Get photos related the tag
+     * @param {string} photoId tag id
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof Class02PhotoGalleryApi
+     */
+    public getApiTagsId(photoId: string, options?: AxiosRequestConfig) {
+        return Class02PhotoGalleryApiFp(this.configuration).getApiTagsId(photoId, options).then((request) => request(this.axios, this.basePath));
     }
 }
 
