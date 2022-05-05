@@ -140,6 +140,39 @@
           "02.PhotoGallery"
         ]
       }
+    },
+    "/api/tags/{photoId}": {
+      "parameters": [
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": "photoId",
+          "in": "path",
+          "required": true,
+          "description": "tag id"
+        }
+      ],
+      "get": {
+        "summary": "Get photos related the tag",
+        "tags": [
+          "02.PhotoGallery"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/tagsId_GET_res"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-api-tags-id",
+        "description": "for tag detail page"
+      }
     }
   },
   "components": {
@@ -382,6 +415,165 @@
         },
         "required": [
           "tags"
+        ]
+      },
+      "tagsId_GET_res": {
+        "description": "",
+        "type": "object",
+        "x-examples": {
+          "example": {
+            "tagName": "tag1",
+            "tagId": "tagId1",
+            "images": [
+              {
+                "imagePath": "http://placehold.jp/3d4070/ffffff/2000x1000.png?text=image1",
+                "location": {
+                  "locationId": "locationId1",
+                  "locationName": "locationName1"
+                },
+                "takenAt": {
+                  "yearMonth": "2022-01",
+                  "viewTakenAt": "2022/01/02"
+                },
+                "tags": [
+                  {
+                    "tagId": "tagId1",
+                    "tagName": "tagName1"
+                  },
+                  {
+                    "tagId": "tagId2",
+                    "tagName": "tagName2"
+                  }
+                ]
+              },
+              {
+                "imagePath": "http://placehold.jp/3d4070/ffffff/2000x1000.png?text=image2",
+                "location": {
+                  "locationId": "locationId2",
+                  "locationName": "locationName2"
+                },
+                "takenAt": {
+                  "yearMonth": "2022-01",
+                  "viewTakenAt": "2022/01/02"
+                },
+                "tags": [
+                  {
+                    "tagId": "tagId1",
+                    "tagName": "tagName1"
+                  },
+                  {
+                    "tagId": "tagId2",
+                    "tagName": "tagName2"
+                  }
+                ]
+              },
+              {
+                "imagePath": "http://placehold.jp/3d4070/ffffff/2000x1000.png?text=image3",
+                "location": {
+                  "locationId": "locationId2",
+                  "locationName": "locationName2"
+                },
+                "takenAt": {
+                  "yearMonth": "2022-01",
+                  "viewTakenAt": "2022/01/02"
+                },
+                "tags": []
+              }
+            ]
+          }
+        },
+        "properties": {
+          "tagName": {
+            "type": "string",
+            "minLength": 1
+          },
+          "tagId": {
+            "type": "string",
+            "minLength": 1
+          },
+          "images": {
+            "type": "array",
+            "uniqueItems": true,
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "properties": {
+                "imagePath": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "location": {
+                  "type": "object",
+                  "required": [
+                    "locationId",
+                    "locationName"
+                  ],
+                  "properties": {
+                    "locationId": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "locationName": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  }
+                },
+                "takenAt": {
+                  "type": "object",
+                  "required": [
+                    "yearMonth",
+                    "viewTakenAt"
+                  ],
+                  "properties": {
+                    "yearMonth": {
+                      "type": "string",
+                      "minLength": 1,
+                      "pattern": "^\\d{4}-\\d{2}$"
+                    },
+                    "viewTakenAt": {
+                      "type": "string",
+                      "minLength": 1,
+                      "pattern": "^\\d{4}\\/\\d{2}\\/\\d{2}$"
+                    }
+                  }
+                },
+                "tags": {
+                  "type": "array",
+                  "uniqueItems": true,
+                  "minItems": 1,
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "tagId": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "tagName": {
+                        "type": "string",
+                        "minLength": 1
+                      }
+                    },
+                    "required": [
+                      "tagId",
+                      "tagName"
+                    ]
+                  }
+                }
+              },
+              "required": [
+                "imagePath",
+                "location",
+                "takenAt",
+                "tags"
+              ]
+            }
+          }
+        },
+        "required": [
+          "tagName",
+          "tagId",
+          "images"
         ]
       }
     },
