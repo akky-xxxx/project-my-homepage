@@ -1,4 +1,4 @@
-name: main ci of module-sg-server
+name: main ci of service-sg-server
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
       - develop
       - main
     paths:
-      - 'packages/module-sg-server/**'
+      - 'packages/service-sg-server/**'
   pull_request:
     branches:
       - release/renewal
@@ -15,7 +15,7 @@ on:
       - main
       - feature/*
     paths:
-      - 'packages/module-sg-server/**'
+      - 'packages/service-sg-server/**'
 
 env:
   STRAPI_SERVER: http://localhost:4000
@@ -26,7 +26,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ./packages/module-sg-server
+        working-directory: ./packages/service-sg-server
 
     steps:
       - uses: actions/checkout@v3

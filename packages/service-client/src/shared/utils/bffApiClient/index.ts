@@ -1,5 +1,5 @@
 import axios from "axios"
-import { Configuration, SGApi } from "module-sg-server/out/bffApiClient"
+import { Configuration, SGApi } from "service-sg-server/out/bffApiClient"
 
 const { NEXT_PUBLIC_SG_SERVER } = process.env
 
