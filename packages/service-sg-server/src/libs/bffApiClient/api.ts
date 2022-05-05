@@ -135,12 +135,56 @@ export interface PhotoGalleryGETResCardsItemsTakenAt {
      */
     'viewTakenAt': string;
 }
+/**
+ * 
+ * @export
+ * @interface TagsGETRes
+ */
+export interface TagsGETRes {
+    /**
+     * 
+     * @type {Set<TagsGETResTagsInner>}
+     * @memberof TagsGETRes
+     */
+    'tags': Set<TagsGETResTagsInner>;
+}
+/**
+ * 
+ * @export
+ * @interface TagsGETResTagsInner
+ */
+export interface TagsGETResTagsInner {
+    /**
+     * 
+     * @type {string}
+     * @memberof TagsGETResTagsInner
+     */
+    'tagName': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof TagsGETResTagsInner
+     */
+    'tagId': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof TagsGETResTagsInner
+     */
+    'imagePath': string;
+    /**
+     * 
+     * @type {number}
+     * @memberof TagsGETResTagsInner
+     */
+    'imageNum': number;
+}
 
 /**
- * SGApi - axios parameter creator
+ * Class01TopApi - axios parameter creator
  * @export
  */
-export const SGApiAxiosParamCreator = function (configuration?: Configuration) {
+export const Class01TopApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
         /**
          * for top page
@@ -172,6 +216,91 @@ export const SGApiAxiosParamCreator = function (configuration?: Configuration) {
                 options: localVarRequestOptions,
             };
         },
+    }
+};
+
+/**
+ * Class01TopApi - functional programming interface
+ * @export
+ */
+export const Class01TopApiFp = function(configuration?: Configuration) {
+    const localVarAxiosParamCreator = Class01TopApiAxiosParamCreator(configuration)
+    return {
+        /**
+         * for top page
+         * @summary Get Main Visual Paths
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getApiHome(options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<HomeGETRes>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getApiHome(options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+    }
+};
+
+/**
+ * Class01TopApi - factory interface
+ * @export
+ */
+export const Class01TopApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
+    const localVarFp = Class01TopApiFp(configuration)
+    return {
+        /**
+         * for top page
+         * @summary Get Main Visual Paths
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getApiHome(options?: any): AxiosPromise<HomeGETRes> {
+            return localVarFp.getApiHome(options).then((request) => request(axios, basePath));
+        },
+    };
+};
+
+/**
+ * Class01TopApi - interface
+ * @export
+ * @interface Class01TopApi
+ */
+export interface Class01TopApiInterface {
+    /**
+     * for top page
+     * @summary Get Main Visual Paths
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof Class01TopApiInterface
+     */
+    getApiHome(options?: AxiosRequestConfig): AxiosPromise<HomeGETRes>;
+
+}
+
+/**
+ * Class01TopApi - object-oriented interface
+ * @export
+ * @class Class01TopApi
+ * @extends {BaseAPI}
+ */
+export class Class01TopApi extends BaseAPI implements Class01TopApiInterface {
+    /**
+     * for top page
+     * @summary Get Main Visual Paths
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof Class01TopApi
+     */
+    public getApiHome(options?: AxiosRequestConfig) {
+        return Class01TopApiFp(this.configuration).getApiHome(options).then((request) => request(this.axios, this.basePath));
+    }
+}
+
+
+/**
+ * Class02PhotoGalleryApi - axios parameter creator
+ * @export
+ */
+export const Class02PhotoGalleryApiAxiosParamCreator = function (configuration?: Configuration) {
+    return {
         /**
          * for photo-gallery page
          * @summary Get all photos
@@ -202,26 +331,46 @@ export const SGApiAxiosParamCreator = function (configuration?: Configuration) {
                 options: localVarRequestOptions,
             };
         },
+        /**
+         * for tags page
+         * @summary Get all tags
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getApiTags: async (options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/api/tags`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
     }
 };
 
 /**
- * SGApi - functional programming interface
+ * Class02PhotoGalleryApi - functional programming interface
  * @export
  */
-export const SGApiFp = function(configuration?: Configuration) {
-    const localVarAxiosParamCreator = SGApiAxiosParamCreator(configuration)
+export const Class02PhotoGalleryApiFp = function(configuration?: Configuration) {
+    const localVarAxiosParamCreator = Class02PhotoGalleryApiAxiosParamCreator(configuration)
     return {
-        /**
-         * for top page
-         * @summary Get Main Visual Paths
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async getApiHome(options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<HomeGETRes>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.getApiHome(options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
-        },
         /**
          * for photo-gallery page
          * @summary Get all photos
@@ -232,25 +381,26 @@ export const SGApiFp = function(configuration?: Configuration) {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getApiPhotoGallery(options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
+        /**
+         * for tags page
+         * @summary Get all tags
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getApiTags(options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<TagsGETRes>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getApiTags(options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
     }
 };
 
 /**
- * SGApi - factory interface
+ * Class02PhotoGalleryApi - factory interface
  * @export
  */
-export const SGApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
-    const localVarFp = SGApiFp(configuration)
+export const Class02PhotoGalleryApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
+    const localVarFp = Class02PhotoGalleryApiFp(configuration)
     return {
-        /**
-         * for top page
-         * @summary Get Main Visual Paths
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        getApiHome(options?: any): AxiosPromise<HomeGETRes> {
-            return localVarFp.getApiHome(options).then((request) => request(axios, basePath));
-        },
         /**
          * for photo-gallery page
          * @summary Get all photos
@@ -260,62 +410,71 @@ export const SGApiFactory = function (configuration?: Configuration, basePath?: 
         getApiPhotoGallery(options?: any): AxiosPromise<PhotoGalleryGETRes> {
             return localVarFp.getApiPhotoGallery(options).then((request) => request(axios, basePath));
         },
+        /**
+         * for tags page
+         * @summary Get all tags
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getApiTags(options?: any): AxiosPromise<TagsGETRes> {
+            return localVarFp.getApiTags(options).then((request) => request(axios, basePath));
+        },
     };
 };
 
 /**
- * SGApi - interface
+ * Class02PhotoGalleryApi - interface
  * @export
- * @interface SGApi
+ * @interface Class02PhotoGalleryApi
  */
-export interface SGApiInterface {
-    /**
-     * for top page
-     * @summary Get Main Visual Paths
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof SGApiInterface
-     */
-    getApiHome(options?: AxiosRequestConfig): AxiosPromise<HomeGETRes>;
-
+export interface Class02PhotoGalleryApiInterface {
     /**
      * for photo-gallery page
      * @summary Get all photos
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof SGApiInterface
+     * @memberof Class02PhotoGalleryApiInterface
      */
     getApiPhotoGallery(options?: AxiosRequestConfig): AxiosPromise<PhotoGalleryGETRes>;
+
+    /**
+     * for tags page
+     * @summary Get all tags
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof Class02PhotoGalleryApiInterface
+     */
+    getApiTags(options?: AxiosRequestConfig): AxiosPromise<TagsGETRes>;
 
 }
 
 /**
- * SGApi - object-oriented interface
+ * Class02PhotoGalleryApi - object-oriented interface
  * @export
- * @class SGApi
+ * @class Class02PhotoGalleryApi
  * @extends {BaseAPI}
  */
-export class SGApi extends BaseAPI implements SGApiInterface {
-    /**
-     * for top page
-     * @summary Get Main Visual Paths
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof SGApi
-     */
-    public getApiHome(options?: AxiosRequestConfig) {
-        return SGApiFp(this.configuration).getApiHome(options).then((request) => request(this.axios, this.basePath));
-    }
-
+export class Class02PhotoGalleryApi extends BaseAPI implements Class02PhotoGalleryApiInterface {
     /**
      * for photo-gallery page
      * @summary Get all photos
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof SGApi
+     * @memberof Class02PhotoGalleryApi
      */
     public getApiPhotoGallery(options?: AxiosRequestConfig) {
-        return SGApiFp(this.configuration).getApiPhotoGallery(options).then((request) => request(this.axios, this.basePath));
+        return Class02PhotoGalleryApiFp(this.configuration).getApiPhotoGallery(options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * for tags page
+     * @summary Get all tags
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof Class02PhotoGalleryApi
+     */
+    public getApiTags(options?: AxiosRequestConfig) {
+        return Class02PhotoGalleryApiFp(this.configuration).getApiTags(options).then((request) => request(this.axios, this.basePath));
     }
 }
 
