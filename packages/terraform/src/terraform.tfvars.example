@@ -3,7 +3,7 @@ credentials = ""
 project_id  = ""
 
 run_client = {
-  name : "",
+  name : "service-client",
   registry : "",
   memory : "1Gi",
   cpu : "1000m",
@@ -12,7 +12,7 @@ run_client = {
 }
 
 run_sg_server = {
-  name : "",
+  name : "service-sg-server",
   registry : "",
   memory : "1Gi",
   cpu : "1000m",
@@ -21,10 +21,10 @@ run_sg_server = {
 }
 
 run_strapi = {
-  name : "",
+  name : "service-strapi",
   registry : "",
-  memory : "1Gi",
-  cpu : "1000m",
+  memory : "2Gi",
+  cpu : "4000m",
   concurrency : "5",
   app_keys : "",
   jwt_secret : "",
@@ -38,8 +38,8 @@ storage_strapi = {
 }
 
 db_strapi = {
-  version: "MYSQL_8_0"
-  name: ""
-  user: ""
-  pass: ""
+  version : "MYSQL_8_0"
+  name : ""
+  user : ""
+  pass : ""
 }
