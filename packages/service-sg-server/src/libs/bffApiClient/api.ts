@@ -37,6 +37,50 @@ export interface HomeGETRes {
 /**
  * 
  * @export
+ * @interface LocationsGETRes
+ */
+export interface LocationsGETRes {
+    /**
+     * 
+     * @type {Set<LocationsGETResLocationsInner>}
+     * @memberof LocationsGETRes
+     */
+    'locations': Set<LocationsGETResLocationsInner>;
+}
+/**
+ * 
+ * @export
+ * @interface LocationsGETResLocationsInner
+ */
+export interface LocationsGETResLocationsInner {
+    /**
+     * 
+     * @type {string}
+     * @memberof LocationsGETResLocationsInner
+     */
+    'locationName': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof LocationsGETResLocationsInner
+     */
+    'locationId': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof LocationsGETResLocationsInner
+     */
+    'imagePath': string;
+    /**
+     * 
+     * @type {number}
+     * @memberof LocationsGETResLocationsInner
+     */
+    'imageNum': number;
+}
+/**
+ * 
+ * @export
  * @interface PhotoGalleryGETRes
  */
 export interface PhotoGalleryGETRes {
@@ -396,6 +440,36 @@ export class Class01TopApi extends BaseAPI implements Class01TopApiInterface {
 export const Class02PhotoGalleryApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
         /**
+         * for locations page
+         * @summary Get locations
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getApiLocations: async (options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/api/locations`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
          * for photo-gallery page
          * @summary Get all photos
          * @param {*} [options] Override http request option.
@@ -500,6 +574,16 @@ export const Class02PhotoGalleryApiFp = function(configuration?: Configuration) 
     const localVarAxiosParamCreator = Class02PhotoGalleryApiAxiosParamCreator(configuration)
     return {
         /**
+         * for locations page
+         * @summary Get locations
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getApiLocations(options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<LocationsGETRes>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getApiLocations(options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
          * for photo-gallery page
          * @summary Get all photos
          * @param {*} [options] Override http request option.
@@ -541,6 +625,15 @@ export const Class02PhotoGalleryApiFactory = function (configuration?: Configura
     const localVarFp = Class02PhotoGalleryApiFp(configuration)
     return {
         /**
+         * for locations page
+         * @summary Get locations
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getApiLocations(options?: any): AxiosPromise<LocationsGETRes> {
+            return localVarFp.getApiLocations(options).then((request) => request(axios, basePath));
+        },
+        /**
          * for photo-gallery page
          * @summary Get all photos
          * @param {*} [options] Override http request option.
@@ -578,6 +671,15 @@ export const Class02PhotoGalleryApiFactory = function (configuration?: Configura
  */
 export interface Class02PhotoGalleryApiInterface {
     /**
+     * for locations page
+     * @summary Get locations
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof Class02PhotoGalleryApiInterface
+     */
+    getApiLocations(options?: AxiosRequestConfig): AxiosPromise<LocationsGETRes>;
+
+    /**
      * for photo-gallery page
      * @summary Get all photos
      * @param {*} [options] Override http request option.
@@ -614,6 +716,17 @@ export interface Class02PhotoGalleryApiInterface {
  * @extends {BaseAPI}
  */
 export class Class02PhotoGalleryApi extends BaseAPI implements Class02PhotoGalleryApiInterface {
+    /**
+     * for locations page
+     * @summary Get locations
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof Class02PhotoGalleryApi
+     */
+    public getApiLocations(options?: AxiosRequestConfig) {
+        return Class02PhotoGalleryApiFp(this.configuration).getApiLocations(options).then((request) => request(this.axios, this.basePath));
+    }
+
     /**
      * for photo-gallery page
      * @summary Get all photos

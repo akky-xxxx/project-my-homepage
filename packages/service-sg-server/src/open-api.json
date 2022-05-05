@@ -173,6 +173,28 @@
         "operationId": "get-api-tags-id",
         "description": "for tag detail page"
       }
+    },
+    "/api/locations": {
+      "get": {
+        "summary": "Get locations",
+        "tags": [
+          "02.PhotoGallery"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/locations_GET_res"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-api-locations",
+        "description": "for locations page"
+      }
     }
   },
   "components": {
@@ -575,6 +597,69 @@
           "tagId",
           "images"
         ]
+      },
+      "locations_GET_res": {
+        "description": "",
+        "type": "object",
+        "properties": {
+          "locations": {
+            "type": "array",
+            "uniqueItems": true,
+            "minItems": 1,
+            "items": {
+              "required": [
+                "locationName",
+                "locationId",
+                "imagePath",
+                "imageNum"
+              ],
+              "properties": {
+                "locationName": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "locationId": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "imagePath": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "imageNum": {
+                  "type": "number"
+                }
+              }
+            }
+          }
+        },
+        "required": [
+          "locations"
+        ],
+        "x-examples": {
+          "example-1": {
+            "locations": [
+              {
+                "locationName": "location1",
+                "locationId": "locationId1",
+                "imagePath": "http://placehold.jp/3d4070/ffffff/2000x1000.png?text=location1",
+                "imageNum": 10
+              },
+              {
+                "locationName": "location2",
+                "locationId": "locationId2",
+                "imagePath": "http://placehold.jp/3d4070/ffffff/2000x1000.png?text=location2",
+                "imageNum": 10000
+              },
+              {
+                "locationName": "location3",
+                "locationId": "location3",
+                "imagePath": "http://placehold.jp/3d4070/ffffff/2000x1000.png?text=location3",
+                "imageNum": 10000000
+              }
+            ]
+          }
+        }
       }
     },
     "responses": {},
