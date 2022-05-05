@@ -11,10 +11,6 @@ resource "random_id" "id" {
   byte_length = 4
 }
 
-locals {
-  db_instance = "strapi-db-instance-${random_id.id.hex}"
-}
-
 provider "google" {
   credentials = file("${var.credentials}.json")
 
@@ -102,9 +98,56 @@ resource "google_cloud_run_service" "strapi" {
         }
 
         env {
-          name  = "TEST"
-          value = lookup(var.run_strapi, "env_test")
+          name  = "APP_KEYS"
+          value = lookup(var.run_strapi, "app_keys")
         }
+
+        env {
+          name  = "JWT_SECRET"
+          value = lookup(var.run_strapi, "jwt_secret")
+        }
+
+        env {
+          name  = "API_TOKEN_SALT"
+          value = lookup(var.run_strapi, "api_token_salt")
+        }
+
+        env {
+          name  = "ADMIN_JWT_SECRET"
+          value = lookup(var.run_strapi, "admin_jwt_secret")
+        }
+
+        env {
+          name  = "CLOUD_STORAGE_BUCKET_NAME"
+          value = google_storage_bucket.strapi.name
+        }
+
+        env {
+          name  = "CLOUD_SQL_SOCKET"
+          value = "/cloudsql/${google_sql_database_instance.db_instance-strapi.connection_name}"
+        }
+
+        env {
+          name  = "CLOUD_SQL_NAME"
+          value = google_sql_database.db-strapi.name
+        }
+
+        env {
+          name  = "CLOUD_SQL_USERNAME"
+          value = google_sql_user.users.name
+        }
+
+        env {
+          name  = "CLOUD_SQL_PASSWORD"
+          value = google_sql_user.users.password
+        }
+      }
+    }
+
+    metadata {
+      annotations = {
+        "run.googleapis.com/cloudsql-instances" = google_sql_database_instance.db_instance-strapi.connection_name
+        "run.googleapis.com/client-name"        = "terraform"
       }
     }
   }
@@ -144,12 +187,13 @@ resource "google_cloud_run_service_iam_policy" "no_auth-strapi" {
 }
 
 resource "google_storage_bucket" "strapi" {
-  name     = lookup(var.storage_strapi, "name")
-  location = lookup(var.storage_strapi, "location")
+  name          = lookup(var.storage_strapi, "name")
+  location      = lookup(var.storage_strapi, "location")
+  force_destroy = true
 }
 
 resource "google_sql_database_instance" "db_instance-strapi" {
-  name             = local.db_instance
+  name             = "strapi-db-instance-${random_id.id.hex}"
   region           = var.region
   database_version = lookup(var.db_strapi, "version")
 
@@ -165,5 +209,6 @@ resource "google_sql_database" "db-strapi" {
 
 resource "google_sql_user" "users" {
   name     = lookup(var.db_strapi, "user")
+  password = lookup(var.db_strapi, "pass")
   instance = google_sql_database_instance.db_instance-strapi.name
 }
