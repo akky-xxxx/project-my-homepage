@@ -30,7 +30,7 @@
         "operationId": "get-api-home",
         "description": "for top page",
         "tags": [
-          "SG"
+          "01.Top"
         ]
       },
       "parameters": []
@@ -38,9 +38,6 @@
     "/api/photo-gallery": {
       "get": {
         "summary": "Get all photos",
-        "tags": [
-          "SG"
-        ],
         "responses": {
           "200": {
             "description": "OK",
@@ -116,15 +113,15 @@
           }
         },
         "operationId": "get-api-photo-gallery",
-        "description": "for photo-gallery page"
+        "description": "for photo-gallery page",
+        "tags": [
+          "02.PhotoGallery"
+        ]
       }
     },
     "/api/tags": {
       "get": {
         "summary": "Get all tags",
-        "tags": [
-          "SG"
-        ],
         "responses": {
           "200": {
             "description": "OK",
@@ -138,7 +135,10 @@
           }
         },
         "operationId": "get-api-tags",
-        "description": "for tags page"
+        "description": "for tags page",
+        "tags": [
+          "02.PhotoGallery"
+        ]
       }
     }
   },
@@ -390,7 +390,10 @@
   },
   "tags": [
     {
-      "name": "SG"
+      "name": "01.Top"
+    },
+    {
+      "name": "02.PhotoGallery"
     }
   ]
 }
