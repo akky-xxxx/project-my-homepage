@@ -7,7 +7,8 @@
     "dev": "strapi develop",
     "start": "strapi start",
     "build": "strapi build",
-    "strapi": "strapi"
+    "local-prod": "NODE_ENV=production yarn build && NODE_ENV=production yarn start",
+    "deploy": "gcloud run deploy --source ."
   },
   "devDependencies": {},
   "dependencies": {
