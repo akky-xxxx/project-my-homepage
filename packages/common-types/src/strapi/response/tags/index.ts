@@ -3,7 +3,7 @@ import { StrapiItem, StrapiResponse } from "../common"
 
 type Tag = TagBase & {
   photos: {
-    data: StrapiItem<PhotoBase>[]
+    data: StrapiItem<Omit<PhotoBase, "photo">>[]
   }
 }
 
