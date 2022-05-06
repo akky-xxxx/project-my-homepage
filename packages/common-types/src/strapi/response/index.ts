@@ -1,6 +1,7 @@
 export * from "./baseScheme"
 export * from "./common"
 export * from "./locations"
+export * from "./locationsId"
 export * from "./photos"
 export * from "./tags"
 export * from "./tagsId"
