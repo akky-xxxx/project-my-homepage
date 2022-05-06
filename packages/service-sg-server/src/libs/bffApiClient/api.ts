@@ -281,12 +281,6 @@ export interface TagsIdGETRes {
     'tagName': string;
     /**
      * 
-     * @type {string}
-     * @memberof TagsIdGETRes
-     */
-    'tagId': string;
-    /**
-     * 
      * @type {Set<TagsIdGETResImagesInner>}
      * @memberof TagsIdGETRes
      */

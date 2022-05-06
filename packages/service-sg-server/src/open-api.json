@@ -478,7 +478,6 @@
         "x-examples": {
           "example": {
             "tagName": "tag1",
-            "tagId": "tagId1",
             "images": [
               {
                 "imagePath": "http://placehold.jp/3d4070/ffffff/2000x1000.png?text=image1",
@@ -539,10 +538,6 @@
         },
         "properties": {
           "tagName": {
-            "type": "string",
-            "minLength": 1
-          },
-          "tagId": {
             "type": "string",
             "minLength": 1
           },
@@ -627,7 +622,6 @@
         },
         "required": [
           "tagName",
-          "tagId",
           "images"
         ]
       },
