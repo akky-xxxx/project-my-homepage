@@ -610,15 +610,15 @@ export const Class02PhotoGalleryApiAxiosParamCreator = function (configuration?:
         /**
          * for tag detail page
          * @summary Get photos related the tag
-         * @param {string} photoId tag id
+         * @param {string} tagId tag id
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getApiTagsId: async (photoId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'photoId' is not null or undefined
-            assertParamExists('getApiTagsId', 'photoId', photoId)
-            const localVarPath = `/api/tags/{photoId}`
-                .replace(`{${"photoId"}}`, encodeURIComponent(String(photoId)));
+        getApiTagsId: async (tagId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'tagId' is not null or undefined
+            assertParamExists('getApiTagsId', 'tagId', tagId)
+            const localVarPath = `/api/tags/{tagId}`
+                .replace(`{${"tagId"}}`, encodeURIComponent(String(tagId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -695,12 +695,12 @@ export const Class02PhotoGalleryApiFp = function(configuration?: Configuration) 
         /**
          * for tag detail page
          * @summary Get photos related the tag
-         * @param {string} photoId tag id
+         * @param {string} tagId tag id
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getApiTagsId(photoId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<TagsIdGETRes>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.getApiTagsId(photoId, options);
+        async getApiTagsId(tagId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<TagsIdGETRes>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getApiTagsId(tagId, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
     }
@@ -753,12 +753,12 @@ export const Class02PhotoGalleryApiFactory = function (configuration?: Configura
         /**
          * for tag detail page
          * @summary Get photos related the tag
-         * @param {string} photoId tag id
+         * @param {string} tagId tag id
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getApiTagsId(photoId: string, options?: any): AxiosPromise<TagsIdGETRes> {
-            return localVarFp.getApiTagsId(photoId, options).then((request) => request(axios, basePath));
+        getApiTagsId(tagId: string, options?: any): AxiosPromise<TagsIdGETRes> {
+            return localVarFp.getApiTagsId(tagId, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -809,12 +809,12 @@ export interface Class02PhotoGalleryApiInterface {
     /**
      * for tag detail page
      * @summary Get photos related the tag
-     * @param {string} photoId tag id
+     * @param {string} tagId tag id
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof Class02PhotoGalleryApiInterface
      */
-    getApiTagsId(photoId: string, options?: AxiosRequestConfig): AxiosPromise<TagsIdGETRes>;
+    getApiTagsId(tagId: string, options?: AxiosRequestConfig): AxiosPromise<TagsIdGETRes>;
 
 }
 
@@ -873,13 +873,13 @@ export class Class02PhotoGalleryApi extends BaseAPI implements Class02PhotoGalle
     /**
      * for tag detail page
      * @summary Get photos related the tag
-     * @param {string} photoId tag id
+     * @param {string} tagId tag id
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof Class02PhotoGalleryApi
      */
-    public getApiTagsId(photoId: string, options?: AxiosRequestConfig) {
-        return Class02PhotoGalleryApiFp(this.configuration).getApiTagsId(photoId, options).then((request) => request(this.axios, this.basePath));
+    public getApiTagsId(tagId: string, options?: AxiosRequestConfig) {
+        return Class02PhotoGalleryApiFp(this.configuration).getApiTagsId(tagId, options).then((request) => request(this.axios, this.basePath));
     }
 }
 
