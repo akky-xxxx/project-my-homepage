@@ -3,7 +3,7 @@ import { StrapiItem, StrapiResponse } from "../common"
 
 type Location = LocationBase & {
   photos: {
-    data: StrapiItem<PhotoBase>[]
+    data: StrapiItem<Omit<PhotoBase, "photo">>[]
   }
 }
 
