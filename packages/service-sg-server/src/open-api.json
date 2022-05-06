@@ -141,13 +141,13 @@
         ]
       }
     },
-    "/api/tags/{photoId}": {
+    "/api/tags/{tagId}": {
       "parameters": [
         {
           "schema": {
             "type": "string"
           },
-          "name": "photoId",
+          "name": "tagId",
           "in": "path",
           "required": true,
           "description": "tag id"
