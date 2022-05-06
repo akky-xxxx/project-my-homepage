@@ -195,6 +195,39 @@
         "operationId": "get-api-locations",
         "description": "for locations page"
       }
+    },
+    "/api/locations/{locationId}": {
+      "parameters": [
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": "locationId",
+          "in": "path",
+          "required": true,
+          "description": "location id"
+        }
+      ],
+      "get": {
+        "summary": "Get photos related the location",
+        "tags": [
+          "02.PhotoGallery"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/locationsId_GET_res"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-api-locations-locationId",
+        "description": "for location detail page"
+      }
     }
   },
   "components": {
@@ -660,6 +693,130 @@
             ]
           }
         }
+      },
+      "locationsId_GET_res": {
+        "description": "",
+        "type": "object",
+        "x-examples": {
+          "example": {
+            "locationName": "location1",
+            "images": [
+              {
+                "imagePath": "http://placehold.jp/3d4070/ffffff/2000x1000.png?text=location1",
+                "takenAt": {
+                  "yearMonth": "2022-01",
+                  "viewTakenAt": "2022/01/02"
+                },
+                "tags": [
+                  {
+                    "tagId": "tagId1",
+                    "tagName": "tagName1"
+                  },
+                  {
+                    "tagId": "tagId2",
+                    "tagName": "tagName2"
+                  }
+                ]
+              },
+              {
+                "imagePath": "http://placehold.jp/3d4070/ffffff/2000x1000.png?text=location2",
+                "takenAt": {
+                  "yearMonth": "2022-01",
+                  "viewTakenAt": "2022/01/02"
+                },
+                "tags": [
+                  {
+                    "tagId": "tagId1",
+                    "tagName": "tagName1"
+                  },
+                  {
+                    "tagId": "tagId2",
+                    "tagName": "tagName2"
+                  }
+                ]
+              },
+              {
+                "imagePath": "http://placehold.jp/3d4070/ffffff/2000x1000.png?text=location3",
+                "takenAt": {
+                  "yearMonth": "2022-01",
+                  "viewTakenAt": "2022/01/02"
+                },
+                "tags": []
+              }
+            ]
+          }
+        },
+        "properties": {
+          "locationName": {
+            "type": "string",
+            "minLength": 1
+          },
+          "images": {
+            "type": "array",
+            "uniqueItems": true,
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "properties": {
+                "imagePath": {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "^https?://"
+                },
+                "takenAt": {
+                  "type": "object",
+                  "required": [
+                    "yearMonth",
+                    "viewTakenAt"
+                  ],
+                  "properties": {
+                    "yearMonth": {
+                      "type": "string",
+                      "minLength": 1,
+                      "pattern": "^\\d{4}-\\d{2}$"
+                    },
+                    "viewTakenAt": {
+                      "type": "string",
+                      "minLength": 1,
+                      "pattern": "^\\d{4}\\/\\d{2}\\/\\d{2}$"
+                    }
+                  }
+                },
+                "tags": {
+                  "type": "array",
+                  "uniqueItems": true,
+                  "minItems": 1,
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "tagId": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "tagName": {
+                        "type": "string",
+                        "minLength": 1
+                      }
+                    },
+                    "required": [
+                      "tagId",
+                      "tagName"
+                    ]
+                  }
+                }
+              },
+              "required": [
+                "imagePath",
+                "takenAt",
+                "tags"
+              ]
+            }
+          }
+        },
+        "required": [
+          "locationName",
+          "images"
+        ]
       }
     },
     "responses": {},
