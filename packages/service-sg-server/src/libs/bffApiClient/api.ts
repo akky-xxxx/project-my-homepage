@@ -316,6 +316,12 @@ export interface TagsIdGETResImagesInner {
      * @type {string}
      * @memberof TagsIdGETResImagesInner
      */
+    'imageId': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof TagsIdGETResImagesInner
+     */
     'imagePath': string;
     /**
      * 
@@ -335,6 +341,12 @@ export interface TagsIdGETResImagesInner {
      * @memberof TagsIdGETResImagesInner
      */
     'tags': Array<PhotoGalleryGETResCardsItemsTagsInner>;
+    /**
+     * 
+     * @type {string}
+     * @memberof TagsIdGETResImagesInner
+     */
+    ''?: string;
 }
 /**
  * 
