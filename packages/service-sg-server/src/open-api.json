@@ -545,10 +545,10 @@
           },
           "images": {
             "type": "array",
-            "uniqueItems": true,
-            "minItems": 1,
+            "uniqueItems": false,
             "items": {
               "type": "object",
+              "additionalProperties": false,
               "properties": {
                 "imagePath": {
                   "type": "string",
@@ -593,10 +593,10 @@
                 },
                 "tags": {
                   "type": "array",
-                  "uniqueItems": true,
-                  "minItems": 1,
+                  "uniqueItems": false,
                   "items": {
                     "type": "object",
+                    "additionalProperties": false,
                     "properties": {
                       "tagId": {
                         "type": "string",
