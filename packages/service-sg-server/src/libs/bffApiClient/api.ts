@@ -42,10 +42,10 @@ export interface HomeGETRes {
 export interface LocationsGETRes {
     /**
      * 
-     * @type {Set<LocationsGETResLocationsInner>}
+     * @type {Array<LocationsGETResLocationsInner>}
      * @memberof LocationsGETRes
      */
-    'locations': Set<LocationsGETResLocationsInner>;
+    'locations': Array<LocationsGETResLocationsInner>;
 }
 /**
  * 
