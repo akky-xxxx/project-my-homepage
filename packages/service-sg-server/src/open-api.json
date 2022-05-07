@@ -482,6 +482,7 @@
             "tagName": "tag1",
             "images": [
               {
+                "imageId": "image1",
                 "imagePath": "http://placehold.jp/3d4070/ffffff/2000x1000.png?text=image1",
                 "location": {
                   "locationId": "locationId1",
@@ -503,6 +504,7 @@
                 ]
               },
               {
+                "imageId": "image2",
                 "imagePath": "http://placehold.jp/3d4070/ffffff/2000x1000.png?text=image2",
                 "location": {
                   "locationId": "locationId2",
@@ -524,6 +526,7 @@
                 ]
               },
               {
+                "imageId": "image3",
                 "imagePath": "http://placehold.jp/3d4070/ffffff/2000x1000.png?text=image3",
                 "location": {
                   "locationId": "locationId2",
@@ -550,6 +553,9 @@
               "type": "object",
               "additionalProperties": false,
               "properties": {
+                "imageId": {
+                  "type": "string"
+                },
                 "imagePath": {
                   "type": "string",
                   "minLength": 1,
@@ -612,9 +618,13 @@
                       "tagName"
                     ]
                   }
+                },
+                "": {
+                  "type": "string"
                 }
               },
               "required": [
+                "imageId",
                 "imagePath",
                 "location",
                 "takenAt",
