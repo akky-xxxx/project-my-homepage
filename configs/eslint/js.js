@@ -22,6 +22,7 @@ module.exports = {
         "no-undefined": OFF,
         "no-console": OFF,
         "max-lines": OFF,
+        "max-statements": OFF,
         complexity: OFF,
       },
     },
