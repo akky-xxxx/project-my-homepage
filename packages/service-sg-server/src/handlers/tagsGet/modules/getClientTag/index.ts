@@ -1,8 +1,8 @@
 import { Tags } from "common-types"
 import { TagsGETRes } from "../../../../libs/bffApiClient"
+import { ExtractImagePathMain } from "../../../../shared/utils/extractImagePath"
+import { extractPhotoId } from "../../../../shared/utils/extractPhotoId"
 import { getFileUrl } from "../../../../shared/utils/getFileUrl"
-import { ExtractImagePathMain } from "../extractImagePath"
-import { extractPhotoId } from "./modules/extractPhotoId"
 
 type GetClientTagMain = (
   tag: Tags["data"][number],

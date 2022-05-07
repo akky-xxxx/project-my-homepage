@@ -1,49 +1,51 @@
-import { Photos, Tags } from "common-types"
-import { TagsGETRes } from "../../libs/bffApiClient"
+import { Locations, Photos } from "common-types"
+import { LocationsGETRes } from "../../libs/bffApiClient"
 import { apiHandler } from "../../shared/utils/apiHandler"
 import { extractImagePath } from "../../shared/utils/extractImagePath"
 import { isErrorStatus } from "../../shared/utils/isErrorStatus"
 import { infoLogger, loggerWrapper } from "../../shared/utils/logger"
 import { strapiApiClient } from "../../shared/utils/strapiApiClient"
 import { Query } from "./const"
-import { getClientTag } from "./modules/getClientTag"
+import { getClientLocations } from "./modules/getClientLocations"
 
-type TagsGetBase = () => Promise<TagsGETRes>
+type LocationsGetBase = () => Promise<LocationsGETRes>
 
 // 再参照等最小限にしているため
 // eslint-disable-next-line max-statements
-const tagsGetBase: TagsGetBase = async () => {
+const locationsGetBase: LocationsGetBase = async () => {
   // TODO: trace id を設定したら定義場所を変更
   const infoLoggerMain = loggerWrapper(infoLogger, { traceId: "-" })
 
-  const [photosRes, tagsRes] = await Promise.all([
+  const [photosRes, locationsRes] = await Promise.all([
     strapiApiClient.get<Photos>(`/photos?${Query}`),
-    strapiApiClient.get<Tags>(`/tags?${Query}`),
+    strapiApiClient.get<Locations>(`/locations?${Query}`),
   ])
 
   if (isErrorStatus(photosRes.status)) {
     throw new Error(`photos status: ${photosRes.status}`)
   }
 
-  if (isErrorStatus(tagsRes.status)) {
-    throw new Error(`tags status: ${tagsRes.status}`)
+  if (isErrorStatus(locationsRes.status)) {
+    throw new Error(`locations status: ${locationsRes.status}`)
   }
 
-  const getClientTagMain = getClientTag(extractImagePath(photosRes.data.data))
+  const getClientLocationsMain = getClientLocations(
+    extractImagePath(photosRes.data.data),
+  )
 
   // .filter(Boolean) で false を除去している
   // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
-  const tags: TagsGETRes["tags"] = tagsRes.data.data
-    .map(getClientTagMain)
-    .filter(Boolean) as TagsGETRes["tags"]
+  const locations: LocationsGETRes["locations"] = locationsRes.data.data
+    .map(getClientLocationsMain)
+    .filter(Boolean) as LocationsGETRes["locations"]
 
-  const response = { tags }
+  const response = { locations }
   infoLoggerMain({
-    endpoint: "GET: /api/tags",
+    endpoint: "GET: /api/locations",
     response,
   })
 
   return response
 }
 
-export const tagsGet = apiHandler(tagsGetBase)
+export const locationsGet = apiHandler(locationsGetBase)
