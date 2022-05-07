@@ -231,10 +231,10 @@ export interface PhotoGalleryGETResCardsItemsTakenAt {
 export interface TagsGETRes {
     /**
      * 
-     * @type {Set<TagsGETResTagsInner>}
+     * @type {Array<TagsGETResTagsInner>}
      * @memberof TagsGETRes
      */
-    'tags': Set<TagsGETResTagsInner>;
+    'tags': Array<TagsGETResTagsInner>;
 }
 /**
  * 
