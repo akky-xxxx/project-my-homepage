@@ -117,10 +117,29 @@ export interface LocationsIdGETResImagesInner {
     'takenAt': TagsIdGETResImagesItemsTakenAt;
     /**
      * 
-     * @type {Set<TagsIdGETResImagesItemsTagsInner>}
+     * @type {Set<LocationsIdGETResImagesItemsTagsInner>}
      * @memberof LocationsIdGETResImagesInner
      */
-    'tags': Set<TagsIdGETResImagesItemsTagsInner>;
+    'tags': Set<LocationsIdGETResImagesItemsTagsInner>;
+}
+/**
+ * 
+ * @export
+ * @interface LocationsIdGETResImagesItemsTagsInner
+ */
+export interface LocationsIdGETResImagesItemsTagsInner {
+    /**
+     * 
+     * @type {string}
+     * @memberof LocationsIdGETResImagesItemsTagsInner
+     */
+    'tagId': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof LocationsIdGETResImagesItemsTagsInner
+     */
+    'tagName': string;
 }
 /**
  * 
@@ -281,10 +300,10 @@ export interface TagsIdGETRes {
     'tagName': string;
     /**
      * 
-     * @type {Set<TagsIdGETResImagesInner>}
+     * @type {Array<TagsIdGETResImagesInner>}
      * @memberof TagsIdGETRes
      */
-    'images': Set<TagsIdGETResImagesInner>;
+    'images': Array<TagsIdGETResImagesInner>;
 }
 /**
  * 
@@ -312,29 +331,10 @@ export interface TagsIdGETResImagesInner {
     'takenAt': TagsIdGETResImagesItemsTakenAt;
     /**
      * 
-     * @type {Set<TagsIdGETResImagesItemsTagsInner>}
+     * @type {Array<PhotoGalleryGETResCardsItemsTagsInner>}
      * @memberof TagsIdGETResImagesInner
      */
-    'tags': Set<TagsIdGETResImagesItemsTagsInner>;
-}
-/**
- * 
- * @export
- * @interface TagsIdGETResImagesItemsTagsInner
- */
-export interface TagsIdGETResImagesItemsTagsInner {
-    /**
-     * 
-     * @type {string}
-     * @memberof TagsIdGETResImagesItemsTagsInner
-     */
-    'tagId': string;
-    /**
-     * 
-     * @type {string}
-     * @memberof TagsIdGETResImagesItemsTagsInner
-     */
-    'tagName': string;
+    'tags': Array<PhotoGalleryGETResCardsItemsTagsInner>;
 }
 /**
  * 
