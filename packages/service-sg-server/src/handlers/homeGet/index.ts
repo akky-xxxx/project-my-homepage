@@ -1,10 +1,7 @@
-import { Photos } from "common-types"
 import { HomeGETRes } from "../../libs/bffApiClient"
-import { Query } from "../../shared/const/strapi/Query"
 import { apiHandler } from "../../shared/utils/apiHandler"
-import { isErrorStatus } from "../../shared/utils/isErrorStatus"
 import { infoLogger, loggerWrapper } from "../../shared/utils/logger"
-import { strapiApiClient } from "../../shared/utils/strapiApiClient"
+import { strapiApiMethods } from "../../shared/utils/strapiApiMethods"
 import { getMainVisualPath } from "./modules/getMainVisualPath"
 
 type ResponseBody = {
@@ -14,16 +11,9 @@ type ResponseBody = {
 type HomeGetBase = () => Promise<HomeGETRes>
 
 const homeGetBase: HomeGetBase = async () => {
-  const {
-    data: { data },
-    status,
-  } = await strapiApiClient.get<Photos>(`/photos?${Query}`)
+  const photos = await strapiApiMethods.getPhotos()
 
-  if (isErrorStatus(status)) {
-    throw new Error(`status: ${status}`)
-  }
-
-  const mainVisualPaths = data.map(getMainVisualPath)
+  const mainVisualPaths = photos.map(getMainVisualPath)
   const infoLoggerMain = loggerWrapper(infoLogger, { traceId: "-" })
 
   const response: ResponseBody = {

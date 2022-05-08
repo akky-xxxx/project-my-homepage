@@ -1,41 +1,26 @@
-import { Locations, Photos } from "common-types"
 import { LocationsGETRes } from "../../libs/bffApiClient"
-import { Query } from "../../shared/const/strapi/Query"
 import { apiHandler } from "../../shared/utils/apiHandler"
 import { extractImagePath } from "../../shared/utils/extractImagePath"
-import { isErrorStatus } from "../../shared/utils/isErrorStatus"
 import { infoLogger, loggerWrapper } from "../../shared/utils/logger"
-import { strapiApiClient } from "../../shared/utils/strapiApiClient"
+import { strapiApiMethods } from "../../shared/utils/strapiApiMethods"
 import { getClientLocations } from "./modules/getClientLocations"
 
 type LocationsGetBase = () => Promise<LocationsGETRes>
 
-// 再参照等最小限にしているため
-// eslint-disable-next-line max-statements
 const locationsGetBase: LocationsGetBase = async () => {
   // TODO: trace id を設定したら定義場所を変更
   const infoLoggerMain = loggerWrapper(infoLogger, { traceId: "-" })
 
   const [photosRes, locationsRes] = await Promise.all([
-    strapiApiClient.get<Photos>(`/photos?${Query}`),
-    strapiApiClient.get<Locations>(`/locations?${Query}`),
+    strapiApiMethods.getPhotos(),
+    strapiApiMethods.getLocations(),
   ])
 
-  if (isErrorStatus(photosRes.status)) {
-    throw new Error(`photos status: ${photosRes.status}`)
-  }
-
-  if (isErrorStatus(locationsRes.status)) {
-    throw new Error(`locations status: ${locationsRes.status}`)
-  }
-
-  const getClientLocationsMain = getClientLocations(
-    extractImagePath(photosRes.data.data),
-  )
+  const getClientLocationsMain = getClientLocations(extractImagePath(photosRes))
 
   // .filter(Boolean) で false を除去している
   // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
-  const locations: LocationsGETRes["locations"] = locationsRes.data.data
+  const locations: LocationsGETRes["locations"] = locationsRes
     .map(getClientLocationsMain)
     .filter(Boolean) as LocationsGETRes["locations"]
 
