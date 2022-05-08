@@ -92,10 +92,10 @@ export interface LocationsIdGETRes {
     'locationName': string;
     /**
      * 
-     * @type {Set<LocationsIdGETResImagesInner>}
+     * @type {Array<LocationsIdGETResImagesInner>}
      * @memberof LocationsIdGETRes
      */
-    'images': Set<LocationsIdGETResImagesInner>;
+    'images': Array<LocationsIdGETResImagesInner>;
 }
 /**
  * 
@@ -117,10 +117,10 @@ export interface LocationsIdGETResImagesInner {
     'takenAt': TagsIdGETResImagesItemsTakenAt;
     /**
      * 
-     * @type {Set<LocationsIdGETResImagesItemsTagsInner>}
+     * @type {Array<LocationsIdGETResImagesItemsTagsInner>}
      * @memberof LocationsIdGETResImagesInner
      */
-    'tags': Set<LocationsIdGETResImagesItemsTagsInner>;
+    'tags': Array<LocationsIdGETResImagesItemsTagsInner>;
 }
 /**
  * 

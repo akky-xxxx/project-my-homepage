@@ -14,7 +14,13 @@ module.exports = {
   },
   overrides: [
     {
-      files: ["**/*.test.ts", "**/*.test.tsx", "**/*.stories.tsx", "**/spy.ts", "**/spy/**"],
+      files: [
+        "**/*.test.ts",
+        "**/*.test.tsx",
+        "**/*.stories.tsx",
+        "**/spy.ts",
+        "**/spy/**",
+      ],
       rules: {
         "max-nested-callbacks": OFF,
         "no-magic-numbers": OFF,

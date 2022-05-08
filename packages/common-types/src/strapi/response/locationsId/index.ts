@@ -7,4 +7,4 @@ type Location = LocationBase & {
   }
 }
 
-export type LocationsId = StrapiResponse<StrapiItem<Location>[]>
+export type LocationsId = StrapiResponse<StrapiItem<Location>>
