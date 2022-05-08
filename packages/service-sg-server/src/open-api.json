@@ -336,7 +336,6 @@
               "properties": {
                 "imagePath": {
                   "type": "string",
-                  "minLength": 1,
                   "pattern": "^https?:\\/\\/"
                 },
                 "location": {
@@ -347,12 +346,10 @@
                   ],
                   "properties": {
                     "locationId": {
-                      "type": "string",
-                      "minLength": 1
+                      "type": "string"
                     },
                     "locationName": {
-                      "type": "string",
-                      "minLength": 1
+                      "type": "string"
                     }
                   }
                 },
@@ -381,12 +378,10 @@
                     "additionalProperties": false,
                     "properties": {
                       "tagId": {
-                        "type": "string",
-                        "minLength": 1
+                        "type": "string"
                       },
                       "tagName": {
-                        "type": "string",
-                        "minLength": 1
+                        "type": "string"
                       }
                     },
                     "required": [
@@ -445,16 +440,13 @@
               "additionalProperties": false,
               "properties": {
                 "tagName": {
-                  "type": "string",
-                  "minLength": 1
+                  "type": "string"
                 },
                 "tagId": {
-                  "type": "string",
-                  "minLength": 1
+                  "type": "string"
                 },
                 "imagePath": {
                   "type": "string",
-                  "minLength": 1,
                   "pattern": "^https?:\\/\\/"
                 },
                 "imageNum": {
@@ -482,6 +474,7 @@
             "tagName": "tag1",
             "images": [
               {
+                "imageId": "image1",
                 "imagePath": "http://placehold.jp/3d4070/ffffff/2000x1000.png?text=image1",
                 "location": {
                   "locationId": "locationId1",
@@ -503,6 +496,7 @@
                 ]
               },
               {
+                "imageId": "image2",
                 "imagePath": "http://placehold.jp/3d4070/ffffff/2000x1000.png?text=image2",
                 "location": {
                   "locationId": "locationId2",
@@ -524,6 +518,7 @@
                 ]
               },
               {
+                "imageId": "image3",
                 "imagePath": "http://placehold.jp/3d4070/ffffff/2000x1000.png?text=image3",
                 "location": {
                   "locationId": "locationId2",
@@ -540,19 +535,20 @@
         },
         "properties": {
           "tagName": {
-            "type": "string",
-            "minLength": 1
+            "type": "string"
           },
           "images": {
             "type": "array",
-            "uniqueItems": true,
-            "minItems": 1,
+            "uniqueItems": false,
             "items": {
               "type": "object",
+              "additionalProperties": false,
               "properties": {
+                "imageId": {
+                  "type": "string"
+                },
                 "imagePath": {
                   "type": "string",
-                  "minLength": 1,
                   "pattern": "^https?:\\/\\/"
                 },
                 "location": {
@@ -563,12 +559,10 @@
                   ],
                   "properties": {
                     "locationId": {
-                      "type": "string",
-                      "minLength": 1
+                      "type": "string"
                     },
                     "locationName": {
-                      "type": "string",
-                      "minLength": 1
+                      "type": "string"
                     }
                   }
                 },
@@ -581,30 +575,26 @@
                   "properties": {
                     "yearMonth": {
                       "type": "string",
-                      "minLength": 1,
                       "pattern": "^\\d{4}-\\d{2}$"
                     },
                     "viewTakenAt": {
                       "type": "string",
-                      "minLength": 1,
                       "pattern": "^\\d{4}\\/\\d{2}\\/\\d{2}$"
                     }
                   }
                 },
                 "tags": {
                   "type": "array",
-                  "uniqueItems": true,
-                  "minItems": 1,
+                  "uniqueItems": false,
                   "items": {
                     "type": "object",
+                    "additionalProperties": false,
                     "properties": {
                       "tagId": {
-                        "type": "string",
-                        "minLength": 1
+                        "type": "string"
                       },
                       "tagName": {
-                        "type": "string",
-                        "minLength": 1
+                        "type": "string"
                       }
                     },
                     "required": [
@@ -612,9 +602,13 @@
                       "tagName"
                     ]
                   }
+                },
+                "": {
+                  "type": "string"
                 }
               },
               "required": [
+                "imageId",
                 "imagePath",
                 "location",
                 "takenAt",
@@ -664,16 +658,13 @@
               "additionalProperties": false,
               "properties": {
                 "locationName": {
-                  "type": "string",
-                  "minLength": 1
+                  "type": "string"
                 },
                 "locationId": {
-                  "type": "string",
-                  "minLength": 1
+                  "type": "string"
                 },
                 "imagePath": {
                   "type": "string",
-                  "minLength": 1,
                   "pattern": "^https?:\\/\\/"
                 },
                 "imageNum": {
@@ -747,8 +738,7 @@
         },
         "properties": {
           "locationName": {
-            "type": "string",
-            "minLength": 1
+            "type": "string"
           },
           "images": {
             "type": "array",
@@ -759,7 +749,6 @@
               "properties": {
                 "imagePath": {
                   "type": "string",
-                  "minLength": 1,
                   "pattern": "^https?:\\/\\/"
                 },
                 "takenAt": {
@@ -771,12 +760,10 @@
                   "properties": {
                     "yearMonth": {
                       "type": "string",
-                      "minLength": 1,
                       "pattern": "^\\d{4}-\\d{2}$"
                     },
                     "viewTakenAt": {
                       "type": "string",
-                      "minLength": 1,
                       "pattern": "^\\d{4}\\/\\d{2}\\/\\d{2}$"
                     }
                   }
@@ -789,12 +776,10 @@
                     "type": "object",
                     "properties": {
                       "tagId": {
-                        "type": "string",
-                        "minLength": 1
+                        "type": "string"
                       },
                       "tagName": {
-                        "type": "string",
-                        "minLength": 1
+                        "type": "string"
                       }
                     },
                     "required": [
