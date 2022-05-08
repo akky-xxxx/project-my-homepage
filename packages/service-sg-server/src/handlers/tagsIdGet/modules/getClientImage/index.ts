@@ -5,8 +5,8 @@ import { TagsIdGETRes } from "../../../../libs/bffApiClient"
 import { DateFnsFormats } from "../../../../shared/const/DateFns"
 import { Strapi } from "../../../../shared/const/strapi"
 import { getFileUrl } from "../../../../shared/utils/getFileUrl"
+import { getTargetTags } from "../../../../shared/utils/getTargetTags"
 import { hasSameId } from "../../../../shared/utils/hasSameId"
-import { getTargetTags } from "./modules/getTargetTags"
 
 const { VIEW, YEAR_MONTH } = DateFnsFormats
 
