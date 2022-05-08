@@ -37,6 +37,7 @@
     "express": "^4.18.1",
     "express-openapi-validator": "^4.13.7",
     "helmet": "^5.0.2",
+    "nanoid": "^3.3.4",
     "qs": "^6.10.3",
     "remeda": "^0.0.32",
     "winston": "^3.7.2"
