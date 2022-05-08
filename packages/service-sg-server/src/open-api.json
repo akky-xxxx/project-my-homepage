@@ -336,7 +336,6 @@
               "properties": {
                 "imagePath": {
                   "type": "string",
-                  "minLength": 1,
                   "pattern": "^https?:\\/\\/"
                 },
                 "location": {
@@ -347,12 +346,10 @@
                   ],
                   "properties": {
                     "locationId": {
-                      "type": "string",
-                      "minLength": 1
+                      "type": "string"
                     },
                     "locationName": {
-                      "type": "string",
-                      "minLength": 1
+                      "type": "string"
                     }
                   }
                 },
@@ -381,12 +378,10 @@
                     "additionalProperties": false,
                     "properties": {
                       "tagId": {
-                        "type": "string",
-                        "minLength": 1
+                        "type": "string"
                       },
                       "tagName": {
-                        "type": "string",
-                        "minLength": 1
+                        "type": "string"
                       }
                     },
                     "required": [
@@ -445,16 +440,13 @@
               "additionalProperties": false,
               "properties": {
                 "tagName": {
-                  "type": "string",
-                  "minLength": 1
+                  "type": "string"
                 },
                 "tagId": {
-                  "type": "string",
-                  "minLength": 1
+                  "type": "string"
                 },
                 "imagePath": {
                   "type": "string",
-                  "minLength": 1,
                   "pattern": "^https?:\\/\\/"
                 },
                 "imageNum": {
@@ -543,8 +535,7 @@
         },
         "properties": {
           "tagName": {
-            "type": "string",
-            "minLength": 1
+            "type": "string"
           },
           "images": {
             "type": "array",
@@ -558,7 +549,6 @@
                 },
                 "imagePath": {
                   "type": "string",
-                  "minLength": 1,
                   "pattern": "^https?:\\/\\/"
                 },
                 "location": {
@@ -569,12 +559,10 @@
                   ],
                   "properties": {
                     "locationId": {
-                      "type": "string",
-                      "minLength": 1
+                      "type": "string"
                     },
                     "locationName": {
-                      "type": "string",
-                      "minLength": 1
+                      "type": "string"
                     }
                   }
                 },
@@ -587,12 +575,10 @@
                   "properties": {
                     "yearMonth": {
                       "type": "string",
-                      "minLength": 1,
                       "pattern": "^\\d{4}-\\d{2}$"
                     },
                     "viewTakenAt": {
                       "type": "string",
-                      "minLength": 1,
                       "pattern": "^\\d{4}\\/\\d{2}\\/\\d{2}$"
                     }
                   }
@@ -605,12 +591,10 @@
                     "additionalProperties": false,
                     "properties": {
                       "tagId": {
-                        "type": "string",
-                        "minLength": 1
+                        "type": "string"
                       },
                       "tagName": {
-                        "type": "string",
-                        "minLength": 1
+                        "type": "string"
                       }
                     },
                     "required": [
@@ -674,16 +658,13 @@
               "additionalProperties": false,
               "properties": {
                 "locationName": {
-                  "type": "string",
-                  "minLength": 1
+                  "type": "string"
                 },
                 "locationId": {
-                  "type": "string",
-                  "minLength": 1
+                  "type": "string"
                 },
                 "imagePath": {
                   "type": "string",
-                  "minLength": 1,
                   "pattern": "^https?:\\/\\/"
                 },
                 "imageNum": {
@@ -757,8 +738,7 @@
         },
         "properties": {
           "locationName": {
-            "type": "string",
-            "minLength": 1
+            "type": "string"
           },
           "images": {
             "type": "array",
@@ -769,7 +749,6 @@
               "properties": {
                 "imagePath": {
                   "type": "string",
-                  "minLength": 1,
                   "pattern": "^https?:\\/\\/"
                 },
                 "takenAt": {
@@ -781,12 +760,10 @@
                   "properties": {
                     "yearMonth": {
                       "type": "string",
-                      "minLength": 1,
                       "pattern": "^\\d{4}-\\d{2}$"
                     },
                     "viewTakenAt": {
                       "type": "string",
-                      "minLength": 1,
                       "pattern": "^\\d{4}\\/\\d{2}\\/\\d{2}$"
                     }
                   }
@@ -799,12 +776,10 @@
                     "type": "object",
                     "properties": {
                       "tagId": {
-                        "type": "string",
-                        "minLength": 1
+                        "type": "string"
                       },
                       "tagName": {
-                        "type": "string",
-                        "minLength": 1
+                        "type": "string"
                       }
                     },
                     "required": [
