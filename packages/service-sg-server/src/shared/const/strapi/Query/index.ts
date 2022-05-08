@@ -1,5 +1,5 @@
 import { stringify } from "qs"
-import { Populate } from "../../../shared/const/Populate"
+import { Populate } from "../../Populate"
 
 export const Query = stringify({
   ...Populate,

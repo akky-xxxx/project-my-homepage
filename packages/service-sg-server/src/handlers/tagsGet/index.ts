@@ -1,11 +1,11 @@
 import { Photos, Tags } from "common-types"
 import { TagsGETRes } from "../../libs/bffApiClient"
+import { Query } from "../../shared/const/strapi/Query"
 import { apiHandler } from "../../shared/utils/apiHandler"
 import { extractImagePath } from "../../shared/utils/extractImagePath"
 import { isErrorStatus } from "../../shared/utils/isErrorStatus"
 import { infoLogger, loggerWrapper } from "../../shared/utils/logger"
 import { strapiApiClient } from "../../shared/utils/strapiApiClient"
-import { Query } from "./const"
 import { getClientTag } from "./modules/getClientTag"
 
 type TagsGetBase = () => Promise<TagsGETRes>

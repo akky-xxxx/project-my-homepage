@@ -1,10 +1,10 @@
 import { Photos } from "common-types"
 import { HomeGETRes } from "../../libs/bffApiClient"
+import { Query } from "../../shared/const/strapi/Query"
 import { apiHandler } from "../../shared/utils/apiHandler"
 import { isErrorStatus } from "../../shared/utils/isErrorStatus"
 import { infoLogger, loggerWrapper } from "../../shared/utils/logger"
 import { strapiApiClient } from "../../shared/utils/strapiApiClient"
-import { Query } from "./const"
 import { getMainVisualPath } from "./modules/getMainVisualPath"
 
 type ResponseBody = {

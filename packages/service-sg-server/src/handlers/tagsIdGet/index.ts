@@ -1,11 +1,11 @@
 import { Locations, Photos, Tags, TagsId } from "common-types"
 import { Request } from "express"
 import { TagsIdGETRes } from "../../libs/bffApiClient"
+import { Query } from "../../shared/const/strapi/Query"
 import { apiHandler } from "../../shared/utils/apiHandler"
 import { isErrorStatus } from "../../shared/utils/isErrorStatus"
 import { infoLogger, loggerWrapper } from "../../shared/utils/logger"
 import { strapiApiClient } from "../../shared/utils/strapiApiClient"
-import { Query } from "./const"
 import { getClientImage } from "./modules/getClientImage"
 
 type TagsIdGetBase = (req: Request<{ tagId: string }>) => Promise<TagsIdGETRes>
