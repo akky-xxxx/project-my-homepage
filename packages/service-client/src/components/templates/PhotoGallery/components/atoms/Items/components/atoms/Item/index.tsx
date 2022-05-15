@@ -1,8 +1,8 @@
 import { Fragment, ReactNode, VFC } from "react"
 import styled from "styled-components"
-import { Margins } from "../../../../../../shared/const/Margins"
-import { MediaQuery } from "../../../../../../shared/const/MediaQuery"
-import { VoidFunction } from "../../../../../../shared/types/react"
+import { Margins } from "../../../../../../../../../shared/const/Margins"
+import { MediaQuery } from "../../../../../../../../../shared/const/MediaQuery"
+import { VoidFunction } from "../../../../../../../../../shared/types/react"
 
 const { Margin4 } = Margins
 
