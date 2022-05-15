@@ -5,9 +5,9 @@ project_id  = ""
 run_client = {
   name : "service-client",
   registry : "",
-  memory : "1Gi",
-  cpu : "1000m",
-  concurrency : "5",
+  memory : "2Gi",
+  cpu : "4000m",
+  concurrency : "10",
   env_test : "test1234",
 }
 
