@@ -17,8 +17,8 @@ resource "google_cloud_run_service" "client" {
         }
 
         env {
-          name  = "TEST"
-          value = lookup(var.run_client, "env_test")
+          name  = "NEXT_PUBLIC_SG_SERVER"
+          value = google_cloud_run_service.sg_server.status[0].url
         }
       }
     }
