@@ -23,8 +23,13 @@ resource "google_cloud_run_service" "sg_server" {
         }
 
         env {
-          name  = "TEST"
-          value = lookup(var.run_sg_server, "env_test")
+          name  = "STRAPI_SERVER"
+          value = google_cloud_run_service.strapi.status[0].url
+        }
+
+        env {
+          name  = "STRAPI_API_TOKEN"
+          value = ""
         }
       }
     }
