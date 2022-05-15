@@ -3,7 +3,7 @@
   "main": "index.js",
   "scripts": {
     "build": "run-s build:compile build:staging build:commit",
-    "build:commit": "git commit -m \"feat(module-sg-server): output bffApiClient@`date \"+%Y-%m-%d %H:%M:%S\"`\"",
+    "build:commit": "git commit -m \"feat(service-sg-server): output bffApiClient@`date \"+%Y-%m-%d %H:%M:%S\"`\"",
     "build:compile": "tsc ./src/libs/bffApiClient/*.ts --noEmit false --outDir out/bffApiClient --declaration",
     "build:staging": "git add ./out",
     "check-all": "npm-run-all fix -p spell-check type-check -s test",
