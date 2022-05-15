@@ -88,7 +88,7 @@ resource "google_storage_bucket" "strapi" {
 
 resource "google_sql_database_instance" "db_instance-strapi" {
   name             = "strapi-db-instance-${random_id.id.hex}"
-  region           = var.region
+  region           = "us-central1"
   database_version = lookup(var.db_strapi, "version")
 
   settings {
