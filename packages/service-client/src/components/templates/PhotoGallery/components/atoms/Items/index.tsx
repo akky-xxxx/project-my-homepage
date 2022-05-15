@@ -1,13 +1,12 @@
 import { ComponentProps, VFC } from "react"
 import { omit } from "remeda"
 import styled from "styled-components"
-import { Common } from "../../../../../../shared/const/Common"
 import { Margins } from "../../../../../../shared/const/Margins"
 import { MediaQuery } from "../../../../../../shared/const/MediaQuery"
 import { Item } from "../Item"
+import { useHasHover } from "../../../../../../shared/utils/useHasHover"
 
 const { Margin8, Margin16 } = Margins
-const { HasHover } = Common
 
 type ImageProps = Omit<
   ComponentProps<typeof Item>,
@@ -24,6 +23,7 @@ type ItemsProps = {
 
 export const Items: VFC<ItemsProps> = (props) => {
   const { images } = props
+  const hasHover = useHasHover()
 
   return (
     <ItemsWrapper>
@@ -39,7 +39,7 @@ export const Items: VFC<ItemsProps> = (props) => {
           <ItemWrapper key={imageId}>
             <Item
               {...itemProps}
-              hasHover={HasHover}
+              hasHover={hasHover}
               handleClickImage={handleClickImage}
               title={locationName}
               subTitle={takenAt}
