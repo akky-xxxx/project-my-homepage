@@ -13,6 +13,7 @@ module.exports = ({ env }) => ({
       providerOptions: {
         bucketName: env('CLOUD_STORAGE_BUCKET_NAME'),
         baseUrl: `https://storage.googleapis.com/${env('CLOUD_STORAGE_BUCKET_NAME')}`,
+        basePath: "files",
         uniform: false,
         // serviceAccount, // TODO: local 確認用
       },
