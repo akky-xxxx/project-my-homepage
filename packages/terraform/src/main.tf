@@ -153,15 +153,6 @@ resource "google_cloud_run_service" "strapi" {
   }
 }
 
-data "google_iam_policy" "no_auth" {
-  binding {
-    role = "roles/run.invoker"
-    members = [
-      "allUsers",
-    ]
-  }
-}
-
 resource "google_cloud_run_service_iam_policy" "no_auth-client" {
   location = google_cloud_run_service.client.location
   project  = google_cloud_run_service.client.project
