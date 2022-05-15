@@ -149,98 +149,53 @@ export interface LocationsIdGETResImagesItemsTagsInner {
 export interface PhotoGalleryGETRes {
     /**
      * 
-     * @type {Array<PhotoGalleryGETResCardsInner>}
+     * @type {Array<PhotoGalleryGETResImagesInner>}
      * @memberof PhotoGalleryGETRes
      */
-    'cards': Array<PhotoGalleryGETResCardsInner>;
+    'images': Array<PhotoGalleryGETResImagesInner>;
 }
 /**
  * 
  * @export
- * @interface PhotoGalleryGETResCardsInner
+ * @interface PhotoGalleryGETResImagesInner
  */
-export interface PhotoGalleryGETResCardsInner {
+export interface PhotoGalleryGETResImagesInner {
     /**
      * 
      * @type {string}
-     * @memberof PhotoGalleryGETResCardsInner
+     * @memberof PhotoGalleryGETResImagesInner
+     */
+    'imageId': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof PhotoGalleryGETResImagesInner
      */
     'imagePath': string;
     /**
      * 
-     * @type {PhotoGalleryGETResCardsItemsLocation}
-     * @memberof PhotoGalleryGETResCardsInner
-     */
-    'location': PhotoGalleryGETResCardsItemsLocation;
-    /**
-     * 
-     * @type {PhotoGalleryGETResCardsItemsTakenAt}
-     * @memberof PhotoGalleryGETResCardsInner
-     */
-    'takenAt': PhotoGalleryGETResCardsItemsTakenAt;
-    /**
-     * 
-     * @type {Array<PhotoGalleryGETResCardsItemsTagsInner>}
-     * @memberof PhotoGalleryGETResCardsInner
-     */
-    'tags': Array<PhotoGalleryGETResCardsItemsTagsInner>;
-}
-/**
- * 
- * @export
- * @interface PhotoGalleryGETResCardsItemsLocation
- */
-export interface PhotoGalleryGETResCardsItemsLocation {
-    /**
-     * 
      * @type {string}
-     * @memberof PhotoGalleryGETResCardsItemsLocation
-     */
-    'locationId': string;
-    /**
-     * 
-     * @type {string}
-     * @memberof PhotoGalleryGETResCardsItemsLocation
+     * @memberof PhotoGalleryGETResImagesInner
      */
     'locationName': string;
-}
-/**
- * 
- * @export
- * @interface PhotoGalleryGETResCardsItemsTagsInner
- */
-export interface PhotoGalleryGETResCardsItemsTagsInner {
     /**
      * 
      * @type {string}
-     * @memberof PhotoGalleryGETResCardsItemsTagsInner
+     * @memberof PhotoGalleryGETResImagesInner
      */
-    'tagId': string;
+    'takenAt': string;
     /**
      * 
-     * @type {string}
-     * @memberof PhotoGalleryGETResCardsItemsTagsInner
+     * @type {number}
+     * @memberof PhotoGalleryGETResImagesInner
      */
-    'tagName': string;
-}
-/**
- * 
- * @export
- * @interface PhotoGalleryGETResCardsItemsTakenAt
- */
-export interface PhotoGalleryGETResCardsItemsTakenAt {
+    'width': number;
     /**
      * 
-     * @type {string}
-     * @memberof PhotoGalleryGETResCardsItemsTakenAt
+     * @type {number}
+     * @memberof PhotoGalleryGETResImagesInner
      */
-    'yearMonth': string;
-    /**
-     * 
-     * @type {string}
-     * @memberof PhotoGalleryGETResCardsItemsTakenAt
-     */
-    'viewTakenAt': string;
+    'height': number;
 }
 /**
  * 
@@ -325,10 +280,10 @@ export interface TagsIdGETResImagesInner {
     'imagePath': string;
     /**
      * 
-     * @type {PhotoGalleryGETResCardsItemsLocation}
+     * @type {TagsIdGETResImagesItemsLocation}
      * @memberof TagsIdGETResImagesInner
      */
-    'location': PhotoGalleryGETResCardsItemsLocation;
+    'location': TagsIdGETResImagesItemsLocation;
     /**
      * 
      * @type {TagsIdGETResImagesItemsTakenAt}
@@ -337,16 +292,54 @@ export interface TagsIdGETResImagesInner {
     'takenAt': TagsIdGETResImagesItemsTakenAt;
     /**
      * 
-     * @type {Array<PhotoGalleryGETResCardsItemsTagsInner>}
+     * @type {Array<TagsIdGETResImagesItemsTagsInner>}
      * @memberof TagsIdGETResImagesInner
      */
-    'tags': Array<PhotoGalleryGETResCardsItemsTagsInner>;
+    'tags': Array<TagsIdGETResImagesItemsTagsInner>;
     /**
      * 
      * @type {string}
      * @memberof TagsIdGETResImagesInner
      */
     ''?: string;
+}
+/**
+ * 
+ * @export
+ * @interface TagsIdGETResImagesItemsLocation
+ */
+export interface TagsIdGETResImagesItemsLocation {
+    /**
+     * 
+     * @type {string}
+     * @memberof TagsIdGETResImagesItemsLocation
+     */
+    'locationId': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof TagsIdGETResImagesItemsLocation
+     */
+    'locationName': string;
+}
+/**
+ * 
+ * @export
+ * @interface TagsIdGETResImagesItemsTagsInner
+ */
+export interface TagsIdGETResImagesItemsTagsInner {
+    /**
+     * 
+     * @type {string}
+     * @memberof TagsIdGETResImagesItemsTagsInner
+     */
+    'tagId': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof TagsIdGETResImagesItemsTagsInner
+     */
+    'tagName': string;
 }
 /**
  * 
@@ -886,6 +879,190 @@ export class Class02PhotoGalleryApi extends BaseAPI implements Class02PhotoGalle
      */
     public getApiTagsId(tagId: string, options?: AxiosRequestConfig) {
         return Class02PhotoGalleryApiFp(this.configuration).getApiTagsId(tagId, options).then((request) => request(this.axios, this.basePath));
+    }
+}
+
+
+/**
+ * SGApi - axios parameter creator
+ * @export
+ */
+export const SGApiAxiosParamCreator = function (configuration?: Configuration) {
+    return {
+        /**
+         * for top page
+         * @summary Get Main Visual Paths
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getApiHome: async (options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/api/home`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * for photo-gallery page
+         * @summary Get all photos
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getApiPhotoGallery: async (options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/api/photo-gallery`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+    }
+};
+
+/**
+ * SGApi - functional programming interface
+ * @export
+ */
+export const SGApiFp = function(configuration?: Configuration) {
+    const localVarAxiosParamCreator = SGApiAxiosParamCreator(configuration)
+    return {
+        /**
+         * for top page
+         * @summary Get Main Visual Paths
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getApiHome(options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<HomeGETRes>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getApiHome(options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * for photo-gallery page
+         * @summary Get all photos
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getApiPhotoGallery(options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PhotoGalleryGETRes>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getApiPhotoGallery(options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+    }
+};
+
+/**
+ * SGApi - factory interface
+ * @export
+ */
+export const SGApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
+    const localVarFp = SGApiFp(configuration)
+    return {
+        /**
+         * for top page
+         * @summary Get Main Visual Paths
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getApiHome(options?: any): AxiosPromise<HomeGETRes> {
+            return localVarFp.getApiHome(options).then((request) => request(axios, basePath));
+        },
+        /**
+         * for photo-gallery page
+         * @summary Get all photos
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getApiPhotoGallery(options?: any): AxiosPromise<PhotoGalleryGETRes> {
+            return localVarFp.getApiPhotoGallery(options).then((request) => request(axios, basePath));
+        },
+    };
+};
+
+/**
+ * SGApi - interface
+ * @export
+ * @interface SGApi
+ */
+export interface SGApiInterface {
+    /**
+     * for top page
+     * @summary Get Main Visual Paths
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof SGApiInterface
+     */
+    getApiHome(options?: AxiosRequestConfig): AxiosPromise<HomeGETRes>;
+
+    /**
+     * for photo-gallery page
+     * @summary Get all photos
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof SGApiInterface
+     */
+    getApiPhotoGallery(options?: AxiosRequestConfig): AxiosPromise<PhotoGalleryGETRes>;
+
+}
+
+/**
+ * SGApi - object-oriented interface
+ * @export
+ * @class SGApi
+ * @extends {BaseAPI}
+ */
+export class SGApi extends BaseAPI implements SGApiInterface {
+    /**
+     * for top page
+     * @summary Get Main Visual Paths
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof SGApi
+     */
+    public getApiHome(options?: AxiosRequestConfig) {
+        return SGApiFp(this.configuration).getApiHome(options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * for photo-gallery page
+     * @summary Get all photos
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof SGApi
+     */
+    public getApiPhotoGallery(options?: AxiosRequestConfig) {
+        return SGApiFp(this.configuration).getApiPhotoGallery(options).then((request) => request(this.axios, this.basePath));
     }
 }
 
