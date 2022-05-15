@@ -19,33 +19,6 @@ provider "google" {
   zone    = "us-central1-c"
 }
 
-resource "google_cloud_run_service" "client" {
-  name     = lookup(var.run_client, "name")
-  location = var.region
-
-  template {
-    spec {
-      container_concurrency = lookup(var.run_client, "concurrency")
-
-      containers {
-        image = lookup(var.run_client, "registry")
-
-        resources {
-          limits = {
-            memory = lookup(var.run_client, "memory")
-            cpu : lookup(var.run_client, "cpu")
-          }
-        }
-
-        env {
-          name  = "TEST"
-          value = lookup(var.run_client, "env_test")
-        }
-      }
-    }
-  }
-}
-
 resource "google_cloud_run_service" "sg_server" {
   name     = lookup(var.run_sg_server, "name")
   location = var.region
@@ -77,14 +50,6 @@ resource "google_cloud_run_service" "sg_server" {
       }
     }
   }
-}
-
-resource "google_cloud_run_service_iam_policy" "no_auth-client" {
-  location = google_cloud_run_service.client.location
-  project  = google_cloud_run_service.client.project
-  service  = google_cloud_run_service.client.name
-
-  policy_data = data.google_iam_policy.no_auth.policy_data
 }
 
 resource "google_cloud_run_service_iam_policy" "no_auth-sg_server" {
