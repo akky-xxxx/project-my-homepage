@@ -1,8 +1,8 @@
-import { VFC } from "react"
+import { ComponentProps, VFC } from "react"
+import { Items } from "./components/atoms/Items"
 
-// TODO: components 作成後に component の props から定義させる
-type PhotoGalleryTemplateProps = any
+type PhotoGalleryTemplateProps = ComponentProps<typeof Items>
 
-export const PhotoGalleryTemplate: VFC<PhotoGalleryTemplateProps> = () => {
-  return <div>仮</div>
-}
+export const PhotoGalleryTemplate: VFC<PhotoGalleryTemplateProps> = (props) => (
+  <Items {...props} />
+)
