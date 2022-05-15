@@ -1,7 +1,10 @@
-const { FILE_SERVER } = process.env
+import { IsDevelopment } from "../../const/common"
 
-if (!FILE_SERVER) {
-  throw new Error("FILE_SERVER が未定義です")
+const { STRAPI_SERVER } = process.env
+
+if (!STRAPI_SERVER) {
+  throw new Error("STRAPI_SERVER が未定義です")
 }
 
-export const getFileUrl = (filePath: string) => `${FILE_SERVER}${filePath}`
+export const getFileUrl = (filePath: string) =>
+  IsDevelopment ? `${STRAPI_SERVER}${filePath}` : filePath
