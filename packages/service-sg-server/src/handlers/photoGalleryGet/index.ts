@@ -1,9 +1,8 @@
-import { Card, ResponseBody } from "common-types"
 import { PhotoGalleryGETRes } from "../../libs/bffApiClient"
 import { apiHandler } from "../../shared/utils/apiHandler"
 import { infoLogger, loggerWrapper } from "../../shared/utils/logger"
 import { strapiApiMethods } from "../../shared/utils/strapiApiMethods"
-import { getCard } from "./modules/getCard"
+import { getImage } from "./modules/getImage"
 
 type PhotoGalleryGetBase = () => Promise<PhotoGalleryGETRes>
 
@@ -12,9 +11,9 @@ const photoGalleryGetBase: PhotoGalleryGetBase = async () => {
   const infoLoggerMain = loggerWrapper(infoLogger, { traceId: "-" })
   const photos = await strapiApiMethods.getPhotos()
 
-  const cards: Card[] = photos.map(getCard)
+  const images: PhotoGalleryGETRes["images"] = photos.map(getImage)
 
-  const response: ResponseBody = { cards }
+  const response: PhotoGalleryGETRes = { images }
   infoLoggerMain({
     endpoint: "GET: api/photo-gallery",
     response,
