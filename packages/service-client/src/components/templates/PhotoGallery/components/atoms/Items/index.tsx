@@ -3,8 +3,8 @@ import { omit } from "remeda"
 import styled from "styled-components"
 import { Margins } from "../../../../../../shared/const/Margins"
 import { MediaQuery } from "../../../../../../shared/const/MediaQuery"
-import { Item } from "../Item"
 import { useHasHover } from "../../../../../../shared/utils/useHasHover"
+import { Item } from "../Item"
 
 const { Margin8, Margin16 } = Margins
 
