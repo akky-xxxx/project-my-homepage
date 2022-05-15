@@ -8,8 +8,8 @@ type PhotoGalleryTemplatePageProps = ComponentProps<typeof PhotoGalleryTemplate>
 const PhotoGalleryTemplatePage: NextPage<PhotoGalleryTemplatePageProps> = (
   props,
 ) => {
-  const { cards } = props
-  return <PhotoGalleryTemplate cards={cards} />
+  const { images } = props
+  return <PhotoGalleryTemplate images={images} />
 }
 
 export const getStaticProps: GetStaticProps<

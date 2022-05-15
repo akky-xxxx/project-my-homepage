@@ -49,6 +49,7 @@
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-responsive-carousel": "^3.2.23",
+    "remeda": "^0.0.32",
     "service-sg-server": "0.1.0",
     "styled-components": "^5.3.5"
   },

@@ -23,6 +23,7 @@ module.exports = {
     "../../configs/eslint/import",
     "../../configs/eslint/ts",
     "../../configs/eslint/jest",
+    "../../configs/eslint/jsx-a11y",
     "prettier",
   ],
   ignorePatterns: ["**/libs/**/*", "**/coverage/**"],

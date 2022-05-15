@@ -1,9 +1,8 @@
 import { ComponentProps, VFC } from "react"
-import { CardList } from "./components/atoms/CardList"
+import { Items } from "./components/atoms/Items"
 
-type PhotoGalleryTemplateProps = ComponentProps<typeof CardList>
+type PhotoGalleryTemplateProps = ComponentProps<typeof Items>
 
-export const PhotoGalleryTemplate: VFC<PhotoGalleryTemplateProps> = (props) => {
-  const { cards } = props
-  return <CardList cards={cards} />
-}
+export const PhotoGalleryTemplate: VFC<PhotoGalleryTemplateProps> = (props) => (
+  <Items {...props} />
+)

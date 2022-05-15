@@ -1,10 +1,10 @@
 import { ComponentStoryObj, Meta } from "@storybook/react"
 import { ComponentProps } from "react"
-import { DeviceMap } from "../../../shared/const/DeviceMap"
-import { PhotoGalleryTemplate } from "./index"
+import { DeviceMap } from "../../../../../../shared/const/DeviceMap"
+import { Items } from "./index"
 
-type PhotoGalleryType = typeof PhotoGalleryTemplate
-type PhotoGalleryStory = ComponentStoryObj<PhotoGalleryType>
+type ItemsType = typeof Items
+type ItemsStory = ComponentStoryObj<ItemsType>
 
 const counter = () => {
   let count = 0
@@ -19,7 +19,7 @@ type GetImageProperty = (getImagePropertyArguments: {
   width: number
   height: number
   hasHover: boolean
-}) => ComponentProps<PhotoGalleryType>["images"][number]
+}) => ComponentProps<ItemsType>["images"][number]
 const getImageProperty: GetImageProperty = (getImagePropertyArguments) => {
   const { hasHover, height, width } = getImagePropertyArguments
   const imageId = counterMain()
@@ -55,19 +55,19 @@ const SizesNotHasHover = [
   { hasHover: false, height: 100, width: 100 },
 ] as const
 
-const meta: Meta<ComponentProps<PhotoGalleryType>> = {
-  component: PhotoGalleryTemplate,
+const meta: Meta<ComponentProps<ItemsType>> = {
+  component: Items,
 }
 export default meta
 
-export const DefaultHasHover: PhotoGalleryStory = {
+export const DefaultHasHover: ItemsStory = {
   args: {
     images: SizesHasHover.map(getImageProperty),
   },
 }
 
 const Device = "ipad" // TODO: 共通化する
-export const DefaultNotHasHover: PhotoGalleryStory = {
+export const DefaultNotHasHover: ItemsStory = {
   args: {
     images: SizesNotHasHover.map(getImageProperty),
   },

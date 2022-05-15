@@ -75,13 +75,523 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 exports.__esModule = true;
-exports.SGApi = exports.SGApiFactory = exports.SGApiFp = exports.SGApiAxiosParamCreator = void 0;
+exports.SGApi = exports.SGApiFactory = exports.SGApiFp = exports.SGApiAxiosParamCreator = exports.Class02PhotoGalleryApi = exports.Class02PhotoGalleryApiFactory = exports.Class02PhotoGalleryApiFp = exports.Class02PhotoGalleryApiAxiosParamCreator = exports.Class01TopApi = exports.Class01TopApiFactory = exports.Class01TopApiFp = exports.Class01TopApiAxiosParamCreator = void 0;
 var axios_1 = require("axios");
 // Some imports not used depending on template conditions
 // @ts-ignore
 var common_1 = require("./common");
 // @ts-ignore
 var base_1 = require("./base");
+/**
+ * Class01TopApi - axios parameter creator
+ * @export
+ */
+var Class01TopApiAxiosParamCreator = function (configuration) {
+    var _this = this;
+    return {
+        /**
+         * for top page
+         * @summary Get Main Visual Paths
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getApiHome: function (options) {
+            if (options === void 0) { options = {}; }
+            return __awaiter(_this, void 0, void 0, function () {
+                var localVarPath, localVarUrlObj, baseOptions, localVarRequestOptions, localVarHeaderParameter, localVarQueryParameter, headersFromBaseOptions;
+                return __generator(this, function (_a) {
+                    localVarPath = "/api/home";
+                    localVarUrlObj = new URL(localVarPath, common_1.DUMMY_BASE_URL);
+                    if (configuration) {
+                        baseOptions = configuration.baseOptions;
+                    }
+                    localVarRequestOptions = __assign(__assign({ method: 'GET' }, baseOptions), options);
+                    localVarHeaderParameter = {};
+                    localVarQueryParameter = {};
+                    (0, common_1.setSearchParams)(localVarUrlObj, localVarQueryParameter);
+                    headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+                    localVarRequestOptions.headers = __assign(__assign(__assign({}, localVarHeaderParameter), headersFromBaseOptions), options.headers);
+                    return [2 /*return*/, {
+                            url: (0, common_1.toPathString)(localVarUrlObj),
+                            options: localVarRequestOptions
+                        }];
+                });
+            });
+        }
+    };
+};
+exports.Class01TopApiAxiosParamCreator = Class01TopApiAxiosParamCreator;
+/**
+ * Class01TopApi - functional programming interface
+ * @export
+ */
+var Class01TopApiFp = function (configuration) {
+    var localVarAxiosParamCreator = (0, exports.Class01TopApiAxiosParamCreator)(configuration);
+    return {
+        /**
+         * for top page
+         * @summary Get Main Visual Paths
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getApiHome: function (options) {
+            return __awaiter(this, void 0, void 0, function () {
+                var localVarAxiosArgs;
+                return __generator(this, function (_a) {
+                    switch (_a.label) {
+                        case 0: return [4 /*yield*/, localVarAxiosParamCreator.getApiHome(options)];
+                        case 1:
+                            localVarAxiosArgs = _a.sent();
+                            return [2 /*return*/, (0, common_1.createRequestFunction)(localVarAxiosArgs, axios_1["default"], base_1.BASE_PATH, configuration)];
+                    }
+                });
+            });
+        }
+    };
+};
+exports.Class01TopApiFp = Class01TopApiFp;
+/**
+ * Class01TopApi - factory interface
+ * @export
+ */
+var Class01TopApiFactory = function (configuration, basePath, axios) {
+    var localVarFp = (0, exports.Class01TopApiFp)(configuration);
+    return {
+        /**
+         * for top page
+         * @summary Get Main Visual Paths
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getApiHome: function (options) {
+            return localVarFp.getApiHome(options).then(function (request) { return request(axios, basePath); });
+        }
+    };
+};
+exports.Class01TopApiFactory = Class01TopApiFactory;
+/**
+ * Class01TopApi - object-oriented interface
+ * @export
+ * @class Class01TopApi
+ * @extends {BaseAPI}
+ */
+var Class01TopApi = /** @class */ (function (_super) {
+    __extends(Class01TopApi, _super);
+    function Class01TopApi() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    /**
+     * for top page
+     * @summary Get Main Visual Paths
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof Class01TopApi
+     */
+    Class01TopApi.prototype.getApiHome = function (options) {
+        var _this = this;
+        return (0, exports.Class01TopApiFp)(this.configuration).getApiHome(options).then(function (request) { return request(_this.axios, _this.basePath); });
+    };
+    return Class01TopApi;
+}(base_1.BaseAPI));
+exports.Class01TopApi = Class01TopApi;
+/**
+ * Class02PhotoGalleryApi - axios parameter creator
+ * @export
+ */
+var Class02PhotoGalleryApiAxiosParamCreator = function (configuration) {
+    var _this = this;
+    return {
+        /**
+         * for locations page
+         * @summary Get locations
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getApiLocations: function (options) {
+            if (options === void 0) { options = {}; }
+            return __awaiter(_this, void 0, void 0, function () {
+                var localVarPath, localVarUrlObj, baseOptions, localVarRequestOptions, localVarHeaderParameter, localVarQueryParameter, headersFromBaseOptions;
+                return __generator(this, function (_a) {
+                    localVarPath = "/api/locations";
+                    localVarUrlObj = new URL(localVarPath, common_1.DUMMY_BASE_URL);
+                    if (configuration) {
+                        baseOptions = configuration.baseOptions;
+                    }
+                    localVarRequestOptions = __assign(__assign({ method: 'GET' }, baseOptions), options);
+                    localVarHeaderParameter = {};
+                    localVarQueryParameter = {};
+                    (0, common_1.setSearchParams)(localVarUrlObj, localVarQueryParameter);
+                    headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+                    localVarRequestOptions.headers = __assign(__assign(__assign({}, localVarHeaderParameter), headersFromBaseOptions), options.headers);
+                    return [2 /*return*/, {
+                            url: (0, common_1.toPathString)(localVarUrlObj),
+                            options: localVarRequestOptions
+                        }];
+                });
+            });
+        },
+        /**
+         * for location detail page
+         * @summary Get photos related the location
+         * @param {string} locationId location id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getApiLocationsLocationId: function (locationId, options) {
+            if (options === void 0) { options = {}; }
+            return __awaiter(_this, void 0, void 0, function () {
+                var localVarPath, localVarUrlObj, baseOptions, localVarRequestOptions, localVarHeaderParameter, localVarQueryParameter, headersFromBaseOptions;
+                return __generator(this, function (_a) {
+                    // verify required parameter 'locationId' is not null or undefined
+                    (0, common_1.assertParamExists)('getApiLocationsLocationId', 'locationId', locationId);
+                    localVarPath = "/api/locations/{locationId}"
+                        .replace("{".concat("locationId", "}"), encodeURIComponent(String(locationId)));
+                    localVarUrlObj = new URL(localVarPath, common_1.DUMMY_BASE_URL);
+                    if (configuration) {
+                        baseOptions = configuration.baseOptions;
+                    }
+                    localVarRequestOptions = __assign(__assign({ method: 'GET' }, baseOptions), options);
+                    localVarHeaderParameter = {};
+                    localVarQueryParameter = {};
+                    (0, common_1.setSearchParams)(localVarUrlObj, localVarQueryParameter);
+                    headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+                    localVarRequestOptions.headers = __assign(__assign(__assign({}, localVarHeaderParameter), headersFromBaseOptions), options.headers);
+                    return [2 /*return*/, {
+                            url: (0, common_1.toPathString)(localVarUrlObj),
+                            options: localVarRequestOptions
+                        }];
+                });
+            });
+        },
+        /**
+         * for photo-gallery page
+         * @summary Get all photos
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getApiPhotoGallery: function (options) {
+            if (options === void 0) { options = {}; }
+            return __awaiter(_this, void 0, void 0, function () {
+                var localVarPath, localVarUrlObj, baseOptions, localVarRequestOptions, localVarHeaderParameter, localVarQueryParameter, headersFromBaseOptions;
+                return __generator(this, function (_a) {
+                    localVarPath = "/api/photo-gallery";
+                    localVarUrlObj = new URL(localVarPath, common_1.DUMMY_BASE_URL);
+                    if (configuration) {
+                        baseOptions = configuration.baseOptions;
+                    }
+                    localVarRequestOptions = __assign(__assign({ method: 'GET' }, baseOptions), options);
+                    localVarHeaderParameter = {};
+                    localVarQueryParameter = {};
+                    (0, common_1.setSearchParams)(localVarUrlObj, localVarQueryParameter);
+                    headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+                    localVarRequestOptions.headers = __assign(__assign(__assign({}, localVarHeaderParameter), headersFromBaseOptions), options.headers);
+                    return [2 /*return*/, {
+                            url: (0, common_1.toPathString)(localVarUrlObj),
+                            options: localVarRequestOptions
+                        }];
+                });
+            });
+        },
+        /**
+         * for tags page
+         * @summary Get all tags
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getApiTags: function (options) {
+            if (options === void 0) { options = {}; }
+            return __awaiter(_this, void 0, void 0, function () {
+                var localVarPath, localVarUrlObj, baseOptions, localVarRequestOptions, localVarHeaderParameter, localVarQueryParameter, headersFromBaseOptions;
+                return __generator(this, function (_a) {
+                    localVarPath = "/api/tags";
+                    localVarUrlObj = new URL(localVarPath, common_1.DUMMY_BASE_URL);
+                    if (configuration) {
+                        baseOptions = configuration.baseOptions;
+                    }
+                    localVarRequestOptions = __assign(__assign({ method: 'GET' }, baseOptions), options);
+                    localVarHeaderParameter = {};
+                    localVarQueryParameter = {};
+                    (0, common_1.setSearchParams)(localVarUrlObj, localVarQueryParameter);
+                    headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+                    localVarRequestOptions.headers = __assign(__assign(__assign({}, localVarHeaderParameter), headersFromBaseOptions), options.headers);
+                    return [2 /*return*/, {
+                            url: (0, common_1.toPathString)(localVarUrlObj),
+                            options: localVarRequestOptions
+                        }];
+                });
+            });
+        },
+        /**
+         * for tag detail page
+         * @summary Get photos related the tag
+         * @param {string} tagId tag id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getApiTagsId: function (tagId, options) {
+            if (options === void 0) { options = {}; }
+            return __awaiter(_this, void 0, void 0, function () {
+                var localVarPath, localVarUrlObj, baseOptions, localVarRequestOptions, localVarHeaderParameter, localVarQueryParameter, headersFromBaseOptions;
+                return __generator(this, function (_a) {
+                    // verify required parameter 'tagId' is not null or undefined
+                    (0, common_1.assertParamExists)('getApiTagsId', 'tagId', tagId);
+                    localVarPath = "/api/tags/{tagId}"
+                        .replace("{".concat("tagId", "}"), encodeURIComponent(String(tagId)));
+                    localVarUrlObj = new URL(localVarPath, common_1.DUMMY_BASE_URL);
+                    if (configuration) {
+                        baseOptions = configuration.baseOptions;
+                    }
+                    localVarRequestOptions = __assign(__assign({ method: 'GET' }, baseOptions), options);
+                    localVarHeaderParameter = {};
+                    localVarQueryParameter = {};
+                    (0, common_1.setSearchParams)(localVarUrlObj, localVarQueryParameter);
+                    headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+                    localVarRequestOptions.headers = __assign(__assign(__assign({}, localVarHeaderParameter), headersFromBaseOptions), options.headers);
+                    return [2 /*return*/, {
+                            url: (0, common_1.toPathString)(localVarUrlObj),
+                            options: localVarRequestOptions
+                        }];
+                });
+            });
+        }
+    };
+};
+exports.Class02PhotoGalleryApiAxiosParamCreator = Class02PhotoGalleryApiAxiosParamCreator;
+/**
+ * Class02PhotoGalleryApi - functional programming interface
+ * @export
+ */
+var Class02PhotoGalleryApiFp = function (configuration) {
+    var localVarAxiosParamCreator = (0, exports.Class02PhotoGalleryApiAxiosParamCreator)(configuration);
+    return {
+        /**
+         * for locations page
+         * @summary Get locations
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getApiLocations: function (options) {
+            return __awaiter(this, void 0, void 0, function () {
+                var localVarAxiosArgs;
+                return __generator(this, function (_a) {
+                    switch (_a.label) {
+                        case 0: return [4 /*yield*/, localVarAxiosParamCreator.getApiLocations(options)];
+                        case 1:
+                            localVarAxiosArgs = _a.sent();
+                            return [2 /*return*/, (0, common_1.createRequestFunction)(localVarAxiosArgs, axios_1["default"], base_1.BASE_PATH, configuration)];
+                    }
+                });
+            });
+        },
+        /**
+         * for location detail page
+         * @summary Get photos related the location
+         * @param {string} locationId location id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getApiLocationsLocationId: function (locationId, options) {
+            return __awaiter(this, void 0, void 0, function () {
+                var localVarAxiosArgs;
+                return __generator(this, function (_a) {
+                    switch (_a.label) {
+                        case 0: return [4 /*yield*/, localVarAxiosParamCreator.getApiLocationsLocationId(locationId, options)];
+                        case 1:
+                            localVarAxiosArgs = _a.sent();
+                            return [2 /*return*/, (0, common_1.createRequestFunction)(localVarAxiosArgs, axios_1["default"], base_1.BASE_PATH, configuration)];
+                    }
+                });
+            });
+        },
+        /**
+         * for photo-gallery page
+         * @summary Get all photos
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getApiPhotoGallery: function (options) {
+            return __awaiter(this, void 0, void 0, function () {
+                var localVarAxiosArgs;
+                return __generator(this, function (_a) {
+                    switch (_a.label) {
+                        case 0: return [4 /*yield*/, localVarAxiosParamCreator.getApiPhotoGallery(options)];
+                        case 1:
+                            localVarAxiosArgs = _a.sent();
+                            return [2 /*return*/, (0, common_1.createRequestFunction)(localVarAxiosArgs, axios_1["default"], base_1.BASE_PATH, configuration)];
+                    }
+                });
+            });
+        },
+        /**
+         * for tags page
+         * @summary Get all tags
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getApiTags: function (options) {
+            return __awaiter(this, void 0, void 0, function () {
+                var localVarAxiosArgs;
+                return __generator(this, function (_a) {
+                    switch (_a.label) {
+                        case 0: return [4 /*yield*/, localVarAxiosParamCreator.getApiTags(options)];
+                        case 1:
+                            localVarAxiosArgs = _a.sent();
+                            return [2 /*return*/, (0, common_1.createRequestFunction)(localVarAxiosArgs, axios_1["default"], base_1.BASE_PATH, configuration)];
+                    }
+                });
+            });
+        },
+        /**
+         * for tag detail page
+         * @summary Get photos related the tag
+         * @param {string} tagId tag id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getApiTagsId: function (tagId, options) {
+            return __awaiter(this, void 0, void 0, function () {
+                var localVarAxiosArgs;
+                return __generator(this, function (_a) {
+                    switch (_a.label) {
+                        case 0: return [4 /*yield*/, localVarAxiosParamCreator.getApiTagsId(tagId, options)];
+                        case 1:
+                            localVarAxiosArgs = _a.sent();
+                            return [2 /*return*/, (0, common_1.createRequestFunction)(localVarAxiosArgs, axios_1["default"], base_1.BASE_PATH, configuration)];
+                    }
+                });
+            });
+        }
+    };
+};
+exports.Class02PhotoGalleryApiFp = Class02PhotoGalleryApiFp;
+/**
+ * Class02PhotoGalleryApi - factory interface
+ * @export
+ */
+var Class02PhotoGalleryApiFactory = function (configuration, basePath, axios) {
+    var localVarFp = (0, exports.Class02PhotoGalleryApiFp)(configuration);
+    return {
+        /**
+         * for locations page
+         * @summary Get locations
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getApiLocations: function (options) {
+            return localVarFp.getApiLocations(options).then(function (request) { return request(axios, basePath); });
+        },
+        /**
+         * for location detail page
+         * @summary Get photos related the location
+         * @param {string} locationId location id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getApiLocationsLocationId: function (locationId, options) {
+            return localVarFp.getApiLocationsLocationId(locationId, options).then(function (request) { return request(axios, basePath); });
+        },
+        /**
+         * for photo-gallery page
+         * @summary Get all photos
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getApiPhotoGallery: function (options) {
+            return localVarFp.getApiPhotoGallery(options).then(function (request) { return request(axios, basePath); });
+        },
+        /**
+         * for tags page
+         * @summary Get all tags
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getApiTags: function (options) {
+            return localVarFp.getApiTags(options).then(function (request) { return request(axios, basePath); });
+        },
+        /**
+         * for tag detail page
+         * @summary Get photos related the tag
+         * @param {string} tagId tag id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getApiTagsId: function (tagId, options) {
+            return localVarFp.getApiTagsId(tagId, options).then(function (request) { return request(axios, basePath); });
+        }
+    };
+};
+exports.Class02PhotoGalleryApiFactory = Class02PhotoGalleryApiFactory;
+/**
+ * Class02PhotoGalleryApi - object-oriented interface
+ * @export
+ * @class Class02PhotoGalleryApi
+ * @extends {BaseAPI}
+ */
+var Class02PhotoGalleryApi = /** @class */ (function (_super) {
+    __extends(Class02PhotoGalleryApi, _super);
+    function Class02PhotoGalleryApi() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    /**
+     * for locations page
+     * @summary Get locations
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof Class02PhotoGalleryApi
+     */
+    Class02PhotoGalleryApi.prototype.getApiLocations = function (options) {
+        var _this = this;
+        return (0, exports.Class02PhotoGalleryApiFp)(this.configuration).getApiLocations(options).then(function (request) { return request(_this.axios, _this.basePath); });
+    };
+    /**
+     * for location detail page
+     * @summary Get photos related the location
+     * @param {string} locationId location id
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof Class02PhotoGalleryApi
+     */
+    Class02PhotoGalleryApi.prototype.getApiLocationsLocationId = function (locationId, options) {
+        var _this = this;
+        return (0, exports.Class02PhotoGalleryApiFp)(this.configuration).getApiLocationsLocationId(locationId, options).then(function (request) { return request(_this.axios, _this.basePath); });
+    };
+    /**
+     * for photo-gallery page
+     * @summary Get all photos
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof Class02PhotoGalleryApi
+     */
+    Class02PhotoGalleryApi.prototype.getApiPhotoGallery = function (options) {
+        var _this = this;
+        return (0, exports.Class02PhotoGalleryApiFp)(this.configuration).getApiPhotoGallery(options).then(function (request) { return request(_this.axios, _this.basePath); });
+    };
+    /**
+     * for tags page
+     * @summary Get all tags
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof Class02PhotoGalleryApi
+     */
+    Class02PhotoGalleryApi.prototype.getApiTags = function (options) {
+        var _this = this;
+        return (0, exports.Class02PhotoGalleryApiFp)(this.configuration).getApiTags(options).then(function (request) { return request(_this.axios, _this.basePath); });
+    };
+    /**
+     * for tag detail page
+     * @summary Get photos related the tag
+     * @param {string} tagId tag id
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof Class02PhotoGalleryApi
+     */
+    Class02PhotoGalleryApi.prototype.getApiTagsId = function (tagId, options) {
+        var _this = this;
+        return (0, exports.Class02PhotoGalleryApiFp)(this.configuration).getApiTagsId(tagId, options).then(function (request) { return request(_this.axios, _this.basePath); });
+    };
+    return Class02PhotoGalleryApi;
+}(base_1.BaseAPI));
+exports.Class02PhotoGalleryApi = Class02PhotoGalleryApi;
 /**
  * SGApi - axios parameter creator
  * @export
