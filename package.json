@@ -17,6 +17,8 @@
     "check-code:service-client": "yarn workspace service-client check-code",
     "check-code:service-sg-server": "yarn workspace service-sg-server check-code",
     "check-code:terraform": "yarn workspace terraform lint",
+    "deploy": "run-s deploy:*",
+    "deploy:service-sg-server": "sh ./scripts/deploy.sh service-sg-server",
     "dev": "run-p dev:*",
     "dev:service-client": "yarn workspace service-client dev",
     "dev:service-sg-server": "yarn workspace service-sg-server dev",
