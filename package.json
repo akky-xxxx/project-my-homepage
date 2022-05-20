@@ -20,6 +20,7 @@
     "deploy": "run-s deploy:*",
     "deploy:service-client": "sh ./scripts/deploy.sh service-client true",
     "deploy:service-sg-server": "sh ./scripts/deploy.sh service-sg-server",
+    "deploy:service-strapi": "sh ./scripts/deploy.sh service-strapi true",
     "dev": "run-p dev:*",
     "dev:service-client": "yarn workspace service-client dev",
     "dev:service-sg-server": "yarn workspace service-sg-server dev",
