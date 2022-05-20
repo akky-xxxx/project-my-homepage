@@ -16,6 +16,7 @@
 **/out
 **/prettier.config.js
 .DS_Store
+.cache/
 .editorconfig
 .env
 .env.example
@@ -26,9 +27,13 @@
 .husky
 .idea
 .prettierignore
+.tmp/
 README.md
+build/
 commitlint.config.js
+database/
 node_modules
 packages/service-strapi/public
 packages/terraform
 prettier.config.js
+public/uploads/*
