@@ -1,9 +1,0 @@
-.cache/
-.tmp/
-build/
-database/
-node_modules/
-public/uploads/*
-.env
-.env.example
-README.md
