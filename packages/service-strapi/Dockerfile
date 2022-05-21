@@ -10,4 +10,6 @@ WORKDIR ./packages/service-strapi
 
 ENV NODE_ENV=production
 
+RUN mkdir public && yarn build
+
 CMD ["yarn", "start"]
