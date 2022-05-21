@@ -34,7 +34,7 @@
     "ss:git-add": "git add \"./.screenshot/expected\"",
     "ss:git-commit": "git commit -m \"docs(service-client): update expected screenshot@`date \"+%Y-%m-%d %H:%M:%S\"`\"",
     "ss:remove": "shx rm -rf \"./.screenshot/expected/*\"",
-    "start": "next start",
+    "start": "next build && next start",
     "storybook": "start-storybook -p 3050",
     "test": "jest --coverage",
     "ts-unused-exports": "ts-unused-exports tsconfig.json",
