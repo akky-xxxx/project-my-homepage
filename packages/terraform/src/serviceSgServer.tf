@@ -29,7 +29,7 @@ resource "google_cloud_run_service" "sg_server" {
 
         env {
           name  = "STRAPI_API_TOKEN"
-          value = ""
+          value = "strapi で token 発行後に cloud run 上で入力する"
         }
       }
     }
