@@ -11,10 +11,11 @@
 **/.svgrrc.js
 **/README.md
 **/build
+**/coverage
 **/database
 **/node_modules
-**/out
 **/prettier.config.js
+./scripts
 .DS_Store
 .cache/
 .editorconfig
