@@ -4,7 +4,6 @@ import { nanoid } from "nanoid"
 import { TagsIdGETRes } from "../../../../libs/bffApiClient"
 import { DateFnsFormats } from "../../../../shared/const/DateFns"
 import { Strapi } from "../../../../shared/const/strapi"
-import { getFileUrl } from "../../../../shared/utils/getFileUrl"
 import { getTargetTags } from "../../../../shared/utils/getTargetTags"
 import { hasSameId } from "../../../../shared/utils/hasSameId"
 
@@ -46,9 +45,7 @@ export const getClientImage: GetClientImage = (getClientImageArguments) => {
 
     return {
       imageId: String(photoId),
-      imagePath: getFileUrl(
-        targetPhoto.attributes.photo.data.attributes.formats.large.url,
-      ),
+      imagePath: targetPhoto.attributes.photo.data.attributes.formats.large.url,
       location: {
         locationId: location?.attributes.locationId || `unknown-${nanoid()}`,
         locationName: location?.attributes.locationName || "unknown",

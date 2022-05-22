@@ -2,12 +2,6 @@ resource "google_cloud_run_service" "sg_server" {
   name     = lookup(var.run_sg_server, "name")
   location = var.region
 
-  metadata {
-    annotations = {
-      "run.googleapis.com/ingress" = "internal"
-    }
-  }
-
   template {
     spec {
       container_concurrency = lookup(var.run_sg_server, "concurrency")
@@ -23,8 +17,13 @@ resource "google_cloud_run_service" "sg_server" {
         }
 
         env {
-          name  = "TEST"
-          value = lookup(var.run_sg_server, "env_test")
+          name  = "STRAPI_SERVER"
+          value = google_cloud_run_service.strapi.status[0].url
+        }
+
+        env {
+          name  = "STRAPI_API_TOKEN"
+          value = "strapi で token 発行後に cloud run 上で入力する"
         }
       }
     }

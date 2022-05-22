@@ -22,7 +22,7 @@ export const getImage: GetImage = (cardRecord) => {
         data: {
           attributes: {
             formats: {
-              medium: { height, url, width },
+              medium: { height, url: imagePath, width },
             },
           },
         },
@@ -31,7 +31,6 @@ export const getImage: GetImage = (cardRecord) => {
     },
   } = cardRecord
   const datedOriginTakenAt = new Date(originTakenAt)
-  const imagePath = `${process.env.STRAPI_SERVER || ""}${url}`
   const viewTakenAt = format(datedOriginTakenAt, VIEW)
   return {
     height,

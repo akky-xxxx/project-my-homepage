@@ -6,10 +6,8 @@ RUN yarn --frozen-lockfile \
     && rm -rf /usr/local/share/.cache \
     && rm -rf /root/.npm
 
-WORKDIR ./packages/service-strapi
+WORKDIR ./packages/service-sg-server
 
 ENV NODE_ENV=production
-
-RUN mkdir public && yarn build
 
 CMD ["yarn", "start"]

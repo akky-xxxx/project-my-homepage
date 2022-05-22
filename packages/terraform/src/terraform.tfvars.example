@@ -8,7 +8,6 @@ run_client = {
   memory : "2Gi",
   cpu : "4000m",
   concurrency : "10",
-  env_test : "test1234",
 }
 
 run_sg_server = {
@@ -17,7 +16,6 @@ run_sg_server = {
   memory : "1Gi",
   cpu : "1000m",
   concurrency : "5",
-  env_test : "test1234",
 }
 
 run_strapi = {
