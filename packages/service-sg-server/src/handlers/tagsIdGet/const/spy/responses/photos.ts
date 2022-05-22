@@ -28,7 +28,7 @@ export const photosData: Photos["data"] = [
                 width: 235,
                 height: 156,
                 size: 8.59,
-                url: "/uploads/thumbnail__dc1177953a.jpg",
+                url: "http://localhost:4000/uploads/thumbnail__dc1177953a.jpg",
               },
               large: {
                 name: "large_コスモス.jpg",
@@ -39,7 +39,7 @@ export const photosData: Photos["data"] = [
                 width: 1000,
                 height: 664,
                 size: 67.25,
-                url: "/uploads/large__dc1177953a.jpg",
+                url: "http://localhost:4000/uploads/large__dc1177953a.jpg",
               },
               medium: {
                 name: "medium_コスモス.jpg",
@@ -50,7 +50,7 @@ export const photosData: Photos["data"] = [
                 width: 750,
                 height: 498,
                 size: 44.92,
-                url: "/uploads/medium__dc1177953a.jpg",
+                url: "http://localhost:4000/uploads/medium__dc1177953a.jpg",
               },
               small: {
                 name: "small_コスモス.jpg",
@@ -61,14 +61,14 @@ export const photosData: Photos["data"] = [
                 width: 500,
                 height: 332,
                 size: 25.1,
-                url: "/uploads/small__dc1177953a.jpg",
+                url: "http://localhost:4000/uploads/small__dc1177953a.jpg",
               },
             },
             hash: "_dc1177953a",
             ext: ".jpg",
             mime: "image/jpeg",
             size: 776.65,
-            url: "/uploads/_dc1177953a.jpg",
+            url: "http://localhost:4000/uploads/_dc1177953a.jpg",
             // TODO: 型の定義ミス
             // eslint-disable-next-line @typescript-eslint/ban-ts-comment
             // @ts-ignore
@@ -140,7 +140,7 @@ export const photosData: Photos["data"] = [
                 width: 104,
                 height: 156,
                 size: 5.52,
-                url: "/uploads/thumbnail__ae219c46d9.jpg",
+                url: "http://localhost:4000/uploads/thumbnail__ae219c46d9.jpg",
               },
               large: {
                 name: "large_なみき.jpg",
@@ -151,7 +151,7 @@ export const photosData: Photos["data"] = [
                 width: 665,
                 height: 1000,
                 size: 178.16,
-                url: "/uploads/large__ae219c46d9.jpg",
+                url: "http://localhost:4000/uploads/large__ae219c46d9.jpg",
               },
               medium: {
                 name: "medium_なみき.jpg",
@@ -162,7 +162,7 @@ export const photosData: Photos["data"] = [
                 width: 499,
                 height: 750,
                 size: 107.41,
-                url: "/uploads/medium__ae219c46d9.jpg",
+                url: "http://localhost:4000/uploads/medium__ae219c46d9.jpg",
               },
               small: {
                 name: "small_なみき.jpg",
@@ -173,14 +173,14 @@ export const photosData: Photos["data"] = [
                 width: 333,
                 height: 500,
                 size: 51.05,
-                url: "/uploads/small__ae219c46d9.jpg",
+                url: "http://localhost:4000/uploads/small__ae219c46d9.jpg",
               },
             },
             hash: "_ae219c46d9",
             ext: ".jpg",
             mime: "image/jpeg",
             size: 210.31,
-            url: "/uploads/_ae219c46d9.jpg",
+            url: "http://localhost:4000/uploads/_ae219c46d9.jpg",
             // TODO: 型の定義ミス
             // eslint-disable-next-line @typescript-eslint/ban-ts-comment
             // @ts-ignore
