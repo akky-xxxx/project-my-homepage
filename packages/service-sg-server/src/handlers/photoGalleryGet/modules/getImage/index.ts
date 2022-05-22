@@ -2,6 +2,7 @@ import { Photos } from "common-types"
 import { format } from "date-fns"
 import { PhotoGalleryGETRes } from "../../../../libs/bffApiClient"
 import { DateFnsFormats } from "../../../../shared/const/DateFns"
+import { getHttpUrl } from "../../../../shared/utils/getHttpUrl"
 
 const { VIEW } = DateFnsFormats
 
@@ -22,7 +23,7 @@ export const getImage: GetImage = (cardRecord) => {
         data: {
           attributes: {
             formats: {
-              medium: { height, url: imagePath, width },
+              medium: { height, url, width },
             },
           },
         },
@@ -32,6 +33,7 @@ export const getImage: GetImage = (cardRecord) => {
   } = cardRecord
   const datedOriginTakenAt = new Date(originTakenAt)
   const viewTakenAt = format(datedOriginTakenAt, VIEW)
+  const imagePath = getHttpUrl(url)
   return {
     height,
     imageId: String(id),
