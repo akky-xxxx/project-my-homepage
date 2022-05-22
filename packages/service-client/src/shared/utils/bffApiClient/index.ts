@@ -2,7 +2,7 @@ import axios from "axios"
 import { Configuration, SGApi } from "service-sg-server/out/bffApiClient"
 
 const { NEXT_PUBLIC_SG_SERVER } = process.env
-const timeout = 1000 * 60 * 5
+const timeout = 300_000 // 5分
 
 if (!NEXT_PUBLIC_SG_SERVER)
   throw new Error("NEXT_PUBLIC_SG_SERVER が定義されてません")
