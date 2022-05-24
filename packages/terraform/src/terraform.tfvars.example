@@ -1,11 +1,3 @@
 region      = "asia-northeast1"
 credentials = ""
 project_id  = ""
-
-run_client = {
-  name : "service-client",
-  registry : "",
-  memory : "2Gi",
-  cpu : "4000m",
-  concurrency : "10",
-}
