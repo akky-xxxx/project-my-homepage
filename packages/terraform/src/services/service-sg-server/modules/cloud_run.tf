@@ -1,29 +1,29 @@
 resource "google_cloud_run_service" "sg_server" {
-  name     = lookup(var.run_sg_server, "name")
-  location = var.region
+  name     = var.cloud_run_service_name
+  location = "asia-northeast1"
 
   template {
     spec {
-      container_concurrency = lookup(var.run_sg_server, "concurrency")
+      container_concurrency = var.cloud_run_container_concurrency
 
       containers {
-        image = lookup(var.run_sg_server, "registry")
+        image = var.cloud_run_registry
 
         resources {
           limits = {
-            memory = lookup(var.run_sg_server, "memory")
-            cpu : lookup(var.run_sg_server, "cpu")
+            memory = var.cloud_run_memory
+            cpu : var.cloud_run_cpu
           }
         }
 
         env {
           name  = "STRAPI_SERVER"
-          value = google_cloud_run_service.strapi.status[0].url
+          value = var.cloud_run_strapi_server
         }
 
         env {
           name  = "STRAPI_API_TOKEN"
-          value = "strapi で token 発行後に cloud run 上で入力する"
+          value = var.cloud_run_strapi_api_token
         }
       }
     }
