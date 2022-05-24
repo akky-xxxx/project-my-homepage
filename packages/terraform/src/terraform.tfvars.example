@@ -9,11 +9,3 @@ run_client = {
   cpu : "4000m",
   concurrency : "10",
 }
-
-run_sg_server = {
-  name : "service-sg-server",
-  registry : "",
-  memory : "1Gi",
-  cpu : "1000m",
-  concurrency : "5",
-}
