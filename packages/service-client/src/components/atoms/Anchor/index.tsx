@@ -6,7 +6,7 @@ import { FcWithChildren } from "../../../shared/types/react"
 import { isExternal } from "./modules/isExternal"
 
 type AnchorProps = {
-  handleClick: (() => void) | null
+  handleClick?: () => void
   href: string
 }
 
