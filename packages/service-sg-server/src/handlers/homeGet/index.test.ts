@@ -1,8 +1,9 @@
-import supertest from "supertest"
 import { spyOn } from "jest-mock"
+import supertest from "supertest"
+
 import "../../modules/initialize"
-import { strapiApiClient } from "../../shared/utils/strapiApiClient"
 import { getServer } from "../../modules/getServer"
+import { strapiApiClient } from "../../shared/utils/strapiApiClient"
 import { spyResponse } from "./const/spy"
 
 const app = getServer()

@@ -1,5 +1,6 @@
 import { ComponentStoryObj, Meta } from "@storybook/react"
 import { ComponentProps } from "react"
+
 import { DeviceMap } from "../../../shared/const/DeviceMap"
 import { PhotoGalleryTemplate } from "./index"
 

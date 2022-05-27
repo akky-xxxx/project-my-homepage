@@ -1,4 +1,5 @@
 import { Tags } from "common-types"
+
 import { TagsGETRes } from "../../../../libs/bffApiClient"
 import { ExtractImagePathMain } from "../../../../shared/utils/extractImagePath"
 import { extractPhotoId } from "../../../../shared/utils/extractPhotoId"

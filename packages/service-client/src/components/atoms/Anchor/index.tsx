@@ -1,4 +1,5 @@
 import Link from "next/link"
+
 import { FcWithChildren } from "../../../shared/types/react"
 import { isExternal } from "./modules/isExternal"
 

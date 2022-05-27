@@ -1,4 +1,5 @@
 import { GetStaticProps, NextPage } from "next"
+
 import { HomeTemplate } from "../components/templates/Home"
 import { bffApiClient } from "../shared/utils/bffApiClient"
 

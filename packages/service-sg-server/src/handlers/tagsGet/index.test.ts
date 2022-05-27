@@ -1,7 +1,8 @@
 import { UnknownObject } from "common-types"
+import { spyOn } from "jest-mock"
 import supertest, { Response } from "supertest"
 import "../../modules/initialize"
-import { spyOn } from "jest-mock"
+
 import { getServer } from "../../modules/getServer"
 import { strapiApiClient } from "../../shared/utils/strapiApiClient"
 import { mockFunction } from "./const/spy"

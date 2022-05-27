@@ -1,5 +1,6 @@
 import { ComponentStoryObj, Meta } from "@storybook/react"
 import { ComponentProps } from "react"
+
 import { SpMenuButton } from "./index"
 
 type SpMenuButtonType = typeof SpMenuButton

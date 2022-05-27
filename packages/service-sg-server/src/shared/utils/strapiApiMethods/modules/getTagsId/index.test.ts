@@ -1,7 +1,8 @@
 import { spyOn } from "jest-mock"
+
 import "../../../../../modules/initialize"
-import { getTagsId } from "./index"
 import { strapiApiClient } from "../../../strapiApiClient"
+import { getTagsId } from "./index"
 
 describe("getTagsId", () => {
   let spy: ReturnType<typeof spyOn>

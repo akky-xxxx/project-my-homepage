@@ -1,6 +1,6 @@
 import "./modules/initialize"
-import { IsDevelopment } from "./shared/const/common"
 import { getServer } from "./modules/getServer"
+import { IsDevelopment } from "./shared/const/common"
 import { loggerWrapper, sillyLogger } from "./shared/utils/logger"
 
 const DefaultPort = 5000

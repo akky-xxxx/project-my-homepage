@@ -1,4 +1,5 @@
 import { Photos } from "common-types"
+
 import { Query } from "../../../../const/strapi/Query"
 import { isErrorStatus } from "../../../isErrorStatus"
 import { strapiApiClient } from "../../../strapiApiClient"

@@ -1,4 +1,5 @@
 import styled from "styled-components"
+
 import { getBackgroundColor } from "./modules/getBackgroundColor"
 import { getPointerEventsValue } from "./modules/getPointerEventsValue"
 import { getRotateValue } from "./modules/getRotateValue"

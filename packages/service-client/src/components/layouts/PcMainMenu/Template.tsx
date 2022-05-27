@@ -1,5 +1,6 @@
 import { VFC } from "react"
 import styled, { css } from "styled-components"
+
 import { Colors } from "../../../shared/const/Colors"
 import { Margins } from "../../../shared/const/Margins"
 import { PcMainMenuItems } from "./components/atoms/PcMainMenuItems"

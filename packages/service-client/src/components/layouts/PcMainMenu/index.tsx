@@ -1,6 +1,7 @@
 import { VFC } from "react"
-import { usePcMainMenu } from "./modules/usePcMainMenu"
+
 import { Template } from "./Template"
+import { usePcMainMenu } from "./modules/usePcMainMenu"
 import { HoCPcMainMenuProps } from "./types"
 
 export const PcMainMenu: VFC<HoCPcMainMenuProps> = (props) => {

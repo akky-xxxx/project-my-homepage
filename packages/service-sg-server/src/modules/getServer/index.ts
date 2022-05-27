@@ -1,4 +1,5 @@
 import express, { Express } from "express"
+
 import { router } from "../../controllers"
 import { errorHandler } from "../errorHandler"
 import { middleware } from "../middleware"
