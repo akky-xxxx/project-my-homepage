@@ -14,7 +14,11 @@ export const Anchor: FcWithChildren<AnchorProps> = (props) => {
   const { children, handleClick, href } = props
 
   if (handleClick) {
-    return <StyledButton type="button" onClick={handleClick}>{children}</StyledButton>
+    return (
+      <StyledButton type="button" onClick={handleClick}>
+        {children}
+      </StyledButton>
+    )
   }
 
   if (isExternal(href))

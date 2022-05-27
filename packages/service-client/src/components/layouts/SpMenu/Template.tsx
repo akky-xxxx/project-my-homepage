@@ -24,7 +24,11 @@ export const Template: VFC<SpMenuProps> = (props) => {
 
       <SpMenu isOpened={isOpenedMenu}>
         <SpMenuItemsWrapper>
-          <SpMenuItems handleCloseMenu={handleCloseMenu} isOpened={isOpenedMenu} menu={menu} />
+          <SpMenuItems
+            handleCloseMenu={handleCloseMenu}
+            isOpened={isOpenedMenu}
+            menu={menu}
+          />
         </SpMenuItemsWrapper>
         <SpMenuBackgroundWrapper>
           <SpMenuBackground isOpened={isOpenedMenu} />
