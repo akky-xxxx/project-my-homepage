@@ -32,10 +32,10 @@ export const SpMenuItems: VFC<SpMenuItemsProps> = (props) => {
             await router.push(menuHref)
             handleCloseMenu()
           }
-          // eslint-disable-next-line no-undefined
           const handleClickMenu = menuHref.startsWith("/")
             ? onClickMenu
-            : undefined
+            : // eslint-disable-next-line no-undefined
+              undefined
 
           return (
             <MainMenuLi key={menuHref}>
