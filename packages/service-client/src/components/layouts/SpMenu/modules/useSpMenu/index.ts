@@ -10,5 +10,8 @@ export const useSpMenu: UseSpMenu = (useSpMenuArguments) => {
   const handleClickMenuButton = () => {
     setOpenedMenu(!isOpenedMenu)
   }
-  return { handleClickMenuButton, isOpenedMenu, menu }
+  const handleCloseMenu = () => {
+    setOpenedMenu(false)
+  }
+  return { handleClickMenuButton, handleCloseMenu, isOpenedMenu, menu }
 }
