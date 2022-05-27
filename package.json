@@ -29,7 +29,7 @@
     "fix:config": "prettier \"./*.{js,json}\" \"./**/*.{js,json}\" --write",
     "fix:pack": "fixpack",
     "lint": "run-p lint:* -c",
-    "lint:editorconfig": "editorconfig-checker -exclude \"./packages/**\"",
+    "lint:editorconfig": "editorconfig-checker",
     "lint:js": "prettier \"./*.js\" --check",
     "lint:pack": "fixpack --dryRun",
     "prepare": "husky install",
