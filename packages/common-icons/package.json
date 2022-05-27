@@ -15,6 +15,7 @@
     "gen": "svgr -d ./src ./origin",
     "hygen:story": "hygen new story",
     "lint": "run-p lint:*",
+    "lint:editorconfig": "editorconfig-checker",
     "lint:js": "prettier \"./*.{js,ts,tsx}\" \"./**/*.{js,ts,tsx}\" --check",
     "lint:pack": "fixpack --dryRun",
     "reg-suit:open": "open-cli \"./report.html\"",

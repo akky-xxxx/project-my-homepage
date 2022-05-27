@@ -21,6 +21,7 @@
     "lint-ts-by-eslint": "eslint \"./src/**/*.ts\"",
     "lint-ts-by-prettier": "prettier \"./src/**/*.ts\" --check",
     "lint:configs": "prettier \"./*.{js,json}\" \"./**/*.js\" \"!**/.next\" --check",
+    "lint:editorconfig": "editorconfig-checker -exclude \"**/libs/**\"",
     "lint:pack": "fixpack --dryRun",
     "lint:ts": "run-s lint-ts-by-eslint lint-ts-by-prettier",
     "spell-check": "cspell \"./src/**/*.ts\"",
