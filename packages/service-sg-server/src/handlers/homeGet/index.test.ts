@@ -1,7 +1,5 @@
 import supertest from "supertest"
 import { spyOn } from "jest-mock"
-// node_modules を除き最初に import させるため
-// organize-imports-ignore
 import "../../modules/initialize"
 import { strapiApiClient } from "../../shared/utils/strapiApiClient"
 import { getServer } from "../../modules/getServer"

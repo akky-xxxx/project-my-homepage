@@ -1,5 +1,3 @@
-// node_modules を除き最初に import させるため
-// organize-imports-ignore
 import "./modules/initialize"
 import { IsDevelopment } from "./shared/const/common"
 import { getServer } from "./modules/getServer"
