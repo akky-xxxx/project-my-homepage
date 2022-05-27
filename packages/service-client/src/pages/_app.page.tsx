@@ -1,3 +1,4 @@
+import "react-medium-image-zoom/dist/styles.css"
 import { Fragment } from "react"
 
 import type { AppProps } from "next/app"

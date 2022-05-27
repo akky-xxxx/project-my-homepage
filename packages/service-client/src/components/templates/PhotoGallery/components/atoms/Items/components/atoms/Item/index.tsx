@@ -1,4 +1,5 @@
 import { Fragment, ReactNode, VFC } from "react"
+import Zoom from "react-medium-image-zoom"
 import styled from "styled-components"
 
 import { Margins } from "../../../../../../../../../shared/const/Margins"
@@ -31,15 +32,17 @@ export const Item: VFC<ItemProps> = (props) => {
   return (
     <StyledDiv>
       <ImageWrapper>
-        {/* TODO: サーバに乗せる時に要確認 */}
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <StyledImage
-          src={imagePath}
-          width={width}
-          height={height}
-          alt=""
-          onClick={handleClickImage}
-        />
+        <Zoom>
+          {/* TODO: サーバに乗せる時に要確認 */}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <StyledImage
+            src={imagePath}
+            width={width}
+            height={height}
+            alt=""
+            onClick={handleClickImage}
+          />
+        </Zoom>
       </ImageWrapper>
       {hasHover && (
         <Fragment>
