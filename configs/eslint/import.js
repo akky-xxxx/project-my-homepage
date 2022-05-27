@@ -4,6 +4,19 @@ module.exports = {
   rules: {
     "import/prefer-default-export": OFF,
     "import/no-default-export": ERROR,
+    "import/order": [
+      ERROR,
+      {
+        "newlines-between": "always",
+        alphabetize: { order: "asc" },
+        groups: [
+          "builtin",
+          "external",
+          "type",
+          ["internal", "sibling", "index", "object", "parent"],
+        ],
+      },
+    ],
     "import/extensions": [
       ERROR,
       {
