@@ -8,6 +8,7 @@ on:
       - main
     paths:
       - 'packages/common-icons/**'
+      - 'yarn.lock'
   pull_request:
     branches:
       - release/renewal
@@ -16,6 +17,7 @@ on:
       - feature/*
     paths:
       - 'packages/common-icons/**'
+      - 'yarn.lock'
 
 jobs:
   checks:
