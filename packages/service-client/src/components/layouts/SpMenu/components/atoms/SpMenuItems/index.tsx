@@ -1,3 +1,4 @@
+import { useRouter } from "next/router"
 import { VFC } from "react"
 import styled from "styled-components"
 
@@ -13,22 +14,32 @@ type MenuWithSubMenu = Menu & {
 }
 
 type SpMenuItemsProps = {
+  handleCloseMenu: () => void
   isOpened: boolean
   menu: MenuWithSubMenu[]
 }
 
 export const SpMenuItems: VFC<SpMenuItemsProps> = (props) => {
-  const { isOpened, menu } = props
+  const { handleCloseMenu, isOpened, menu } = props
+  const router = useRouter()
 
   return (
     <Wrapper className={isOpened ? "is-opened" : ""}>
       <MainMenuUl>
         {menu.map((menuData) => {
           const { href: menuHref, linkText: menuLinkText, subMenu } = menuData
+          const onClickMenu = async () => {
+            await router.push(menuHref)
+            handleCloseMenu()
+          }
+          const handleClickMenu = menuHref.startsWith("/")
+            ? onClickMenu
+            : // eslint-disable-next-line no-undefined
+              undefined
 
           return (
             <MainMenuLi key={menuHref}>
-              <Anchor href={menuHref}>
+              <Anchor href={menuHref} handleClick={handleClickMenu}>
                 <MainMenuLinkText>{menuLinkText}</MainMenuLinkText>
               </Anchor>
 
