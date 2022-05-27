@@ -1,5 +1,6 @@
 import { ComponentStoryObj, Meta } from "@storybook/react"
 import { ComponentProps } from "react"
+
 import { SpMenuItems } from "./index"
 
 type SpMenuItemsType = typeof SpMenuItems

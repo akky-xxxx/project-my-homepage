@@ -1,4 +1,5 @@
 import { Photos } from "common-types"
+
 import { extractPhotoThumbnailUrl } from "./modules/extractPhotoThumbnailUrl"
 import { isSamePhotoId } from "./modules/isSamePhotoId"
 

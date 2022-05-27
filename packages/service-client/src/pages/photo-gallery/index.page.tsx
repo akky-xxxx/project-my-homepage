@@ -1,5 +1,6 @@
 import { GetStaticProps, NextPage } from "next"
 import { ComponentProps } from "react"
+
 import { PhotoGalleryTemplate } from "../../components/templates/PhotoGallery"
 import { bffApiClient } from "../../shared/utils/bffApiClient"
 

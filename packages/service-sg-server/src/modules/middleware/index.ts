@@ -1,6 +1,7 @@
 import { json, Router, urlencoded } from "express"
 import { middleware as openApiValidator } from "express-openapi-validator"
 import helmet from "helmet"
+
 import { IsDevelopment } from "../../shared/const/common"
 
 const middleware = Router()

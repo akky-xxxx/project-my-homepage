@@ -1,9 +1,8 @@
 import { spyOn } from "jest-mock"
-// node_modules を除き最初に import させるため
-// organize-imports-ignore
+
 import "../../../../../modules/initialize"
-import { getLocationsId } from "./index"
 import { strapiApiClient } from "../../../strapiApiClient"
+import { getLocationsId } from "./index"
 
 describe("getLocationsId", () => {
   let spy: ReturnType<typeof spyOn>

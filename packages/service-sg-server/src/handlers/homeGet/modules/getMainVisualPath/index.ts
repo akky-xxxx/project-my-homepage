@@ -1,4 +1,5 @@
 import { Photos } from "common-types"
+
 import { getHttpUrl } from "../../../../shared/utils/getHttpUrl"
 
 type GetMainVisualPath = (data: Photos["data"][number]) => string

@@ -1,6 +1,7 @@
 import { VFC } from "react"
-import { useSpMenu } from "./modules/useSpMenu"
+
 import { Template } from "./Template"
+import { useSpMenu } from "./modules/useSpMenu"
 import { HoCSpMenuProps } from "./types"
 
 export const SpMenu: VFC<HoCSpMenuProps> = (props) => {

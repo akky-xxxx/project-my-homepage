@@ -1,5 +1,6 @@
 import { ComponentStoryObj, Meta } from "@storybook/react"
 import { ComponentProps } from "react"
+
 import { Template } from "./Template"
 
 type PcMainMenuType = typeof Template

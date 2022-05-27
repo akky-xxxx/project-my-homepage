@@ -1,4 +1,5 @@
 import { UnknownObject } from "common-types"
+
 import { AppInfo } from "./const"
 import { originLogger } from "./modules/originLogger"
 

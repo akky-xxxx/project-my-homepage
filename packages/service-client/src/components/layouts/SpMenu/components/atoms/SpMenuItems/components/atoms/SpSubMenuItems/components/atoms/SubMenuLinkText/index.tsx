@@ -1,4 +1,5 @@
 import styled from "styled-components"
+
 import { Colors } from "../../../../../../../../../../../../shared/const/Colors"
 
 const { $ffffff } = Colors

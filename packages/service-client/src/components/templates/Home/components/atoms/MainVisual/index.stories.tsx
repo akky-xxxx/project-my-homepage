@@ -1,5 +1,6 @@
 import { ComponentStoryObj, Meta } from "@storybook/react"
 import { ComponentProps } from "react"
+
 import { MainVisual } from "./index"
 
 type MainVisualType = typeof MainVisual

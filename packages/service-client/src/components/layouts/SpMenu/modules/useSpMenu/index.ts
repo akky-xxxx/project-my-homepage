@@ -1,4 +1,5 @@
 import { useState } from "react"
+
 import { HoCSpMenuProps, SpMenuProps } from "../../types"
 
 type UseSpMenu = (useSpMenuArguments: HoCSpMenuProps) => SpMenuProps

@@ -1,4 +1,5 @@
 import { Locations } from "common-types"
+
 import { LocationsGETRes } from "../../../../libs/bffApiClient"
 import { ExtractImagePathMain } from "../../../../shared/utils/extractImagePath"
 import { extractPhotoId } from "../../../../shared/utils/extractPhotoId"

@@ -1,6 +1,7 @@
 import React from "react"
 import { CarouselProps } from "react-responsive-carousel"
 import styled from "styled-components"
+
 import { Indicator } from "./components/Indicator"
 
 export const renderIndicator: CarouselProps["renderIndicator"] = (

@@ -1,6 +1,7 @@
 import { ComponentProps, VFC } from "react"
 import { omit } from "remeda"
 import styled from "styled-components"
+
 import { Margins } from "../../../../../../shared/const/Margins"
 import { MediaQuery } from "../../../../../../shared/const/MediaQuery"
 import { useHasHover } from "../../../../../../shared/utils/useHasHover"

@@ -1,4 +1,3 @@
-// organize-imports-ignore
 import "../../../modules/initialize"
 import { getHttpUrl } from "."
 

@@ -1,5 +1,6 @@
 import { AxiosResponse } from "axios"
 import { Locations, Photos, Tags, TagsId } from "common-types"
+
 import { locationsData } from "./responses/locations"
 import { photosData } from "./responses/photos"
 import { tagsData } from "./responses/tags"

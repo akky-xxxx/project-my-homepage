@@ -1,5 +1,6 @@
 import { Photos, Tags, TagsId } from "common-types"
 import { format } from "date-fns"
+
 import { LocationsIdGETRes } from "../../../../libs/bffApiClient"
 import { DateFnsFormats } from "../../../../shared/const/DateFns"
 import { getTargetTags } from "../../../../shared/utils/getTargetTags"

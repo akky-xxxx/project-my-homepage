@@ -1,4 +1,5 @@
 import { Router } from "express"
+
 import { homeGet } from "../../handlers/homeGet"
 import { locationsGet } from "../../handlers/locationsGet"
 import { locationsIdGet } from "../../handlers/locationsIdGet"

@@ -1,5 +1,6 @@
 import { ComponentStoryObj, Meta } from "@storybook/react"
 import { ComponentProps } from "react"
+
 import { LinkText } from "."
 
 type LinkTextType = typeof LinkText

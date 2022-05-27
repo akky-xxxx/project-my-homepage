@@ -1,5 +1,6 @@
 import { ComponentStoryObj, Meta } from "@storybook/react"
 import { ComponentProps } from "react"
+
 import { Indicator } from "./index"
 
 type IndicatorType = typeof Indicator

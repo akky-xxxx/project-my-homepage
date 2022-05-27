@@ -1,6 +1,7 @@
 import { VFC } from "react"
 import { Carousel } from "react-responsive-carousel"
 import styled from "styled-components"
+
 import { MediaQuery } from "../../../../../../shared/const/MediaQuery"
 import { renderIndicator } from "./modules/renderIndicator"
 

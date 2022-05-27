@@ -1,9 +1,8 @@
 import { UnknownObject } from "common-types"
-import supertest, { Response } from "supertest"
-// node_modules を除き最初に import させるため
-// organize-imports-ignore
-import "../../modules/initialize"
 import { spyOn } from "jest-mock"
+import supertest, { Response } from "supertest"
+import "../../modules/initialize"
+
 import { getServer } from "../../modules/getServer"
 import { strapiApiClient } from "../../shared/utils/strapiApiClient"
 import { mockFunction } from "./const/spy"

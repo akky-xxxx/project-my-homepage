@@ -1,5 +1,6 @@
 import { VFC } from "react"
 import styled from "styled-components"
+
 import { ClassNames } from "./const/ClassNames"
 import { circleBase } from "./styles"
 
