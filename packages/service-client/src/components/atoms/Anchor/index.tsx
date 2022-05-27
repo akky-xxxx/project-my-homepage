@@ -1,14 +1,21 @@
 import Link from "next/link"
+import styled from "styled-components"
 
+import { FontWeights } from "../../../shared/const/FontWeights"
 import { FcWithChildren } from "../../../shared/types/react"
 import { isExternal } from "./modules/isExternal"
 
 type AnchorProps = {
+  handleClick: (() => void) | null
   href: string
 }
 
 export const Anchor: FcWithChildren<AnchorProps> = (props) => {
-  const { children, href } = props
+  const { children, handleClick, href } = props
+
+  if (handleClick) {
+    return <StyledButton type="button" onClick={handleClick}>{children}</StyledButton>
+  }
 
   if (isExternal(href))
     return (
@@ -23,3 +30,10 @@ export const Anchor: FcWithChildren<AnchorProps> = (props) => {
     </Link>
   )
 }
+
+const StyledButton = styled.button.attrs({ type: "button" })`
+  appearance: none;
+  background: none;
+  border: none;
+  font-weight: ${FontWeights.Bold};
+`
