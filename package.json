@@ -29,6 +29,7 @@
     "fix:config": "prettier \"./*.{js,json}\" \"./**/*.{js,json}\" --write",
     "fix:pack": "fixpack",
     "lint": "run-p lint:* -c",
+    "lint:editorconfig": "editorconfig-checker -exclude \"./packages/**\"",
     "lint:js": "prettier \"./*.js\" --check",
     "lint:pack": "fixpack --dryRun",
     "prepare": "husky install",
@@ -43,6 +44,7 @@
   "devDependencies": {
     "@commitlint/cli": "^17.0.0",
     "@commitlint/config-conventional": "^17.0.0",
+    "editorconfig-checker": "^4.0.2",
     "fixpack": "^4.0.0",
     "husky": "^8.0.1",
     "npm-run-all": "^4.1.5",

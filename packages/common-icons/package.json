@@ -15,6 +15,7 @@
     "gen": "svgr -d ./src ./origin",
     "hygen:story": "hygen new story",
     "lint": "run-p lint:*",
+    "lint:editorconfig": "editorconfig-checker",
     "lint:js": "prettier \"./*.{js,ts,tsx}\" \"./**/*.{js,ts,tsx}\" --check",
     "lint:pack": "fixpack --dryRun",
     "reg-suit:open": "open-cli \"./report.html\"",
@@ -34,6 +35,7 @@
   "devDependencies": {
     "@storybook/react": "^6.5.3",
     "@svgr/cli": "^6.2.1",
+    "editorconfig-checker": "^4.0.2",
     "fixpack": "^4.0.0",
     "hygen": "^6.2.0",
     "npm-run-all": "^4.1.5",
