@@ -11,7 +11,7 @@ import { SpMenuItemsWrapper } from "./components/atoms/SpMenuItemsWrapper"
 import { SpMenuProps } from "./types"
 
 export const Template: VFC<SpMenuProps> = (props) => {
-  const { handleClickMenuButton, isOpenedMenu, menu } = props
+  const { handleClickMenuButton, handleCloseMenu, isOpenedMenu, menu } = props
   return (
     <Fragment>
       <SpMenuButtonWrapper>
@@ -24,7 +24,7 @@ export const Template: VFC<SpMenuProps> = (props) => {
 
       <SpMenu isOpened={isOpenedMenu}>
         <SpMenuItemsWrapper>
-          <SpMenuItems isOpened={isOpenedMenu} menu={menu} />
+          <SpMenuItems handleCloseMenu={handleCloseMenu} isOpened={isOpenedMenu} menu={menu} />
         </SpMenuItemsWrapper>
         <SpMenuBackgroundWrapper>
           <SpMenuBackground isOpened={isOpenedMenu} />
