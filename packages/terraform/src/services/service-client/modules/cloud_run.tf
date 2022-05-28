@@ -22,6 +22,13 @@ resource "google_cloud_run_service" "client" {
         }
       }
     }
+
+    metadata {
+      annotations = {
+        "autoscaling.knative.dev/minScale" = "1"
+        "autoscaling.knative.dev/maxScale" = "1000"
+      }
+    }
   }
 }
 
