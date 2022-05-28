@@ -8,6 +8,6 @@ REPOSITORY=$REGION-docker.pkg.dev/$PRODUCTION_ID/cloud-run-source-deploy/$SERVIC
 # 要 gcloud auth configure-docker $REGION-docker.pkg.dev の実行
 docker build -f packages/$SERVICE_NAME/Dockerfile -t $REPOSITORY .
 docker push $REPOSITORY
-gcloud run deploy $SERVICE_NAME --image $REPOSITORY --region asia-east1 --platform managed --allow-unauthenticated
+gcloud run deploy $SERVICE_NAME --image $REPOSITORY --region asia-northeast1 --platform managed --allow-unauthenticated
 docker image rm $REPOSITORY
 
