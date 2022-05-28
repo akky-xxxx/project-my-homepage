@@ -33,7 +33,7 @@
     "react": "^17.0.2"
   },
   "devDependencies": {
-    "@storybook/react": "^6.5.3",
+    "@storybook/react": "^6.5.5",
     "@svgr/cli": "^6.2.1",
     "editorconfig-checker": "^4.0.2",
     "fixpack": "^4.0.0",
@@ -44,7 +44,7 @@
     "reg-keygen-git-hash-plugin": "^0.11.1",
     "reg-suit": "^0.11.1",
     "shx": "^0.3.4",
-    "storycap": "^3.1.7"
+    "storycap": "^3.1.8"
   },
   "private": true,
   "version": "0.1.0",
