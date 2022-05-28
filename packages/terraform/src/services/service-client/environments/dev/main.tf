@@ -24,10 +24,10 @@ module "modules" {
   random_id = random_id.id.hex
 
   # cloud run
-  cloud_run_service_name          = lookup(var.run_client, "name")
-  cloud_run_container_concurrency = lookup(var.run_client, "concurrency")
+  cloud_run_service_name          = "${lookup(var.run_client, "name")}-dev"
+  cloud_run_container_concurrency = "100"
   cloud_run_registry              = lookup(var.run_client, "registry")
-  cloud_run_memory                = lookup(var.run_client, "memory")
-  cloud_run_cpu                   = lookup(var.run_client, "cpu")
+  cloud_run_memory                = "16Gi"
+  cloud_run_cpu                   = "4000m"
   cloud_run_sg_server_server      = var.run_sg_server
 }
