@@ -24,7 +24,7 @@ module "modules" {
   random_id = random_id.id.hex
 
   # cloud run
-  cloud_run_service_name          = lookup(var.run_client, "name")
+  cloud_run_service_name          = "${lookup(var.run_client, "name")}-dev"
   cloud_run_container_concurrency = "100"
   cloud_run_registry              = lookup(var.run_client, "registry")
   cloud_run_memory                = "16Gi"
