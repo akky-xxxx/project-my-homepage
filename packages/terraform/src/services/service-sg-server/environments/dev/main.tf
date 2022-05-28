@@ -25,10 +25,10 @@ module "modules" {
 
   # cloud run
   cloud_run_service_name          = lookup(var.run_sg_server, "name")
-  cloud_run_container_concurrency = lookup(var.run_sg_server, "concurrency")
+  cloud_run_container_concurrency = "10"
   cloud_run_registry              = lookup(var.run_sg_server, "registry")
-  cloud_run_memory                = lookup(var.run_sg_server, "memory")
-  cloud_run_cpu                   = lookup(var.run_sg_server, "cpu")
+  cloud_run_memory                = "16Gi"
+  cloud_run_cpu                   = "4000m"
   cloud_run_strapi_server         = var.run_strapi_server
   cloud_run_strapi_api_token      = var.run_strapi_api_token
 }
