@@ -1,0 +1,9 @@
+project = {
+  credentials : ""
+  project_id : ""
+}
+
+run_sg_server = {
+  name : ""
+  registry : ""
+}
