@@ -1,4 +1,4 @@
-import { ComponentProps, Fragment, VFC } from "react"
+import { ComponentProps, Fragment, FC } from "react"
 
 import { PcMainMenuItem } from "./components/atoms/PcMainMenuItem"
 
@@ -7,7 +7,7 @@ type PcMainMenuItemsProps = {
   menuData: Omit<ComponentProps<typeof PcMainMenuItem>, "handleHover">[]
 }
 
-export const PcMainMenuItems: VFC<PcMainMenuItemsProps> = (props) => {
+export const PcMainMenuItems: FC<PcMainMenuItemsProps> = (props) => {
   const { menuData, handleHoverMenu } = props
 
   return (

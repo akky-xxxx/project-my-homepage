@@ -1,4 +1,4 @@
-import { VFC } from "react"
+import { FC } from "react"
 import styled from "styled-components"
 
 import { ClassNames } from "./const/ClassNames"
@@ -10,7 +10,7 @@ type SpMenuBackgroundProps = {
 
 const { IsOpened, BlueLayer, RedLayer, WhiteLayer } = ClassNames
 
-export const SpMenuBackground: VFC<SpMenuBackgroundProps> = (props) => {
+export const SpMenuBackground: FC<SpMenuBackgroundProps> = (props) => {
   const { isOpened } = props
 
   return (

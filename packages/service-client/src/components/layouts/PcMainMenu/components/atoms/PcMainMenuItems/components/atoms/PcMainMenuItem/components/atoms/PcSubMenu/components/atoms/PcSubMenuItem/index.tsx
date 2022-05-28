@@ -1,4 +1,4 @@
-import { VFC } from "react"
+import { FC } from "react"
 
 import { Menu } from "../../../../../../../../../../../../../../../shared/const/Menu"
 import { Anchor } from "../../../../../../../../../../../../../../atoms/Anchor"
@@ -8,7 +8,7 @@ import { PcAnchorText } from "./components/atoms/PcAnchorText"
 
 type PcSubMenuItemProps = Menu
 
-export const PcSubMenuItem: VFC<PcSubMenuItemProps> = (props) => {
+export const PcSubMenuItem: FC<PcSubMenuItemProps> = (props) => {
   const { href, linkText } = props
 
   return (

@@ -17,7 +17,7 @@ export const <%= componentName %>: FC<HoC<%= componentName %>Props> = (props) =>
   )
 }
 <% } else { -%>
-export const <%= componentName %>: VFC<HoC<%= componentName %>Props> = (props) => {
+export const <%= componentName %>: FC<HoC<%= componentName %>Props> = (props) => {
   const dependencies = use<%= componentName %>(props)
   return <Template {...dependencies} />
 }

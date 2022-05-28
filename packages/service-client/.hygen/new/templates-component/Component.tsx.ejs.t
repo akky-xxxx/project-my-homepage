@@ -1,9 +1,9 @@
 ---
 to: <%= path %>/index.tsx
 ---
-import { VFC } from "react"
+import { FC } from "react"
 
-export const <%= componentName %>Template: VFC = () => {
+export const <%= componentName %>Template: FC = () => {
   return (
     <div>
       <%= componentName %> page template

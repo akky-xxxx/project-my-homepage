@@ -1,4 +1,4 @@
-import { VFC } from "react"
+import { FC } from "react"
 import { Carousel } from "react-responsive-carousel"
 import styled from "styled-components"
 
@@ -9,7 +9,7 @@ type MainVisualProps = {
   mainVisualPaths: string[]
 }
 
-export const MainVisual: VFC<MainVisualProps> = (props) => {
+export const MainVisual: FC<MainVisualProps> = (props) => {
   const { mainVisualPaths } = props
 
   return (
