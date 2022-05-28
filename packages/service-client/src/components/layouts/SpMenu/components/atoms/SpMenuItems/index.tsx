@@ -1,5 +1,5 @@
 import { useRouter } from "next/router"
-import { VFC } from "react"
+import { FC } from "react"
 import styled from "styled-components"
 
 import { Menu } from "../../../../../../shared/const/Menu"
@@ -19,7 +19,7 @@ type SpMenuItemsProps = {
   menu: MenuWithSubMenu[]
 }
 
-export const SpMenuItems: VFC<SpMenuItemsProps> = (props) => {
+export const SpMenuItems: FC<SpMenuItemsProps> = (props) => {
   const { handleCloseMenu, isOpened, menu } = props
   const router = useRouter()
 

@@ -1,4 +1,4 @@
-import { ComponentProps, VFC } from "react"
+import { ComponentProps, FC } from "react"
 import { omit } from "remeda"
 import styled from "styled-components"
 
@@ -22,7 +22,7 @@ type ItemsProps = {
   images: ImageProps[]
 }
 
-export const Items: VFC<ItemsProps> = (props) => {
+export const Items: FC<ItemsProps> = (props) => {
   const { images } = props
   const hasHover = useHasHover()
 

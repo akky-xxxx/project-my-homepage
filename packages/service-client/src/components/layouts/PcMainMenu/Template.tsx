@@ -1,4 +1,4 @@
-import { VFC } from "react"
+import { FC } from "react"
 import styled, { css } from "styled-components"
 
 import { Colors } from "../../../shared/const/Colors"
@@ -10,7 +10,7 @@ import { MarkerProps, PcMainMenuProps } from "./types"
 const { $bf9963, $f0284f } = Colors
 const { Margin8 } = Margins
 
-export const Template: VFC<PcMainMenuProps> = (props) => {
+export const Template: FC<PcMainMenuProps> = (props) => {
   const { handleHoverMenu, currentPagePosition, markerPosition, menuData } =
     props
 

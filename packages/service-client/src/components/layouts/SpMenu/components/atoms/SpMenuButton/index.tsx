@@ -1,4 +1,4 @@
-import { VFC } from "react"
+import { FC } from "react"
 import styled from "styled-components"
 
 import { ClassNames } from "./const/ClassNames"
@@ -11,7 +11,7 @@ type SpMenuButtonProps = {
   isOpened: boolean
 }
 
-export const SpMenuButton: VFC<SpMenuButtonProps> = (props) => {
+export const SpMenuButton: FC<SpMenuButtonProps> = (props) => {
   const { isOpened, handleClickButton } = props
   return (
     <Circle className={isOpened ? IsOpened : ""} onClick={handleClickButton}>

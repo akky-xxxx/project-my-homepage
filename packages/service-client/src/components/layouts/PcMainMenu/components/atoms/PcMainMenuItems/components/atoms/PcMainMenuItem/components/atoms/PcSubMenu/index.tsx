@@ -1,4 +1,4 @@
-import { VFC } from "react"
+import { FC } from "react"
 import styled from "styled-components"
 
 import { Menu } from "../../../../../../../../../../../../shared/const/Menu"
@@ -8,7 +8,7 @@ type PcSubMenuProps = {
   subMenu: Menu[]
 }
 
-export const PcSubMenu: VFC<PcSubMenuProps> = (props) => {
+export const PcSubMenu: FC<PcSubMenuProps> = (props) => {
   const { subMenu } = props
 
   return (

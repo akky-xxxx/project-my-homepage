@@ -1,4 +1,4 @@
-import { VFC } from "react"
+import { FC } from "react"
 
 import { Menu } from "../../../../../../../../../shared/const/Menu"
 import { Anchor } from "../../../../../../../../atoms/Anchor"
@@ -9,7 +9,7 @@ type SpSubMenuItemsProps = {
   subMenu: Menu[]
 }
 
-export const SpSubMenuItems: VFC<SpSubMenuItemsProps> = (props) => {
+export const SpSubMenuItems: FC<SpSubMenuItemsProps> = (props) => {
   const { subMenu } = props
 
   return (

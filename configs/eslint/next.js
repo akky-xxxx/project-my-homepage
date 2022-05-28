@@ -4,6 +4,7 @@ module.exports = {
   rules: {
     "react/jsx-props-no-spreading": OFF,
     "react/prop-types": OFF,
+    "react/require-default-props": OFF,
     "react/jsx-fragments": [ERROR, "element"],
     "react/jsx-filename-extension": [ERROR, { extensions: [".ts", ".tsx"] }],
     "jsx-a11y/anchor-is-valid": [

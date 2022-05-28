@@ -1,4 +1,4 @@
-import { Fragment, VFC } from "react"
+import { Fragment, FC } from "react"
 
 import { SpMenu } from "./components/atoms/SpMenu"
 import { SpMenuBackground } from "./components/atoms/SpMenuBackground"
@@ -10,7 +10,7 @@ import { SpMenuItems } from "./components/atoms/SpMenuItems"
 import { SpMenuItemsWrapper } from "./components/atoms/SpMenuItemsWrapper"
 import { SpMenuProps } from "./types"
 
-export const Template: VFC<SpMenuProps> = (props) => {
+export const Template: FC<SpMenuProps> = (props) => {
   const { handleClickMenuButton, handleCloseMenu, isOpenedMenu, menu } = props
   return (
     <Fragment>

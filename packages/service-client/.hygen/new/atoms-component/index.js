@@ -21,7 +21,7 @@ module.exports = {
     ]
     return inquirer.prompt(questions).then((answers) => {
       const { componentName: componentNameBase, hasChildren } = answers
-      const componentType = hasChildren ? "FcWithChildren" : "VFC"
+      const componentType = hasChildren ? "FcWithChildren" : "FC"
       const [initial, ...latest] = [...componentNameBase]
       const componentName = `${initial.toUpperCase()}${latest.join("")}`
       const path = `src/components/atoms/${componentName}`

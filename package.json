@@ -42,6 +42,7 @@
     "test:terraform": "yarn workspace terraform test"
   },
   "devDependencies": {
+    "-": "^0.0.1",
     "@commitlint/cli": "^17.0.1",
     "@commitlint/config-conventional": "^17.0.0",
     "editorconfig-checker": "^4.0.2",

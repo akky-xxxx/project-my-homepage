@@ -15,7 +15,7 @@ export const Template: FC<<%= componentName %>Props> = (props) => {
   )
 }
 <% } else { -%>
-export const Template: VFC<<%= componentName %>Props> = (props) => {
+export const Template: FC<<%= componentName %>Props> = (props) => {
   const { test2 } = props
   return (
     <div>

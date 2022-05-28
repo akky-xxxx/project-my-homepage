@@ -1,4 +1,4 @@
-import { Fragment, ReactNode, VFC } from "react"
+import { Fragment, ReactNode, FC } from "react"
 import Zoom from "react-medium-image-zoom"
 import styled from "styled-components"
 
@@ -18,7 +18,7 @@ type ItemProps = Record<"height" | "width", number> & {
 
 const thumbnailHeight = 180
 
-export const Item: VFC<ItemProps> = (props) => {
+export const Item: FC<ItemProps> = (props) => {
   const {
     handleClickImage,
     hasHover,
