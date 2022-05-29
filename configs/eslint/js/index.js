@@ -16,16 +16,18 @@ module.exports = {
   overrides: [
     {
       files: ["**/*.{test,stories}.{ts,tsx}", "**/spy{/**,.ts}"],
-      rules: {
-        "max-nested-callbacks": OFF,
-        "no-magic-numbers": OFF,
-        "sort-keys": OFF,
-        "no-undefined": OFF,
-        "no-console": OFF,
-        "max-lines": OFF,
-        "max-statements": OFF,
-        complexity: OFF,
-      },
+      rules: Object.fromEntries(
+        [
+          "complexity",
+          "max-lines",
+          "max-nested-callbacks",
+          "max-statements",
+          "no-console",
+          "no-magic-numbers",
+          "no-undefined",
+          "sort-keys",
+        ].map((rule) => [rule, OFF]),
+      ),
     },
   ],
 }

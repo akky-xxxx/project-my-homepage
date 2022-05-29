@@ -15,9 +15,9 @@ module.exports = {
   overrides: [
     {
       files: ["**/*.tsx"],
-      rules: {
-        "no-use-before-define": OFF,
-      },
+      rules: Object.fromEntries(
+        ["no-use-before-define"].map((rule) => [rule, OFF]),
+      ),
     },
   ],
 }

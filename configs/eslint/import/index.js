@@ -19,15 +19,15 @@ module.exports = {
   overrides: [
     {
       files: ["**/*.{test,stories}.{ts,tsx}"],
-      rules: {
-        "import/no-extraneous-dependencies": OFF,
-      },
+      rules: Object.fromEntries(
+        ["import/no-extraneous-dependencies"].map((rule) => [rule, OFF]),
+      ),
     },
     {
       files: ["**/pages/**/*.{api,page}.{tsx,ts}", "**/*.stories.{ts,tsx}"],
-      rules: {
-        "import/no-default-export": OFF,
-      },
+      rules: Object.fromEntries(
+        ["import/no-default-export"].map((rule) => [rule, OFF]),
+      ),
     },
   ],
 }

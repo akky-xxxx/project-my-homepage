@@ -46,10 +46,12 @@ module.exports = {
   overrides: [
     {
       files: ["**/*.test.{ts,tsx}"],
-      rules: {
-        "@typescript-eslint/no-unsafe-member-access": OFF,
-        "@typescript-eslint/no-unsafe-call": OFF,
-      },
+      rules: Object.fromEntries(
+        [
+          "@typescript-eslint/no-unsafe-call",
+          "@typescript-eslint/no-unsafe-member-access",
+        ].map((rule) => [rule, OFF]),
+      ),
     },
   ],
 }

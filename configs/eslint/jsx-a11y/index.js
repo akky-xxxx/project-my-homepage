@@ -12,9 +12,9 @@ module.exports = {
   overrides: [
     {
       files: ["**/*.{test,stories}.{ts,tsx}", "**/spy{/**,.ts}"],
-      rules: {
-        "jsx-a11y/anchor-is-valid": OFF,
-      },
+      rules: Object.fromEntries(
+        ["jsx-a11y/anchor-is-valid"].map((rule) => [rule, OFF]),
+      ),
     },
   ],
 }
