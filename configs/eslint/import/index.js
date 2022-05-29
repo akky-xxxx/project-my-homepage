@@ -1,6 +1,6 @@
 const { OFF, ERROR } = require("../const")
-const { order } = require("./rules/order")
 const { extensions } = require("./rules/extensions")
+const { order } = require("./rules/order")
 
 module.exports = {
   rules: {
