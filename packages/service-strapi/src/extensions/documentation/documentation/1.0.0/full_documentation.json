@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2022-05-22T08:22:42.011Z"
+    "x-generation-date": "2022-05-29T08:35:43.883Z"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -63,7 +63,8 @@
                 "type": "object"
               },
               {
-                "type": "array"
+                "type": "array",
+                "items": []
               }
             ]
           },
@@ -88,8 +89,15 @@
       },
       "LocationRequest": {
         "type": "object",
+        "required": [
+          "data"
+        ],
         "properties": {
           "data": {
+            "required": [
+              "locationName",
+              "locationId"
+            ],
             "type": "object",
             "properties": {
               "locationName": {
@@ -97,6 +105,20 @@
               },
               "locationId": {
                 "type": "string"
+              },
+              "photos": {
+                "type": "array",
+                "items": {
+                  "oneOf": [
+                    {
+                      "type": "integer"
+                    },
+                    {
+                      "type": "string"
+                    }
+                  ],
+                  "example": "string or id"
+                }
               }
             }
           }
@@ -1997,8 +2019,16 @@
       },
       "PhotoRequest": {
         "type": "object",
+        "required": [
+          "data"
+        ],
         "properties": {
           "data": {
+            "required": [
+              "photo",
+              "takenAt",
+              "isShownTop"
+            ],
             "type": "object",
             "properties": {
               "photo": {
@@ -2015,6 +2045,31 @@
               "takenAt": {
                 "type": "string",
                 "format": "date"
+              },
+              "tags": {
+                "type": "array",
+                "items": {
+                  "oneOf": [
+                    {
+                      "type": "integer"
+                    },
+                    {
+                      "type": "string"
+                    }
+                  ],
+                  "example": "string or id"
+                }
+              },
+              "location": {
+                "oneOf": [
+                  {
+                    "type": "integer"
+                  },
+                  {
+                    "type": "string"
+                  }
+                ],
+                "example": "string or id"
               },
               "isShownTop": {
                 "type": "boolean"
@@ -4702,12 +4757,32 @@
       },
       "TagRequest": {
         "type": "object",
+        "required": [
+          "data"
+        ],
         "properties": {
           "data": {
+            "required": [
+              "tagName"
+            ],
             "type": "object",
             "properties": {
               "tagName": {
                 "type": "string"
+              },
+              "photos": {
+                "type": "array",
+                "items": {
+                  "oneOf": [
+                    {
+                      "type": "integer"
+                    },
+                    {
+                      "type": "string"
+                    }
+                  ],
+                  "example": "string or id"
+                }
               }
             }
           }
@@ -6602,14 +6677,41 @@
       },
       "UploadFileRequest": {
         "type": "object",
+        "required": [
+          "data"
+        ],
         "properties": {
           "data": {
+            "required": [
+              "name",
+              "hash",
+              "mime",
+              "size",
+              "url",
+              "provider"
+            ],
             "type": "object",
             "properties": {
               "name": {
                 "type": "string"
               },
+              "alternativeText": {
+                "type": "string"
+              },
+              "caption": {
+                "type": "string"
+              },
+              "width": {
+                "type": "integer"
+              },
+              "height": {
+                "type": "integer"
+              },
+              "formats": {},
               "hash": {
+                "type": "string"
+              },
+              "ext": {
                 "type": "string"
               },
               "mime": {
@@ -6622,8 +6724,26 @@
               "url": {
                 "type": "string"
               },
+              "previewUrl": {
+                "type": "string"
+              },
               "provider": {
                 "type": "string"
+              },
+              "provider_metadata": {},
+              "related": {
+                "type": "array",
+                "items": {
+                  "oneOf": [
+                    {
+                      "type": "integer"
+                    },
+                    {
+                      "type": "string"
+                    }
+                  ],
+                  "example": "string or id"
+                }
               }
             }
           }
@@ -7398,12 +7518,29 @@
       },
       "UsersPermissionsPermissionRequest": {
         "type": "object",
+        "required": [
+          "data"
+        ],
         "properties": {
           "data": {
+            "required": [
+              "action"
+            ],
             "type": "object",
             "properties": {
               "action": {
                 "type": "string"
+              },
+              "role": {
+                "oneOf": [
+                  {
+                    "type": "integer"
+                  },
+                  {
+                    "type": "string"
+                  }
+                ],
+                "example": "string or id"
               }
             }
           }
@@ -8574,12 +8711,52 @@
       },
       "UsersPermissionsRoleRequest": {
         "type": "object",
+        "required": [
+          "data"
+        ],
         "properties": {
           "data": {
+            "required": [
+              "name"
+            ],
             "type": "object",
             "properties": {
               "name": {
                 "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "type": {
+                "type": "string"
+              },
+              "permissions": {
+                "type": "array",
+                "items": {
+                  "oneOf": [
+                    {
+                      "type": "integer"
+                    },
+                    {
+                      "type": "string"
+                    }
+                  ],
+                  "example": "string or id"
+                }
+              },
+              "users": {
+                "type": "array",
+                "items": {
+                  "oneOf": [
+                    {
+                      "type": "integer"
+                    },
+                    {
+                      "type": "string"
+                    }
+                  ],
+                  "example": "string or id"
+                }
               }
             }
           }
@@ -9808,8 +9985,15 @@
       },
       "UsersPermissionsUserRequest": {
         "type": "object",
+        "required": [
+          "data"
+        ],
         "properties": {
           "data": {
+            "required": [
+              "username",
+              "email"
+            ],
             "type": "object",
             "properties": {
               "username": {
@@ -9818,6 +10002,37 @@
               "email": {
                 "type": "string",
                 "format": "email"
+              },
+              "provider": {
+                "type": "string"
+              },
+              "password": {
+                "type": "string",
+                "format": "password",
+                "example": "*******"
+              },
+              "resetPasswordToken": {
+                "type": "string"
+              },
+              "confirmationToken": {
+                "type": "string"
+              },
+              "confirmed": {
+                "type": "boolean"
+              },
+              "blocked": {
+                "type": "boolean"
+              },
+              "role": {
+                "oneOf": [
+                  {
+                    "type": "integer"
+                  },
+                  {
+                    "type": "string"
+                  }
+                ],
+                "example": "string or id"
               }
             }
           }
