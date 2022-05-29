@@ -1,6 +1,6 @@
-import { ComponentProps, FC } from "react"
-
 import { Items } from "./components/atoms/Items"
+
+import type { ComponentProps, FC } from "react"
 
 type PhotoGalleryTemplateProps = ComponentProps<typeof Items>
 

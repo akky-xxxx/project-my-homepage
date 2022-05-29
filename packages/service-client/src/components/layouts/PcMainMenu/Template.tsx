@@ -1,11 +1,12 @@
-import { FC } from "react"
 import styled, { css } from "styled-components"
 
 import { Colors } from "../../../shared/const/Colors"
 import { Margins } from "../../../shared/const/Margins"
 import { PcMainMenuItems } from "./components/atoms/PcMainMenuItems"
 import { getTransform } from "./modules/getTransform"
-import { MarkerProps, PcMainMenuProps } from "./types"
+
+import type { MarkerProps, PcMainMenuProps } from "./types"
+import type { FC } from "react"
 
 const { $bf9963, $f0284f } = Colors
 const { Margin8 } = Margins

@@ -3,10 +3,11 @@ import styled from "styled-components"
 
 import { Margins } from "../../../shared/const/Margins"
 import { MediaQuery } from "../../../shared/const/MediaQuery"
-import { Menu } from "../../../shared/const/Menu"
-import { FcWithChildren } from "../../../shared/types/react"
 import { PcMainMenu } from "../PcMainMenu"
 import { SpMenu } from "../SpMenu"
+
+import type { Menu } from "../../../shared/const/Menu"
+import type { FcWithChildren } from "../../../shared/types/react"
 
 const { Margin12, Margin20 } = Margins
 const HeaderBuffer = 90

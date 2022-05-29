@@ -1,7 +1,7 @@
-import { ComponentStoryObj, Meta } from "@storybook/react"
-import { ComponentProps } from "react"
-
 import { MainVisual } from "./index"
+
+import type { ComponentStoryObj, Meta } from "@storybook/react"
+import type { ComponentProps } from "react"
 
 type MainVisualType = typeof MainVisual
 type MainVisualStory = ComponentStoryObj<MainVisualType>

@@ -1,7 +1,9 @@
-import { act, renderHook, RenderHookResult } from "@testing-library/react-hooks"
+import { act, renderHook } from "@testing-library/react-hooks"
 
 import { usePcMainMenu } from "."
-import { HoCPcMainMenuProps } from "../../types"
+
+import type { HoCPcMainMenuProps } from "../../types"
+import type { RenderHookResult } from "@testing-library/react-hooks"
 
 const usePcMainMenuArguments: HoCPcMainMenuProps = {
   currentPagePosition: 0,

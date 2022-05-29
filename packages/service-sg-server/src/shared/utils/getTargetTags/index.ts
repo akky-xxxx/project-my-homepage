@@ -1,7 +1,7 @@
-import { Photos, Tags } from "common-types"
-
-import { TagsIdGETRes } from "../../../libs/bffApiClient"
 import { hasSameId } from "../hasSameId"
+
+import type { TagsIdGETRes } from "../../../libs/bffApiClient"
+import type { Photos, Tags } from "common-types"
 
 type GetTargetTagsMain = (
   relatedTag: Photos["data"][number]["attributes"]["tags"]["data"][number],

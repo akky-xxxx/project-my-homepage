@@ -1,13 +1,14 @@
 import { useRouter } from "next/router"
-import { FC } from "react"
 import styled from "styled-components"
 
-import { Menu } from "../../../../../../shared/const/Menu"
 import { Anchor } from "../../../../../atoms/Anchor"
 import { MainMenuLi } from "./components/atoms/MainMenuLi"
 import { MainMenuLinkText } from "./components/atoms/MainMenuLinkText"
 import { MainMenuUl } from "./components/atoms/MainMenuUl"
 import { SpSubMenuItems } from "./components/atoms/SpSubMenuItems"
+
+import type { Menu } from "../../../../../../shared/const/Menu"
+import type { FC } from "react"
 
 type MenuWithSubMenu = Menu & {
   subMenu?: Menu[]

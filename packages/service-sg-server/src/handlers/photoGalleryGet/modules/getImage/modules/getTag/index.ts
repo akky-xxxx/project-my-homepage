@@ -1,4 +1,4 @@
-import { StrapiItem, TagBase } from "common-types"
+import type { StrapiItem, TagBase } from "common-types"
 
 type GetTagReturn = {
   tagId: string

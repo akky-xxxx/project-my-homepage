@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-import { HoCPcMainMenuProps, PcMainMenuProps } from "../../types"
+import type { HoCPcMainMenuProps, PcMainMenuProps } from "../../types"
 
 const InitialMarkerPosition = 0
 

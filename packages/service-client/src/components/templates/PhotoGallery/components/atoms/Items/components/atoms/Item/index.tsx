@@ -1,10 +1,12 @@
-import { Fragment, ReactNode, FC } from "react"
+import { Fragment } from "react"
 import Zoom from "react-medium-image-zoom"
 import styled from "styled-components"
 
 import { Margins } from "../../../../../../../../../shared/const/Margins"
 import { MediaQuery } from "../../../../../../../../../shared/const/MediaQuery"
-import { VoidFunction } from "../../../../../../../../../shared/types/react"
+
+import type { VoidFunction } from "../../../../../../../../../shared/types/react"
+import type { ReactNode, FC } from "react"
 
 const { Margin4 } = Margins
 

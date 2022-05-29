@@ -1,8 +1,9 @@
-import { FC } from "react"
 import styled from "styled-components"
 
 import { ClassNames } from "./const/ClassNames"
 import { circleBase } from "./styles"
+
+import type { FC } from "react"
 
 const { IsOpened, BarTop, BarMiddle, BarBottom } = ClassNames
 

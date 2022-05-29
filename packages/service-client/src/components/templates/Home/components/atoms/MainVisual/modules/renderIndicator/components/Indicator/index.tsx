@@ -3,7 +3,8 @@ import styled from "styled-components"
 import { getBackgroundColor } from "./modules/getBackgroundColor"
 import { getPointerEventsValue } from "./modules/getPointerEventsValue"
 import { getRotateValue } from "./modules/getRotateValue"
-import { IndicatorProps } from "./types"
+
+import type { IndicatorProps } from "./types"
 
 const NarrowWidth = 5
 const WideWidth = 20

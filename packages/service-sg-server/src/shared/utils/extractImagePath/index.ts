@@ -1,7 +1,7 @@
-import { Photos } from "common-types"
-
 import { extractPhotoThumbnailUrl } from "./modules/extractPhotoThumbnailUrl"
 import { isSamePhotoId } from "./modules/isSamePhotoId"
+
+import type { Photos } from "common-types"
 
 export type ExtractImagePathMain = (targetPhotoId: number) => string
 type ExtractImagePath = (photoList: Photos["data"]) => ExtractImagePathMain

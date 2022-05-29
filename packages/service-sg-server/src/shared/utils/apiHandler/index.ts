@@ -1,4 +1,4 @@
-import { Request, RequestHandler, Response } from "express"
+import type { Request, RequestHandler, Response } from "express"
 
 type ApiHandlerCallbackReturn = unknown | void
 // TODO: 型を厳密にする

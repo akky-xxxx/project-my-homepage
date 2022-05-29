@@ -1,10 +1,10 @@
-import { Request } from "express"
-
-import { TagsIdGETRes } from "../../libs/bffApiClient"
 import { apiHandler } from "../../shared/utils/apiHandler"
 import { infoLogger, loggerWrapper } from "../../shared/utils/logger"
 import { strapiApiMethods } from "../../shared/utils/strapiApiMethods"
 import { getClientImage } from "./modules/getClientImage"
+
+import type { TagsIdGETRes } from "../../libs/bffApiClient"
+import type { Request } from "express"
 
 type TagsIdGetBase = (req: Request<{ tagId: string }>) => Promise<TagsIdGETRes>
 

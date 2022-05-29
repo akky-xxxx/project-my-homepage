@@ -1,8 +1,9 @@
-import { PhotoGalleryGETRes } from "../../libs/bffApiClient"
 import { apiHandler } from "../../shared/utils/apiHandler"
 import { infoLogger, loggerWrapper } from "../../shared/utils/logger"
 import { strapiApiMethods } from "../../shared/utils/strapiApiMethods"
 import { getImage } from "./modules/getImage"
+
+import type { PhotoGalleryGETRes } from "../../libs/bffApiClient"
 
 type PhotoGalleryGetBase = () => Promise<PhotoGalleryGETRes>
 

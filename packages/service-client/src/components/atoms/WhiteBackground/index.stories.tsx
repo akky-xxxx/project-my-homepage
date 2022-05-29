@@ -1,7 +1,7 @@
-import { ComponentStoryObj, Meta } from "@storybook/react"
-import { ComponentProps } from "react"
-
 import { WhiteBackground } from "./index"
+
+import type { ComponentStoryObj, Meta } from "@storybook/react"
+import type { ComponentProps } from "react"
 
 type WhiteBackgroundType = typeof WhiteBackground
 type WhiteBackgroundStory = ComponentStoryObj<WhiteBackgroundType>

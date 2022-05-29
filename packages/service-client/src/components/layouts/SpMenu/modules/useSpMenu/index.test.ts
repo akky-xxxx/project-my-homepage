@@ -1,6 +1,8 @@
-import { act, renderHook, RenderHookResult } from "@testing-library/react-hooks"
+import { act, renderHook } from "@testing-library/react-hooks"
 
 import { useSpMenu } from "./index"
+
+import type { RenderHookResult } from "@testing-library/react-hooks"
 
 const props = {
   menu: [

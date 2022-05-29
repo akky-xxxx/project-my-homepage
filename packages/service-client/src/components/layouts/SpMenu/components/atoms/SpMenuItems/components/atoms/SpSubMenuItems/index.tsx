@@ -1,9 +1,9 @@
-import { FC } from "react"
-
-import { Menu } from "../../../../../../../../../shared/const/Menu"
 import { Anchor } from "../../../../../../../../atoms/Anchor"
 import { SubMenuLi } from "./components/atoms/SubMenuLi"
 import { SubMenuLinkText } from "./components/atoms/SubMenuLinkText"
+
+import type { Menu } from "../../../../../../../../../shared/const/Menu"
+import type { FC } from "react"
 
 type SpSubMenuItemsProps = {
   subMenu: Menu[]

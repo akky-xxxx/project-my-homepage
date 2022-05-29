@@ -1,8 +1,8 @@
-import { ComponentStoryObj, Meta } from "@storybook/react"
-import { ComponentProps } from "react"
-
 import { DeviceMap } from "../../../../../../../../../shared/const/DeviceMap"
 import { Item } from "./index"
+
+import type { ComponentStoryObj, Meta } from "@storybook/react"
+import type { ComponentProps } from "react"
 
 type ItemType = typeof Item
 type ItemStory = ComponentStoryObj<ItemType>

@@ -1,9 +1,10 @@
-import { HomeGETRes } from "../../libs/bffApiClient"
 import { apiHandler } from "../../shared/utils/apiHandler"
 import { infoLogger, loggerWrapper } from "../../shared/utils/logger"
 import { strapiApiMethods } from "../../shared/utils/strapiApiMethods"
 import { getMainVisualPath } from "./modules/getMainVisualPath"
 import { isMainVisual } from "./modules/isMainVisual"
+
+import type { HomeGETRes } from "../../libs/bffApiClient"
 
 type ResponseBody = {
   mainVisualPaths: string[]

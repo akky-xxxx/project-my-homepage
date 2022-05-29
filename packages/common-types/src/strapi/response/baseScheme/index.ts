@@ -1,4 +1,4 @@
-import { Dates, StrapiItem } from "../common"
+import type { Dates, StrapiItem } from "../common"
 
 // Photo
 type Rectangle = Record<"height" | "width", number>

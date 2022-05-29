@@ -1,10 +1,10 @@
-import { FC } from "react"
-
-import { Menu } from "../../../../../../../../../../../../../../../shared/const/Menu"
 import { Anchor } from "../../../../../../../../../../../../../../atoms/Anchor"
 import { WhiteBackground } from "../../../../../../../../../../../../../../atoms/WhiteBackground"
 import { PcMainMenuListItem } from "../../../../PcMainMenuListItem"
 import { PcAnchorText } from "./components/atoms/PcAnchorText"
+
+import type { Menu } from "../../../../../../../../../../../../../../../shared/const/Menu"
+import type { FC } from "react"
 
 type PcSubMenuItemProps = Menu
 

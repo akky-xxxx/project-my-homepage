@@ -1,8 +1,8 @@
-import { LocationsId } from "common-types"
-
 import { Query } from "../../../../const/strapi/Query"
 import { isErrorStatus } from "../../../isErrorStatus"
 import { strapiApiClient } from "../../../strapiApiClient"
+
+import type { LocationsId } from "common-types"
 
 type GetLocationsId = (locationId: string) => Promise<LocationsId["data"]>
 

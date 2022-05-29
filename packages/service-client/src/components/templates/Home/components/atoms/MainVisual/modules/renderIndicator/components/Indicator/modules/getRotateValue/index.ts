@@ -1,4 +1,4 @@
-import { IndicatorProps } from "../../types"
+import type { IndicatorProps } from "../../types"
 
 export const getRotateValue = (props: IndicatorProps) => {
   const { isSelected } = props

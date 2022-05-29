@@ -1,6 +1,5 @@
-import { ComponentProps } from "react"
-
-import { PcMainMenuItems } from "../components/atoms/PcMainMenuItems"
+import type { PcMainMenuItems } from "../components/atoms/PcMainMenuItems"
+import type { ComponentProps } from "react"
 
 type PcMainMenuItemsProps = ComponentProps<typeof PcMainMenuItems>
 

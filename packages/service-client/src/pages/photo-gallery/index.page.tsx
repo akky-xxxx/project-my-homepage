@@ -1,8 +1,8 @@
-import { GetStaticProps, NextPage } from "next"
-import { ComponentProps } from "react"
-
 import { PhotoGalleryTemplate } from "../../components/templates/PhotoGallery"
 import { bffApiClient } from "../../shared/utils/bffApiClient"
+
+import type { GetStaticProps, NextPage } from "next"
+import type { ComponentProps } from "react"
 
 type PhotoGalleryTemplatePageProps = ComponentProps<typeof PhotoGalleryTemplate>
 

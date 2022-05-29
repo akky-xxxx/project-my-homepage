@@ -1,9 +1,10 @@
-import { TagsGETRes } from "../../libs/bffApiClient"
 import { apiHandler } from "../../shared/utils/apiHandler"
 import { extractImagePath } from "../../shared/utils/extractImagePath"
 import { infoLogger, loggerWrapper } from "../../shared/utils/logger"
 import { strapiApiMethods } from "../../shared/utils/strapiApiMethods"
 import { getClientTag } from "./modules/getClientTag"
+
+import type { TagsGETRes } from "../../libs/bffApiClient"
 
 type TagsGetBase = () => Promise<TagsGETRes>
 

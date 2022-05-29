@@ -1,8 +1,8 @@
-import { Tags } from "common-types"
-
 import { Query } from "../../../../const/strapi/Query"
 import { isErrorStatus } from "../../../isErrorStatus"
 import { strapiApiClient } from "../../../strapiApiClient"
+
+import type { Tags } from "common-types"
 
 type GetTags = () => Promise<Tags["data"]>
 
