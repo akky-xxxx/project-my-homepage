@@ -2,6 +2,11 @@
   "name": "project-my-homepage",
   "author": "akky-xxxx <114.s.aki@gmail.com>",
   "repository": "https://github.com/akky-xxxx/project-my-homepage.git",
+  "engines": {
+    "node": "16.15.0",
+    "npm": "⚠️️  【yarn】 を使ってください。(((ꎤ’ω’)و三 ꎤ’ω’)-o≡【npm】",
+    "yarn": "1.22.18"
+  },
   "scripts": {
     "check-all": "run-p check-all:*",
     "check-all:common-icons": "yarn workspace common-icons check-all",
