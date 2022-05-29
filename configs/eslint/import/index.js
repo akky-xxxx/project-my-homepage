@@ -18,12 +18,7 @@ module.exports = {
   },
   overrides: [
     {
-      files: [
-        "**/*.test.ts",
-        "**/*.test.tsx",
-        "**/*.stories.ts",
-        "**/*.stories.tsx",
-      ],
+      files: ["**/*.{test,stories}.{ts,tsx}"],
       rules: {
         "import/no-extraneous-dependencies": OFF,
       },
