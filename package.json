@@ -54,11 +54,11 @@
   "workspaces": [
     "packages/*"
   ],
+  "version": "1.0.0",
+  "license": "MIT",
   "engines": {
     "node": "16.15.0",
     "npm": "⚠️️  【yarn】 を使ってください。(((ꎤ’ω’)و三 ꎤ’ω’)-o≡【npm】",
     "yarn": "1.22.18"
-  },
-  "version": "1.0.0",
-  "license": "MIT"
+  }
 }
