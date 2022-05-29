@@ -1,4 +1,4 @@
-const { OFF, WARN, ERROR } = require("./const")
+const { OFF, WARN, ERROR } = require("../const")
 
 module.exports = {
   rules: {

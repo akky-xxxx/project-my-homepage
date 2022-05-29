@@ -1,4 +1,4 @@
-const { OFF } = require("./const")
+const { OFF } = require("../const")
 
 module.exports = {
   overrides: [

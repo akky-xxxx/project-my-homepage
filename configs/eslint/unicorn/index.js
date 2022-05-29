@@ -1,4 +1,4 @@
-const { OFF, ERROR } = require("./const")
+const { OFF, ERROR } = require("../const")
 
 module.exports = {
   plugins: ["unicorn"],

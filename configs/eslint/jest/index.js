@@ -1,4 +1,4 @@
-const { ERROR } = require("./const")
+const { ERROR } = require("../const")
 
 module.exports = {
   plugins: ["jest"],
