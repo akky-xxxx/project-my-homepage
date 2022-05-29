@@ -54,6 +54,9 @@
   "workspaces": [
     "packages/*"
   ],
+  "engines": {
+    "yarn": "1.22.18"
+  },
   "version": "1.0.0",
   "license": "MIT"
 }
