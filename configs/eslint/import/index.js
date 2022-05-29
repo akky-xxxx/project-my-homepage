@@ -1,30 +1,13 @@
 const { OFF, ERROR } = require("../const")
+const { order } = require("./rules/order")
+const { extensions } = require("./rules/extensions")
 
 module.exports = {
   rules: {
     "import/prefer-default-export": OFF,
     "import/no-default-export": ERROR,
-    "import/order": [
-      ERROR,
-      {
-        "newlines-between": "always",
-        alphabetize: { order: "asc" },
-        groups: [
-          ["builtin", "external"],
-          "internal",
-          ["parent", "sibling", "index"],
-          "object",
-          "type",
-        ],
-      },
-    ],
-    "import/extensions": [
-      ERROR,
-      {
-        js: "never",
-        ts: "never",
-      },
-    ],
+    "import/order": order,
+    "import/extensions": extensions,
   },
   settings: {
     "import/resolver": {

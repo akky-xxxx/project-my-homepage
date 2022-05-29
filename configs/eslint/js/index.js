@@ -1,8 +1,7 @@
-const { OFF, WARN, ERROR } = require("../const")
+const { OFF, ERROR, WARN } = require("../const")
 
 module.exports = {
   rules: {
-    complexity: [ERROR, 5],
     "max-depth": [ERROR, 3],
     "max-lines": [ERROR, { max: 100 }],
     "max-nested-callbacks": [ERROR, 3],
@@ -10,7 +9,9 @@ module.exports = {
     "multiline-comment-style": OFF,
     "no-magic-numbers": WARN,
     "no-undefined": ERROR,
+    "no-unused-vars": OFF,
     "sort-keys": WARN,
+    complexity: [ERROR, 5],
   },
   overrides: [
     {

@@ -1,4 +1,5 @@
-const { OFF, ERROR } = require("../const")
+const { OFF } = require("../const")
+const { prevent_abbreviations } = require("./rules/prevent_abbreviations")
 
 module.exports = {
   plugins: ["unicorn"],
@@ -16,19 +17,6 @@ module.exports = {
     "unicorn/prefer-module": OFF,
     "unicorn/prefer-node-protocol": OFF,
     "unicorn/prefer-number-properties": OFF,
-    "unicorn/prevent-abbreviations": [
-      ERROR,
-      {
-        allowList: {
-          Props: true,
-          props: true,
-          Req: true,
-          req: true,
-          Res: true,
-          res: true,
-          ref: true,
-        },
-      },
-    ],
+    "unicorn/prevent-abbreviations": prevent_abbreviations,
   },
 }

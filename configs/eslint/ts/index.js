@@ -1,58 +1,40 @@
-const { WARN, ERROR, OFF } = require("../const")
+const { OFF, ERROR, WARN } = require("../const")
+const { array_type } = require("./rules/array_type")
+const {
+  consistent_type_assertions,
+} = require("./rules/consistent_type_assertions")
+const { consistent_type_imports } = require("./rules/consistent_type_imports")
+const {
+  no_confusing_void_expression,
+} = require("./rules/no_confusing_void_expression")
+const { no_implicit_any_catch } = require("./rules/no_implicit_any_catch")
+const {
+  no_unnecessary_boolean_literal_compare,
+} = require("./rules/no_unnecessary_boolean_literal_compare")
+const { no_unnecessary_condition } = require("./rules/no_unnecessary_condition")
+const {
+  sort_type_union_intersection_members,
+} = require("./rules/sort_type_union_intersection_members")
 
 module.exports = {
   parser: "@typescript-eslint/parser",
   rules: {
-    /**
-     * eslint の未使用変数チェックは buggy ということで tsconfig でチェックをかける
-     * refer: https://speakerdeck.com/quramy/tsconfig-options-best5?slide=6
-     */
-    "no-unused-vars": OFF,
-    "@typescript-eslint/array-type": [
-      ERROR,
-      {
-        default: "array",
-      },
-    ],
-    "@typescript-eslint/consistent-type-imports": [
-      ERROR,
-      { prefer: "type-imports" },
-    ],
-    "@typescript-eslint/explicit-module-boundary-types": OFF,
+    "@typescript-eslint/array-type": array_type,
     "@typescript-eslint/consistent-indexed-object-style": [ERROR, "record"],
+    "@typescript-eslint/consistent-type-assertions": consistent_type_assertions,
     "@typescript-eslint/consistent-type-definitions": [ERROR, "type"],
-    "@typescript-eslint/no-confusing-void-expression": [
-      ERROR,
-      { ignoreVoidOperator: true },
-    ],
-    "@typescript-eslint/no-implicit-any-catch": [
-      ERROR,
-      { allowExplicitAny: false },
-    ],
-    "@typescript-eslint/no-unnecessary-boolean-literal-compare": [
-      WARN,
-      {
-        allowComparingNullableBooleansToTrue: false,
-        allowComparingNullableBooleansToFalse: false,
-      },
-    ],
-    "@typescript-eslint/no-unnecessary-condition": [
-      ERROR,
-      {
-        allowConstantLoopConditions: false,
-        allowRuleToRunWithoutStrictNullChecksIKnowWhatIAmDoing: false,
-      },
-    ],
+    "@typescript-eslint/consistent-type-imports": consistent_type_imports,
+    "@typescript-eslint/explicit-module-boundary-types": OFF,
+    "@typescript-eslint/no-confusing-void-expression":
+      no_confusing_void_expression,
+    "@typescript-eslint/no-implicit-any-catch": no_implicit_any_catch,
+    "@typescript-eslint/no-unnecessary-boolean-literal-compare":
+      no_unnecessary_boolean_literal_compare,
+    "@typescript-eslint/no-unnecessary-condition": no_unnecessary_condition,
     "@typescript-eslint/no-unnecessary-type-arguments": WARN,
     "@typescript-eslint/prefer-string-starts-ends-with": WARN,
-    "@typescript-eslint/sort-type-union-intersection-members": [
-      WARN,
-      { checkIntersections: true },
-    ],
-    "@typescript-eslint/consistent-type-assertions": [
-      ERROR,
-      { assertionStyle: "never" },
-    ],
+    "@typescript-eslint/sort-type-union-intersection-members":
+      sort_type_union_intersection_members,
   },
   settings: {
     "import/resolver": {

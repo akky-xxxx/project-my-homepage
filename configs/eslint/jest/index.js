@@ -1,14 +1,8 @@
-const { ERROR } = require("../const")
+const { consistent_test_it } = require("./rules/consistent_test_it")
 
 module.exports = {
   plugins: ["jest"],
   rules: {
-    "jest/consistent-test-it": [
-      ERROR,
-      {
-        fn: "it",
-        withinDescribe: "it",
-      },
-    ],
+    "jest/consistent-test-it": consistent_test_it,
   },
 }
