@@ -1,5 +1,6 @@
-import { Menu } from "../Menu"
 import { UrlMap } from "../UrlMap"
+
+import type { Menu } from "../Menu"
 
 type MenuWithSubMenu = Menu & {
   subMenu?: Menu[]

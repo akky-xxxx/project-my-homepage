@@ -1,8 +1,8 @@
-import { FC } from "react"
-
 import { Template } from "./Template"
 import { useSpMenu } from "./modules/useSpMenu"
-import { HoCSpMenuProps } from "./types"
+
+import type { HoCSpMenuProps } from "./types"
+import type { FC } from "react"
 
 export const SpMenu: FC<HoCSpMenuProps> = (props) => {
   const dependencies = useSpMenu(props)

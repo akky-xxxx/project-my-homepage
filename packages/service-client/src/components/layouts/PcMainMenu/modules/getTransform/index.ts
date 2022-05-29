@@ -1,4 +1,4 @@
-import { MarkerProps } from "../../types"
+import type { MarkerProps } from "../../types"
 
 type GetTransform = (getTransformArguments: MarkerProps) => string
 export const getTransform: GetTransform = (getTransformArguments) => {

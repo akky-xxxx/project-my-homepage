@@ -1,6 +1,8 @@
-import { ComponentProps, Fragment, FC } from "react"
+import { Fragment } from "react"
 
 import { PcMainMenuItem } from "./components/atoms/PcMainMenuItem"
+
+import type { ComponentProps, FC } from "react"
 
 type PcMainMenuItemsProps = {
   handleHoverMenu: (position: number) => void

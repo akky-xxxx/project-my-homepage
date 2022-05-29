@@ -1,4 +1,4 @@
-import { Location, Tag, TakenAt } from "../common"
+import type { Location, Tag, TakenAt } from "../common"
 
 /**
  * @description Home の Card

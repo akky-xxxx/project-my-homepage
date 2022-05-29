@@ -1,6 +1,8 @@
-import NextDocument, { DocumentContext, Html } from "next/document"
+import NextDocument, { Html } from "next/document"
 import React from "react"
 import { ServerStyleSheet as StyledComponentSheets } from "styled-components"
+
+import type { DocumentContext } from "next/document"
 
 export default class Document extends NextDocument {
   static async getInitialProps(context: DocumentContext) {

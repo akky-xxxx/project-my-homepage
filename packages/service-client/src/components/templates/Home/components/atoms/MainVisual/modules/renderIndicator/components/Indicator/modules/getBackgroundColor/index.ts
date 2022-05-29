@@ -1,5 +1,6 @@
 import { Colors } from "../../../../../../../../../../../../shared/const/Colors"
-import { IndicatorProps } from "../../types"
+
+import type { IndicatorProps } from "../../types"
 
 const { $333333, $ffffff } = Colors
 

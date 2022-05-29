@@ -1,4 +1,4 @@
-import { Fragment, FC } from "react"
+import { Fragment } from "react"
 
 import { SpMenu } from "./components/atoms/SpMenu"
 import { SpMenuBackground } from "./components/atoms/SpMenuBackground"
@@ -8,7 +8,9 @@ import { SpMenuButton } from "./components/atoms/SpMenuButton"
 import { SpMenuButtonWrapper } from "./components/atoms/SpMenuButtonWrapper"
 import { SpMenuItems } from "./components/atoms/SpMenuItems"
 import { SpMenuItemsWrapper } from "./components/atoms/SpMenuItemsWrapper"
-import { SpMenuProps } from "./types"
+
+import type { SpMenuProps } from "./types"
+import type { FC } from "react"
 
 export const Template: FC<SpMenuProps> = (props) => {
   const { handleClickMenuButton, handleCloseMenu, isOpenedMenu, menu } = props

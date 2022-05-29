@@ -1,7 +1,7 @@
-import { ComponentStoryObj, Meta } from "@storybook/react"
-import { ComponentProps } from "react"
-
 import { SpMenuBackground } from "./index"
+
+import type { ComponentStoryObj, Meta } from "@storybook/react"
+import type { ComponentProps } from "react"
 
 type SpMenuBackgroundType = typeof SpMenuBackground
 type SpMenuBackgroundStory = ComponentStoryObj<SpMenuBackgroundType>

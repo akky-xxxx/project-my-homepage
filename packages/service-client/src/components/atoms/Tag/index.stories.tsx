@@ -1,7 +1,7 @@
-import { ComponentStoryObj, Meta } from "@storybook/react"
-import { ComponentProps } from "react"
-
 import { Tag } from "."
+
+import type { ComponentStoryObj, Meta } from "@storybook/react"
+import type { ComponentProps } from "react"
 
 type TagType = typeof Tag
 type TagStory = ComponentStoryObj<TagType>

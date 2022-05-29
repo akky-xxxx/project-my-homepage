@@ -1,4 +1,4 @@
-import { Photos } from "common-types"
+import type { Photos } from "common-types"
 
 export const photosData: Photos["data"] = [
   {

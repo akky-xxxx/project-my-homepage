@@ -1,4 +1,4 @@
-import { Menu } from "../../../../shared/const/Menu"
+import type { Menu } from "../../../../shared/const/Menu"
 
 type MenuWithSubMenu = Menu & {
   subMenu?: Menu[]

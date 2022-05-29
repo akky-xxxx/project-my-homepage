@@ -1,9 +1,10 @@
-import { LocationsGETRes } from "../../libs/bffApiClient"
 import { apiHandler } from "../../shared/utils/apiHandler"
 import { extractImagePath } from "../../shared/utils/extractImagePath"
 import { infoLogger, loggerWrapper } from "../../shared/utils/logger"
 import { strapiApiMethods } from "../../shared/utils/strapiApiMethods"
 import { getClientLocations } from "./modules/getClientLocations"
+
+import type { LocationsGETRes } from "../../libs/bffApiClient"
 
 type LocationsGetBase = () => Promise<LocationsGETRes>
 

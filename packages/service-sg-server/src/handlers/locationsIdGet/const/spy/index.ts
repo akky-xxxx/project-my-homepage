@@ -1,9 +1,9 @@
-import { AxiosResponse } from "axios"
-import { LocationsId, Photos, Tags } from "common-types"
-
 import { locationsIdData } from "./responses/locationsId"
 import { photosData } from "./responses/photos"
 import { tagsData } from "./responses/tags"
+
+import type { AxiosResponse } from "axios"
+import type { LocationsId, Photos, Tags } from "common-types"
 
 const meta: Photos["meta"] = {
   pagination: {

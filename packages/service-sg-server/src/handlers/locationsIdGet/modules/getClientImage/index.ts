@@ -1,10 +1,11 @@
-import { Photos, Tags, TagsId } from "common-types"
 import { format } from "date-fns"
 
-import { LocationsIdGETRes } from "../../../../libs/bffApiClient"
 import { DateFnsFormats } from "../../../../shared/const/DateFns"
 import { getTargetTags } from "../../../../shared/utils/getTargetTags"
 import { hasSameId } from "../../../../shared/utils/hasSameId"
+
+import type { LocationsIdGETRes } from "../../../../libs/bffApiClient"
+import type { Photos, Tags, TagsId } from "common-types"
 
 const { VIEW, YEAR_MONTH } = DateFnsFormats
 

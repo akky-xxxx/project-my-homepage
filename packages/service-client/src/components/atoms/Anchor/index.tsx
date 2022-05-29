@@ -2,8 +2,9 @@ import Link from "next/link"
 import styled from "styled-components"
 
 import { FontWeights } from "../../../shared/const/FontWeights"
-import { FcWithChildren } from "../../../shared/types/react"
 import { isExternal } from "./modules/isExternal"
+
+import type { FcWithChildren } from "../../../shared/types/react"
 
 type AnchorProps = {
   handleClick?: () => void

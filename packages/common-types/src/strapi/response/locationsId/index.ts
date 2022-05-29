@@ -1,5 +1,5 @@
-import { LocationBase, PhotoBase } from "../baseScheme"
-import { StrapiItem, StrapiResponse } from "../common"
+import type { LocationBase, PhotoBase } from "../baseScheme"
+import type { StrapiItem, StrapiResponse } from "../common"
 
 type Location = LocationBase & {
   photos: {

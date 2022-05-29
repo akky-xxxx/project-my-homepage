@@ -1,4 +1,4 @@
-import { Tags } from "common-types"
+import type { Tags } from "common-types"
 
 export const tagsData: Tags["data"] = [
   {

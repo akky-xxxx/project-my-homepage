@@ -1,9 +1,10 @@
-import { Photos } from "common-types"
 import { format } from "date-fns"
 
-import { PhotoGalleryGETRes } from "../../../../libs/bffApiClient"
 import { DateFnsFormats } from "../../../../shared/const/DateFns"
 import { getHttpUrl } from "../../../../shared/utils/getHttpUrl"
+
+import type { PhotoGalleryGETRes } from "../../../../libs/bffApiClient"
+import type { Photos } from "common-types"
 
 const { VIEW } = DateFnsFormats
 

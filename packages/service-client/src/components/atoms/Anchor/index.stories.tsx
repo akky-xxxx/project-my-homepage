@@ -1,7 +1,7 @@
-import { ComponentStoryObj, Meta } from "@storybook/react"
-import { ComponentProps } from "react"
-
 import { Anchor } from "."
+
+import type { ComponentStoryObj, Meta } from "@storybook/react"
+import type { ComponentProps } from "react"
 
 type AnchorType = typeof Anchor
 type AnchorStory = ComponentStoryObj<AnchorType>

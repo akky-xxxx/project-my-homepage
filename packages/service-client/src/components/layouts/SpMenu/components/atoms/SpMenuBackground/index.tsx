@@ -1,8 +1,9 @@
-import { FC } from "react"
 import styled from "styled-components"
 
 import { ClassNames } from "./const/ClassNames"
 import { wrapperBase } from "./styles"
+
+import type { FC } from "react"
 
 type SpMenuBackgroundProps = {
   isOpened: boolean

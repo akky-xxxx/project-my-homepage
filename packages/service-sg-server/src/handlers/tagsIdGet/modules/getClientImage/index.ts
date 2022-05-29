@@ -1,12 +1,13 @@
-import { Locations, Photos, Tags, TagsId } from "common-types"
 import { format } from "date-fns"
 import { nanoid } from "nanoid"
 
-import { TagsIdGETRes } from "../../../../libs/bffApiClient"
 import { DateFnsFormats } from "../../../../shared/const/DateFns"
 import { Strapi } from "../../../../shared/const/strapi"
 import { getTargetTags } from "../../../../shared/utils/getTargetTags"
 import { hasSameId } from "../../../../shared/utils/hasSameId"
+
+import type { TagsIdGETRes } from "../../../../libs/bffApiClient"
+import type { Locations, Photos, Tags, TagsId } from "common-types"
 
 const { VIEW, YEAR_MONTH } = DateFnsFormats
 

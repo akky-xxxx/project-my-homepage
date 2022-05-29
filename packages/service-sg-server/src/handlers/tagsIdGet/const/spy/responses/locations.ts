@@ -1,4 +1,4 @@
-import { Locations } from "common-types"
+import type { Locations } from "common-types"
 
 export const locationsData: Locations["data"] = [
   {

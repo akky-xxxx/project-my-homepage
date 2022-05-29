@@ -1,12 +1,14 @@
-import { UnknownObject } from "common-types"
 import { spyOn } from "jest-mock"
 import { isObject } from "remeda"
-import supertest, { Response } from "supertest"
+import supertest from "supertest"
 import "../../modules/initialize"
 
 import { getServer } from "../../modules/getServer"
 import { strapiApiClient } from "../../shared/utils/strapiApiClient"
 import { mockFunction } from "./const/spy"
+
+import type { UnknownObject } from "common-types"
+import type { Response } from "supertest"
 
 const app = getServer()
 const request = supertest(app)

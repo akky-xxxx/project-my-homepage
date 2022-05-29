@@ -1,6 +1,6 @@
-import { ComponentProps, FC } from "react"
-
 import { MainVisual } from "./components/atoms/MainVisual"
+
+import type { ComponentProps, FC } from "react"
 
 type HomeTemplateProps = ComponentProps<typeof MainVisual>
 

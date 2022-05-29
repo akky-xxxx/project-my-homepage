@@ -1,8 +1,8 @@
-import { Locations } from "common-types"
-
-import { LocationsGETRes } from "../../../../libs/bffApiClient"
-import { ExtractImagePathMain } from "../../../../shared/utils/extractImagePath"
 import { extractPhotoId } from "../../../../shared/utils/extractPhotoId"
+
+import type { LocationsGETRes } from "../../../../libs/bffApiClient"
+import type { ExtractImagePathMain } from "../../../../shared/utils/extractImagePath"
+import type { Locations } from "common-types"
 
 type GetClientLocationsMain = (
   location: Locations["data"][number],
