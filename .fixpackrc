@@ -5,6 +5,7 @@
     "author",
     "repository",
     "engines",
+    "resolutions",
     "main",
     "scripts",
     "dependencies",
