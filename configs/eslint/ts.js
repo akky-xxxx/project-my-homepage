@@ -14,6 +14,10 @@ module.exports = {
         default: "array",
       },
     ],
+    "@typescript-eslint/consistent-type-imports": [
+      ERROR,
+      { prefer: "type-imports" },
+    ],
     "@typescript-eslint/explicit-module-boundary-types": OFF,
     "@typescript-eslint/consistent-indexed-object-style": [ERROR, "record"],
     "@typescript-eslint/consistent-type-definitions": [ERROR, "type"],
