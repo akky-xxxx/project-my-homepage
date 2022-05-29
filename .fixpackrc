@@ -4,6 +4,7 @@
     "description",
     "author",
     "repository",
+    "engines",
     "main",
     "scripts",
     "dependencies",
