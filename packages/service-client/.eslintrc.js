@@ -25,6 +25,7 @@ module.exports = {
     "../../configs/eslint/tsdoc",
     "../../configs/eslint/jest",
     "../../configs/eslint/jsx-a11y",
+    "../../configs/eslint/sonarjs",
     "prettier",
   ],
   ignorePatterns: ["**/libs/**/*", "**/coverage/**"],
