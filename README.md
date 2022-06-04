@@ -36,5 +36,4 @@ $ yarn dev
 | 3000 | client                    |
 | 3050 | storybook of client       |
 | 3051 | storybook of common icons |
-| 4000 | strapi                    |
 | 5000 | sg server                 |
