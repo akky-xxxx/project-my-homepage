@@ -1,11 +1,13 @@
 import type { Location, Tag, TakenAt } from "../common"
 
 /**
- * @description Home の Card
- * @property imagePath {string} strapi から渡される画像パス
- * @property location {Location}
- * @property tags {Tags[]}
- * @property takenAt {TakenAt}
+ * @remarks
+ * Home の Card
+ *
+ * @param imagePath - strapi から渡される画像パス
+ * @param location - Location
+ * @param tags - Tags[]
+ * @param takenAt - TakenAt
  */
 export type Card = {
   imagePath: string
@@ -15,8 +17,10 @@ export type Card = {
 }
 
 /**
- * @description GET: /api/home のレスポンスボディ
- * @property cards {Card[]}
+ * @remarks
+ * GET: /api/home のレスポンスボディ
+ *
+ * @param cards - Card[]
  */
 export type ResponseBody = {
   cards: Card[]

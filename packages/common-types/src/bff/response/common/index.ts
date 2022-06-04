@@ -1,7 +1,9 @@
 /**
- * @description 場所情報
- * @property locationId {string} - ユニーク
- * @property locationName {string} - 地名
+ * @remarks
+ * 場所情報
+ *
+ * @param locationId - ユニークID
+ * @param locationName - 地名
  */
 export type Location = {
   locationId: string
@@ -9,9 +11,11 @@ export type Location = {
 }
 
 /**
- * @description タグ情報
- * @property tagId {string} - ユニーク
- * @property tagName {string} - タグ名
+ * @remarks
+ * タグ情報
+ *
+ * @param tagId - ユニークID
+ * @param tagName - タグ名
  */
 export type Tag = {
   tagId: string
@@ -19,9 +23,11 @@ export type Tag = {
 }
 
 /**
- * @description 撮影日情報
- * @property yearMonth {string} - YYYY-MM
- * @property viewTakenAt {string} - YYYY/MM/D
+ * @remarks
+ * 撮影日情報
+ *
+ * @param yearMonth - YYYY-MM
+ * @param viewTakenAt - YYYY/MM/D
  */
 export type TakenAt = {
   yearMonth: string
