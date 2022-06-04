@@ -1,7 +1,8 @@
 import { format } from "winston"
 
 /**
- * @description TransformableInfo のネストを一段浅くする
+ * @remarks
+ * TransformableInfo のネストを一段浅くする
  */
 export const flattenInfo = format((info) => {
   if (typeof info.message === "object") {
