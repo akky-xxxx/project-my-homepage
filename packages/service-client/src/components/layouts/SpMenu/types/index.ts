@@ -5,21 +5,23 @@ type MenuWithSubMenu = Menu & {
 }
 
 /**
- * @type HoCSpMenuProps
- * @description 親から渡す props
- * @property isOpenedMenu - メニューが開いているか否か
+ * @remarks
+ * 親から渡す props
+ *
+ * @param isOpenedMenu - メニューが開いているか否か
  */
 export type HoCSpMenuProps = {
   menu: MenuWithSubMenu[]
 }
 
 /**
- * @type SpMenuProps
- * @description stateless component ( Template ) に渡す props
- * @property handleClickMenuButton - メニューの開閉関数
- * @property handleCloseMenu - メニューを閉じる関数
- * @property isOpenedMenu - メニューが開いているか否か
- * @property menu - menu date
+ * @remarks
+ * stateless component ( Template ) に渡す props
+ *
+ * @param handleClickMenuButton - メニューの開閉関数
+ * @param handleCloseMenu - メニューを閉じる関数
+ * @param isOpenedMenu - メニューが開いているか否か
+ * @param menu - menu date
  */
 export type SpMenuProps = {
   handleClickMenuButton: () => void

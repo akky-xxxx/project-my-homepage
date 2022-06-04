@@ -4,10 +4,11 @@ import type { ComponentProps } from "react"
 type PcMainMenuItemsProps = ComponentProps<typeof PcMainMenuItems>
 
 /**
- * @type HoCPcMainMenuProps
- * @description 親から渡す props
- * @property currentPagePosition - 現在ページのポジション
- * @property menuData - menu data
+ * @remarks
+ * 親から渡す props
+ *
+ * @param currentPagePosition - 現在ページのポジション
+ * @param menuData - menu data
  */
 export type HoCPcMainMenuProps = {
   currentPagePosition: number
@@ -15,10 +16,11 @@ export type HoCPcMainMenuProps = {
 }
 
 /**
- * @type PcMainMenuProps
- * @description stateless component ( Template ) に渡す props
- * @property currentPagePosition - 現在ページのポジション
- * @property markerPosition - マーカーの位置判定用
+ * @remarks
+ * stateless component ( Template ) に渡す props
+ *
+ * @param currentPagePosition - 現在ページのポジション
+ * @param markerPosition - マーカーの位置判定用
  */
 export type PcMainMenuProps = PcMainMenuItemsProps & {
   currentPagePosition: number
