@@ -1,16 +1,7 @@
 import { AppInfo } from "./const"
 import { originLogger } from "./modules/originLogger"
 
-import type { UnknownObject } from "common-types"
-
-type Message = UnknownObject | string
-type LoggerFormat = {
-  version: string
-  traceId: string
-  message: Message
-}
-type LoggerInfo = Pick<LoggerFormat, "message" | "traceId">
-type Logger = (loggerInfo: LoggerInfo) => void
+import type { Logger, LoggerFormat, LoggerInfo, Message } from "./types"
 
 export const errorLogger: Logger = (loggerInfo) => {
   const log: LoggerFormat = {
