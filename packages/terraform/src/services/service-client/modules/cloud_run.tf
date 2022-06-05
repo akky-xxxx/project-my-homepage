@@ -26,7 +26,7 @@ resource "google_cloud_run_service" "client" {
     metadata {
       annotations = {
         "autoscaling.knative.dev/minScale" = "1"
-        "autoscaling.knative.dev/maxScale" = "1000"
+        "autoscaling.knative.dev/maxScale" = var.cloud_run_max_scale
       }
     }
   }
