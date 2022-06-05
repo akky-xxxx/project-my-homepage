@@ -105,7 +105,6 @@ const photosSpyResponse: Photos = {
             id: 1,
             attributes: {
               locationName: "a",
-              locationId: "a",
               createdAt: "2022-05-05T13:09:05.121Z",
               updatedAt: "2022-05-05T13:09:05.121Z",
             },

@@ -4,7 +4,6 @@ export const locationsData: Locations["data"] = [
   {
     id: 1,
     attributes: {
-      locationId: "locationId1",
       locationName: "location1",
       createdAt: "2022-05-05T14:22:58.120Z",
       updatedAt: "2022-05-05T14:22:58.120Z",
@@ -37,7 +36,6 @@ export const locationsData: Locations["data"] = [
   {
     id: 2,
     attributes: {
-      locationId: "locationId2",
       locationName: "location2",
       createdAt: "2022-05-05T14:23:04.296Z",
       updatedAt: "2022-05-05T14:23:04.296Z",

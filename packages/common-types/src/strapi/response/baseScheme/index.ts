@@ -45,5 +45,4 @@ export type TagBase = Omit<Dates, "publishedAt"> & {
 // Location
 export type LocationBase = Omit<Dates, "publishedAt"> & {
   locationName: string
-  locationId: string
 }

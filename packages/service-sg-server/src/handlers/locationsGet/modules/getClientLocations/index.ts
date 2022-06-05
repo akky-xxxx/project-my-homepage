@@ -14,8 +14,8 @@ type GetClientLocations = (
 export const getClientLocations: GetClientLocations =
   (extractImagePathMain) => (location) => {
     const {
+      id,
       attributes: {
-        locationId,
         locationName,
         photos: { data: photos },
       },
@@ -33,7 +33,7 @@ export const getClientLocations: GetClientLocations =
     return {
       imageNum: photos.length,
       imagePath,
-      locationId,
+      locationId: String(id),
       locationName,
     }
   }
