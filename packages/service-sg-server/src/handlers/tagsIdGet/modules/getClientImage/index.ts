@@ -39,7 +39,7 @@ export const getClientImage: GetClientImage = (getClientImageArguments) => {
     const hasSameLocationId = hasSameId(
       // TODO: 型定義が間違ってるが、 nullable なため optional chaining が必要
       // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
-      targetPhoto.attributes.location.data?.id || Strapi.UNKNOWN_ID,
+      targetPhoto.attributes.location?.data?.id || Strapi.UNKNOWN_ID,
     )
     const location = locations.find(hasSameLocationId)
     const dateTakenAt = new Date(targetPhoto.attributes.takenAt)
@@ -52,7 +52,7 @@ export const getClientImage: GetClientImage = (getClientImageArguments) => {
         locationId: getLocationId(location),
         locationName: location?.attributes.locationName || "unknown",
       },
-      tags: targetPhoto.attributes.tags.data.map(getTargetTagsMain),
+      tags: targetPhoto.attributes.tags.data?.map(getTargetTagsMain) || [],
       takenAt: {
         viewTakenAt: format(dateTakenAt, VIEW),
         yearMonth: format(dateTakenAt, YEAR_MONTH),
