@@ -29,5 +29,6 @@ module "modules" {
   cloud_run_registry              = lookup(var.run_client, "registry")
   cloud_run_memory                = "16Gi"
   cloud_run_cpu                   = "4000m"
+  cloud_run_max_scale             = "50"
   cloud_run_sg_server_server      = var.run_sg_server
 }
