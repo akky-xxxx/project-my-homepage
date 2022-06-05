@@ -1,6 +1,10 @@
 import { apiHandler } from "../../shared/utils/apiHandler"
 import { extractImagePath } from "../../shared/utils/extractImagePath"
-import { infoLogger, loggerWrapper } from "../../shared/utils/logger"
+import {
+  infoLogger,
+  loggerWrapper,
+  debugLogger,
+} from "../../shared/utils/logger"
 import { strapiApiMethods } from "../../shared/utils/strapiApiMethods"
 import { getClientTag } from "./modules/getClientTag"
 
@@ -11,11 +15,13 @@ type TagsGetBase = () => Promise<TagsGETRes>
 const tagsGetBase: TagsGetBase = async () => {
   // TODO: trace id を設定したら定義場所を変更
   const infoLoggerMain = loggerWrapper(infoLogger, { traceId: "-" })
+  const debugLoggerMain = loggerWrapper(debugLogger, { traceId: "-" })
 
   const [photosRes, tagsRes] = await Promise.all([
     strapiApiMethods.getPhotos(),
     strapiApiMethods.getTags(),
   ])
+  debugLoggerMain({ photosRes, tagsRes })
 
   const getClientTagMain = getClientTag(extractImagePath(photosRes))
 
