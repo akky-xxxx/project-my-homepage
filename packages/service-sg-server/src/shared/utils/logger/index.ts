@@ -1,21 +1,15 @@
+import { IsDevelopment } from "../../const/common"
 import { AppInfo } from "./const"
+import { getFormatMessage } from "./modules/getFormatMessage"
 import { originLogger } from "./modules/originLogger"
 
-import type { UnknownObject } from "common-types"
-
-type Message = UnknownObject | string
-type LoggerFormat = {
-  version: string
-  traceId: string
-  message: Message
-}
-type LoggerInfo = Pick<LoggerFormat, "message" | "traceId">
-type Logger = (loggerInfo: LoggerInfo) => void
+import type { Logger, LoggerFormat, LoggerInfo, Message } from "./types"
 
 export const errorLogger: Logger = (loggerInfo) => {
   const log: LoggerFormat = {
     ...loggerInfo,
     ...AppInfo,
+    message: getFormatMessage(loggerInfo.message, IsDevelopment),
   }
   originLogger.error(log)
 }
@@ -24,6 +18,7 @@ export const warnLogger: Logger = (loggerInfo) => {
   const log: LoggerFormat = {
     ...loggerInfo,
     ...AppInfo,
+    message: getFormatMessage(loggerInfo.message, IsDevelopment),
   }
   originLogger.warn(log)
 }
@@ -32,6 +27,7 @@ export const infoLogger: Logger = (loggerInfo) => {
   const log: LoggerFormat = {
     ...loggerInfo,
     ...AppInfo,
+    message: getFormatMessage(loggerInfo.message, IsDevelopment),
   }
   originLogger.info(log)
 }
@@ -40,6 +36,7 @@ export const debugLogger: Logger = (loggerInfo) => {
   const log: LoggerFormat = {
     ...loggerInfo,
     ...AppInfo,
+    message: getFormatMessage(loggerInfo.message, IsDevelopment),
   }
   originLogger.debug(log)
 }
@@ -48,6 +45,7 @@ export const sillyLogger: Logger = (loggerInfo) => {
   const log: LoggerFormat = {
     ...loggerInfo,
     ...AppInfo,
+    message: getFormatMessage(loggerInfo.message, IsDevelopment),
   }
   originLogger.silly(log)
 }
