@@ -1,10 +1,10 @@
 import { format } from "date-fns"
-import { nanoid } from "nanoid"
 
 import { DateFnsFormats } from "../../../../shared/const/DateFns"
 import { Strapi } from "../../../../shared/const/strapi"
 import { getTargetTags } from "../../../../shared/utils/getTargetTags"
 import { hasSameId } from "../../../../shared/utils/hasSameId"
+import { getLocationId } from "./modules/getLocationId"
 
 import type { TagsIdGETRes } from "../../../../libs/bffApiClient"
 import type { Locations, Photos, Tags, TagsId } from "common-types"
@@ -49,7 +49,7 @@ export const getClientImage: GetClientImage = (getClientImageArguments) => {
       imageId: String(photoId),
       imagePath: targetPhoto.attributes.photo.data.attributes.formats.large.url,
       location: {
-        locationId: location?.attributes.locationId || `unknown-${nanoid()}`,
+        locationId: getLocationId(location),
         locationName: location?.attributes.locationName || "unknown",
       },
       tags: targetPhoto.attributes.tags.data.map(getTargetTagsMain),
