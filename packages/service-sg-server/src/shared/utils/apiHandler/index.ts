@@ -1,4 +1,10 @@
+import { inspect } from "util"
+
+import { IsDevelopment } from "../../const/common"
+
 import type { Request, RequestHandler, Response } from "express"
+
+const HasLineBreak = 0
 
 type ApiHandlerCallbackReturn = unknown | void
 // TODO: 型を厳密にする
@@ -20,7 +26,10 @@ export const apiHandler: ApiHandler = (callback) => {
       res.json(typeof result === "undefined" ? null : result)
     } catch (error: unknown) {
       next({
-        error,
+        error: inspect(error, {
+          breakLength: IsDevelopment ? HasLineBreak : Infinity,
+          depth: null,
+        }),
         handler: callback.name,
       })
     }
