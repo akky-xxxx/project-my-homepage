@@ -21,7 +21,7 @@ export const getImage: GetImage = (cardRecord) => {
         data: {
           attributes: {
             formats: {
-              medium: { height, url, width },
+              large: { height, url, width },
             },
           },
         },
