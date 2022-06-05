@@ -3,8 +3,11 @@ import { hasSameId } from "../hasSameId"
 import type { TagsIdGETRes } from "../../../libs/bffApiClient"
 import type { Photos, Tags } from "common-types"
 
+type RelatedTag = Required<
+  Photos["data"][number]["attributes"]["tags"]
+>["data"][number]
 type GetTargetTagsMain = (
-  relatedTag: Photos["data"][number]["attributes"]["tags"]["data"][number],
+  relatedTag: RelatedTag,
 ) => TagsIdGETRes["images"][number]["tags"][number]
 type GetTargetTags = (tags: Tags["data"]) => GetTargetTagsMain
 
