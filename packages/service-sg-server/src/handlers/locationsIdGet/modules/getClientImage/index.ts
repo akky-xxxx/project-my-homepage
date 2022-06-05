@@ -39,7 +39,7 @@ export const getClientImage: GetClientImage = (getClientImageArguments) => {
     return {
       imageId: String(photoId),
       imagePath: targetPhoto.attributes.photo.data.attributes.formats.large.url,
-      tags: targetPhoto.attributes.tags.data.map(getTargetTagsMain),
+      tags: targetPhoto.attributes.tags.data?.map(getTargetTagsMain) || [],
       takenAt: {
         viewTakenAt: format(dateTakenAt, VIEW),
         yearMonth: format(dateTakenAt, YEAR_MONTH),

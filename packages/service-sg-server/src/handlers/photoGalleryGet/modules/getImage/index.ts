@@ -16,11 +16,7 @@ export const getImage: GetImage = (cardRecord) => {
   const {
     id,
     attributes: {
-      location: {
-        data: {
-          attributes: { locationName },
-        },
-      },
+      location,
       photo: {
         data: {
           attributes: {
@@ -33,6 +29,17 @@ export const getImage: GetImage = (cardRecord) => {
       takenAt: originTakenAt,
     },
   } = cardRecord
+
+  if (!location.data) {
+    throw new Error(`画像 id: ${id} の location が設定されてません`)
+  }
+
+  const {
+    data: {
+      attributes: { locationName },
+    },
+  } = location
+
   const datedOriginTakenAt = new Date(originTakenAt)
   const viewTakenAt = format(datedOriginTakenAt, VIEW)
   const imagePath = getHttpUrl(url)

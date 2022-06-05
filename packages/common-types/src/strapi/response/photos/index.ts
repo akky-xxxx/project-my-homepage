@@ -3,10 +3,10 @@ import type { StrapiItem, StrapiResponse } from "../common"
 
 type Photo = PhotoBase & {
   tags: {
-    data: StrapiItem<TagBase>[]
+    data?: StrapiItem<TagBase>[]
   }
   location: {
-    data: StrapiItem<LocationBase>
+    data?: StrapiItem<LocationBase>
   }
 }
 
