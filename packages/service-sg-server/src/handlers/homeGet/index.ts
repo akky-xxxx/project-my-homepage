@@ -1,5 +1,9 @@
 import { apiHandler } from "../../shared/utils/apiHandler"
-import { infoLogger, loggerWrapper } from "../../shared/utils/logger"
+import {
+  infoLogger,
+  loggerWrapper,
+  debugLogger,
+} from "../../shared/utils/logger"
 import { strapiApiMethods } from "../../shared/utils/strapiApiMethods"
 import { getMainVisualPath } from "./modules/getMainVisualPath"
 import { isMainVisual } from "./modules/isMainVisual"
@@ -13,7 +17,9 @@ type ResponseBody = {
 type HomeGetBase = () => Promise<HomeGETRes>
 
 const homeGetBase: HomeGetBase = async () => {
+  const debugLoggerMain = loggerWrapper(debugLogger, { traceId: "-" })
   const photos = await strapiApiMethods.getPhotos()
+  debugLoggerMain({ photos })
 
   const mainVisualPaths = photos.filter(isMainVisual).map(getMainVisualPath)
   const infoLoggerMain = loggerWrapper(infoLogger, { traceId: "-" })

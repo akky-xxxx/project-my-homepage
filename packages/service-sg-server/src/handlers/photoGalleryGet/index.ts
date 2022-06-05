@@ -1,5 +1,9 @@
 import { apiHandler } from "../../shared/utils/apiHandler"
-import { infoLogger, loggerWrapper } from "../../shared/utils/logger"
+import {
+  infoLogger,
+  loggerWrapper,
+  debugLogger,
+} from "../../shared/utils/logger"
 import { strapiApiMethods } from "../../shared/utils/strapiApiMethods"
 import { getImage } from "./modules/getImage"
 
@@ -10,7 +14,10 @@ type PhotoGalleryGetBase = () => Promise<PhotoGalleryGETRes>
 const photoGalleryGetBase: PhotoGalleryGetBase = async () => {
   // TODO: trace id を設定したら定義場所を変更
   const infoLoggerMain = loggerWrapper(infoLogger, { traceId: "-" })
+  const debugLoggerMain = loggerWrapper(debugLogger, { traceId: "-" })
   const photos = await strapiApiMethods.getPhotos()
+
+  debugLoggerMain({ photos })
 
   const images: PhotoGalleryGETRes["images"] = photos.map(getImage)
 
