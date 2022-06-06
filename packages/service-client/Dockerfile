@@ -8,6 +8,10 @@ RUN yarn --frozen-lockfile \
 
 WORKDIR ./packages/service-client
 
+ARG NEXT_PUBLIC_SG_SERVER
 ENV NODE_ENV=production
+ENV NEXT_PUBLIC_SG_SERVER ${NEXT_PUBLIC_SG_SERVER}
+
+RUN yarn build
 
 CMD ["yarn", "start"]
