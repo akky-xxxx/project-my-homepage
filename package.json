@@ -8,6 +8,7 @@
     "yarn": "1.22.18"
   },
   "scripts": {
+    "build:service-client": "sh ./scripts/build_push-service_client.sh",
     "check-all": "run-p check-all:*",
     "check-all:common-icons": "yarn workspace common-icons check-all",
     "check-all:common-types": "yarn workspace common-types check-all",
