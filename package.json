@@ -8,6 +8,7 @@
     "yarn": "1.22.18"
   },
   "scripts": {
+    "build": "run-s build:*",
     "build:service-client": "sh ./scripts/build_push-service_client.sh",
     "build:service-sg-server": "sh ./scripts/build_push-service_sg_server.sh",
     "check-all": "run-p check-all:*",
