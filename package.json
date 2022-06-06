@@ -8,6 +8,9 @@
     "yarn": "1.22.18"
   },
   "scripts": {
+    "build": "run-s build:*",
+    "build:service-client": "sh ./scripts/build_push-service_client.sh",
+    "build:service-sg-server": "sh ./scripts/build_push-service_sg_server.sh",
     "check-all": "run-p check-all:*",
     "check-all:common-icons": "yarn workspace common-icons check-all",
     "check-all:common-types": "yarn workspace common-types check-all",
@@ -22,9 +25,6 @@
     "check-code:service-client": "yarn workspace service-client check-code",
     "check-code:service-sg-server": "yarn workspace service-sg-server check-code",
     "check-code:terraform": "yarn workspace terraform lint",
-    "deploy": "run-s deploy:*",
-    "deploy:service-client": "sh ./scripts/deploy.sh service-client",
-    "deploy:service-sg-server": "sh ./scripts/deploy.sh service-sg-server",
     "dev": "run-p dev:*",
     "dev:service-client": "yarn workspace service-client dev",
     "dev:service-sg-server": "yarn workspace service-sg-server dev",
