@@ -17,7 +17,10 @@ describe("sortDefault", () => {
     [dataB, dataA, -1],
     [dataC, dataB, -1],
     [dataA, dataA, 0],
-  ] as const)("引数が %o, %o の時 %s を返す", (input1, input2, expectedValue) => {
-    expect(sortDefault(input1, input2)).toStrictEqual(expectedValue)
-  })
+  ] as const)(
+    "引数が %o, %o の時 %s を返す",
+    (input1, input2, expectedValue) => {
+      expect(sortDefault(input1, input2)).toStrictEqual(expectedValue)
+    },
+  )
 })

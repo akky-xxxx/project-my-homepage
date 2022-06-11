@@ -20,7 +20,9 @@ const photoGalleryGetBase: PhotoGalleryGetBase = async () => {
 
   debugLoggerMain({ photos })
 
-  const images: PhotoGalleryGETRes["images"] = photos.map(getImage).sort(sortDefault)
+  const images: PhotoGalleryGETRes["images"] = photos
+    .map(getImage)
+    .sort(sortDefault)
 
   const response: PhotoGalleryGETRes = { images }
   infoLoggerMain({
