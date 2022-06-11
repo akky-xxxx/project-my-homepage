@@ -6,6 +6,7 @@ import {
 } from "../../shared/utils/logger"
 import { strapiApiMethods } from "../../shared/utils/strapiApiMethods"
 import { getImage } from "./modules/getImage"
+import { sortDefault } from "./modules/sortDefault"
 
 import type { PhotoGalleryGETRes } from "../../libs/bffApiClient"
 
@@ -19,7 +20,7 @@ const photoGalleryGetBase: PhotoGalleryGetBase = async () => {
 
   debugLoggerMain({ photos })
 
-  const images: PhotoGalleryGETRes["images"] = photos.map(getImage)
+  const images: PhotoGalleryGETRes["images"] = photos.map(getImage).sort(sortDefault)
 
   const response: PhotoGalleryGETRes = { images }
   infoLoggerMain({
