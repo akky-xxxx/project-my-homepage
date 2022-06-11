@@ -1,9 +1,6 @@
 {
   "name": "common-utils",
   "main": "out/index.js",
-  "private": true,
-  "version": "0.1.0",
-  "license": "MIT",
   "scripts": {
     "build": "run-s check-all build:remove build:compile build:staging build:commit",
     "build:commit": "git commit -m \"feat(common-utils): output utils@`date \"+%Y-%m-%d %H:%M:%S\"`\"",
@@ -44,5 +41,8 @@
     "prettier": "^2.6.2",
     "shx": "^0.3.4",
     "typescript": "^4.7.3"
-  }
+  },
+  "private": true,
+  "version": "0.1.0",
+  "license": "MIT"
 }
