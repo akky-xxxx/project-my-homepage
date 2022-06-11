@@ -1,6 +1,5 @@
 module.exports = {
   processors: ["stylelint-processor-styled-components"],
-  customSyntax: "postcss-jsx", // TODO: チェックの時はコメントアウトする。14系でうまく動かないため
   extends: [
     "stylelint-config-standard",
     "stylelint-config-styled-components",
