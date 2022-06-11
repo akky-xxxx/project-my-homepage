@@ -3,7 +3,6 @@ import Zoom from "react-medium-image-zoom"
 import styled from "styled-components"
 
 import { Margins } from "../../../../../../../../../shared/const/Margins"
-import { MediaQuery } from "../../../../../../../../../shared/const/MediaQuery"
 
 import type { VoidFunction } from "../../../../../../../../../shared/types/react"
 import type { ReactNode, FC } from "react"
@@ -71,16 +70,6 @@ const ImageWrapper = styled.div`
 const StyledImage = styled.img`
   height: ${thumbnailHeight}px;
   object-fit: contain;
-
-  ${MediaQuery.Hover} {
-    & {
-      transition: opacity 0.3s;
-    }
-
-    &:hover {
-      opacity: 0.8;
-    }
-  }
 `
 
 const Paragraph = styled.p`
