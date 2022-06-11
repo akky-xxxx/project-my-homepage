@@ -26,6 +26,8 @@ module "modules" {
   # cloud run
   cloud_run_container_concurrency = "100"
   cloud_run_cpu                   = "4000m"
+  cloud_run_env_title             = "dev wandering style"
+  cloud_run_env_production        = "false"
   cloud_run_max_scale             = "50"
   cloud_run_memory                = "16Gi"
   cloud_run_registry              = lookup(var.run_client, "registry")
