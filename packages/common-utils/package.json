@@ -1,0 +1,7 @@
+{
+  "name": "common-utils",
+  "main": "out/index.js",
+  "private": true,
+  "version": "0.1.0",
+  "license": "MIT"
+}
