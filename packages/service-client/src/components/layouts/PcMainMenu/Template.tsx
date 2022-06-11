@@ -48,7 +48,7 @@ const MarkerStyle = css<MarkerProps>`
   height: ${Margin8}px;
   pointer-events: none;
   position: absolute;
-  top: 48px;
+  top: 42px;
   transform: ${getTransform};
   transition: transform 0.3s;
   width: ${({ menuLength }) => `calc(100% / ${menuLength})`};

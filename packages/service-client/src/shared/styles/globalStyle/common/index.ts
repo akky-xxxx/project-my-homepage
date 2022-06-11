@@ -9,6 +9,7 @@ export const common = css`
   body {
     background-color: ${$fff6e0};
     color: ${$333333};
+    font-family: arial, sans-serif;
   }
 
   li {
