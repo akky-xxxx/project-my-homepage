@@ -2,3 +2,4 @@ remeda
 stylelint
 Embedder
 strapi
+swipeable
