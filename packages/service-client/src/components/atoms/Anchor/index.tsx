@@ -37,6 +37,8 @@ export const Anchor: FcWithChildren<AnchorProps> = (props) => {
 }
 
 const StyledButton = styled.button.attrs({ type: "button" })`
+  /* TODO: iOS が対応したらコメントを消す */
+  /* stylelint-disable-next-line plugin/no-unsupported-browser-features */
   appearance: none;
   background: none;
   border: none;
