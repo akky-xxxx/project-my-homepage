@@ -20,6 +20,16 @@ resource "google_cloud_run_service" "client" {
           name  = "NEXT_PUBLIC_SG_SERVER"
           value = var.cloud_run_sg_server_server
         }
+
+        env {
+          name  = "NEXT_PUBLIC_PRODUCTION_ENVIRONMENT"
+          value = var.cloud_run_env_production
+        }
+
+        env {
+          name  = "NEXT_PUBLIC_TITLE"
+          value = " | ${var.cloud_run_env_production}}"
+        }
       }
     }
 
