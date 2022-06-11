@@ -21,7 +21,7 @@ const locationsGetBase: LocationsGetBase = async () => {
     strapiApiMethods.getPhotos(),
     strapiApiMethods.getLocations(),
   ])
-  debugLoggerMain({ photosRes, locationsRes })
+  debugLoggerMain({ locationsRes, photosRes })
 
   const getClientLocationsMain = getClientLocations(extractImagePath(photosRes))
 

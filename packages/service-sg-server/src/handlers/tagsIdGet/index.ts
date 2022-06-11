@@ -28,7 +28,7 @@ const tagsIdGetBase: TagsIdGetBase = async (req) => {
     strapiApiMethods.getLocations(),
     strapiApiMethods.getTagsId(tagId),
   ])
-  debugLoggerMain({ photosRes, tagsRes, locationsRes, tagRes })
+  debugLoggerMain({ locationsRes, photosRes, tagRes, tagsRes })
 
   const getClientImageMain = getClientImage({
     locations: locationsRes,
