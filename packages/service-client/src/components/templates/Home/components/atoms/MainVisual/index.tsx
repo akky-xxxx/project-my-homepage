@@ -22,6 +22,7 @@ export const MainVisual: FC<MainVisualProps> = (props) => {
       autoPlay
       showStatus={false}
       renderIndicator={renderIndicator}
+      swipeable={false}
     >
       {mainVisualPaths.map((mainVisualPath) => (
         <div key={mainVisualPath}>
