@@ -1,10 +1,10 @@
 {
   "extends": "../../configs/tsconfig/tsconfig.client.json",
   "include": ["src/**/*.ts", "src/**/*.tsx"],
-  "exclude": ["node_modules", "*.stories."],
+  "exclude": ["node_modules"],
   "compilerOptions": {
     "declaration": true,
     "jsx": "react",
-    "outDir": "./out",
-  },
+    "outDir": "./out"
+  }
 }
