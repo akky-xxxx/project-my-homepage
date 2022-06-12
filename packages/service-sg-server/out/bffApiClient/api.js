@@ -3,7 +3,7 @@
 /* eslint-disable */
 /**
  * sg-server
- * api for ssg
+ * api for sg
  *
  * The version of the OpenAPI document: 1.0
  *
