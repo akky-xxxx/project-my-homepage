@@ -19,6 +19,7 @@ module.exports = {
     "plugin:jest/style",
     "../../configs/eslint/js",
     "../../configs/eslint/next",
+    "../../configs/eslint/storybook",
     "../../configs/eslint/unicorn",
     "../../configs/eslint/import",
     "../../configs/eslint/ts",
