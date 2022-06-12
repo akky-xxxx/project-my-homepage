@@ -1,7 +1,8 @@
 import axios from "axios"
+import { getEnv } from "common-utils"
 import { Configuration, SGApi } from "service-sg-server/out/bffApiClient"
 
-const { NEXT_PUBLIC_SG_SERVER } = process.env
+const NEXT_PUBLIC_SG_SERVER = getEnv.string("NEXT_PUBLIC_SG_SERVER")
 const timeout = 300_000 // 5分
 
 if (!NEXT_PUBLIC_SG_SERVER)
