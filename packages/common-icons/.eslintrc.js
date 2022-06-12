@@ -1,0 +1,32 @@
+module.exports = {
+  root: true,
+  env: {
+    browser: true,
+  },
+  parserOptions: {
+    tsconfigRootDir: __dirname,
+    project: ["./tsconfig.lint.json"],
+  },
+  plugins: ["react"],
+  extends: [
+    "eslint:recommended",
+    "airbnb",
+    "plugin:react/jsx-runtime",
+    "plugin:unicorn/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "plugin:react/recommended",
+    "plugin:jest/recommended",
+    "plugin:jest/style",
+    "../../configs/eslint/js",
+    "../../configs/eslint/next",
+    "../../configs/eslint/unicorn",
+    "../../configs/eslint/import",
+    "../../configs/eslint/ts",
+    "../../configs/eslint/tsdoc",
+    "../../configs/eslint/jest",
+    "../../configs/eslint/jsx-a11y",
+    "../../configs/eslint/sonarjs",
+    "prettier",
+  ],
+}
