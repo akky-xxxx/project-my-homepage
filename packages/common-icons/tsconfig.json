@@ -5,6 +5,6 @@
   "compilerOptions": {
     "declaration": true,
     "jsx": "react",
-    "outDir": "./out",
-  },
+    "outDir": "./out"
+  }
 }
