@@ -2,9 +2,10 @@
   "name": "common-icons",
   "main": "out/index.js",
   "scripts": {
-    "build": "run-s build:compile build:staging build:commit",
+    "build": "run-s build:remove build:compile build:staging build:commit",
     "build:commit": "git commit -m \"feat(common-icons): output components@`date \"+%Y-%m-%d %H:%M:%S\"`\"",
     "build:compile": "tsc --noEmit false",
+    "build:remove": "shx rm -rf ./out",
     "build:staging": "git add ./out",
     "check-all": "run-s fix check-code",
     "check-code": "run-p lint type-check",
