@@ -1,0 +1,46 @@
+name: main ci of common-utils
+
+on:
+  push:
+    branches:
+      - release/renewal
+      - develop
+      - main
+    paths:
+      - 'packages/common-utils/**'
+      - 'yarn.lock'
+  pull_request:
+    branches:
+      - release/renewal
+      - develop
+      - main
+      - feature/*
+    paths:
+      - 'packages/common-utils/**'
+      - 'yarn.lock'
+
+jobs:
+  checks:
+
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./packages/common-utils
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.15.1
+          cache: 'yarn'
+
+      - name: Install dependencies
+        run: yarn
+
+      - name: Check the codes
+        run: yarn check-code
+
+      - name: Test the codes
+        run: yarn test

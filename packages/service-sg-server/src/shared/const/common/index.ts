@@ -1,2 +1,6 @@
-export const IsDevelopment = process.env.NODE_ENV !== "production"
-export const IsTest = process.env.NODE_ENV === "test"
+import { getEnv } from "common-utils"
+
+const nodeEnvironment = getEnv.string("NODE_ENV")
+
+export const IsDevelopment = nodeEnvironment !== "production"
+export const IsTest = nodeEnvironment === "test"

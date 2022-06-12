@@ -1,3 +1,5 @@
+import { getEnv } from "common-utils"
+
 export const AppInfo = {
-  version: process.env.VERSION || "N/A",
+  version: getEnv.string("VERSION", "N/A"),
 } as const

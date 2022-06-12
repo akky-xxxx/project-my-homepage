@@ -15,7 +15,7 @@ module.exports = {
   },
   overrides: [
     {
-      files: ["**/*.{test,stories}.{ts,tsx}", "**/spy{/**,.ts}"],
+      files: ["**/*.{test,stories}.{ts,tsx}", "**/spy{/**,.ts}", "**/spec/**"],
       rules: Object.fromEntries(
         [
           "complexity",

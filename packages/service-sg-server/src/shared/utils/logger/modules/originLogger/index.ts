@@ -1,3 +1,4 @@
+import { getEnv } from "common-utils"
 import { createLogger, format, transports } from "winston"
 
 import { IsDevelopment } from "../../../../const/common"
@@ -22,6 +23,6 @@ formats.push(IsDevelopment ? developmentFormat : productionFormat)
 
 export const originLogger = createLogger({
   format: combine(...formats),
-  level: process.env.LOG_LEVEL || "silly",
+  level: getEnv.string("LOG_LEVEL", "silly"),
   transports: [new Console()],
 })
