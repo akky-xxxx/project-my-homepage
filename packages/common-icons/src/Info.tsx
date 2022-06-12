@@ -1,6 +1,6 @@
 import React from "react"
 
-import type { SVGProps } from "react";
+import type { SVGProps } from "react"
 
 export const Info = (props: SVGProps<SVGSVGElement>) => {
   const { color } = props
