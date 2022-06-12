@@ -1,6 +1,7 @@
-import { ComponentStoryObj, Meta } from "@storybook/react"
-import { ComponentProps } from "react"
 import { Info } from "../../src"
+
+import type { ComponentStoryObj, Meta } from "@storybook/react"
+import type { ComponentProps } from "react"
 
 type InfoType = typeof Info
 type InfoStory = ComponentStoryObj<InfoType>

@@ -5,8 +5,9 @@ module.exports = {
   },
   parserOptions: {
     tsconfigRootDir: __dirname,
-    project: ["./tsconfig.json"],
+    project: ["./tsconfig.lint.json"],
   },
+  plugins: ["react"],
   extends: [
     "eslint:recommended",
     "airbnb",
@@ -14,7 +15,7 @@ module.exports = {
     "plugin:unicorn/recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:@typescript-eslint/recommended-requiring-type-checking",
-    "next",
+    "plugin:react/recommended",
     "plugin:jest/recommended",
     "plugin:jest/style",
     "../../configs/eslint/js",
@@ -29,5 +30,4 @@ module.exports = {
     "../../configs/eslint/sonarjs",
     "prettier",
   ],
-  ignorePatterns: ["**/libs/**/*", "**/coverage/**"],
 }

@@ -1,6 +1,7 @@
-import { ComponentStoryObj, Meta } from "@storybook/react"
-import { ComponentProps } from "react"
 import { Close } from "../../src"
+
+import type { ComponentStoryObj, Meta } from "@storybook/react"
+import type { ComponentProps } from "react"
 
 type CloseType = typeof Close
 type CloseStory = ComponentStoryObj<CloseType>
