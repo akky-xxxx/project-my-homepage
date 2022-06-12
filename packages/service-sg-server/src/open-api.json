@@ -3,7 +3,7 @@
   "info": {
     "title": "sg-server",
     "version": "1.0",
-    "description": "api for ssg",
+    "description": "api for sg",
     "contact": {}
   },
   "servers": [
