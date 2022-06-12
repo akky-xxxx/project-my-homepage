@@ -4,6 +4,5 @@ declare type GetEnv = {
     number: GetEnvMethod<number>;
     string: GetEnvMethod<string>;
 };
-declare type GetEnvBase = (env: Record<string, string | undefined>) => GetEnv;
-export declare const getEnvBase: GetEnvBase;
+export declare const getEnv: GetEnv;
 export {};

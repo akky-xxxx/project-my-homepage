@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getEnvBase = void 0;
-var getEnvBase_1 = require("./getEnvBase");
-Object.defineProperty(exports, "getEnvBase", { enumerable: true, get: function () { return getEnvBase_1.getEnvBase; } });
+exports.getEnv = void 0;
+var getEnv_1 = require("./getEnv");
+Object.defineProperty(exports, "getEnv", { enumerable: true, get: function () { return getEnv_1.getEnv; } });
 //# sourceMappingURL=index.js.map

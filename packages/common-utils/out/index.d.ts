@@ -1,1 +1,1 @@
-export { getEnvBase } from "./getEnvBase";
+export { getEnv } from "./getEnv";
