@@ -2,14 +2,15 @@ const { ERROR } = require("../../../const")
 exports.prevent_abbreviations = [
   ERROR,
   {
-    allowList: {
-      Props: true,
-      props: true,
-      Req: true,
-      req: true,
-      Res: true,
-      res: true,
-      ref: true,
-    },
+    replacements: Object.fromEntries(
+      [
+        // 許容する略称一覧
+        "props",
+        "req",
+        "res",
+        "ref",
+        "env",
+      ].map((keyword) => [keyword, false]),
+    ),
   },
 ]
