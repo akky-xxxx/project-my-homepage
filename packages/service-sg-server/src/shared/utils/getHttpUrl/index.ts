@@ -1,6 +1,8 @@
+import { getEnv } from "common-utils"
+
 type GetHttpUrl = (path: string) => string
 
-const { STRAPI_SERVER } = process.env
+const STRAPI_SERVER = getEnv.string("STRAPI_SERVER")
 
 if (!STRAPI_SERVER) {
   throw new Error("STRAPI_SERVER が定義されていません")
