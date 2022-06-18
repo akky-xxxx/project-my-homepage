@@ -1,10 +1,6 @@
-import type { LocationBase, PhotoBase } from "../baseScheme"
+import type { RelatedPhotos, LocationBase } from "../baseScheme"
 import type { StrapiItem, StrapiResponse } from "../common"
 
-type Location = LocationBase & {
-  photos: {
-    data: StrapiItem<Omit<PhotoBase, "photo">>[]
-  }
-}
+type Location = RelatedPhotos<LocationBase>
 
 export type Locations = StrapiResponse<StrapiItem<Location>[]>

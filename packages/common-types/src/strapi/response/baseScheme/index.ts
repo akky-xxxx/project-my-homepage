@@ -46,3 +46,9 @@ export type TagBase = Omit<Dates, "publishedAt"> & {
 export type LocationBase = Omit<Dates, "publishedAt"> & {
   locationName: string
 }
+
+export type RelatedPhotos<Base> = Base & {
+  photos: {
+    data: StrapiItem<Omit<PhotoBase, "photo">>[]
+  }
+}

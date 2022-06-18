@@ -1,10 +1,6 @@
-import type { PhotoBase, TagBase } from "../baseScheme"
+import type { RelatedPhotos, TagBase } from "../baseScheme"
 import type { StrapiItem, StrapiResponse } from "../common"
 
-type Tag = TagBase & {
-  photos: {
-    data: StrapiItem<Omit<PhotoBase, "photo">>[]
-  }
-}
+type Tag = RelatedPhotos<TagBase>
 
 export type Tags = StrapiResponse<StrapiItem<Tag>[]>
