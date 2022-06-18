@@ -35,6 +35,7 @@ export const parameters = {
   },
   screenshot: {
     viewport: DeviceMap.pc,
+    delay: 500,
   },
   layout: "fullscreen",
 }
