@@ -40,6 +40,11 @@ describe("GET /api/tags/{tagId}", () => {
       expect(Array.isArray(res.body?.images)).toBeTruthy()
     })
 
+    it("tagName プロパティがあり、文字列である", () => {
+      expect(spy).toHaveBeenCalled()
+      expect(typeof res.body.tagName).toBe("string")
+    })
+
     it("images[number] はオブジェクトである", () => {
       expect(spy).toHaveBeenCalled()
       if (!Array.isArray(res.body?.images)) return
