@@ -85,5 +85,15 @@ describe("GET /api/locations", () => {
         expect(typeof newLocation.imageNum).toBe("number")
       })
     })
+
+    it("locations[number].order は number である", () => {
+      expect(spy).toHaveBeenCalled()
+      res.body.locations.forEach((location: unknown) => {
+        if (typeof location !== "object" || location === null) return
+        const newLocation: UnknownObject = { ...location }
+
+        expect(typeof newLocation.order).toBe("number")
+      })
+    })
   })
 })

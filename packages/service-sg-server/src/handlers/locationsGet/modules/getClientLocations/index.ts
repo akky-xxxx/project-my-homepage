@@ -17,6 +17,7 @@ export const getClientLocations: GetClientLocations =
       id,
       attributes: {
         locationName,
+        order,
         photos: { data: photos },
       },
     } = location
@@ -35,5 +36,6 @@ export const getClientLocations: GetClientLocations =
       imagePath,
       locationId: String(id),
       locationName,
+      order: typeof order !== "undefined" ? Number(order) : Infinity,
     }
   }
