@@ -7,6 +7,7 @@ import {
 } from "../../shared/utils/logger"
 import { strapiApiMethods } from "../../shared/utils/strapiApiMethods"
 import { getClientLocations } from "./modules/getClientLocations"
+import { sortLocation } from "./modules/sortLocation"
 
 import type { LocationsGETRes } from "../../libs/bffApiClient"
 
@@ -30,6 +31,8 @@ const locationsGetBase: LocationsGetBase = async () => {
   const locations: LocationsGETRes["locations"] = locationsRes
     .map(getClientLocationsMain)
     .filter(Boolean) as LocationsGETRes["locations"]
+
+  locations.sort(sortLocation)
 
   const response = { locations }
   infoLoggerMain({
