@@ -570,19 +570,22 @@
                 "locationName": "location1",
                 "locationId": "locationId1",
                 "imagePath": "http://placehold.jp/3d4070/ffffff/2000x1000.png?text=location1",
-                "imageNum": 10
+                "imageNum": 10,
+                "ordre": 3
               },
               {
                 "locationName": "location2",
                 "locationId": "locationId2",
                 "imagePath": "http://placehold.jp/3d4070/ffffff/2000x1000.png?text=location2",
-                "imageNum": 10000
+                "imageNum": 10000,
+                "ordre": 2
               },
               {
                 "locationName": "location3",
                 "locationId": "location3",
                 "imagePath": "http://placehold.jp/3d4070/ffffff/2000x1000.png?text=location3",
-                "imageNum": 10000000
+                "imageNum": 10000000,
+                "ordre": 1
               }
             ]
           }
@@ -607,13 +610,17 @@
                 },
                 "imageNum": {
                   "type": "number"
+                },
+                "order": {
+                  "type": "number"
                 }
               },
               "required": [
                 "locationName",
                 "locationId",
                 "imagePath",
-                "imageNum"
+                "imageNum",
+                "order"
               ]
             }
           }

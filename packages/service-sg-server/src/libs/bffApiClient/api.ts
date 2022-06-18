@@ -77,6 +77,12 @@ export interface LocationsGETResLocationsInner {
      * @memberof LocationsGETResLocationsInner
      */
     'imageNum': number;
+    /**
+     * 
+     * @type {number}
+     * @memberof LocationsGETResLocationsInner
+     */
+    'order': number;
 }
 /**
  * 

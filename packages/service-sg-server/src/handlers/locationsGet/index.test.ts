@@ -76,13 +76,23 @@ describe("GET /api/locations", () => {
       })
     })
 
-    it("locations[number].imageNun は数字である", () => {
+    it("locations[number].imageNum は数字である", () => {
       expect(spy).toHaveBeenCalled()
       res.body.locations.forEach((location: unknown) => {
         if (typeof location !== "object" || location === null) return
         const newLocation: UnknownObject = { ...location }
 
         expect(typeof newLocation.imageNum).toBe("number")
+      })
+    })
+
+    it("locations[number].order は number である", () => {
+      expect(spy).toHaveBeenCalled()
+      res.body.locations.forEach((location: unknown) => {
+        if (typeof location !== "object" || location === null) return
+        const newLocation: UnknownObject = { ...location }
+
+        expect(typeof newLocation.order).toBe("number")
       })
     })
   })

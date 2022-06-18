@@ -45,6 +45,7 @@ export type TagBase = Omit<Dates, "publishedAt"> & {
 // Location
 export type LocationBase = Omit<Dates, "publishedAt"> & {
   locationName: string
+  order?: string
 }
 
 export type RelatedPhotos<Base> = Base & {

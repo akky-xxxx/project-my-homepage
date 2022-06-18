@@ -94,6 +94,7 @@ const photosSpyResponse: Photos = {
               id: 1,
               attributes: {
                 locationName: "location1",
+                order: "1",
                 createdAt: "2022-05-05T14:22:58.120Z",
                 updatedAt: "2022-05-05T14:22:58.120Z",
               },
@@ -105,6 +106,7 @@ const photosSpyResponse: Photos = {
             id: 1,
             attributes: {
               locationName: "a",
+              order: "1",
               createdAt: "2022-05-05T13:09:05.121Z",
               updatedAt: "2022-05-05T13:09:05.121Z",
             },
@@ -197,6 +199,7 @@ const photosSpyResponse: Photos = {
               id: 1,
               attributes: {
                 locationName: "location1",
+                order: "1",
                 createdAt: "2022-05-05T14:22:58.120Z",
                 updatedAt: "2022-05-05T14:22:58.120Z",
               },
@@ -215,6 +218,7 @@ const locationsSpyResponse: Locations = {
       id: 1,
       attributes: {
         locationName: "location1",
+        order: "1",
         createdAt: "2022-05-05T14:22:58.120Z",
         updatedAt: "2022-05-05T14:22:58.120Z",
         photos: {
@@ -247,6 +251,7 @@ const locationsSpyResponse: Locations = {
       id: 2,
       attributes: {
         locationName: "location2",
+        order: "2",
         createdAt: "2022-05-05T14:23:04.296Z",
         updatedAt: "2022-05-05T14:23:04.296Z",
         photos: { data: [] },
