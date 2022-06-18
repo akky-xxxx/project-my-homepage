@@ -1,4 +1,5 @@
 import { extractPhotoId } from "../../../../shared/utils/extractPhotoId"
+import { getRandomImagePath } from "../../../../shared/utils/getRandomImagePath"
 
 import type { LocationsGETRes } from "../../../../libs/bffApiClient"
 import type { ExtractImagePathMain } from "../../../../shared/utils/extractImagePath"
@@ -26,10 +27,7 @@ export const getClientLocations: GetClientLocations =
 
     const targetPhotoIdList = photos.map(extractPhotoId)
     const imagePaths = targetPhotoIdList.map(extractImagePathMain)
-    // eslint-disable-next-line no-magic-numbers
-    const randomIndex = Math.floor(Math.random() * (imagePaths.length - 1))
-    // eslint-disable-next-line no-magic-numbers
-    const imagePath = imagePaths[randomIndex > -1 ? randomIndex : 0]
+    const imagePath = getRandomImagePath(imagePaths)
 
     return {
       imageNum: photos.length,
