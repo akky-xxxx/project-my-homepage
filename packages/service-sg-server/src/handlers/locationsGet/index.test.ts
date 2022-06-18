@@ -76,7 +76,7 @@ describe("GET /api/locations", () => {
       })
     })
 
-    it("locations[number].imageNun は数字である", () => {
+    it("locations[number].imageNum は数字である", () => {
       expect(spy).toHaveBeenCalled()
       res.body.locations.forEach((location: unknown) => {
         if (typeof location !== "object" || location === null) return
