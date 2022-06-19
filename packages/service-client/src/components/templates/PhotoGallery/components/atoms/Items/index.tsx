@@ -4,7 +4,7 @@ import styled from "styled-components"
 import { Margins } from "../../../../../../shared/const/Margins"
 import { MediaQuery } from "../../../../../../shared/const/MediaQuery"
 import { useHasHover } from "../../../../../../shared/utils/useHasHover"
-import { Item } from "./components/atoms/Item"
+import { Item } from "../../../../../atoms/Item"
 
 import type { ComponentProps, FC } from "react"
 

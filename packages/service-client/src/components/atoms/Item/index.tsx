@@ -2,7 +2,7 @@ import { Fragment } from "react"
 import Zoom from "react-medium-image-zoom"
 import styled from "styled-components"
 
-import { Margins } from "../../../../../../../../../shared/const/Margins"
+import { Margins } from "../../../shared/const/Margins"
 
 import type { ReactNode, FC } from "react"
 
