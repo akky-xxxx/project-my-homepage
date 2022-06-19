@@ -18,14 +18,7 @@ type ItemProps = Record<"height" | "width", number> & {
 const thumbnailHeight = 180
 
 export const Item: FC<ItemProps> = (props) => {
-  const {
-    hasHover,
-    height,
-    imagePath,
-    title,
-    subTitle,
-    width,
-  } = props
+  const { hasHover, height, imagePath, title, subTitle, width } = props
 
   return (
     <StyledDiv>
@@ -33,12 +26,7 @@ export const Item: FC<ItemProps> = (props) => {
         <Zoom>
           {/* TODO: サーバに乗せる時に要確認 */}
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <StyledImage
-            src={imagePath}
-            width={width}
-            height={height}
-            alt=""
-          />
+          <StyledImage src={imagePath} width={width} height={height} alt="" />
         </Zoom>
       </ImageWrapper>
       {hasHover && (
