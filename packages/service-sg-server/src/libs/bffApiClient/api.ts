@@ -42,47 +42,65 @@ export interface HomeGETRes {
 export interface LocationsGETRes {
     /**
      * 
-     * @type {Array<LocationsGETResLocationsInner>}
+     * @type {Array<LocationsGETResImagesInner>}
      * @memberof LocationsGETRes
      */
-    'locations': Array<LocationsGETResLocationsInner>;
+    'images': Array<LocationsGETResImagesInner>;
+    /**
+     * 
+     * @type {string}
+     * @memberof LocationsGETRes
+     */
+    ''?: string;
 }
 /**
  * 
  * @export
- * @interface LocationsGETResLocationsInner
+ * @interface LocationsGETResImagesInner
  */
-export interface LocationsGETResLocationsInner {
+export interface LocationsGETResImagesInner {
     /**
      * 
      * @type {string}
-     * @memberof LocationsGETResLocationsInner
+     * @memberof LocationsGETResImagesInner
      */
     'locationName': string;
     /**
      * 
      * @type {string}
-     * @memberof LocationsGETResLocationsInner
+     * @memberof LocationsGETResImagesInner
      */
     'locationId': string;
     /**
      * 
      * @type {string}
-     * @memberof LocationsGETResLocationsInner
+     * @memberof LocationsGETResImagesInner
      */
     'imagePath': string;
     /**
      * 
-     * @type {number}
-     * @memberof LocationsGETResLocationsInner
+     * @type {string}
+     * @memberof LocationsGETResImagesInner
      */
-    'imageNum': number;
+    'imageNum': string;
     /**
      * 
      * @type {number}
-     * @memberof LocationsGETResLocationsInner
+     * @memberof LocationsGETResImagesInner
      */
     'order': number;
+    /**
+     * 
+     * @type {number}
+     * @memberof LocationsGETResImagesInner
+     */
+    'width': number;
+    /**
+     * 
+     * @type {number}
+     * @memberof LocationsGETResImagesInner
+     */
+    'height': number;
 }
 /**
  * 
@@ -926,6 +944,70 @@ export const SGApiAxiosParamCreator = function (configuration?: Configuration) {
             };
         },
         /**
+         * for locations page
+         * @summary Get locations
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getApiLocations: async (options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/api/locations`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * for location detail page
+         * @summary Get photos related the location
+         * @param {string} locationId location id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getApiLocationsLocationId: async (locationId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'locationId' is not null or undefined
+            assertParamExists('getApiLocationsLocationId', 'locationId', locationId)
+            const localVarPath = `/api/locations/{locationId}`
+                .replace(`{${"locationId"}}`, encodeURIComponent(String(locationId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
          * for photo-gallery page
          * @summary Get all photos
          * @param {*} [options] Override http request option.
@@ -976,6 +1058,27 @@ export const SGApiFp = function(configuration?: Configuration) {
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
+         * for locations page
+         * @summary Get locations
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getApiLocations(options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<LocationsGETRes>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getApiLocations(options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * for location detail page
+         * @summary Get photos related the location
+         * @param {string} locationId location id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getApiLocationsLocationId(locationId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<LocationsIdGETRes>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getApiLocationsLocationId(locationId, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
          * for photo-gallery page
          * @summary Get all photos
          * @param {*} [options] Override http request option.
@@ -1005,6 +1108,25 @@ export const SGApiFactory = function (configuration?: Configuration, basePath?: 
             return localVarFp.getApiHome(options).then((request) => request(axios, basePath));
         },
         /**
+         * for locations page
+         * @summary Get locations
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getApiLocations(options?: any): AxiosPromise<LocationsGETRes> {
+            return localVarFp.getApiLocations(options).then((request) => request(axios, basePath));
+        },
+        /**
+         * for location detail page
+         * @summary Get photos related the location
+         * @param {string} locationId location id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getApiLocationsLocationId(locationId: string, options?: any): AxiosPromise<LocationsIdGETRes> {
+            return localVarFp.getApiLocationsLocationId(locationId, options).then((request) => request(axios, basePath));
+        },
+        /**
          * for photo-gallery page
          * @summary Get all photos
          * @param {*} [options] Override http request option.
@@ -1030,6 +1152,25 @@ export interface SGApiInterface {
      * @memberof SGApiInterface
      */
     getApiHome(options?: AxiosRequestConfig): AxiosPromise<HomeGETRes>;
+
+    /**
+     * for locations page
+     * @summary Get locations
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof SGApiInterface
+     */
+    getApiLocations(options?: AxiosRequestConfig): AxiosPromise<LocationsGETRes>;
+
+    /**
+     * for location detail page
+     * @summary Get photos related the location
+     * @param {string} locationId location id
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof SGApiInterface
+     */
+    getApiLocationsLocationId(locationId: string, options?: AxiosRequestConfig): AxiosPromise<LocationsIdGETRes>;
 
     /**
      * for photo-gallery page
@@ -1058,6 +1199,29 @@ export class SGApi extends BaseAPI implements SGApiInterface {
      */
     public getApiHome(options?: AxiosRequestConfig) {
         return SGApiFp(this.configuration).getApiHome(options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * for locations page
+     * @summary Get locations
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof SGApi
+     */
+    public getApiLocations(options?: AxiosRequestConfig) {
+        return SGApiFp(this.configuration).getApiLocations(options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * for location detail page
+     * @summary Get photos related the location
+     * @param {string} locationId location id
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof SGApi
+     */
+    public getApiLocationsLocationId(locationId: string, options?: AxiosRequestConfig) {
+        return SGApiFp(this.configuration).getApiLocationsLocationId(locationId, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
