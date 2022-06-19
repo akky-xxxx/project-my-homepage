@@ -97,5 +97,25 @@ describe("GET /api/locations", () => {
         expect(typeof newLocation.order).toBe("number")
       })
     })
+
+    it("images[number].height は number である", () => {
+      expect(spy).toHaveBeenCalled()
+      res.body.images.forEach((location: unknown) => {
+        if (typeof location !== "object" || location === null) return
+        const newLocation: UnknownObject = { ...location }
+
+        expect(typeof newLocation.height).toBe("number")
+      })
+    })
+
+    it("images[number].width は number である", () => {
+      expect(spy).toHaveBeenCalled()
+      res.body.images.forEach((location: unknown) => {
+        if (typeof location !== "object" || location === null) return
+        const newLocation: UnknownObject = { ...location }
+
+        expect(typeof newLocation.width).toBe("number")
+      })
+    })
   })
 })
