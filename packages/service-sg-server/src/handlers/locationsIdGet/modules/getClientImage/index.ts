@@ -1,13 +1,14 @@
 import { format } from "date-fns"
 
 import { DateFnsFormats } from "../../../../shared/const/DateFns"
+import { getHttpUrl } from "../../../../shared/utils/getHttpUrl"
 import { getTargetTags } from "../../../../shared/utils/getTargetTags"
 import { hasSameId } from "../../../../shared/utils/hasSameId"
 
 import type { LocationsIdGETRes } from "../../../../libs/bffApiClient"
 import type { Photos, Tags, TagsId } from "common-types"
 
-const { VIEW, YEAR_MONTH } = DateFnsFormats
+const { VIEW } = DateFnsFormats
 
 type GetClientImageMainReturn = LocationsIdGETRes["images"][number]
 type GetClientImageMain = (
@@ -35,15 +36,16 @@ export const getClientImage: GetClientImage = (getClientImageArguments) => {
 
     const dateTakenAt = new Date(targetPhoto.attributes.takenAt)
     const getTargetTagsMain = getTargetTags(tags)
+    const { url, height, width } =
+      targetPhoto.attributes.photo.data.attributes.formats.large
 
     return {
+      height,
       imageId: String(photoId),
-      imagePath: targetPhoto.attributes.photo.data.attributes.formats.large.url,
+      imagePath: getHttpUrl(url),
       tags: targetPhoto.attributes.tags.data?.map(getTargetTagsMain) || [],
-      takenAt: {
-        viewTakenAt: format(dateTakenAt, VIEW),
-        yearMonth: format(dateTakenAt, YEAR_MONTH),
-      },
+      takenAt: format(dateTakenAt, VIEW),
+      width,
     }
   }
 }
