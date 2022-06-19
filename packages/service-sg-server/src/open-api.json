@@ -656,11 +656,11 @@
             "locationName": "location1",
             "images": [
               {
+                "imageId": "imageId1",
                 "imagePath": "http://placehold.jp/3d4070/ffffff/2000x1000.png?text=location1",
-                "takenAt": {
-                  "yearMonth": "2022-01",
-                  "viewTakenAt": "2022/01/02"
-                },
+                "height": 1000,
+                "width": 2000,
+                "takenAt": "2022/01/02",
                 "tags": [
                   {
                     "tagId": "tagId1",
@@ -673,11 +673,11 @@
                 ]
               },
               {
+                "imageId": "imageId2",
                 "imagePath": "http://placehold.jp/3d4070/ffffff/2000x1000.png?text=location2",
-                "takenAt": {
-                  "yearMonth": "2022-01",
-                  "viewTakenAt": "2022/01/02"
-                },
+                "height": 1000,
+                "width": 2000,
+                "takenAt": "2022/01/02",
                 "tags": [
                   {
                     "tagId": "tagId1",
@@ -690,11 +690,11 @@
                 ]
               },
               {
+                "imageId": "imageId3",
                 "imagePath": "http://placehold.jp/3d4070/ffffff/2000x1000.png?text=location3",
-                "takenAt": {
-                  "yearMonth": "2022-01",
-                  "viewTakenAt": "2022/01/02"
-                },
+                "height": 1000,
+                "width": 2000,
+                "takenAt": "2022/01/02",
                 "tags": []
               }
             ]
@@ -710,26 +710,16 @@
             "items": {
               "type": "object",
               "properties": {
+                "imageId": {
+                  "type": "string"
+                },
                 "imagePath": {
                   "type": "string",
                   "pattern": "^https?:\\/\\/"
                 },
                 "takenAt": {
-                  "type": "object",
-                  "required": [
-                    "yearMonth",
-                    "viewTakenAt"
-                  ],
-                  "properties": {
-                    "yearMonth": {
-                      "type": "string",
-                      "pattern": "^\\d{4}-\\d{2}$"
-                    },
-                    "viewTakenAt": {
-                      "type": "string",
-                      "pattern": "^\\d{4}\\/\\d{2}\\/\\d{2}$"
-                    }
-                  }
+                  "type": "string",
+                  "pattern": "^\\d{4}\\/\\d{2}\\/\\d{2}$"
                 },
                 "tags": {
                   "type": "array",
@@ -749,12 +739,21 @@
                       "tagName"
                     ]
                   }
+                },
+                "height": {
+                  "type": "number"
+                },
+                "width": {
+                  "type": "number"
                 }
               },
               "required": [
+                "imageId",
                 "imagePath",
                 "takenAt",
-                "tags"
+                "tags",
+                "height",
+                "width"
               ]
             }
           }
