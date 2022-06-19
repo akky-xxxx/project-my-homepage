@@ -132,19 +132,37 @@ export interface LocationsIdGETResImagesInner {
      * @type {string}
      * @memberof LocationsIdGETResImagesInner
      */
+    'imageId': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof LocationsIdGETResImagesInner
+     */
     'imagePath': string;
     /**
      * 
-     * @type {TagsIdGETResImagesItemsTakenAt}
+     * @type {string}
      * @memberof LocationsIdGETResImagesInner
      */
-    'takenAt': TagsIdGETResImagesItemsTakenAt;
+    'takenAt': string;
     /**
      * 
      * @type {Array<LocationsIdGETResImagesItemsTagsInner>}
      * @memberof LocationsIdGETResImagesInner
      */
     'tags': Array<LocationsIdGETResImagesItemsTagsInner>;
+    /**
+     * 
+     * @type {number}
+     * @memberof LocationsIdGETResImagesInner
+     */
+    'height': number;
+    /**
+     * 
+     * @type {number}
+     * @memberof LocationsIdGETResImagesInner
+     */
+    'width': number;
 }
 /**
  * 
