@@ -1,6 +1,6 @@
 import type { LocationsGETRes } from "../../../../libs/bffApiClient"
 
-type Location = Pick<LocationsGETRes["locations"][number], "order">
+type Location = Pick<LocationsGETRes["images"][number], "order">
 type SortLocation = (a: Location, b: Location) => number
 
 const BeforePosition = 1

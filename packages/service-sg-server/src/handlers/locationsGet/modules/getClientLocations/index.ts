@@ -7,7 +7,7 @@ import type { Locations } from "common-types"
 
 type GetClientLocationsMain = (
   location: Locations["data"][number],
-) => LocationsGETRes["locations"][number] | false
+) => LocationsGETRes["images"][number] | false
 type GetClientLocations = (
   extractImagePathMain: ExtractImagePathMain,
 ) => GetClientLocationsMain

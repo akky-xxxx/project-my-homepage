@@ -28,13 +28,13 @@ const locationsGetBase: LocationsGetBase = async () => {
 
   // .filter(Boolean) で false を除去している
   // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
-  const locations: LocationsGETRes["locations"] = locationsRes
+  const images: LocationsGETRes["images"] = locationsRes
     .map(getClientLocationsMain)
-    .filter(Boolean) as LocationsGETRes["locations"]
+    .filter(Boolean) as LocationsGETRes["images"]
 
-  locations.sort(sortLocation)
+  images.sort(sortLocation)
 
-  const response = { locations }
+  const response = { images }
   infoLoggerMain({
     endpoint: "GET: /api/locations",
     response,
