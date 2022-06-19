@@ -1,4 +1,3 @@
-import "react-medium-image-zoom/dist/styles.css"
 import Head from "next/head"
 import { Fragment } from "react"
 

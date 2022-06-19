@@ -1,5 +1,5 @@
 import { apiHandler } from "../../shared/utils/apiHandler"
-import { extractImagePath } from "../../shared/utils/extractImagePath"
+import { extractImage } from "../../shared/utils/extractImage"
 import {
   infoLogger,
   loggerWrapper,
@@ -24,17 +24,17 @@ const locationsGetBase: LocationsGetBase = async () => {
   ])
   debugLoggerMain({ locationsRes, photosRes })
 
-  const getClientLocationsMain = getClientLocations(extractImagePath(photosRes))
+  const getClientLocationsMain = getClientLocations(extractImage(photosRes))
 
   // .filter(Boolean) で false を除去している
   // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
-  const locations: LocationsGETRes["locations"] = locationsRes
+  const images: LocationsGETRes["images"] = locationsRes
     .map(getClientLocationsMain)
-    .filter(Boolean) as LocationsGETRes["locations"]
+    .filter(Boolean) as LocationsGETRes["images"]
 
-  locations.sort(sortLocation)
+  images.sort(sortLocation)
 
-  const response = { locations }
+  const response = { images }
   infoLoggerMain({
     endpoint: "GET: /api/locations",
     response,

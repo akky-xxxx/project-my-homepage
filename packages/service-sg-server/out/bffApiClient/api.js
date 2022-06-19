@@ -629,6 +629,68 @@ var SGApiAxiosParamCreator = function (configuration) {
             });
         },
         /**
+         * for locations page
+         * @summary Get locations
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getApiLocations: function (options) {
+            if (options === void 0) { options = {}; }
+            return __awaiter(_this, void 0, void 0, function () {
+                var localVarPath, localVarUrlObj, baseOptions, localVarRequestOptions, localVarHeaderParameter, localVarQueryParameter, headersFromBaseOptions;
+                return __generator(this, function (_a) {
+                    localVarPath = "/api/locations";
+                    localVarUrlObj = new URL(localVarPath, common_1.DUMMY_BASE_URL);
+                    if (configuration) {
+                        baseOptions = configuration.baseOptions;
+                    }
+                    localVarRequestOptions = __assign(__assign({ method: 'GET' }, baseOptions), options);
+                    localVarHeaderParameter = {};
+                    localVarQueryParameter = {};
+                    (0, common_1.setSearchParams)(localVarUrlObj, localVarQueryParameter);
+                    headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+                    localVarRequestOptions.headers = __assign(__assign(__assign({}, localVarHeaderParameter), headersFromBaseOptions), options.headers);
+                    return [2 /*return*/, {
+                            url: (0, common_1.toPathString)(localVarUrlObj),
+                            options: localVarRequestOptions
+                        }];
+                });
+            });
+        },
+        /**
+         * for location detail page
+         * @summary Get photos related the location
+         * @param {string} locationId location id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getApiLocationsLocationId: function (locationId, options) {
+            if (options === void 0) { options = {}; }
+            return __awaiter(_this, void 0, void 0, function () {
+                var localVarPath, localVarUrlObj, baseOptions, localVarRequestOptions, localVarHeaderParameter, localVarQueryParameter, headersFromBaseOptions;
+                return __generator(this, function (_a) {
+                    // verify required parameter 'locationId' is not null or undefined
+                    (0, common_1.assertParamExists)('getApiLocationsLocationId', 'locationId', locationId);
+                    localVarPath = "/api/locations/{locationId}"
+                        .replace("{".concat("locationId", "}"), encodeURIComponent(String(locationId)));
+                    localVarUrlObj = new URL(localVarPath, common_1.DUMMY_BASE_URL);
+                    if (configuration) {
+                        baseOptions = configuration.baseOptions;
+                    }
+                    localVarRequestOptions = __assign(__assign({ method: 'GET' }, baseOptions), options);
+                    localVarHeaderParameter = {};
+                    localVarQueryParameter = {};
+                    (0, common_1.setSearchParams)(localVarUrlObj, localVarQueryParameter);
+                    headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+                    localVarRequestOptions.headers = __assign(__assign(__assign({}, localVarHeaderParameter), headersFromBaseOptions), options.headers);
+                    return [2 /*return*/, {
+                            url: (0, common_1.toPathString)(localVarUrlObj),
+                            options: localVarRequestOptions
+                        }];
+                });
+            });
+        },
+        /**
          * for photo-gallery page
          * @summary Get all photos
          * @param {*} [options] Override http request option.
@@ -687,6 +749,45 @@ var SGApiFp = function (configuration) {
             });
         },
         /**
+         * for locations page
+         * @summary Get locations
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getApiLocations: function (options) {
+            return __awaiter(this, void 0, void 0, function () {
+                var localVarAxiosArgs;
+                return __generator(this, function (_a) {
+                    switch (_a.label) {
+                        case 0: return [4 /*yield*/, localVarAxiosParamCreator.getApiLocations(options)];
+                        case 1:
+                            localVarAxiosArgs = _a.sent();
+                            return [2 /*return*/, (0, common_1.createRequestFunction)(localVarAxiosArgs, axios_1["default"], base_1.BASE_PATH, configuration)];
+                    }
+                });
+            });
+        },
+        /**
+         * for location detail page
+         * @summary Get photos related the location
+         * @param {string} locationId location id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getApiLocationsLocationId: function (locationId, options) {
+            return __awaiter(this, void 0, void 0, function () {
+                var localVarAxiosArgs;
+                return __generator(this, function (_a) {
+                    switch (_a.label) {
+                        case 0: return [4 /*yield*/, localVarAxiosParamCreator.getApiLocationsLocationId(locationId, options)];
+                        case 1:
+                            localVarAxiosArgs = _a.sent();
+                            return [2 /*return*/, (0, common_1.createRequestFunction)(localVarAxiosArgs, axios_1["default"], base_1.BASE_PATH, configuration)];
+                    }
+                });
+            });
+        },
+        /**
          * for photo-gallery page
          * @summary Get all photos
          * @param {*} [options] Override http request option.
@@ -725,6 +826,25 @@ var SGApiFactory = function (configuration, basePath, axios) {
             return localVarFp.getApiHome(options).then(function (request) { return request(axios, basePath); });
         },
         /**
+         * for locations page
+         * @summary Get locations
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getApiLocations: function (options) {
+            return localVarFp.getApiLocations(options).then(function (request) { return request(axios, basePath); });
+        },
+        /**
+         * for location detail page
+         * @summary Get photos related the location
+         * @param {string} locationId location id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getApiLocationsLocationId: function (locationId, options) {
+            return localVarFp.getApiLocationsLocationId(locationId, options).then(function (request) { return request(axios, basePath); });
+        },
+        /**
          * for photo-gallery page
          * @summary Get all photos
          * @param {*} [options] Override http request option.
@@ -757,6 +877,29 @@ var SGApi = /** @class */ (function (_super) {
     SGApi.prototype.getApiHome = function (options) {
         var _this = this;
         return (0, exports.SGApiFp)(this.configuration).getApiHome(options).then(function (request) { return request(_this.axios, _this.basePath); });
+    };
+    /**
+     * for locations page
+     * @summary Get locations
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof SGApi
+     */
+    SGApi.prototype.getApiLocations = function (options) {
+        var _this = this;
+        return (0, exports.SGApiFp)(this.configuration).getApiLocations(options).then(function (request) { return request(_this.axios, _this.basePath); });
+    };
+    /**
+     * for location detail page
+     * @summary Get photos related the location
+     * @param {string} locationId location id
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof SGApi
+     */
+    SGApi.prototype.getApiLocationsLocationId = function (locationId, options) {
+        var _this = this;
+        return (0, exports.SGApiFp)(this.configuration).getApiLocationsLocationId(locationId, options).then(function (request) { return request(_this.axios, _this.basePath); });
     };
     /**
      * for photo-gallery page

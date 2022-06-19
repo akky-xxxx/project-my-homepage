@@ -2,9 +2,8 @@ import { Fragment } from "react"
 import Zoom from "react-medium-image-zoom"
 import styled from "styled-components"
 
-import { Margins } from "../../../../../../../../../shared/const/Margins"
+import { Margins } from "../../../shared/const/Margins"
 
-import type { VoidFunction } from "../../../../../../../../../shared/types/react"
 import type { ReactNode, FC } from "react"
 
 const { Margin4 } = Margins
@@ -13,22 +12,13 @@ type ItemProps = Record<"height" | "width", number> & {
   hasHover: boolean
   imagePath: string
   title: ReactNode
-  handleClickImage: VoidFunction
   subTitle?: ReactNode
 }
 
 const thumbnailHeight = 180
 
 export const Item: FC<ItemProps> = (props) => {
-  const {
-    handleClickImage,
-    hasHover,
-    height,
-    imagePath,
-    title,
-    subTitle,
-    width,
-  } = props
+  const { hasHover, height, imagePath, title, subTitle, width } = props
 
   return (
     <StyledDiv>
@@ -36,13 +26,7 @@ export const Item: FC<ItemProps> = (props) => {
         <Zoom>
           {/* TODO: サーバに乗せる時に要確認 */}
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <StyledImage
-            src={imagePath}
-            width={width}
-            height={height}
-            alt=""
-            onClick={handleClickImage}
-          />
+          <StyledImage src={imagePath} width={width} height={height} alt="" />
         </Zoom>
       </ImageWrapper>
       {hasHover && (

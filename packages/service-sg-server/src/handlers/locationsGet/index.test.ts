@@ -31,23 +31,23 @@ describe("GET /api/locations", () => {
       expect(res.status).toBe(200)
     })
 
-    it("locations プロパティがあり、配列である", () => {
+    it("images プロパティがあり、配列である", () => {
       expect(spy).toHaveBeenCalled()
-      expect(Array.isArray(res.body?.locations)).toBeTruthy()
+      expect(Array.isArray(res.body?.images)).toBeTruthy()
     })
 
-    it("locations[number] はオブジェクトである", () => {
+    it("images[number] はオブジェクトである", () => {
       expect(spy).toHaveBeenCalled()
-      if (!Array.isArray(res.body?.locations)) return
-      res.body.locations.forEach((location: unknown) => {
+      if (!Array.isArray(res.body?.images)) return
+      res.body.images.forEach((location: unknown) => {
         expect(typeof location).toBe("object")
         expect(location).not.toBeNull()
       })
     })
 
-    it("locations[number].locationName は文字列である", () => {
+    it("images[number].locationName は文字列である", () => {
       expect(spy).toHaveBeenCalled()
-      res.body.locations.forEach((location: unknown) => {
+      res.body.images.forEach((location: unknown) => {
         if (typeof location !== "object" || location === null) return
         const newLocation: UnknownObject = { ...location }
 
@@ -55,9 +55,9 @@ describe("GET /api/locations", () => {
       })
     })
 
-    it("locations[number].locationId は文字列である", () => {
+    it("images[number].locationId は文字列である", () => {
       expect(spy).toHaveBeenCalled()
-      res.body.locations.forEach((location: unknown) => {
+      res.body.images.forEach((location: unknown) => {
         if (typeof location !== "object" || location === null) return
         const newLocation: UnknownObject = { ...location }
 
@@ -65,9 +65,9 @@ describe("GET /api/locations", () => {
       })
     })
 
-    it("locations[number].imagePath は http で始まる文字列である", () => {
+    it("images[number].imagePath は http で始まる文字列である", () => {
       expect(spy).toHaveBeenCalled()
-      res.body.locations.forEach((location: unknown) => {
+      res.body.images.forEach((location: unknown) => {
         if (typeof location !== "object" || location === null) return
         const newLocation: UnknownObject = { ...location }
 
@@ -76,23 +76,45 @@ describe("GET /api/locations", () => {
       })
     })
 
-    it("locations[number].imageNum は数字である", () => {
+    it("images[number].imageNum は文字列で「枚」で終わる", () => {
       expect(spy).toHaveBeenCalled()
-      res.body.locations.forEach((location: unknown) => {
+      res.body.images.forEach((location: unknown) => {
         if (typeof location !== "object" || location === null) return
         const newLocation: UnknownObject = { ...location }
 
-        expect(typeof newLocation.imageNum).toBe("number")
+        expect(typeof newLocation.imageNum).toBe("string")
+        if (typeof newLocation.imageNum !== "string") return
+        expect(newLocation.imageNum.endsWith("枚")).toBeTruthy()
       })
     })
 
-    it("locations[number].order は number である", () => {
+    it("images[number].order は number である", () => {
       expect(spy).toHaveBeenCalled()
-      res.body.locations.forEach((location: unknown) => {
+      res.body.images.forEach((location: unknown) => {
         if (typeof location !== "object" || location === null) return
         const newLocation: UnknownObject = { ...location }
 
         expect(typeof newLocation.order).toBe("number")
+      })
+    })
+
+    it("images[number].height は number である", () => {
+      expect(spy).toHaveBeenCalled()
+      res.body.images.forEach((location: unknown) => {
+        if (typeof location !== "object" || location === null) return
+        const newLocation: UnknownObject = { ...location }
+
+        expect(typeof newLocation.height).toBe("number")
+      })
+    })
+
+    it("images[number].width は number である", () => {
+      expect(spy).toHaveBeenCalled()
+      res.body.images.forEach((location: unknown) => {
+        if (typeof location !== "object" || location === null) return
+        const newLocation: UnknownObject = { ...location }
+
+        expect(typeof newLocation.width).toBe("number")
       })
     })
   })

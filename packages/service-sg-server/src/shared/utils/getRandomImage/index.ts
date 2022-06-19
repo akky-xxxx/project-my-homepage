@@ -1,6 +1,6 @@
-type GetRandomImagePath = (imagePaths: string[]) => string
+type GetRandomImage = <T>(imagePaths: T[]) => T
 
-export const getRandomImagePath: GetRandomImagePath = (imagePaths) => {
+export const getRandomImage: GetRandomImage = (imagePaths) => {
   /* eslint-disable no-magic-numbers */
   const randomIndex = Math.round(Math.random() * (imagePaths.length - 1))
   return imagePaths[randomIndex]
