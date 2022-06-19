@@ -1,5 +1,5 @@
 import { extractPhotoId } from "../../../../shared/utils/extractPhotoId"
-import { getRandomImagePath } from "../../../../shared/utils/getRandomImagePath"
+import { getRandomImage } from "../../../../shared/utils/getRandomImage"
 
 import type { TagsGETRes } from "../../../../libs/bffApiClient"
 import type { ExtractImagePathMain } from "../../../../shared/utils/extractImage"
@@ -25,7 +25,7 @@ export const getClientTag: GetClientTag = (extractImagePathMain) => (tag) => {
 
   const targetPhotoIdList = photos.map(extractPhotoId)
   const imagePaths = targetPhotoIdList.map(extractImagePathMain)
-  const imagePath = getRandomImagePath(imagePaths)
+  const imagePath = getRandomImage(imagePaths)
 
   return {
     imageNum: photos.length,
