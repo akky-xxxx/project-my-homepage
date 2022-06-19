@@ -1,4 +1,4 @@
-import { getRandomImagePath } from "./index"
+import { getRandomImage } from "./index"
 
 describe("getRandomImagePath", () => {
   describe('引数が ["a", "b", "c", "d"]', () => {
@@ -18,7 +18,7 @@ describe("getRandomImagePath", () => {
       (spyValue, expectedValue) => {
         const spy = jest.spyOn(Math, "random")
         spy.mockReturnValue(spyValue)
-        expect(getRandomImagePath(["a", "b", "c", "d"])).toBe(expectedValue)
+        expect(getRandomImage(["a", "b", "c", "d"])).toBe(expectedValue)
         spy.mockReset()
       },
     )
@@ -41,7 +41,7 @@ describe("getRandomImagePath", () => {
       (spyValue, expectedValue) => {
         const spy = jest.spyOn(Math, "random")
         spy.mockReturnValue(spyValue)
-        expect(getRandomImagePath(["a", "b", "c"])).toBe(expectedValue)
+        expect(getRandomImage(["a", "b", "c"])).toBe(expectedValue)
         spy.mockReset()
       },
     )
