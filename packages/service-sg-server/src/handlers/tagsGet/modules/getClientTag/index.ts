@@ -2,7 +2,7 @@ import { extractPhotoId } from "../../../../shared/utils/extractPhotoId"
 import { getRandomImagePath } from "../../../../shared/utils/getRandomImagePath"
 
 import type { TagsGETRes } from "../../../../libs/bffApiClient"
-import type { ExtractImagePathMain } from "../../../../shared/utils/extractImagePath"
+import type { ExtractImagePathMain } from "../../../../shared/utils/extractImage"
 import type { Tags } from "common-types"
 
 type GetClientTagMain = (

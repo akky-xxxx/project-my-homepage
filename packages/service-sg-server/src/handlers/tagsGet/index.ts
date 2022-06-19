@@ -1,5 +1,5 @@
 import { apiHandler } from "../../shared/utils/apiHandler"
-import { extractImagePath } from "../../shared/utils/extractImagePath"
+import { extractImage } from "../../shared/utils/extractImage"
 import {
   infoLogger,
   loggerWrapper,
@@ -23,7 +23,7 @@ const tagsGetBase: TagsGetBase = async () => {
   ])
   debugLoggerMain({ photosRes, tagsRes })
 
-  const getClientTagMain = getClientTag(extractImagePath(photosRes))
+  const getClientTagMain = getClientTag(extractImage(photosRes))
 
   // .filter(Boolean) で false を除去している
   // eslint-disable-next-line @typescript-eslint/consistent-type-assertions

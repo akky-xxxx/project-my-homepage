@@ -3,7 +3,7 @@ import { getRandomImagePath } from "../../../../shared/utils/getRandomImagePath"
 import { separateDigit } from "../../../../shared/utils/separateDigit"
 
 import type { LocationsGETRes } from "../../../../libs/bffApiClient"
-import type { ExtractImagePathMain } from "../../../../shared/utils/extractImagePath"
+import type { ExtractImagePathMain } from "../../../../shared/utils/extractImage"
 import type { Locations } from "common-types"
 
 type GetClientLocationsMain = (
