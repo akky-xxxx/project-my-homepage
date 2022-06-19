@@ -1,14 +1,11 @@
 import { omit } from "remeda"
 import styled from "styled-components"
 
-import { Margins } from "../../../../../../shared/const/Margins"
-import { MediaQuery } from "../../../../../../shared/const/MediaQuery"
 import { useHasHover } from "../../../../../../shared/utils/useHasHover"
 import { Item } from "../../../../../atoms/Item"
+import { ItemsWrapper } from "../../../../../atoms/ItemsWrapper"
 
 import type { ComponentProps, FC } from "react"
-
-const { Margin8, Margin16 } = Margins
 
 type ImageProps = Omit<
   ComponentProps<typeof Item>,
@@ -46,24 +43,6 @@ export const Items: FC<ItemsProps> = (props) => {
     </ItemsWrapper>
   )
 }
-
-const ItemsWrapper = styled.div`
-  display: grid;
-
-  ${MediaQuery.Pc} {
-    /* TODO: chrome 等が対応したらコメントを消す */
-    /* stylelint-disable-next-line plugin/no-unsupported-browser-features */
-    grid-template-columns: repeat(4, calc(25% - calc(${Margin16}px * 3 / 4)));
-    gap: ${Margin16}px;
-  }
-
-  ${MediaQuery.Tb} {
-    /* TODO: chrome 等が対応したらコメントを消す */
-    /* stylelint-disable-next-line plugin/no-unsupported-browser-features */
-    grid-template-columns: repeat(2, calc(50% - calc(${Margin8}px * 3 / 4)));
-    gap: ${Margin8}px;
-  }
-`
 
 const ItemWrapper = styled.div`
   display: block;
