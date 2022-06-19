@@ -150,7 +150,8 @@
       "get": {
         "summary": "Get locations",
         "tags": [
-          "02.PhotoGallery"
+          "02.PhotoGallery",
+          "SG"
         ],
         "responses": {
           "200": {
@@ -183,7 +184,8 @@
       "get": {
         "summary": "Get photos related the location",
         "tags": [
-          "02.PhotoGallery"
+          "02.PhotoGallery",
+          "SG"
         ],
         "responses": {
           "200": {
@@ -565,33 +567,39 @@
         "type": "object",
         "x-examples": {
           "example": {
-            "locations": [
+            "images": [
               {
                 "locationName": "location1",
                 "locationId": "locationId1",
                 "imagePath": "http://placehold.jp/3d4070/ffffff/2000x1000.png?text=location1",
-                "imageNum": 10,
-                "ordre": 3
+                "imageNum": "10 枚",
+                "ordre": 3,
+                "width": 2000,
+                "height": 1000
               },
               {
                 "locationName": "location2",
                 "locationId": "locationId2",
                 "imagePath": "http://placehold.jp/3d4070/ffffff/2000x1000.png?text=location2",
-                "imageNum": 10000,
-                "ordre": 2
+                "imageNum": "10,000 枚",
+                "ordre": 2,
+                "width": 2000,
+                "height": 1000
               },
               {
                 "locationName": "location3",
                 "locationId": "location3",
                 "imagePath": "http://placehold.jp/3d4070/ffffff/2000x1000.png?text=location3",
-                "imageNum": 10000000,
-                "ordre": 1
+                "imageNum": "10,000,000 枚",
+                "ordre": 1,
+                "width": 2000,
+                "height": 1000
               }
             ]
           }
         },
         "properties": {
-          "locations": {
+          "images": {
             "type": "array",
             "uniqueItems": false,
             "items": {
@@ -609,9 +617,15 @@
                   "pattern": "^https?:\\/\\/"
                 },
                 "imageNum": {
-                  "type": "number"
+                  "type": "string"
                 },
                 "order": {
+                  "type": "number"
+                },
+                "width": {
+                  "type": "number"
+                },
+                "height": {
                   "type": "number"
                 }
               },
@@ -620,13 +634,18 @@
                 "locationId",
                 "imagePath",
                 "imageNum",
-                "order"
+                "order",
+                "width",
+                "height"
               ]
             }
+          },
+          "": {
+            "type": "string"
           }
         },
         "required": [
-          "locations"
+          "images"
         ]
       },
       "locationsId_GET_res": {
