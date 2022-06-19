@@ -31,18 +31,12 @@ export const Items: FC<ItemsProps> = (props) => {
     <ItemsWrapper>
       {images.map((imageInfo) => {
         const { imageId, locationName, takenAt } = imageInfo
-        const handleClickImage = () => {
-          // TODO: モーダル実装時にいじる
-          // eslint-disable-next-line no-console
-          console.log({ imageId })
-        }
         const itemProps = omit(imageInfo, ["imageId"])
         return (
           <ItemWrapper key={imageId}>
             <Item
               {...itemProps}
               hasHover={hasHover}
-              handleClickImage={handleClickImage}
               title={locationName}
               subTitle={takenAt}
             />

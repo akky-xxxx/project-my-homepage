@@ -4,7 +4,6 @@ import styled from "styled-components"
 
 import { Margins } from "../../../../../../../../../shared/const/Margins"
 
-import type { VoidFunction } from "../../../../../../../../../shared/types/react"
 import type { ReactNode, FC } from "react"
 
 const { Margin4 } = Margins
@@ -13,7 +12,6 @@ type ItemProps = Record<"height" | "width", number> & {
   hasHover: boolean
   imagePath: string
   title: ReactNode
-  handleClickImage: VoidFunction
   subTitle?: ReactNode
 }
 
@@ -21,7 +19,6 @@ const thumbnailHeight = 180
 
 export const Item: FC<ItemProps> = (props) => {
   const {
-    handleClickImage,
     hasHover,
     height,
     imagePath,
@@ -41,7 +38,6 @@ export const Item: FC<ItemProps> = (props) => {
             width={width}
             height={height}
             alt=""
-            onClick={handleClickImage}
           />
         </Zoom>
       </ImageWrapper>
