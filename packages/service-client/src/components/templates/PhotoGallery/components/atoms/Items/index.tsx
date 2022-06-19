@@ -1,5 +1,4 @@
 import { omit } from "remeda"
-import styled from "styled-components"
 
 import { useHasHover } from "../../../../../../shared/utils/useHasHover"
 import { Item } from "../../../../../atoms/Item"
@@ -30,20 +29,15 @@ export const Items: FC<ItemsProps> = (props) => {
         const { imageId, locationName, takenAt } = imageInfo
         const itemProps = omit(imageInfo, ["imageId"])
         return (
-          <ItemWrapper key={imageId}>
-            <Item
-              {...itemProps}
-              hasHover={hasHover}
-              title={locationName}
-              subTitle={takenAt}
-            />
-          </ItemWrapper>
+          <Item
+            key={imageId}
+            {...itemProps}
+            hasHover={hasHover}
+            title={locationName}
+            subTitle={takenAt}
+          />
         )
       })}
     </ItemsWrapper>
   )
 }
-
-const ItemWrapper = styled.div`
-  display: block;
-`
