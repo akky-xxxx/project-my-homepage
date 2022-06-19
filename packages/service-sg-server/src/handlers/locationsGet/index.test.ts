@@ -76,13 +76,15 @@ describe("GET /api/locations", () => {
       })
     })
 
-    it("images[number].imageNum は数字である", () => {
+    it("images[number].imageNum は文字列で「枚」で終わる", () => {
       expect(spy).toHaveBeenCalled()
       res.body.images.forEach((location: unknown) => {
         if (typeof location !== "object" || location === null) return
         const newLocation: UnknownObject = { ...location }
 
-        expect(typeof newLocation.imageNum).toBe("number")
+        expect(typeof newLocation.imageNum).toBe("string")
+        if (typeof newLocation.imageNum !== "string") return
+        expect(newLocation.imageNum.endsWith("枚")).toBeTruthy()
       })
     })
 

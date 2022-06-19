@@ -1,5 +1,6 @@
 import { extractPhotoId } from "../../../../shared/utils/extractPhotoId"
 import { getRandomImagePath } from "../../../../shared/utils/getRandomImagePath"
+import { separateDigit } from "../../../../shared/utils/separateDigit"
 
 import type { LocationsGETRes } from "../../../../libs/bffApiClient"
 import type { ExtractImagePathMain } from "../../../../shared/utils/extractImagePath"
@@ -30,7 +31,7 @@ export const getClientLocations: GetClientLocations =
     const imagePath = getRandomImagePath(imagePaths)
 
     return {
-      imageNum: photos.length,
+      imageNum: separateDigit(photos.length, { suffix: "枚" }),
       imagePath,
       locationId: String(id),
       locationName,
