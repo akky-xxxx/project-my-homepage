@@ -5,13 +5,14 @@ import { Layout } from "../components/layouts/Layout"
 import { MenuData } from "../shared/const/MenuData"
 import { GlobalStyle } from "../shared/styles/globalStyle"
 import { getCurrentPagePosition } from "./modules/getCurrentPagePosition"
+import { getDetailName } from "./modules/getDetailName"
 import { getPageName } from "./modules/getPageName"
 
 import type { AppProps } from "next/app"
 
 const MyApp = ({ Component, pageProps, router }: AppProps) => {
   const { route } = router
-  const pageTitle = `${getPageName(route)}${
+  const pageTitle = `${getPageName(route, getDetailName(pageProps))}${
     process.env.NEXT_PUBLIC_TITLE || ""
   }`
 
